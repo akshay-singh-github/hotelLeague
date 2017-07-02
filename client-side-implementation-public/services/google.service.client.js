@@ -18,12 +18,14 @@
         
         
         
-        function searchNearbyHotels(search) {
+        function searchNearbyHotels(searchUrlObject) {
             var url = "/api/hotel/search";
 
-            return $http.get(url)
+            return $http.post(url,searchUrlObject)
                 .then(function (result) {
                     return result;
+                }, function (err) {
+                    console.log(err);
                 });
         }
         
