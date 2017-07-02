@@ -47,9 +47,8 @@
 
         </div>
     </div>
-    <div class="banner-info">
+    <div class="banner-info wd-search-bar-alignment">
         <div class="container">
-
             <div class="details-1">
                 <div class="wd-project-padding-search">
                 <div class="col-md-10 dropdown-buttons">
@@ -112,7 +111,7 @@
 </div>
 <!-- banner -->
 <!-- hod -->
-<div class="hod">
+<!--<div class="hod">
     <div class="container">
         <div class="col-md-6 hod-left">
             <img src="images/14.jpg" class="img-responsive" alt="">
@@ -125,18 +124,21 @@
         </div>
         <div class="clearfix"></div>
     </div>
-</div>
+</div>-->
 <!-- hod -->
 <!-- tels -->
-<div class="tels">
-    <div class="container">
-        <div class="col-md-4 tels-left">
-            <h4>Single room <span>110$</span></h4>
+<div ng-show="model.hotels" class="tels result-area-background" >
+    <h1  style="color: #761c19">Search Results</h1>
+    <div class="container ">
+        <div class="row is-flex">
+        <div class="col-md-6 tels-left wd-menuitem-style" ng-repeat="hotel in model.hotels">
+            <h4>{{hotel.name}} </h4>
             <img src="images/4.jpg" class="img-responsive" alt="">
             <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
-            <a class="hvr-shutter-in-horizontal" href="details.html">Book Now</a>
+            <a class="hvr-shutter-in-horizontal" style="position: absolute;bottom: 5px" href="details.html">Book Now</a>
         </div>
-        <div class="col-md-4 tels-left">
+        </div>
+        <!--<div class="col-md-4 tels-left">
             <h4>Double room <span>150$</span></h4>
             <img src="images/9.jpg" class="img-responsive" alt="">
             <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
@@ -148,6 +150,12 @@
             <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
             <a class="hvr-shutter-in-horizontal" href="details.html">Book Now</a>
         </div>
+        <div class="col-md-4 tels-left">
+            <h4>Private room <span>200$</span></h4>
+            <img src="images/3.jpg" class="img-responsive" alt="">
+            <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
+            <a class="hvr-shutter-in-horizontal" href="details.html">Book Now</a>
+        </div>-->
         <div class="clearfix"></div>
     </div>
 </div>

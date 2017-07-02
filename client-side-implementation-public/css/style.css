@@ -10,6 +10,81 @@ html, body{
 	background:#fff;
 }
 
+
+
+
+
+
+
+
+
+.row.is-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row.is-flex > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+* And with max cross-browser enabled.
+* Nobody should ever write this by hand.
+* Use a preprocesser with autoprefixing.
+*/
+.row.is-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row.is-flex > [class*='col-'] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+
+
+
+.result-area-background{
+    background-color: #E7E3DA;
+}
+
+
+
+
+.wd-menuitem-style{
+
+    border:5px solid white;
+    background-color: green;
+
+}
+
+.wd-menuitem-style:hover {
+    border:5px solid orangered;
+     // only changes to red if the mouse is hovering.
+}
+
+
+.wd-search-bar-alignment{
+    position: relative;
+    bottom: 15px;
+    width: 100%;
+}
+
+
+
 .wd-project-padding-search{
     padding: 10px;
 }
@@ -302,7 +377,7 @@ input#datepicker, input#datepicker1 {
     margin: 1em 0;
 }
 .tels {
-    padding: 5em 0;
+    padding: 1em 0;
 }
 .tels h4 {
     font-size: 1.7em;

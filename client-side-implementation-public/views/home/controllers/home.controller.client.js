@@ -23,7 +23,7 @@
             };
             googleService.searchNearbyHotels(urlObject)
                 .then(function (result) {
-                    model.hotels = result.data
+                    model.hotels = result.data;
                     console.log(result.data);
                 })
 
