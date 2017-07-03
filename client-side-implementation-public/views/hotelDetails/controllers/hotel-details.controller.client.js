@@ -14,7 +14,7 @@
         model.getApiKey = getApiKey;
 
 
-        
+
 
         function init(){
             model.hotelId = $routeParams.hotelId;
@@ -48,7 +48,7 @@
             googleService.getApiKey()
                 .then(function (result) {
                     model.googleApiKey=result.key;
-                    console.log(model.googleApiKey);
+
 
                 })
         }

@@ -53,27 +53,27 @@
 <div class="details">
     <div class="container">
         <div class="col-md-7 details-left">
-            <img src="images/16.jpg" class="img-responsive" alt="">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{model.hotelDetails.photos[0].photo_reference}}&sensor=false&maxheight={{model.hotelDetails.photos[0].height}}&maxwidth={{model.hotelDetails.photos[0].width}}&key={{model.googleApiKey}}" class="img-responsive center-block wd-image-shadow" alt="" >
+            <!--<img src="images/16.jpg" class="img-responsive" alt="">-->
         </div>
         <div class="col-md-5 details-right">
-            <span><strong>€ 250</strong> € 300 per guest</span>
-            <li>Book the service at the best price</li>
-            <li>Secure payment by credit card</li>
-            <li>No booking fee</li>
-            <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and a type specimen book. It has the leap into electronic typesetting, It was popularised in the 1960s with the relesoftware like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <span><strong>{{model.hotelDetails.name}}</strong></span>
+            <li>{{model.hotelDetails.opening_hours.open_now}}</li>
+            <li>{{model.hotelDetails.international_phone_number}}</li>
+            <li>{{model.hotelDetails.formatted_address}}</li>
         </div>
         <div class="clearfix"> </div>
         <div class="details-top">
-            <h3>Lorem Ipsum has been the industry's standard dummy tex</h3>
+            <!--<h3>Lorem Ipsum has been the industry's standard dummy tex</h3>
             <h5>Buy the online room booking, save 2 euro and skip the line!</h5>
             <h6>Validity : from 1 January 2015 to 31 August 2015</h6>
-            <h4>Included</h4>
-            <li>Kids under 5: free</li>
-            <li>publishing packages and web .Many desktop publishing packages and web page editors </li>
+            <h4>Included</h4>-->
+            <li ng-repeat="timing in model.hotelDetails.opening_hours.weekday_text">{{timing}}</li>
+            <!--<li>publishing packages and web .Many desktop publishing packages and web page editors </li>
             <h4>Not included</h4>
             <li> will uncover many web sites still in their infancy. Various versions have evolved over the years,</li>
-            <h4>Additional information</h4>
-            <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+            <h4>Additional information</h4>-->
+
         </div>
         <div class="booking-form">
             <div class="col-md-6">
