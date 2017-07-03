@@ -15,6 +15,14 @@
                 /*resolve:{
                     currentUser: checkCurrentUser
                 }*/
+            })
+            .when('/details/:hotelId', {
+                templateUrl:'views/hotelDetails/templates/hotel-details.view.client.html',
+                controller: "hotelDetailsController",
+                controllerAs: "model"
+                /*resolve:{
+                 currentUser: checkCurrentUser
+                 }*/
             });
 
     }
