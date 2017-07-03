@@ -131,10 +131,10 @@
     <h1>Search Results</h1>
     <div class="container ">
         <div class="row is-flex">
-        <div class="col-md-4 tels-left wd-menuitem-style" ng-repeat="hotel in model.hotels">
+        <div class="col-md-4 tels-left wd-menuitem-style wd-tile-shadow" ng-repeat="hotel in model.hotels">
             <div>
             <h4 class="wd-project-text-position-heading">{{hotel.name}} </h4>
-            <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=200&maxwidth=200&key={{model.googleApiKey}}" class="img-responsive center-block" alt="" >
+            <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=200&maxwidth=200&key={{model.googleApiKey}}" class="img-responsive center-block wd-image-shadow" alt="" >
                 <label>Address : </label>
                 <p>{{hotel.formatted_address}}</p>
                 <label>Open Now : </label>
