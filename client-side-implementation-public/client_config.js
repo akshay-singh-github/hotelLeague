@@ -23,6 +23,22 @@
                 /*resolve:{
                  currentUser: checkCurrentUser
                  }*/
+            })
+            .when('/login', {
+                templateUrl:'views/user/templates/user-login.view.client.html',
+                controller: "userLoginController",
+                controllerAs: "model"
+                /*resolve:{
+                 currentUser: checkCurrentUser
+                 }*/
+            })
+            .when('/register', {
+                templateUrl:'views/user/templates/user-register.view.client.html',
+                controller: "userRegisterController",
+                controllerAs: "model"
+                /*resolve:{
+                 currentUser: checkCurrentUser
+                 }*/
             });
 
     }

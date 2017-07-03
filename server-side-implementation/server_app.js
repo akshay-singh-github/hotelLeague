@@ -18,5 +18,6 @@ module.exports = function(app){
 
 
     require("./services/google.service.server.js")(app);
+    require("./services/user.service.server.js")(app);
 
 };
