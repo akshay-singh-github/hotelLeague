@@ -23,7 +23,7 @@
             var replacedsearch = cityN.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g," ");
             var processedSearch = replacedsearch.split(" ").join("+");
             console.log(processedSearch);
-            var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+processedSearch+"&radius=500&type=restaurant";
+            var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+processedSearch+"&radius=500&type=lodging";
             var urlObject = {
                 url:url
             };

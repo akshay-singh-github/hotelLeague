@@ -7,11 +7,13 @@ module.exports=function (app) {
     app.post("/api/hotel/search" , findNearbyHotels);
     app.get("/api/google/apiKey" , getApiKey);
     
-    
+    var GOOGLE_API_KEY = "AIzaSyBJgFmxoGn8jaOHdodFaDQ3uEDG2B4gY20";
+
+    /*AIzaSyA2Bhea9SgEMLUpWGOHViSBv8iEpYQky9Y*/
 
     function getApiKey(req, res) {
 
-        res.json({key:"AIzaSyA2Bhea9SgEMLUpWGOHViSBv8iEpYQky9Y"});
+        res.json({key:GOOGLE_API_KEY});
 
     }
 
@@ -22,7 +24,7 @@ module.exports=function (app) {
     function findNearbyHotels(req, res) {
         var urlObject = req.body;
         var url = urlObject.url;
-        var completeUrl = url+"&key=AIzaSyA2Bhea9SgEMLUpWGOHViSBv8iEpYQky9Y";
+        var completeUrl = url+"&key="+GOOGLE_API_KEY;
 
 
         console.log(completeUrl);

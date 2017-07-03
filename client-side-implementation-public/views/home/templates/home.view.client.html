@@ -132,10 +132,21 @@
     <div class="container ">
         <div class="row is-flex">
         <div class="col-md-4 tels-left wd-menuitem-style" ng-repeat="hotel in model.hotels">
-            <h4>{{hotel.name}} </h4>
-            <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=400&maxwidth=600&key=AIzaSyA2Bhea9SgEMLUpWGOHViSBv8iEpYQky9Y" class="img-responsive" alt="" >
-            <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
+            <div>
+            <h4 class="wd-project-text-position-heading">{{hotel.name}} </h4>
+            <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=200&maxwidth=200&key={{model.googleApiKey}}" class="img-responsive center-block" alt="" >
+                <label>Address : </label>
+                <p>{{hotel.formatted_address}}</p>
+                <label>Open Now : </label>
+                <p>{{hotel.opening_hours.open_now}}</p>
+                <label>Price : </label>
+                 <p>{{hotel.price_level}}</p>
+                <label>Rating : </label>
+                <p>{{hotel.rating}}</p>
+            </div>
+            <div>
             <a class="hvr-shutter-in-horizontal" style="position: absolute;bottom: 5px" href="details.html">Book Now</a>
+            </div>
         </div>
         </div>
         <!--<div class="col-md-4 tels-left">

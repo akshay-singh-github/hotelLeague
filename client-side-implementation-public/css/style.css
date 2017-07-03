@@ -57,6 +57,62 @@ html, body{
 
 
 
+.wd-project-text-heading{
+    font-family: "Playfair Display", serif;
+    color: #E61A9B;
+    font-style: italic;
+    text-transform: none;
+}
+
+.wd-heading-decoration{
+    text-decoration:overline underline dotted #F7F41E;
+}
+
+
+
+
+
+
+
+
+.wd-project-text-position-heading{
+    /*width: 400px;*/
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    color: #fb6e14;
+    font-style: italic;
+    text-transform: none;
+    padding-right: 5px;
+    padding-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.wd-project-text{
+    font-family: "Playfair Display", serif;
+    color: #fb6e14;
+    font-style: italic;
+    text-transform: none;
+}
+
+
+.wd-project-text-position{
+    /*width: 400px;*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding:10px;
+    text-align: center;
+}
+
+
+
+
+
+
+
 .result-area-background{
     background-color: #E7E3DA;
 }
@@ -381,7 +437,7 @@ input#datepicker, input#datepicker1 {
 }
 .tels h4 {
     font-size: 1.7em;
-    color:#A5A7A3;
+    color:#fb6e14;
     margin: 0 0 1em;
 }
 .tels p {
