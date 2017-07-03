@@ -127,13 +127,13 @@
 </div>-->
 <!-- hod -->
 <!-- tels -->
-<div ng-show="model.hotels" class="tels result-area-background" >
-    <h1  style="color: #761c19">Search Results</h1>
+<div ng-if="model.hotels" class="tels result-area-background" >
+    <h1>Search Results</h1>
     <div class="container ">
         <div class="row is-flex">
-        <div class="col-md-6 tels-left wd-menuitem-style" ng-repeat="hotel in model.hotels">
+        <div class="col-md-4 tels-left wd-menuitem-style" ng-repeat="hotel in model.hotels">
             <h4>{{hotel.name}} </h4>
-            <img src="images/4.jpg" class="img-responsive" alt="">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=400&maxwidth=600&key=AIzaSyA2Bhea9SgEMLUpWGOHViSBv8iEpYQky9Y" class="img-responsive" alt="" >
             <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
             <a class="hvr-shutter-in-horizontal" style="position: absolute;bottom: 5px" href="details.html">Book Now</a>
         </div>

@@ -10,7 +10,8 @@
 
 
         var api = {
-            searchNearbyHotels : searchNearbyHotels
+            searchNearbyHotels : searchNearbyHotels,
+            getApiKey : getApiKey
 
         };
 
@@ -24,6 +25,17 @@
             return $http.post(url,searchUrlObject)
                 .then(function (result) {
                     return result;
+                }, function (err) {
+                    console.log(err);
+                });
+        }
+
+        function getApiKey() {
+            var url = "/api/google/apiKey";
+
+            return $http.get(url)
+                .then(function (result) {
+                    return result.data;
                 }, function (err) {
                     console.log(err);
                 });

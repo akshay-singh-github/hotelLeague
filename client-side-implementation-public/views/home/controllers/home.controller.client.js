@@ -7,10 +7,16 @@
 
     function homeController(googleService) {
         var model = this;
+
         /*model.currentUser = currentUser;*/
 
         model.searchNearbyHotels = searchNearbyHotels;
+        model.getApiKey = getApiKey;
 
+        function init(){
+            model.getApiKey();
+        }
+        init();
 
         function searchNearbyHotels(search) {
             var cityN = search.city;
@@ -27,6 +33,15 @@
                     console.log(result.data);
                 })
 
+        }
+
+        function getApiKey() {
+            googleService.getApiKey()
+                .then(function (result) {
+                    model.googleApiKey=result.key;
+                    console.log(model.googleApiKey);
+
+                })
         }
 
 

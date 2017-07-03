@@ -5,9 +5,18 @@ var https = require('https');
 module.exports=function (app) {
 
     app.post("/api/hotel/search" , findNearbyHotels);
+    app.get("/api/google/apiKey" , getApiKey);
     
     
-    
+
+    function getApiKey(req, res) {
+
+        res.json({key:"AIzaSyA2Bhea9SgEMLUpWGOHViSBv8iEpYQky9Y"});
+
+    }
+
+
+
     
     
     function findNearbyHotels(req, res) {
