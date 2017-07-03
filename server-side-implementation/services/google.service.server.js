@@ -5,10 +5,12 @@ var https = require('https');
 module.exports=function (app) {
 
     app.post("/api/hotel/search" , findNearbyHotels);
+    app.post("/api/hotel/details" , getHotelDetails);
     app.get("/api/google/apiKey" , getApiKey);
     
-    var GOOGLE_API_KEY = "AIzaSyBJgFmxoGn8jaOHdodFaDQ3uEDG2B4gY20";
+    var GOOGLE_API_KEY = "AIzaSyA2Bhea9SgEMLUpWGOHViSBv8iEpYQky9Y";
 
+    /*AIzaSyBJgFmxoGn8jaOHdodFaDQ3uEDG2B4gY20*/
     /*AIzaSyA2Bhea9SgEMLUpWGOHViSBv8iEpYQky9Y*/
 
     function getApiKey(req, res) {
@@ -18,7 +20,30 @@ module.exports=function (app) {
     }
 
 
+    function getHotelDetails(req, res) {
+        var urlObject = req.body;
+        var url = urlObject.url;
+        var completeUrl = url+"&key="+GOOGLE_API_KEY;
 
+        console.log(completeUrl);
+        https.get(completeUrl, function(response) {
+            var body ='';
+            response.on('data', function(chunk) {
+                body += chunk;
+
+            });
+
+            response.on('end', function() {
+                var placeDetail = JSON.parse(body);
+                var details = placeDetail.result;
+                /*console.log(details);*/
+                res.send(details);
+            });
+        }).on('error', function(e) {
+            console.log("Got error: " + e.message);
+        });
+
+    }
     
     
     function findNearbyHotels(req, res) {

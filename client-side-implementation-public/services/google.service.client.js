@@ -11,13 +11,26 @@
 
         var api = {
             searchNearbyHotels : searchNearbyHotels,
-            getApiKey : getApiKey
+            getApiKey : getApiKey,
+            getHotelDetails : getHotelDetails
+
 
         };
 
         return api;
         
-        
+        function getHotelDetails(detailUrlObject) {
+
+            var url = "/api/hotel/details";
+
+            return $http.post(url,detailUrlObject)
+                .then(function (result) {
+                    return result;
+                }, function (err) {
+                    console.log(err);
+                });
+
+        }
         
         function searchNearbyHotels(searchUrlObject) {
             var url = "/api/hotel/search";

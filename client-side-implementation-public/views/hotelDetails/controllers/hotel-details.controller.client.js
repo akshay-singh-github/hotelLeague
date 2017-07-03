@@ -5,35 +5,44 @@
     angular.module("HotelLeagueMaker")
         .controller("hotelDetailsController", hotelDetailsController);
 
-    function hotelDetailsController(googleService) {
+    function hotelDetailsController(googleService,$routeParams) {
         var model = this;
 
         /*model.currentUser = currentUser;*/
 
-        model.searchNearbyHotels = searchNearbyHotels;
+        model.getHotelDetails = getHotelDetails;
         model.getApiKey = getApiKey;
 
+
+        
+
         function init(){
+            model.hotelId = $routeParams.hotelId;
+            model.getHotelDetails(model.hotelId);
             model.getApiKey();
         }
         init();
 
-        function searchNearbyHotels(search) {
-            var cityN = search.city;
-            var replacedsearch = cityN.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g," ");
-            var processedSearch = replacedsearch.split(" ").join("+");
-            console.log(processedSearch);
-            var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+processedSearch+"&radius=500&type=lodging";
+
+
+
+
+        function getHotelDetails(hotelId) {
+            var url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+hotelId;
             var urlObject = {
                 url:url
             };
-            googleService.searchNearbyHotels(urlObject)
+            googleService.getHotelDetails(urlObject)
                 .then(function (result) {
-                    model.hotels = result.data;
-                    console.log(result.data);
+                    model.hotelDetails = result.data;
                 })
 
         }
+
+
+
+
+
 
         function getApiKey() {
             googleService.getApiKey()
