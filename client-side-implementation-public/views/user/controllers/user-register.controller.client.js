@@ -6,7 +6,7 @@
     angular.module("HotelLeagueMaker")
         .controller("userRegisterController", userRegisterController);
 
-    function userRegisterController(userService) {
+    function userRegisterController(userService, $location) {
         var model = this;
 
         model.register = register;
@@ -46,6 +46,7 @@
                 .then(function () {
                     model.error = "Username is not available";
                 }, function () {
+                    console.log("this user can be registered");
                     var userNew = {
                         username: username,
                         password: password
@@ -55,6 +56,7 @@
                         .register(userNew);
                 })
                 .then(function (user) {
+                    console.log("after register done",user);
                     $location.url('/');
                 });
         }

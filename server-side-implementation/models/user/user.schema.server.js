@@ -39,7 +39,6 @@ module.exports = function () {
             message_title:String,
             message_body:String
         }],
-        reservations: [{type: mongoose.Schema.Types.ObjectId, ref: "websiteModel"}],
         dateCreated: {type: Date, default: Date.now}
     }, {collection:"hotelLeague.user"});
 

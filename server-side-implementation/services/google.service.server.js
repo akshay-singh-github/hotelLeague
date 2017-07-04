@@ -2,7 +2,7 @@
  * Created by XA on 02-Jul-17.
  */
 var https = require('https');
-module.exports=function (app) {
+module.exports=function (app,model) {
 
     app.post("/api/hotel/search" , findNearbyHotels);
     app.post("/api/hotel/details" , getHotelDetails);

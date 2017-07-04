@@ -96,6 +96,7 @@
                                 placeholder="WonderLand"
                         >
                     </div>
+
                     <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <label for="username"><span>Username*</span></label>
                         <input
@@ -108,8 +109,9 @@
                                 spellcheck="false"
                                 placeholder="alice_wonder"
                                 required>
+                        <div ng-show="model.usernamemessage" class="alert alert-info">{{model.usernamemessage}}</div>
                     </div>
-                    <div ng-show="model.usernamemessage" class="alert alert-info">{{model.usernamemessage}}</div>
+
                     <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <label for="email"><span>Email Address</span></label>
                         <input ng-model="user.email"

@@ -12,7 +12,8 @@
         var api = {
             login : login,
             register : register,
-            getApiKey : getApiKey
+            getApiKey : getApiKey,
+            findUserByUsername : findUserByUsername
             /*getHotelDetails : getHotelDetails*/
 
 
@@ -21,17 +22,28 @@
         return api;
 
 
-        function register(firstname, lastname,username, password, password2, email) {
+        function findUserByUsername(username) {
+            var url = '/api/user?username=' + username;
+
+            return $http.get(url)
+                .then(function (response) {
+                    var user = response.data;
+                    return user;
+                });
+            
+        }
+        
+        
+        
+        
+        
+        function register(userNew) {
 
             var url = "/api/register";
-            var userObject = {
-                firstName : firstname,
-                lastName : lastname,
-                username : username,
-                password : password,
-                emailId : email
-
-            };
+            return $http.post(url, userNew)
+                .then(function (response) {
+                    return response.data;
+                });
 
         }
 
