@@ -13,10 +13,71 @@ module.exports=function (app, model) {
     passport.serializeUser(serializeUser);
     passport.deserializeUser(deserializeUser);
 
+    /*isUserAdmin
+     isUserAdminOrCurrentUser
+    * */
+
 
     app.post("/api/login" ,passport.authenticate('local') ,login);
     app.get("/api/user",findUserbyQueryParameter);
     app.post('/api/register',register);
+    app.get('/api/checkLoggedInUser', checkLoggedInUser);
+    app.get('/api/checkAdminUser', checkAdminUser);
+    app.post('/api/logoutUser',logoutUser);
+
+
+
+    function logoutUser(req, res) {
+
+        req.logOut();
+        res.sendStatus(200);
+
+    }
+
+
+
+
+
+
+    function isUserAdmin(req, res, next) {
+        if(req.isAuthenticated() && req.user.roles.indexOf('ADMIN')> -1){
+            next();
+        }else{
+            res.sendStatus(401);
+        }
+    }
+
+    function isUserAdminOrCurrentUser(req, res, next) {
+        if(req.isAuthenticated() || (req.user.roles.indexOf('ADMIN')> -1 && req.isAuthenticated())){
+            next();
+        }else{
+            res.sendStatus(401);
+        }
+    }
+
+    
+    
+    function checkAdminUser() {
+
+        if(req.isAuthenticated() && req.user.roles.indexOf('ADMIN') > -1){
+            res.json(req.user);
+        }else{
+            res.send('0');
+        }
+        
+    }
+    
+    
+    
+
+
+    function checkLoggedInUser(req , res) {
+
+        res.send(req.isAuthenticated() ? req.user : '0');
+
+    }
+
+
 
 
     function serializeUser(user, done) {

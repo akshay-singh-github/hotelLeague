@@ -5,18 +5,36 @@
     angular.module("HotelLeagueMaker")
         .controller("homeController", homeController);
 
-    function homeController(googleService) {
+    function homeController($route,$location, userService,currentUser, googleService) {
         var model = this;
 
         /*model.currentUser = currentUser;*/
 
         model.searchNearbyHotels = searchNearbyHotels;
         model.getApiKey = getApiKey;
+        model.logout = logout;
+        model.currentUser = currentUser;
 
         function init(){
             model.getApiKey();
         }
         init();
+        
+        
+        function logout() {
+            userService
+                .logout()
+                .then(function () {
+                    $route.reload();
+                    $location.url('/');
+                })
+            
+        }
+        
+        
+        
+        
+        
 
         function searchNearbyHotels(search) {
             var cityN = search.city;

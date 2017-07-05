@@ -5,13 +5,15 @@
     angular.module("HotelLeagueMaker")
         .controller("hotelDetailsController", hotelDetailsController);
 
-    function hotelDetailsController(googleService,$routeParams) {
+    function hotelDetailsController($route, $location, userService, currentUser,googleService,$routeParams) {
         var model = this;
 
         /*model.currentUser = currentUser;*/
 
         model.getHotelDetails = getHotelDetails;
         model.getApiKey = getApiKey;
+        model.logout = logout;
+        model.currentUser = currentUser;
 
 
 
@@ -23,6 +25,16 @@
         }
         init();
 
+
+        function logout() {
+            userService
+                .logout()
+                .then(function () {
+                    $route.reload();
+                    $location.url('/');
+                })
+
+        }
 
 
 

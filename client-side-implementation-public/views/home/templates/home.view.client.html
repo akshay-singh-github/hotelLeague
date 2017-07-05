@@ -3,10 +3,11 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="index.html">Motel</a></h1>
+                {{model.currentUser.username}}
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -15,17 +16,31 @@
                 </div>
                 <!--/.navbar-header-->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav ">
                         <li class="active"><a href="#!/">Home</a></li>
-                        <li><a href="rooms.html">Admin</a></li>
-                        <li><a href="#!/login">Login</a></li>
-                        <li><a href="#!/register">Register</a></li>
-                        <li><a href="signin.html">Profile</a></li>
-                        <li><a href="signin.html">Inbox</a></li>
-                        <li><a href="signin.html">Following</a></li>
-                        <li><a href="signin.html">Followers</a></li>
-                        <li><a href="signin.html">Reservations</a></li>
-                        <li><a href="contact.html">Logout</a></li>
+                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>
+                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
+                        <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav ">
+                        <!--<li class="active"><a href="#!/">Home</a></li>
+                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>
+                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
@@ -47,7 +62,7 @@
             <script>
                 new UISearch( document.getElementById( 'sb-search' ) );
             </script>
-            <!-- //search-scripts -->
+             <!--//search-scripts-->
 
         </div>
     </div>

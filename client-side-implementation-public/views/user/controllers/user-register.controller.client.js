@@ -6,10 +6,25 @@
     angular.module("HotelLeagueMaker")
         .controller("userRegisterController", userRegisterController);
 
-    function userRegisterController(userService, $location) {
+    function userRegisterController($route, currentUser, userService, $location) {
         var model = this;
 
         model.register = register;
+        model.logout = logout;
+        model.currentUser = currentUser;
+
+
+
+
+        function logout() {
+            userService
+                .logout()
+                .then(function () {
+                    $route.reload();
+                    $location.url('/');
+                })
+
+        }
 
         function register(firstname, lastname,username, password, password2, email) {
             model.usernamemessage="";

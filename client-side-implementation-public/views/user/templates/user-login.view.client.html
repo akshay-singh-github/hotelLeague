@@ -6,7 +6,7 @@
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -15,17 +15,31 @@
                 </div>
                 <!--/.navbar-header-->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#!/">Home</a></li>
-                        <li><a href="rooms.html">Admin</a></li>
-                        <li class="active"><a href="#!/login">Login</a></li>
-                        <li><a href="#!/register">Register</a></li>
-                        <li><a href="signin.html">Profile</a></li>
-                        <li><a href="signin.html">Inbox</a></li>
-                        <li><a href="signin.html">Following</a></li>
-                        <li><a href="signin.html">Followers</a></li>
-                        <li><a href="signin.html">Reservations</a></li>
-                        <li><a href="contact.html">Logout</a></li>
+                    <ul class="nav navbar-nav ">
+                        <li ><a href="#!/">Home</a></li>
+                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
+                        <li class="active" ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>
+                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
+                        <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav ">
+                        <!--<li class="active"><a href="#!/">Home</a></li>
+                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>
+                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
@@ -65,14 +79,35 @@
             <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
                 <h3>REGISTERED CUSTOMERS</h3>
                 <p>If you have an account with us, please log in.</p>
-                <form>
+                <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
+                <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
+
+                <form ng-class="{'submitted': submitted}">
                     <div>
-                        <span>Username<label>*</label></span>
-                        <input ng-model ="user.username" type="text">
+                        <label for="username"><span>Username*</span></label>
+                        <input ng-model ="user.username"
+                               type="text"
+                               autocomplete="off"
+                               autocorrect="off"
+                               autocapitalize="off"
+                               spellcheck="false"
+                               id="username"
+                               placeholder="ironman321"
+                               required>
+                        <div ng-show="model.usernamemessage" class="alert alert-info">{{model.usernamemessage}}</div>
                     </div>
                     <div>
-                        <span>Password<label>*</label></span>
-                        <input ng-model ="user.password" type="password">
+                        <label for="password"><span>Password*</span></label>
+                        <input ng-model ="user.password"
+                               type="password"
+                               autocomplete="off"
+                               autocorrect="off"
+                               autocapitalize="off"
+                               spellcheck="false"
+                               id="password"
+                               placeholder="qwerty321"
+                               required>
+                        <div ng-show="model.passwordmessage" class="alert alert-info">{{model.passwordmessage}}</div>
                     </div>
                     <a class="forgot" href="#">Forgot Your Password?</a>
                     <input ng-click ="model.login(user.username,user.password)" type="submit" value="Login">

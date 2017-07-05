@@ -90,6 +90,13 @@ html, body{
 }
 
 
+.nowrapping{
+    white-space: nowrap;
+    display: flex;
+    text-overflow: ellipsis;
+}
+
+
 .wd-project-text{
     font-family: "Playfair Display", serif;
     color: #fb6e14;

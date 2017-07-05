@@ -13,14 +13,52 @@
             login : login,
             register : register,
             getApiKey : getApiKey,
-            findUserByUsername : findUserByUsername
+            findUserByUsername : findUserByUsername,
+            checkLoggedInUser : checkLoggedInUser,
+            checkAdminUser : checkAdminUser,
+            logout : logout
             /*getHotelDetails : getHotelDetails*/
 
 
         };
 
         return api;
+        
+        
+        function logout() {
 
+            var url = '/api/logoutUser';
+            return $http.post(url)
+                .then(function(result){
+                    return result.data;
+                });
+        }
+        
+        
+        function checkAdminUser() {
+
+            var url = '/api/checkAdminUser';
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
+        
+        
+        
+
+        
+        function checkLoggedInUser() {
+            var url = '/api/checkLoggedInUser';
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
+        
+        
+        
+        
 
         function findUserByUsername(username) {
             var url = '/api/user?username=' + username;
