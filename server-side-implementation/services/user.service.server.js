@@ -25,9 +25,23 @@ module.exports=function (app, model) {
     app.get('/api/checkAdminUser', checkAdminUser);
     app.post('/api/logoutUser',logoutUser);
     app.put('/api/user/:uid',isAdminorCurrentUser , updateUserProfile);
+    app.post('/api/unregisterUserProfile',unregisterUserProfile);
 
 
 
+    function unregisterUserProfile(req, res) {
+        model.userModel
+            .deleteUserProfile(req.user._id)
+            .then(function (user) {
+                req.logOut();
+                res.sendStatus(200);
+            });
+        
+    }
+    
+    
+    
+    
     
     
     
@@ -180,8 +194,6 @@ module.exports=function (app, model) {
                     } else {
                         res.json(user);
                     }
-
-
                 });
             })
     }

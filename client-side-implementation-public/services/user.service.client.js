@@ -17,13 +17,27 @@
             checkLoggedInUser : checkLoggedInUser,
             checkAdminUser : checkAdminUser,
             logout : logout,
-            updateUserProfile : updateUserProfile
+            updateUserProfile : updateUserProfile,
+            unregisterUserProfile : unregisterUserProfile
             /*getHotelDetails : getHotelDetails*/
 
 
         };
 
         return api;
+        
+        
+        function unregisterUserProfile() {
+
+            var url = '/api/unregisterUserProfile';
+            return $http.post(url)
+                .then(function (response) {
+                    return response.data;
+                });
+        }
+        
+        
+        
         
         
         

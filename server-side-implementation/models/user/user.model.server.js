@@ -21,10 +21,19 @@ module.exports = function () {
         deleteWebsite : deleteWebsite,
         findUserByGoogleId : findUserByGoogleId,
         findUserByFacebookId : findUserByFacebookId,
-        setModel: setModel
+        setModel: setModel,
+        deleteUserProfile : deleteUserProfile
     };
 
     return api;
+
+
+
+
+    function deleteUserProfile(userId) {
+        return userModel.remove({_id: userId});
+    }
+
 
 
 

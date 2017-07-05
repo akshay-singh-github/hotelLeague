@@ -63,6 +63,9 @@
                 }, function () {
                     console.log("this user can be registered");
                     var userNew = {
+                        firstName:firstname,
+                        lastName : lastname,
+                        emailId:email,
                         username: username,
                         password: password
                     };

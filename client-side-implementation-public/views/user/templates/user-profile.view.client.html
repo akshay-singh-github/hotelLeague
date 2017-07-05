@@ -118,7 +118,7 @@
 
                     <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <label for="email"><span>Email Address</span></label>
-                        <input ng-model="model.currentUser.email"
+                        <input ng-model="model.currentUser.emailId"
                                type="text"
                                id="email"
                                autocomplete="off"
@@ -147,6 +147,8 @@
                     <button type="submit" class="btn btn-primary btn-block "
                             ng-click="model.updateUserProfile(model.currentUser);submitted= true">Update
                     </button>
+                    <a class="btn btn-warning  btn-block margin-top"
+                       ng-click="model.unregisterUserProfile()" href="">Delete</a>
                     <a class="btn btn-danger  btn-block margin-top"
                        href="#!/">Cancel</a>
                     <div class="clearfix"></div>

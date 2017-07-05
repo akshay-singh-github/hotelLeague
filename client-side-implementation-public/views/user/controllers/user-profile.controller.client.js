@@ -12,6 +12,7 @@
         model.register = register;
         model.logout = logout;
         model.updateUserProfile = updateUserProfile;
+        model.unregisterUserProfile = unregisterUserProfile;
         model.currentUser = currentUser;
 
 
@@ -23,6 +24,21 @@
 
         Init();
 
+        
+        
+        function unregisterUserProfile() {
+
+            userService
+                .unregisterUserProfile()
+                .then(function () {
+                    $location.url('/');
+                })
+            
+        }
+        
+        
+        
+        
 
         
         function updateUserProfile(userProfile) {
