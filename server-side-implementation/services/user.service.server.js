@@ -24,9 +24,53 @@ module.exports=function (app, model) {
     app.get('/api/checkLoggedInUser', checkLoggedInUser);
     app.get('/api/checkAdminUser', checkAdminUser);
     app.post('/api/logoutUser',logoutUser);
+    app.put('/api/user/:uid',isAdminorCurrentUser , updateUserProfile);
 
 
 
+    
+    
+    
+    function updateUserProfile(req, res) {
+
+        var user = req.body;
+        var userid = req.params.uid;
+
+        model
+            .userModel
+            .updateUserProfile(userid, user)
+            .then(function () {
+                res.sendStatus(200);
+            }, function (error) {
+                res.sendStatus(404);
+            });
+
+    }
+    
+    
+    
+    
+    
+
+
+
+
+    function isAdminorCurrentUser(req, res, next) {
+        if(req.isAuthenticated() || (req.user.roles.indexOf('ADMIN')> -1 && req.isAuthenticated())){
+            next();
+        }else{
+            res.sendStatus(401);
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     function logoutUser(req, res) {
 
         req.logOut();

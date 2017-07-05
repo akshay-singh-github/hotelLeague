@@ -16,13 +16,33 @@
             findUserByUsername : findUserByUsername,
             checkLoggedInUser : checkLoggedInUser,
             checkAdminUser : checkAdminUser,
-            logout : logout
+            logout : logout,
+            updateUserProfile : updateUserProfile
             /*getHotelDetails : getHotelDetails*/
 
 
         };
 
         return api;
+        
+        
+        
+        function updateUserProfile(userId, user) {
+
+            var url = '/api/user/' + userId;
+
+            return $http.put(url, user)
+                .then(function (response) {
+                    var user = response.data;
+                    return user;
+                });
+            
+        }
+        
+        
+        
+        
+        
         
         
         function logout() {

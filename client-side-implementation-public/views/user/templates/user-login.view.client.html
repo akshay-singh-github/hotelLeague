@@ -20,8 +20,8 @@
                         <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
                         <li class="active" ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
+                        <li ng-show="model.currentUser._id"><a href="">Inbox</a></li>
                         <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
@@ -36,9 +36,9 @@
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
                         <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>
+                        <li ng-show="model.currentUser._id"><a href="">Following</a></li>
+                        <li ng-show="model.currentUser._id"><a href="">Followers</a></li>
+                        <li ng-show="model.currentUser._id"><a href="">Reservations</a></li>
                         <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
@@ -110,7 +110,7 @@
                         <div ng-show="model.passwordmessage" class="alert alert-info">{{model.passwordmessage}}</div>
                     </div>
                     <a class="forgot" href="#">Forgot Your Password?</a>
-                    <input ng-click ="model.login(user.username,user.password)" type="submit" value="Login">
+                    <input ng-click ="model.login(user.username,user.password);submitted= true" type="submit" value="Login">
                 </form>
             </div>
             <div class="clearfix"> </div>

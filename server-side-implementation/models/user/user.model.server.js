@@ -15,7 +15,7 @@ module.exports = function () {
         findAllUser: findAllUser,
         findUserByUsername: findUserByUsername,
         findUserByCredentials: findUserByCredentials,
-        updateUser: updateUser,
+        updateUserProfile: updateUserProfile,
         deleteUser: deleteUser,
         addWebsite : addWebsite,
         deleteWebsite : deleteWebsite,
@@ -105,7 +105,7 @@ module.exports = function () {
 
 
 
-    function updateUser(userId, newUser) {
+    function updateUserProfile(userId, newUser) {
 
         if (newUser.roles) {
             if (typeof newUser.roles === 'string' || newUser.roles instanceof String) {

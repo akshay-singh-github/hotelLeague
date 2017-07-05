@@ -19,27 +19,17 @@
                         <li ><a href="#!/">Home</a></li>
                         <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
-                        <li class="active" ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                        <li class="active" ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
                         <li ng-show="model.currentUser._id"><a href="">Inbox</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav ">
-                        <!--<li class="active"><a href="#!/">Home</a></li>
-                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
                         <li ng-show="model.currentUser._id"><a href="">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="">Reservations</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
@@ -78,7 +68,7 @@
             <div ng-show="model.message" class="alert alert-info">
                 {{model.message}}
             </div>
-            <form ng-class="{'submitted': submitted}">
+            <form name ="myForm" ng-class="{'submitted': submitted}">
                 <div class="register-top-grid">
                     <h3>PERSONAL INFORMATION</h3>
 
@@ -86,7 +76,7 @@
                     <div class="wow fadeInLeft" data-wow-delay="0.4s">
                         <label for="firstname"><span>First Name</span></label>
                         <input
-                                ng-model="user.firstName"
+                                ng-model="model.currentUser.firstName"
                                 type="text"
                                 id="firstname"
                                 autocomplete="off"
@@ -99,7 +89,7 @@
                     <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <label for="lastname"><span>Last Name</span></label>
                         <input
-                                ng-model="user.lastName"
+                                ng-model="model.currentUser.lastName"
                                 type="text"
                                 id="lastname"
                                 autocomplete="off"
@@ -113,21 +103,22 @@
                     <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <label for="username"><span>Username*</span></label>
                         <input
-                                ng-model="user.username"
+                                ng-model="model.currentUser.username"
                                 type="text"
                                 id="username"
+                                name="username"
                                 autocomplete="off"
                                 autocorrect="off"
                                 autocapitalize="off"
                                 spellcheck="false"
                                 placeholder="alice_wonder"
                                 required>
-                        <div ng-show="model.usernamemessage" class="alert alert-info">{{model.usernamemessage}}</div>
+                        <div ng-show="myForm.username.$touched && model.submitted" class="alert alert-danger">The Username can't be changed. Other fields Updated.</div>
                     </div>
 
                     <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <label for="email"><span>Email Address</span></label>
-                        <input ng-model="user.email"
+                        <input ng-model="model.currentUser.email"
                                type="text"
                                id="email"
                                autocomplete="off"
@@ -137,49 +128,27 @@
                                placeholder="alice@gmail.com"
                         >
                     </div>
-                    <div class="clearfix"></div>
-                    <a class="news-letter" href="#">
-                        <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for
-                            Newsletter</label>
-                    </a>
-                </div>
-                <div class="register-bottom-grid">
-                    <h3>LOGIN INFORMATION</h3>
-                    <div class="wow fadeInLeft" data-wow-delay="0.4s">
-                        <label for="password"><span>Password*</span></label>
-                        <input ng-model="user.password"
-                               type="password"
-                               id="password"
-                               autocomplete="off"
-                               autocorrect="off"
-                               autocapitalize="off"
-                               spellcheck="false"
-                               placeholder="qwerty321"
-                               required>
-                        <div ng-show="model.passwordmessage" class="alert alert-info">{{model.passwordmessage}}</div>
-                    </div>
                     <div class="wow fadeInRight" data-wow-delay="0.4s">
-                        <label for="password2"><span>Confirm Password*</span></label>
-                        <input ng-model="user.password2"
-                               type="password"
-                               id="password2"
+                        <label for="phone"><span>Phone</span></label>
+                        <input ng-model="model.currentUser.phone"
+                               type="text"
+                               id="phone"
                                autocomplete="off"
                                autocorrect="off"
                                autocapitalize="off"
                                spellcheck="false"
-                               placeholder="qwerty321"
-                               required>
-                        <div ng-show="model.passwordmessage" class="alert alert-info">{{model.passwordmessage}}</div>
+                               placeholder="000-000-0000"
+                        >
                     </div>
+                    <div class="clearfix"></div>
                 </div>
-
                 <div class="clearfix"></div>
                 <div class="register-but">
                     <button type="submit" class="btn btn-primary btn-block "
-                            ng-click="model.register(user.firstName, user.lastName ,user.username, user.password, user.password2, user.email);submitted= true">Register
+                            ng-click="model.updateUserProfile(model.currentUser);submitted= true">Update
                     </button>
                     <a class="btn btn-danger  btn-block margin-top"
-                       href="#!/login">Cancel</a>
+                       href="#!/">Cancel</a>
                     <div class="clearfix"></div>
                 </div>
             </form>

@@ -39,6 +39,14 @@
                 resolve:{
                     currentUser: checkNoUserLoggedIn
                 }
+            })
+            .when('/profile', {
+                templateUrl:'views/user/templates/user-profile.view.client.html',
+                controller: "userProfileController",
+                controllerAs: "model",
+                resolve:{
+                    currentUser: checkLoggedInUser
+                }
             });
 
     }
