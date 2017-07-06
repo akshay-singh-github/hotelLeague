@@ -22,10 +22,22 @@ module.exports = function () {
         findUserByGoogleId : findUserByGoogleId,
         findUserByFacebookId : findUserByFacebookId,
         setModel: setModel,
-        deleteUserProfile : deleteUserProfile
+        deleteUserProfile : deleteUserProfile,
+        findUserByRegexUsername : findUserByRegexUsername
     };
 
     return api;
+    
+    
+    
+    function findUserByRegexUsername(username) {
+        return userModel.find({"username" : new RegExp(username, "i")});
+        
+    }
+    
+    
+    
+    
 
 
 

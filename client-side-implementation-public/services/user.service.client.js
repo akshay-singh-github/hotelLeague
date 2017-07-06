@@ -18,14 +18,29 @@
             checkAdminUser : checkAdminUser,
             logout : logout,
             updateUserProfile : updateUserProfile,
-            unregisterUserProfile : unregisterUserProfile
+            unregisterUserProfile : unregisterUserProfile,
+            findUserByUsernameRegex : findUserByUsernameRegex
             /*getHotelDetails : getHotelDetails*/
 
 
         };
 
         return api;
-        
+
+
+        function findUserByUsernameRegex(username) {
+
+            var url = '/api/userRegex?username=' + username;
+
+            return $http.get(url)
+                .then(function (response) {
+                    var users = response.data;
+                    return users;
+                });
+
+        }
+
+
         
         function unregisterUserProfile() {
 

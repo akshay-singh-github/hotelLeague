@@ -47,6 +47,22 @@
                 resolve:{
                     currentUser: checkLoggedInUser
                 }
+            })
+            .when('/people', {
+                templateUrl:'views/people/templates/search-people.view.client.html',
+                controller: "searchPeopleController",
+                controllerAs: "model",
+                resolve:{
+                    currentUser: checkLoggedInUser
+                }
+            })
+            .when('/inbox', {
+                templateUrl:'views/message/templates/message-inbox.view.client.html',
+                controller: "messageInboxController",
+                controllerAs: "model",
+                resolve:{
+                    currentUser: checkLoggedInUser
+                }
             });
 
     }

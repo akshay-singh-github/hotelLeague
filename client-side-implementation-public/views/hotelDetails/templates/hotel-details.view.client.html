@@ -21,10 +21,11 @@
                         <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="">Inbox</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox</a></li>
                         <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
+                        <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>

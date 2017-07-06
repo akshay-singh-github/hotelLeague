@@ -18,30 +18,20 @@
                     <ul class="nav navbar-nav ">
                         <li ><a href="#!/">Home</a></li>
                         <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
-                        <li class="active" ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
+                        <li class="active" ng-show="model.currentUser._id"><a href="#!/inbox">Inbox</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav ">
-                        <!--<li class="active"><a href="#!/">Home</a></li>
-                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
                         <li ng-show="model.currentUser._id"><a href="">Search People</a></li>
                         <li ng-show="model.currentUser._id"><a href="">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="">Reservations</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
@@ -73,47 +63,92 @@
 <div class="login-page">
     <div class="container">
         <div class="account_grid">
-            <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
-                <h3>NEW CUSTOMERS</h3>
-                <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-                <a class="acount-btn" href="register.html">Create an Account</a>
-            </div>
-            <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
-                <h3>REGISTERED CUSTOMERS</h3>
-                <p>If you have an account with us, please log in.</p>
+            <div class="col-md-9 login-right wow fadeInLeft" data-wow-delay="0.4s">
+                <h3>MESSAGE INBOX</h3>
                 <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
                 <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
+                <ul class="list-group">
+                    <li class="list-group-item active">
+                        <div class="row">
+                            <div class="col-xs-10">
+                                Messages
+                            </div>
+                            <div class="col-xs-2">
+                                Delete
+                            </div>
+                        </div>
+                    </li>
+                    <li ng-repeat="message in model.currentUser.MessagesInbox" class="list-group-item">
+                        <div class="row nowrapping">
+                            <div class = "col-xs-9">
+                                <h1 ng-if="message.isMessageNew=='NEW'">New!!!</h1>
+                                {{message}}
+                            </div>
+                            <div class = "col-xs-3">
+                                <span ng-click="model.selectUser(user)" class="glyphicon glyphicon-pencil pull-right"></span>
+                                <span ng-click="model.deleteUser(user)" class="glyphicon glyphicon-remove pull-right"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--<div>
+                    <form ng-class="{'submitted': submitted}">
+                        <div>
+                            <label for="username_search"><span>Enter Person Username*</span></label>
+                            <input ng-model ="user.username"
+                                   type="text"
+                                   autocomplete="off"
+                                   autocorrect="off"
+                                   autocapitalize="off"
+                                   spellcheck="false"
+                                   id="username_search"
+                                   placeholder="ironman321"
+                                   required>
+                            <div ng-show="model.usernamemessage" class="alert alert-info">{{model.usernamemessage}}</div>
+                        </div>
+                        <div>
+                            <input ng-click ="model.searchUser(user.username);submitted= true" type="submit" value="Search">
+                        </div>
+                    </form>
+                </div>-->
 
-                <form ng-class="{'submitted': submitted}">
+
+
+                {{model.foundUser}}
+
+                <div  ng-show="model.foundUsers">
                     <div>
-                        <label for="username"><span>Username*</span></label>
-                        <input ng-model ="user.username"
-                               type="text"
-                               autocomplete="off"
-                               autocorrect="off"
-                               autocapitalize="off"
-                               spellcheck="false"
-                               id="username"
-                               placeholder="ironman321"
-                               required>
-                        <div ng-show="model.usernamemessage" class="alert alert-info">{{model.usernamemessage}}</div>
+                        <ul class="list-group wd-tile-shadow">
+                            <li class="list-group-item active"><h2>Search Results:</h2></li>
+                            <li ng-repeat="user in model.foundUsers" class="list-group-item"><button ng-click="model.showUserDetails(user)" type="button" class="btn btn-link"><h2>{{user.firstName}} {{user.lastName}}</h2></button></li>
+                        </ul>
                     </div>
-                    <div>
-                        <label for="password"><span>Password*</span></label>
-                        <input ng-model ="user.password"
-                               type="password"
-                               autocomplete="off"
-                               autocorrect="off"
-                               autocapitalize="off"
-                               spellcheck="false"
-                               id="password"
-                               placeholder="qwerty321"
-                               required>
-                        <div ng-show="model.passwordmessage" class="alert alert-info">{{model.passwordmessage}}</div>
+
+                </div>
+
+
+
+            </div>
+            <!--class="wd-tile-shadow"-->
+            <div class="col-md-3 login-right wow fadeInRight" data-wow-delay="0.4s">
+                <div ng-show="model.showUserDetailsFlag">
+                    <div class="wd-tile-shadow">
+                        <div>
+                            <ul class="list-group">
+                                <li class="list-group-item active"><h2>User Details</h2></li>
+                                <li class="list-group-item"><h4>Username : {{model.thisusername}}</h4></li>
+                                <li class="list-group-item"><h4>First Name : {{model.thisfirstName}}</h4></li>
+                                <li class="list-group-item"><h4>Last Name : {{model.thislastName}}</h4></li>
+                                <li class="list-group-item"><h4>Email Id : {{model.thisemailId}}</h4></li>
+                                <li class="list-group-item"><h4>Phone : {{model.thisphone}}</h4></li>
+                            </ul>
+                        </div>
                     </div>
-                    <a class="forgot" href="#">Forgot Your Password?</a>
-                    <input ng-click ="model.login(user.username,user.password);submitted= true" type="submit" value="Login">
-                </form>
+                </div>
+
+
+                <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
+                <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
             </div>
             <div class="clearfix"> </div>
         </div>

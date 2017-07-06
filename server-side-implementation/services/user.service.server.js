@@ -20,12 +20,37 @@ module.exports=function (app, model) {
 
     app.post("/api/login" ,passport.authenticate('local') ,login);
     app.get("/api/user",findUserbyQueryParameter);
+    app.get("/api/userRegex",findUserbyRegexQueryParameter);
     app.post('/api/register',register);
     app.get('/api/checkLoggedInUser', checkLoggedInUser);
     app.get('/api/checkAdminUser', checkAdminUser);
     app.post('/api/logoutUser',logoutUser);
     app.put('/api/user/:uid',isAdminorCurrentUser , updateUserProfile);
     app.post('/api/unregisterUserProfile',unregisterUserProfile);
+
+
+
+    function findUserbyRegexQueryParameter(req, res) {
+
+        var username = req.query.username;
+
+        model.userModel
+            .findUserByRegexUsername(username)
+            .then(function (users) {
+                if (users)
+                {
+                    res.json(users);
+                }
+                else{
+                    res.sendStatus(404);
+                }
+
+            },function () {
+                res.sendStatus(404);
+            });
+    }
+
+
 
 
 

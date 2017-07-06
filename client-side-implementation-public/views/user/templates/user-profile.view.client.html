@@ -21,12 +21,14 @@
                         <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li class="active" ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="">Inbox</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav ">
+
                         <li ng-show="model.currentUser._id"><a href="">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="">Reservations</a></li>

@@ -262,11 +262,11 @@ label {
 }
 .logo {
     float: left;
-    width: 24%;
+    width: 20%;
 }
 nav.navbar.navbar-default {
     float: left;
-    width: 66%;
+    width: 80%;
     margin:0;
 }
 /*--*/
