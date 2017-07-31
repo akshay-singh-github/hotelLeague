@@ -6,26 +6,103 @@
     angular.module("HotelLeagueMaker")
         .controller("messageInboxController", messageInboxController);
 
-    function messageInboxController($route, currentUser, userService, $location) {
+    function messageInboxController($route, currentUser, userService, $location, messageService) {
         var model = this;
 
         model.login = login;
         model.logout = logout;
         model.searchUser = searchUser;
         model.showUserDetails = showUserDetails;
+        model.showMessageDetails = showMessageDetails;
+        model.createMessage = createMessage;
+        model.getMessageBycurrentUser = getMessageBycurrentUser;
+        model.reloadPage = reloadPage;
+        /*model.findMessageByReceiverId = findMessageByReceiverId;
+        model.deleteMessage = deleteMessage;*/
         model.currentUser = currentUser;
 
 
 
         function init() {
+            getMessageBycurrentUser();
             model.showUserDetailsFlag = false;
+            model.showMessageDetailsFlag = false;
         }
         init();
 
 
+        function reloadPage() {
+            $route.reload();
+        }
+
+        function getMessageBycurrentUser() {
+            messageService.getMessageBycurrentUser()
+                .then(function (result) {
+                    model.allMessages = result.data;
+                    console.log("This all Messages for user", model.allMessages)
+                });
+        }
 
 
 
+        function createMessage(uid , messageObject) {
+            model.error="";
+            model.successMessage = "";
+            model.messageTo="";
+            model.messageSubject = "";
+            model.submitted = true;
+            if(!messageObject){
+                model.error = "Message could not be send. Please fill all the fields.";
+            }
+
+            else if(messageObject && !messageObject.forUser){
+                model.error = "Message could not be send. Please fill all the fields.";
+                model.messageTo = "Please enter the receiver's username.";
+            }
+            else if(messageObject && !messageObject.message_title){
+                model.error = "Message could not be send. Please fill all the fields.";
+                model.messageTo = "Please enter the subject for the message.";
+            }
+            else{
+                model.submitted = false;
+
+                userService.findUserByUsername(messageObject.forUser)
+                    .then(function (result) {
+                        console.log("this is the user message to be sent");
+                        if(!result || typeof result === "undefined"){
+                            model.error = "This User does not exist.";
+                        }
+                        else{
+                            model.successMessage = "Message has been sent Successfully!!!.";
+                            messageObject.forUserId = result._id;
+                            messageObject.from = model.currentUser.username;
+                            messageService
+                                .createMessage(messageObject)
+                                .then(function (result) {
+                                    return result.data;
+                                });
+
+                        }
+
+                    },function () {
+                        model.error = "This User does not exist.";
+                    });
+
+            }
+        }
+
+
+
+
+        function showMessageDetails(message) {
+            model.showMessageDetailsFlag = true;
+            model.thisMessageTitle = message.message_title;
+            model.thisMessageBody = message.message_body;
+            model.thisFrom = message.from;
+
+
+
+        }
 
 
 

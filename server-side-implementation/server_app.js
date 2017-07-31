@@ -20,5 +20,6 @@ module.exports = function(app){
 
     require("./services/google.service.server.js")(app, model);
     require("./services/user.service.server.js")(app, model);
+    require("./services/message.service.server.js")(app, model);
 
 };

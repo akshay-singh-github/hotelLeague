@@ -6,17 +6,23 @@ module.exports = function () {
      mongoose.connect('mongodb://localhost/webdev_summer1_2017');*/
 
     var userModel = require("./user/user.model.server")();
+    var messageModel = require("./message/message.model.server")();
+    var bookingModel = require("./booking/booking.model.server")();
     /*var websiteModel = require("./website/website.model.server")();
     var pageModel = require("./page/page.model.server")();
     var widgetModel = require("./widget/widget.model.server")();*/
 
     var model = {
-        userModel: userModel
+        userModel: userModel,
+        messageModel: messageModel,
+        bookingModel: bookingModel
         /*websiteModel: websiteModel,
         pageModel: pageModel,
         widgetModel: widgetModel*/
     };
     userModel.setModel(model);
+    messageModel.setModel(model);
+    bookingModel.setModel(model);
     /*websiteModel.setModel(model);
     pageModel.setModel(model);
     widgetModel.setModel(model);*/

@@ -27,13 +27,6 @@ module.exports = function () {
         followedBy:[String],
         following:[String],
         favoriteHotel:[String],
-        MessagesInbox:[{
-            from :String,
-            date:{type: Date, default: Date.now},
-            message_title:String,
-            message_body:String,
-            isMessageNew :{type:String,default:'NEW',enum:['NEW','OLD']}
-        }],
         dateCreated: {type: Date, default: Date.now}
     }, {collection:"hotelLeague.user"});
 

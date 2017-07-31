@@ -62,98 +62,218 @@
 
 <div class="login-page">
     <div class="container">
-        <div class="account_grid">
-            <div class="col-md-9 login-right wow fadeInLeft" data-wow-delay="0.4s">
-                <h3>MESSAGE INBOX</h3>
-                <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
-                <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
-                <ul class="list-group">
-                    <li class="list-group-item active">
-                        <div class="row">
-                            <div class="col-xs-10">
-                                Messages
-                            </div>
-                            <div class="col-xs-2">
-                                Delete
-                            </div>
-                        </div>
-                    </li>
-                    <li ng-repeat="message in model.currentUser.MessagesInbox" class="list-group-item">
-                        <div class="row nowrapping">
-                            <div class = "col-xs-9">
-                                <h1 ng-if="message.isMessageNew=='NEW'">New!!!</h1>
-                                {{message}}
-                            </div>
-                            <div class = "col-xs-3">
-                                <span ng-click="model.selectUser(user)" class="glyphicon glyphicon-pencil pull-right"></span>
-                                <span ng-click="model.deleteUser(user)" class="glyphicon glyphicon-remove pull-right"></span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <!--<div>
-                    <form ng-class="{'submitted': submitted}">
-                        <div>
-                            <label for="username_search"><span>Enter Person Username*</span></label>
-                            <input ng-model ="user.username"
-                                   type="text"
-                                   autocomplete="off"
-                                   autocorrect="off"
-                                   autocapitalize="off"
-                                   spellcheck="false"
-                                   id="username_search"
-                                   placeholder="ironman321"
-                                   required>
-                            <div ng-show="model.usernamemessage" class="alert alert-info">{{model.usernamemessage}}</div>
-                        </div>
-                        <div>
-                            <input ng-click ="model.searchUser(user.username);submitted= true" type="submit" value="Search">
-                        </div>
-                    </form>
-                </div>-->
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a data-toggle="tab" data-target="#wd-inbox-id" ng-click="model.reloadPage()" href="">Inbox</a></li>
+            <li><a data-toggle="tab" data-target="#wd-compose-message-id" href="">Compose Message</a></li>
+        </ul>
 
 
-
-                {{model.foundUser}}
-
-                <div  ng-show="model.foundUsers">
-                    <div>
-                        <ul class="list-group wd-tile-shadow">
-                            <li class="list-group-item active"><h2>Search Results:</h2></li>
-                            <li ng-repeat="user in model.foundUsers" class="list-group-item"><button ng-click="model.showUserDetails(user)" type="button" class="btn btn-link"><h2>{{user.firstName}} {{user.lastName}}</h2></button></li>
+        <div class="tab-content">
+            <div id="wd-inbox-id" class="tab-pane fade in active">
+                <div class="account_grid">
+                    <div class="col-md-6 login-right wow fadeInLeft" data-wow-delay="0.4s">
+                        <h3>MESSAGE INBOX</h3>
+                        <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
+                        <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
+                        <ul class="list-group">
+                            <li class="list-group-item active">
+                                <div class="row">
+                                    <div class="col-xs-10">
+                                        Messages
+                                    </div>
+                                    <div class="col-xs-2">
+                                        Delete
+                                    </div>
+                                </div>
+                            </li>
+                            <li ng-repeat="message in model.allMessages" class="list-group-item" ng-click = "model.showMessageDetails(message)">
+                                <div class="row nowrapping">
+                                    <div class = "col-xs-9">
+                                        <h6 ng-if="message.isMessageNew=='NEW'">New!!!</h6>
+                                        <h2>{{message.message_title}}</h2>
+                                        <h2>from: {{message.from}}</h2>
+                                        <h4>Message : <p>{{message.message_body}}</p></h4>
+                                        {{message}}
+                                    </div>
+                                    <div class = "col-xs-3">
+                                        <span ng-click="model.selectUser(user)" class="glyphicon glyphicon-pencil pull-right"></span>
+                                        <span ng-click="model.deleteUser(user)" class="glyphicon glyphicon-remove pull-right"></span>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
+
+                        <!--{{model.foundUser}}
+
+                        <div  ng-show="model.foundUsers">
+                            <div>
+                                <ul class="list-group wd-tile-shadow">
+                                    <li class="list-group-item active"><h2>Search Results:</h2></li>
+                                    <li ng-repeat="user in model.foundUsers" class="list-group-item"><button ng-click="model.showUserDetails(user)" type="button" class="btn btn-link"><h2>{{user.firstName}} {{user.lastName}}</h2></button></li>
+                                </ul>
+                            </div>
+
+                        </div>-->
+
+
+
                     </div>
+                    <!--class="wd-tile-shadow"-->
+                    <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
+                        <div ng-show="model.showMessageDetailsFlag">
+                            <div class="wd-tile-shadow">
+                                <div>
+                                    <ul class="list-group">
 
-                </div>
-
-
-
-            </div>
-            <!--class="wd-tile-shadow"-->
-            <div class="col-md-3 login-right wow fadeInRight" data-wow-delay="0.4s">
-                <div ng-show="model.showUserDetailsFlag">
-                    <div class="wd-tile-shadow">
-                        <div>
-                            <ul class="list-group">
-                                <li class="list-group-item active"><h2>User Details</h2></li>
-                                <li class="list-group-item"><h4>Username : {{model.thisusername}}</h4></li>
-                                <li class="list-group-item"><h4>First Name : {{model.thisfirstName}}</h4></li>
-                                <li class="list-group-item"><h4>Last Name : {{model.thislastName}}</h4></li>
-                                <li class="list-group-item"><h4>Email Id : {{model.thisemailId}}</h4></li>
-                                <li class="list-group-item"><h4>Phone : {{model.thisphone}}</h4></li>
-                            </ul>
+                                        <li class="list-group-item active"><h2>Message Details</h2></li>
+                                        <li class="list-group-item"><h2>from : {{model.thisFrom}}</h2></li>
+                                        <li class="list-group-item"><h2>Title : {{model.thisMessageTitle}}</h2></li>
+                                        <li class="list-group-item"><h4>Message : <p>{{model.thisMessageBody}}</p></h4></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
+
+
+                        <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
+                        <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
                     </div>
+                    <div class="clearfix"> </div>
                 </div>
 
-
-                <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
-                <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
             </div>
-            <div class="clearfix"> </div>
+            <div id="wd-compose-message-id" class="tab-pane fade">
+
+
+                <div class="container-fluid">
+                    <h3>Compose Message</h3>
+                    <div ng-show="model.error" class="alert alert-danger">
+                        {{model.error}}
+                    </div>
+                    <div ng-show="model.successMessage" class="alert alert-success">
+                        {{model.successMessage}}
+                    </div>
+                    <form ng-class="{'submitted': model.submitted}">
+                        <label class="wd-custom-label-color" for="to">To:</label>
+                        <input class="input-group "
+                               placeholder="abc"
+                               id="to"
+                               ng-model="messageObject.forUser"
+                               required/>
+                        <div ng-show="model.messageTo" class="alert alert-info">{{model.messageTo}}</div>
+                        <label class="wd-custom-label-color" for="subject">Subject:</label>
+                        <input class="input-group"
+                               placeholder="subject of message"
+                               id="subject"
+                               ng-model="messageObject.message_title"
+                               required/>
+                        <div ng-show="model.messageSubject" class="alert alert-info">{{model.messageSubject}}</div>
+
+                        <label class="wd-custom-label-color" for="message-content">Message:</label>
+                        <textarea class="input-group"
+                                  placeholder="Best email service."
+                                  ng-model="messageObject.message_body"
+                                  id="message-content" rows="8"></textarea>
+
+                        <button type="submit" class="btn btn-success btn-block "
+                                ng-click="model.createMessage(model.currentUser._id,messageObject)">Create
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
+
+
+<!--
+<div class="container message-inbox-body">
+    <h3>MESSAGE INBOX</h3>
+    <div class="row">
+        <div class="container-fluid">
+            <a href="" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-pencil" style="padding-right:4px;"></span>Compose</a>
+            &lt;!&ndash;<div class="or"></div>&ndash;&gt;
+            &lt;!&ndash;<a href="http://www.jquery2dotnet.com" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-inbox" style="padding-right:4px;"></span>Inbox</a>&ndash;&gt;
+            <a href="" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-send" style="padding-right:4px;"></span>Send</a>
+        </div>
+
+        <div class="panel panel-default widget">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-comment"></span>
+                <h3 class="panel-title">
+                    Messages</h3>
+
+
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-xs-2 col-md-1">
+                                <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
+                            <div class="col-xs-10 col-md-11">
+                                <div>
+                                    <a href="#">
+                                        Congratulations</a>
+                                    <div class="mic-info">
+                                        By: <a href="#">Check My Athletics</a> on 12 Jun 2014
+                                    </div>
+                                </div>
+                                <div class="comment-text">
+                                    We would like to congratulate John on his achievement...
+                                </div>
+
+
+                                <a  href="#" class="btn btn-sm btn-hover btn-primary" href="#reply" ><span class="glyphicon glyphicon-share-alt" style="padding-right:3px;"></span>Reply</a>
+                                <a href="#" class="btn btn-sm btn-hover btn-danger"><span class="glyphicon glyphicon-remove" style="padding-right:3px;"></span>Delete</a>
+
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-xs-2 col-md-1">
+                                <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
+                            <div class="col-xs-10 col-md-11">
+                                <div>
+                                    <a href="#">Great Job</a>
+                                    <div class="mic-info">
+                                        By: <a href="#">Coacher</a> on 11 May 2014
+                                    </div>
+                                </div>
+                                <div class="comment-text">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
 <!-- footer -->
 <div class="footer">
     <div class="container">

@@ -98,21 +98,19 @@
             <div class="col-md-6">
                 <form>
                     <h5>NAME</h5>
-                    <input type="text" value="">
+                    <input type="text" value="" ng-model="model.customer.name">
                     <h5>SUR NAME</h5>
-                    <input type="text" value="">
+                    <input type="text" value="" ng-model="model.customer.surname">
                     <h5>E-MAIL</h5>
-                    <input type="text" value="">
+                    <input type="text" value="" ng-model="model.customer.email">
                     <h5>PHONE</h5>
-                    <input type="text" value="">
-                    <h5>TIME</h5>
-                    <input type="text" value="" class="time">
+                    <input type="text" value="" ng-model="model.customer.phone">
                 </form>
             </div>
             <div class="col-md-6">
                 <form>
                     <h5>CHECK IN</h5>
-                    <select class="arrival">
+                    <select class="arrival" ng-model="model.customer.checkinDate">
                         <option>01</option>
                         <option>02</option>
                         <option>03</option>
@@ -144,21 +142,21 @@
                         <option>30</option>
                         <option>31</option>
                     </select>
-                    <select class="arrival">
-                        <option>Jan</option>
-                        <option>Feb</option>
-                        <option>Mar</option>
-                        <option>Apr</option>
-                        <option>May</option>
-                        <option>June</option>
-                        <option>July</option>
-                        <option>Aug</option>
-                        <option>Sep</option>
-                        <option>Oct</option>
-                        <option>Nov</option>
-                        <option>Dec</option>
+                    <select class="arrival" ng-model="model.customer.checkinMonth">
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
                     </select>
-                    <select class="arrival">
+                    <select class="arrival" ng-model="model.customer.checkinYear">
                         <option>2015</option>
                         <option>2016</option>
                         <option>2017</option>
@@ -167,7 +165,7 @@
                         <option>2020</option>
                     </select>
                     <h5>CHECK OUT</h5>
-                    <select class="arrival">
+                    <select class="arrival" ng-model="model.customer.checkoutDate">
                         <option>01</option>
                         <option>02</option>
                         <option>03</option>
@@ -199,21 +197,21 @@
                         <option>30</option>
                         <option>31</option>
                     </select>
-                    <select class="arrival">
-                        <option>Jan</option>
-                        <option>Feb</option>
-                        <option>Mar</option>
-                        <option>Apr</option>
-                        <option>May</option>
-                        <option>June</option>
-                        <option>July</option>
-                        <option>Aug</option>
-                        <option>Sep</option>
-                        <option>Oct</option>
-                        <option>Nov</option>
-                        <option>Dec</option>
+                    <select class="arrival" ng-model="model.customer.checkoutMonth">
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
                     </select>
-                    <select class="arrival">
+                    <select class="arrival" ng-model="model.customer.checkoutYear">
                         <option>2012</option>
                         <option>2013</option>
                         <option>2014</option>
@@ -222,10 +220,10 @@
                         <option>2017</option>
                     </select>
                     <h5 class="mem">MEMBERS</h5>
-                    <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
+                    <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small" ng-model="model.customer.MemberCount">
                     <h5>REQUIRED</h5>
-                    <textarea value=""></textarea>
-                    <input type="submit" value="Submit">
+                    <textarea value="" ng-model="model.customer.Instructions"></textarea>
+                    <input type="submit" value="Submit" ng-click="model.createBooking(model.customer)">
                     <input type="reset" value="Reset">
                 </form>
             </div>

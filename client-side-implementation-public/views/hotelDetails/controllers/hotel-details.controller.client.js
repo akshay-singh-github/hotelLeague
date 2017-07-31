@@ -14,6 +14,7 @@
         model.getApiKey = getApiKey;
         model.logout = logout;
         model.currentUser = currentUser;
+        model.createBooking = createBooking;
 
 
 
@@ -25,6 +26,65 @@
         }
         init();
 
+        
+        
+        
+        function createBooking(customer) {
+
+            console.log(customer);
+
+            /*model.error="";
+            model.successMessage = "";
+            model.messageTo="";
+            model.messageSubject = "";
+            model.submitted = true;
+            if(!messageObject){
+                model.error = "Message could not be send. Please fill all the fields.";
+            }
+
+            else if(messageObject && !messageObject.forUser){
+                model.error = "Message could not be send. Please fill all the fields.";
+                model.messageTo = "Please enter the receiver's username.";
+            }
+            else if(messageObject && !messageObject.message_title){
+                model.error = "Message could not be send. Please fill all the fields.";
+                model.messageTo = "Please enter the subject for the message.";
+            }
+            else{
+                model.submitted = false;
+
+                userService.findUserByUsername(messageObject.forUser)
+                    .then(function (result) {
+                        console.log("this is the user message to be sent");
+                        if(!result || typeof result === "undefined"){
+                            model.error = "This User does not exist.";
+                        }
+                        else{
+                            model.successMessage = "Message has been sent Successfully!!!.";
+                            messageObject.forUserId = result._id;
+                            messageObject.from = model.currentUser.username;
+                            messageService
+                                .createMessage(messageObject)
+                                .then(function (result) {
+                                    return result.data;
+                                });
+
+                        }
+
+                    },function () {
+                        model.error = "This User does not exist.";
+                    });
+
+            }*/
+
+
+
+
+
+            
+        }
+        
+        
 
         function logout() {
             userService

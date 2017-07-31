@@ -10,10 +10,13 @@ html, body{
 	background:#fff;
 }
 
+.wd-custom-label-color{
+    color: black;
+}
 
-
-
-
+.wd-custom-text-width{
+    width: 100%;
+}
 
 
 
