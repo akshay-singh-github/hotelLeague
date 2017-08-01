@@ -14,10 +14,13 @@ module.exports=function (app,model) {
 
 
     function createBooking(req, res) {
+        console.log("Inside booking server create");
         var bookingObject = req.body;
+        console.log("bookingObject : ", bookingObject);
         model.bookingModel
             .createBooking(bookingObject)
             .then(function (booking) {
+                console.log("booking : ", booking);
                 res.json(booking);
             });
     }

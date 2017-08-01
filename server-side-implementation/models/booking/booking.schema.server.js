@@ -17,6 +17,9 @@ module.exports = function () {
         checkinDate :String,
         checkinMonth :String,
         checkinYear :String,
+        checkoutDate : String,
+        checkoutMonth : String,
+        checkoutYear : String,
         MemberCount : Number,
         Instructions :String
     }, {collection:"hotelLeague.booking"});
