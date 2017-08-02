@@ -7,20 +7,14 @@ module.exports = function () {
     var mongoose = require("mongoose");
 
     var reviewSchema = mongoose.Schema({
-        forUser: String,
-        forUserId: String,
-        name :String,
-        surname :String,
-        email :String,
-        phone :String,
-        checkinDate :String,
-        checkinMonth :String,
-        checkinYear :String,
-        checkoutDate : String,
-        checkoutMonth : String,
-        checkoutYear : String,
-        MemberCount : Number,
-        Instructions :String
+        ReviewTitle: String,
+        ReviewContent: String,
+        reviewer :String,
+        reviewFor :String,
+        reviewerId :String,
+        rating : Number,
+        Likes : Number,
+        Dislikes : Number
     }, {collection:"hotelLeague.review"});
 
     return reviewSchema;

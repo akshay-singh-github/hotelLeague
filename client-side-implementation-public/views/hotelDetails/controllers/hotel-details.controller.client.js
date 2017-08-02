@@ -48,7 +48,9 @@
             }
             else{
                 model.Reviewsubmitted = false;
+                console.log("current user is : ",currentUser);
                 reviewObject.reviewer = currentUser.username;
+                reviewObject.reviewerId = currentUser._id;
                 reviewObject.reviewFor = model.hotelId;
                 userService.findUserByUsername(reviewObject.reviewer)
                     .then(function (result) {
@@ -255,7 +257,22 @@
             };
             googleService.getHotelDetails(urlObject)
                 .then(function (result) {
+                    console.log(result.data);
                     model.hotelDetails = result.data;
+                    model.hotelObject = {};
+                    model.hotelObject.photoUrl = "https://maps.googleapis.com/maps/api/place/photo?photoreference="+model.hotelDetails.photos[0].photo_reference+"&sensor=false&maxheight="+model.hotelDetails.photos[0].height+"&maxwidth="+model.hotelDetails.photos[0].width+"&key="+model.googleApiKey;
+                    console.log("model.hotelObject", model.hotelObject);
+                    model.hotelObject.hotelName = model.hotelDetails.name;
+                    if(model.hotelDetails.opening_hours.open_now === true){
+                        model.hotelObject.openStatus = "Yes";
+                    }else if(model.hotelDetails.opening_hours.open_now === false) {
+                        model.hotelObject.openStatus = "No";
+                    }else{
+                        model.hotelObject.openStatus = "Unknown";
+                    }
+                    model.hotelObject.phoneNumber = model.hotelDetails.international_phone_number;
+                    model.hotelObject.hotelAddress = model.hotelDetails.formatted_address;
+                    model.hotelObject.weekHours = model.hotelDetails.opening_hours.weekday_text;
                 })
 
         }

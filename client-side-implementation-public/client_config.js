@@ -17,7 +17,7 @@
                 }
             })
             .when('/details/:hotelId', {
-                templateUrl:'views/hotelBooking/templates/hotel-booking.view.client.html',
+                templateUrl:'views/hotelDetails/templates/hotel-details.view.client.html',
                 controller: "hotelDetailsController",
                 controllerAs: "model",
                 resolve:{
