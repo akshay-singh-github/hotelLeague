@@ -262,6 +262,7 @@
                     model.hotelObject = {};
                     model.hotelObject.photoUrl = "https://maps.googleapis.com/maps/api/place/photo?photoreference="+model.hotelDetails.photos[0].photo_reference+"&sensor=false&maxheight="+model.hotelDetails.photos[0].height+"&maxwidth="+model.hotelDetails.photos[0].width+"&key="+model.googleApiKey;
                     console.log("model.hotelObject", model.hotelObject);
+                    model.hotelObject.hotelID = model.hotelDetails.place_id;
                     model.hotelObject.hotelName = model.hotelDetails.name;
                     if(model.hotelDetails.opening_hours.open_now === true){
                         model.hotelObject.openStatus = "Yes";
@@ -273,6 +274,11 @@
                     model.hotelObject.phoneNumber = model.hotelDetails.international_phone_number;
                     model.hotelObject.hotelAddress = model.hotelDetails.formatted_address;
                     model.hotelObject.weekHours = model.hotelDetails.opening_hours.weekday_text;
+                    model.hotelObject.landmarkLocation =  model.hotelDetails.vicinity;
+                    model.hotelObject.website = model.hotelDetails.website;
+                    model.hotelObject.mapDetailsUrl = model.hotelDetails.url;
+                    model.hotelObject.hotelCategory = model.hotelDetails.types; //[String]
+                    model.hotelObject.hotelRating = model.hotelDetails.rating;
                 })
 
         }

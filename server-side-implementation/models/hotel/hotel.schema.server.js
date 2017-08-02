@@ -7,21 +7,20 @@ module.exports = function () {
     var mongoose = require("mongoose");
 
     var hotelSchema = mongoose.Schema({
-        forUser: String,
-        forUserId: String,
-        name :String,
-        surname :String,
-        email :String,
-        phone :String,
-        checkinDate :String,
-        checkinMonth :String,
-        checkinYear :String,
-        checkoutDate : String,
-        checkoutMonth : String,
-        checkoutYear : String,
-        MemberCount : Number,
-        Instructions :String
-    }, {collection:"hotelLeague.booking"});
+        hotelID: String,
+        hotelName: String,
+        openStatus :String,
+        phoneNumber :String,
+        hotelAddress :String,
+        weekHours :[String],
+        photoUrl :String,
+        landmarkLocation : String,
+        website : String,
+        mapDetailsUrl : String,
+        hotelCategory : [String],
+        hotelRating : Number
+
+    }, {collection:"hotelLeague.hotel"});
 
     return hotelSchema;
 };
