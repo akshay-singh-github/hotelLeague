@@ -12,7 +12,7 @@
 
         var api = {
             createReview : createReview,
-            getReviewBycurrentRestaurant : getReviewBycurrentRestaurant,
+            getReviewBycurrentHotel : getReviewBycurrentHotel,
             deleteReview : deleteReview
 
 
@@ -30,8 +30,8 @@
                 });
         }
 
-        function getReviewBycurrentRestaurant(restaurantId) {
-            var url = "/api/getReview/"+restaurantId;
+        function getReviewBycurrentHotel(hotelId) {
+            var url = "/api/getReview/"+hotelId;
 
             return $http.get(url)
                 .then(function (response) {

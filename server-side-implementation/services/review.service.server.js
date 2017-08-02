@@ -5,7 +5,7 @@
 var https = require('https');
 module.exports=function (app,model) {
 
-    app.get("/api/getReview/:resId" , findBookingByRestaurantId);
+    app.get("/api/getReview/:resId" , findReviewByHotelId);
     app.post("/api/createReview" , createReview);
 
 
@@ -28,11 +28,11 @@ module.exports=function (app,model) {
 
 
 
-    function findBookingByRestaurantId(req, res) {
+    function findReviewByHotelId(req, res) {
         var resId = req.params.resId;
 
         model.reviewModel
-            .findBookingByRestaurantId(resId)
+            .findReviewByHotelId(resId)
             .then(function (reviews) {
                 if (reviews)
                 {

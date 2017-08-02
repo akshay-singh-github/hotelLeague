@@ -23,5 +23,6 @@ module.exports = function(app){
     require("./services/message.service.server.js")(app, model);
     require("./services/booking.service.server.js")(app, model);
     require("./services/review.service.server.js")(app, model);
+    require("./services/hotel.service.server.js")(app, model);
 
 };

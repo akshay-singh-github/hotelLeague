@@ -11,7 +11,7 @@ module.exports = function () {
     var api = {
 
         createReview: createReview,
-        findBookingByRestaurantId: findBookingByRestaurantId,
+        findReviewByHotelId: findReviewByHotelId,
         deleteReview: deleteReview,
         setModel: setModel
     };
@@ -42,7 +42,7 @@ module.exports = function () {
 
 
 
-    function findBookingByRestaurantId(resId) {
+    function findReviewByHotelId(resId) {
         return reviewModel.find({reviewFor: resId});
     }
 

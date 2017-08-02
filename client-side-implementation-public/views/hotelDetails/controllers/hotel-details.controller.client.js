@@ -5,7 +5,7 @@
     angular.module("HotelLeagueMaker")
         .controller("hotelDetailsController", hotelDetailsController);
 
-    function hotelDetailsController($route, $location, userService,bookingService,reviewService, currentUser,googleService,$routeParams) {
+    function hotelDetailsController($route, $location, userService,bookingService,hotelService,reviewService, currentUser,googleService,$routeParams) {
         var model = this;
 
         model.currentUser = currentUser;
@@ -251,36 +251,55 @@
 
 
         function getHotelDetails(hotelId) {
-            var url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+hotelId;
-            var urlObject = {
-                url:url
-            };
-            googleService.getHotelDetails(urlObject)
+            hotelService.findHotelById(hotelId)
                 .then(function (result) {
-                    console.log(result.data);
-                    model.hotelDetails = result.data;
-                    model.hotelObject = {};
-                    model.hotelObject.photoUrl = "https://maps.googleapis.com/maps/api/place/photo?photoreference="+model.hotelDetails.photos[0].photo_reference+"&sensor=false&maxheight="+model.hotelDetails.photos[0].height+"&maxwidth="+model.hotelDetails.photos[0].width+"&key="+model.googleApiKey;
-                    console.log("model.hotelObject", model.hotelObject);
-                    model.hotelObject.hotelID = model.hotelDetails.place_id;
-                    model.hotelObject.hotelName = model.hotelDetails.name;
-                    if(model.hotelDetails.opening_hours.open_now === true){
-                        model.hotelObject.openStatus = "Yes";
-                    }else if(model.hotelDetails.opening_hours.open_now === false) {
-                        model.hotelObject.openStatus = "No";
-                    }else{
-                        model.hotelObject.openStatus = "Unknown";
+                    console.log(result);
+                    console.log("result.data.length", result.data.length);
+                    if (result.data.length !== 0){
+                        console.log("result.data is NOT empty",result.data.length);
+                         var arrayElement= result.data[0];
+                        model.hotelObject = arrayElement;
+                        console.log("model.hotelObject", model.hotelObject);
                     }
-                    model.hotelObject.phoneNumber = model.hotelDetails.international_phone_number;
-                    model.hotelObject.hotelAddress = model.hotelDetails.formatted_address;
-                    model.hotelObject.weekHours = model.hotelDetails.opening_hours.weekday_text;
-                    model.hotelObject.landmarkLocation =  model.hotelDetails.vicinity;
-                    model.hotelObject.website = model.hotelDetails.website;
-                    model.hotelObject.mapDetailsUrl = model.hotelDetails.url;
-                    model.hotelObject.hotelCategory = model.hotelDetails.types; //[String]
-                    model.hotelObject.hotelRating = model.hotelDetails.rating;
-                })
+                    else{
+                        console.log("result.data is empty");
+                        var url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+hotelId;
+                        var urlObject = {
+                            url:url
+                        };
+                        googleService.getHotelDetails(urlObject)
+                            .then(function (result) {
+                                console.log(result.data);
+                                model.hotelDetails = result.data;
+                                model.hotelObject = {};
+                                model.hotelObject.photoUrl = "https://maps.googleapis.com/maps/api/place/photo?photoreference="+model.hotelDetails.photos[0].photo_reference+"&sensor=false&maxheight="+model.hotelDetails.photos[0].height+"&maxwidth="+model.hotelDetails.photos[0].width+"&key="+model.googleApiKey;
+                                console.log("model.hotelObject", model.hotelObject);
+                                model.hotelObject.hotelID = model.hotelDetails.place_id;
+                                model.hotelObject.hotelName = model.hotelDetails.name;
+                                if(model.hotelDetails.opening_hours.open_now === true){
+                                    model.hotelObject.openStatus = "Yes";
+                                }else if(model.hotelDetails.opening_hours.open_now === false) {
+                                    model.hotelObject.openStatus = "No";
+                                }else{
+                                    model.hotelObject.openStatus = "Unknown";
+                                }
+                                model.hotelObject.phoneNumber = model.hotelDetails.international_phone_number;
+                                model.hotelObject.hotelAddress = model.hotelDetails.formatted_address;
+                                model.hotelObject.weekHours = model.hotelDetails.opening_hours.weekday_text;
+                                model.hotelObject.landmarkLocation =  model.hotelDetails.vicinity;
+                                model.hotelObject.website = model.hotelDetails.website;
+                                model.hotelObject.mapDetailsUrl = model.hotelDetails.url;
+                                model.hotelObject.hotelCategory = model.hotelDetails.types; //[String]
+                                model.hotelObject.hotelRating = model.hotelDetails.rating;
+                                hotelService.createHotel(model.hotelObject)
+                                    .then(function (result) {
+                                        return result.data;
+                                    });
 
+
+                            });
+                    }
+                });
         }
 
 
