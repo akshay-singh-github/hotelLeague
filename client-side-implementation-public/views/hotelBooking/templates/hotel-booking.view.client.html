@@ -235,7 +235,15 @@
                             </select>
                             <div ng-show="model.MemberCountMessage" class="alert alert-danger">{{model.MemberCountMessage}}</div>
                             <h5 class="mem">MEMBERS</h5>
-                            <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small" ng-model="model.customer.MemberCount">
+                            <select class="arrival " ng-model="model.customer.MemberCount">
+                                <option selected="selected" value = 1 >1</option>
+                                <option value = 2>2</option>
+                                <option value = 3>3</option>
+                                <option value = 4>4</option>
+                                <option value = 5>5</option>
+                                <option value = 6>6</option>
+                            </select>
+                            <!--<input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small" ng-model="model.customer.MemberCount">-->
                             <h5>REQUIRED</h5>
                             <textarea value="" ng-model="model.customer.Instructions"></textarea>
                             <input type="submit" value="Submit" ng-click="model.createBooking(model.customer)">
@@ -251,37 +259,31 @@
 
             <div id="wd-compose-review-id" class="tab-pane fade">
                 <div class="container-fluid">
-                    <h3>Compose Message</h3>
-                    <div ng-show="model.error" class="alert alert-danger">
-                        {{model.error}}
+                    <h3>Review : </h3>
+                    <div ng-show="model.Reviewerror" class="alert alert-danger">
+                        {{model.Reviewerror}}
                     </div>
-                    <div ng-show="model.successMessage" class="alert alert-success">
-                        {{model.successMessage}}
+                    <div ng-show="model.ReviewsuccessMessage" class="alert alert-success">
+                        {{model.ReviewsuccessMessage}}
                     </div>
-                    <form ng-class="{'submitted': model.submitted}">
-                        <label class="wd-custom-label-color" for="to">To:</label>
+                    <form ng-class="{'submitted': model.Reviewsubmitted}">
+                        <label class="wd-custom-label-color" for="Title">Title :</label>
+                        <div ng-show="model.ReviewTitleMessage" class="alert alert-info">{{model.ReviewTitleMessage}}</div>
                         <input class="input-group "
                                placeholder="abc"
-                               id="to"
-                               ng-model="messageObject.forUser"
+                               id="Title"
+                               ng-model="reviewObject.ReviewTitle"
                                required/>
-                        <div ng-show="model.messageTo" class="alert alert-info">{{model.messageTo}}</div>
-                        <label class="wd-custom-label-color" for="subject">Subject:</label>
-                        <input class="input-group"
-                               placeholder="subject of message"
-                               id="subject"
-                               ng-model="messageObject.message_title"
-                               required/>
-                        <div ng-show="model.messageSubject" class="alert alert-info">{{model.messageSubject}}</div>
+                        <div ng-show="model.messageReviewContent" class="alert alert-info">{{model.messageReviewContent}}</div>
 
-                        <label class="wd-custom-label-color" for="message-content">Message:</label>
+                        <label class="wd-custom-label-color" for="Content">Review Content :</label>
                         <textarea class="input-group"
-                                  placeholder="Best email service."
-                                  ng-model="messageObject.message_body"
-                                  id="message-content" rows="8"></textarea>
+                                  placeholder="review details"
+                                  ng-model="reviewObject.ReviewContent"
+                                  id="Content" rows="8"></textarea>
 
                         <button type="submit" class="btn btn-success btn-block "
-                                ng-click="model.createMessage(model.currentUser._id,messageObject)">Create
+                                ng-click="model.createReview(reviewObject)">Post Review
                         </button>
                     </form>
 

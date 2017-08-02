@@ -22,5 +22,6 @@ module.exports = function(app){
     require("./services/user.service.server.js")(app, model);
     require("./services/message.service.server.js")(app, model);
     require("./services/booking.service.server.js")(app, model);
+    require("./services/review.service.server.js")(app, model);
 
 };

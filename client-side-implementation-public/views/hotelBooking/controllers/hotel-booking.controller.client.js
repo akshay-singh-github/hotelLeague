@@ -5,7 +5,7 @@
     angular.module("HotelLeagueMaker")
         .controller("hotelDetailsController", hotelDetailsController);
 
-    function hotelDetailsController($route, $location, userService,bookingService, currentUser,googleService,$routeParams) {
+    function hotelDetailsController($route, $location, userService,bookingService,reviewService, currentUser,googleService,$routeParams) {
         var model = this;
 
         model.currentUser = currentUser;
@@ -14,6 +14,7 @@
         model.logout = logout;
         model.currentUser = currentUser;
         model.createBooking = createBooking;
+        model.createReview = createReview;
 
 
 
@@ -26,7 +27,54 @@
         init();
 
         
-        
+        function createReview(reviewObject) {
+
+            model.Reviewerror = "";
+            model.ReviewsuccessMessage = "";
+            model.ReviewTitleMessage = "";
+            model.Reviewsubmitted = true;
+            model.messageReviewContent = "";
+
+            if(!reviewObject){
+                model.Reviewerror = "Review could not be posted. Please fill all the details and try again.";
+            }
+            else if(reviewObject && (!reviewObject.ReviewTitle)){
+                model.Reviewerror = "Review could not be posted. Please fill all the details and try again.";
+                model.ReviewTitleMessage = "Please fill the review title field.";
+            }
+            else if(reviewObject && (!reviewObject.ReviewContent)){
+                model.Reviewerror = "Review could not be posted. Please fill all the details and try again.";
+                model.messageReviewContent = "Please fill the review content field.";
+            }
+            else{
+                model.Reviewsubmitted = false;
+                reviewObject.reviewer = currentUser.username;
+                reviewObject.reviewFor = model.hotelId;
+                userService.findUserByUsername(reviewObject.reviewer)
+                    .then(function (result) {
+
+                        if(!result){
+                            model.Reviewerror = "This User does not exist.";
+                        }
+                        else {
+                            model.ReviewsuccessMessage = "The review has been successfully posted.";
+                            reviewService.createReview(reviewObject)
+                                .then(function (result) {
+                                    return result
+                                });
+                        }
+
+                    }, function () {
+                        model.Reviewerror = "This User does not exist.";
+                    });
+
+
+
+
+            }
+
+
+        }
         
         function createBooking(bookingObject) {
             console.log("Inside booking controller create");
