@@ -15,6 +15,8 @@
         model.currentUser = currentUser;
         model.createBooking = createBooking;
         model.createReview = createReview;
+        model.getReviewBycurrentHotel = getReviewBycurrentHotel;
+
 
 
 
@@ -22,9 +24,26 @@
         function init(){
             model.hotelId = $routeParams.hotelId;
             model.getHotelDetails(model.hotelId);
+            getReviewBycurrentHotel(model.hotelId);
             model.getApiKey();
         }
         init();
+
+
+
+
+        function getReviewBycurrentHotel(hotelId) {
+            reviewService.getReviewBycurrentHotel(hotelId)
+                .then(function (resultReview) {
+                    model.reviews = resultReview.data;
+                    console.log("review for this hotel are here",model.reviews);
+                });
+
+
+
+
+        }
+
 
         
         function createReview(reviewObject) {
