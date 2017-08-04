@@ -5,7 +5,7 @@
     angular.module("HotelLeagueMaker")
         .controller("hotelDetailsController", hotelDetailsController);
 
-    function hotelDetailsController($route, $location, userService,bookingService,hotelService,reviewService, currentUser,googleService,$routeParams) {
+    function hotelDetailsController($route, $location,$sce, userService,bookingService,hotelService,reviewService, currentUser,googleService,$routeParams) {
         var model = this;
 
         model.currentUser = currentUser;
@@ -16,6 +16,7 @@
         model.createBooking = createBooking;
         model.createReview = createReview;
         model.getReviewBycurrentHotel = getReviewBycurrentHotel;
+        model.urlContentTrusting = urlContentTrusting;
 
 
 
@@ -23,13 +24,20 @@
 
         function init(){
             model.hotelId = $routeParams.hotelId;
+            model.getApiKey();
+            console.log("this is the google api key",model.googleApiKey);
             model.getHotelDetails(model.hotelId);
             getReviewBycurrentHotel(model.hotelId);
-            model.getApiKey();
+
         }
         init();
 
 
+        
+        
+        function urlContentTrusting(url) {
+            return $sce.trustAsResourceUrl(url);
+        }
 
 
         function getReviewBycurrentHotel(hotelId) {
@@ -279,6 +287,16 @@
                          var arrayElement= result.data[0];
                         model.hotelObject = arrayElement;
                         console.log("model.hotelObject", model.hotelObject);
+
+                        googleService.getApiKey()
+                            .then(function (result) {
+                                console.log("this is the google api key RESULT",result);
+                                model.googleApiKey=result.key;
+                                var newUrl = "https://www.google.com/maps/embed/v1/view?key="+model.googleApiKey+"&center="+model.hotelObject.hotelLatitude+","+model.hotelObject.hotelLongitude+"&zoom=18&maptype=satellite" ;
+                                model.mapUrlIframe = model.urlContentTrusting(newUrl);
+                                console.log("model.mapUrlIframe", model.mapUrlIframe);
+                            });
+                        console.log("model.mapUrlIframe", model.mapUrlIframe);
                     }
                     else{
                         console.log("result.data is empty");
@@ -310,9 +328,19 @@
                                 model.hotelObject.mapDetailsUrl = model.hotelDetails.url;
                                 model.hotelObject.hotelCategory = model.hotelDetails.types; //[String]
                                 model.hotelObject.hotelRating = model.hotelDetails.rating;
-                                hotelService.createHotel(model.hotelObject)
+                                model.hotelObject.hotelLatitude = model.hotelDetails.geometry.location.lat;
+                                model.hotelObject.hotelLongitude = model.hotelDetails.geometry.location.lng;
+                                googleService.getApiKey()
                                     .then(function (result) {
-                                        return result.data;
+                                        console.log("this is the google api key RESULT",result);
+                                        model.googleApiKey=result.key;
+                                        var newUrl = "https://www.google.com/maps/embed/v1/view?key="+model.googleApiKey+"&center="+model.hotelObject.hotelLatitude+","+model.hotelObject.hotelLongitude+"&zoom=18&maptype=satellite" ;
+                                        model.mapUrlIframe = model.urlContentTrusting(newUrl);
+                                        console.log("model.mapUrlIframe", model.mapUrlIframe);
+                                        hotelService.createHotel(model.hotelObject)
+                                            .then(function (result) {
+                                                return result.data;
+                                            });
                                     });
 
 
@@ -329,10 +357,9 @@
         function getApiKey() {
             googleService.getApiKey()
                 .then(function (result) {
+                    console.log("this is the google api key RESULT",result);
                     model.googleApiKey=result.key;
-
-
-                })
+                });
         }
 
 

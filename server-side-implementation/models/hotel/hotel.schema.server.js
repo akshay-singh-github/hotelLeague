@@ -18,8 +18,9 @@ module.exports = function () {
         website : String,
         mapDetailsUrl : String,
         hotelCategory : [String],
-        hotelRating : Number
-
+        hotelRating : Number,
+        hotelLatitude : Number,
+        hotelLongitude : Number
     }, {collection:"hotelLeague.hotel"});
 
     return hotelSchema;
