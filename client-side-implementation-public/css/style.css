@@ -196,7 +196,16 @@ html, body{
     flex-direction: column;
 }
 
+.wd-link-color{
+    color: #ff9a30;
+    font-style: oblique;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
 
+.wd-link-color:hover{
+    text-decoration: underline;
+    color: black;
+}
 
 
 .wd-project-text-heading{

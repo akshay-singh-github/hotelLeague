@@ -96,6 +96,15 @@
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
                         <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Address&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.hotelAddress}}</h4>
                     </div>
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Rating&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.hotelRating}}</h4>
+                    </div>
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Landmark&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.landmarkLocation}}</h4>
+                    </div>
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Website&nbsp;&nbsp;:&nbsp;&nbsp;</h4><a href="{{model.hotelObject.website}}" target="_blank"><h4 class="card-subtitle mb-2 text-muted wd-link-color">Click Me.</h4></a>
+                    </div>
                     <div class="wd-text-card-margin wd-remove-text-overflowing">
                         <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Opening Hours&nbsp;&nbsp;:&nbsp;&nbsp;</h4><ul class="list-group wd-text-card-margin"><li ng-repeat="timing in model.hotelObject.weekHours" class="list-group-item wd-remove-text-overflowing"><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{timing}}</h4></li></ul>
                     </div>
