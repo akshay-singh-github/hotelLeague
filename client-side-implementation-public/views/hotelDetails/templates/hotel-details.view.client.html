@@ -333,16 +333,45 @@
                             </div>&ndash;&gt;
                         </div>-->
 
-                        <div class="row">
-                            <div class="col-sm-6 wd-tile-shadow " ng-repeat="review in model.reviews" >
-                                <div class="card wd-card-margin">
+                        <!--<div class="row">
+                            <div class="col-sm-6 card wd-tile-shadow " ng-repeat="review in model.reviews" >
+                                <div class=" wd-card-margin">
                                     <div class="card-block">
                                         <h3 class="card-title">{{review.reviewer}} says:</h3>
-                                        <!--<h3 class="card-title">{{review.ReviewTitle}}</h3>-->
+                                        &lt;!&ndash;<h3 class="card-title">{{review.ReviewTitle}}</h3>&ndash;&gt;
                                         <p class="card-text">{{review.ReviewContent}}</p>
                                         <a href="" class="btn btn-primary wd-button-margin">Go somewhere</a>
                                     </div>
                                 </div>
+                            </div>
+                        </div>-->
+
+
+
+
+
+
+                        <div class="row">
+                            <div class="wd-latest-flipping-trial-card-container col-sm-6 " ng-repeat="review in model.reviews">
+                            <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
+                                <div class="wd-latest-flipping-trial-front">
+                                    <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="250" height="200">
+                                    <h3>{{review.reviewer}} says:</h3>
+                                    <h5>{{review.ReviewTitle}}</h5>
+                                    <div></div>
+                                    <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb" aria-hidden="true"></i>
+                                    <h5 class="pull-left wd-positive-thumb">Likes</h5>
+                                    <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb" aria-hidden="true"></i>
+                                    <h5 class="pull-right wd-negative-thumb">Dislikes</h5>
+                                    <h5 class="wd-tile-footer-info">Note: Bring the mouse pointer on tile for detailed review.</h5>
+                                </div>
+                                <div class="wd-latest-flipping-trial-back">
+                                    <h3 class="wd-review-detail-margin-top">{{review.ReviewContent}}</h3>
+                                    <button type="button" class="btn btn-success">Like Review</button>
+                                    <button type="button" class="btn btn-danger">Dislike Review</button>
+
+                                </div>
+                            </div>
                             </div>
                         </div>
 
@@ -352,16 +381,18 @@
 
 
 
-
+<!--
                         <div class="row">
+                            <div ng-repeat="review in model.reviews">
                             <div class="col-sm-6 " >
                                 <div class="flip ">
                                     <div class="card wd-tile-shadow">
                                         <div class="face front">
-                                            <div class="inner">
-                                                <!--<img src="http://vinculumgroup.com/v2/wp-content/uploads/2015/08/nykaa.jpg">-->
+                                            <div class="inner text-center">
+                                                &lt;!&ndash;<img src="http://vinculumgroup.com/v2/wp-content/uploads/2015/08/nykaa.jpg">&ndash;&gt;
                                                 <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="325" height="275">
-                                                    <!--<img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">-->
+                                                <h3>{{review.reviewer}} says:</h3>
+                                                    &lt;!&ndash;<img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">&ndash;&gt;
                                             </div>
                                         </div>
                                         <div class="face back">
@@ -373,7 +404,28 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            </div>
+                            &lt;!&ndash;<div class="col-sm-6 " >
+                                <div class="flip ">
+                                    <div class="card wd-tile-shadow">
+                                        <div class="face front">
+                                            <div class="inner text-center">
+                                                &lt;!&ndash;<img src="http://vinculumgroup.com/v2/wp-content/uploads/2015/08/nykaa.jpg">&ndash;&gt;
+                                                <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="325" height="275">
+                                                <h3>{{review.reviewer}} says:</h3>
+                                                &lt;!&ndash;<img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">&ndash;&gt;
+                                            </div>
+                                        </div>
+                                        <div class="face back">
+                                            <div class="inner text-center">
+                                                <h3>Improved efficiency through automation</h3>
+                                                <button type="button" class="btn btn-default">Know More</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>&ndash;&gt;
+                        </div>-->
 
 
 

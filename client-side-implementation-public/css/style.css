@@ -10,88 +10,80 @@ html, body{
 	background:#fff;
 }
 
+.wd-thumbs-margin{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 
 
 
+.wd-positive-thumb{
+    color:green;
+}
 
+.wd-negative-thumb{
+    color:red;
+}
+
+
+.wd-tile-footer-info {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    color: red;
+    text-shadow:
+            -1px -1px 0 yellow,
+            1px -1px 0 yellow,
+            -1px 1px 0 yellow,
+            1px 1px 0 yellow;
+}
+
+.wd-review-detail-margin-top{
+    margin-top: 100px;
+}
 
 .wd-profile-image-border{
     border:5px solid orangered;
+    margin: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.flip {
-    -webkit-perspective: 800px;
+.wd-latest-flipping-trial-card-container{
     perspective: 800px;
+}
+
+.wd-latest-flipping-trial-card{
     position: relative;
+    color: orangered;
     text-align: center;
-}
-.flip .card.flipped {
-    -webkit-transform: rotatey(-180deg);
-    transform: rotatey(-180deg);
-}
-.flip .card {
-    width: 350px;
-    height: 500px;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transition: 0.5s;
+    margin: 20px;
+    width: 400px;
+    height: 350px;
+    transition: all 0.6s ease;
     transform-style: preserve-3d;
-    transition: 0.5s;
-    background-color: #fff;
+}
 
-}
-.flip .card .face {
-    -webkit-backface-visibility: hidden ;
-    backface-visibility: hidden ;
-    z-index: 2;
-}
-.flip .card .front {
+.wd-latest-flipping-trial-front , .wd-latest-flipping-trial-back{
     position: absolute;
-    width: 100%;
-    z-index: 1;
+    background: #FFFFFF;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 350px;
+    backface-visibility: hidden;
 }
-.flip .card .img {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    border: 2px solid #000;
+
+.wd-latest-flipping-trial-back{
+    transform: rotateY(180deg);
 }
-.flip .card .back {
-    padding-top: 10%;
-    -webkit-transform: rotatey(-180deg);
-    transform: rotatey(-180deg);
+
+
+
+
+.wd-latest-flipping-trial-card:hover{
+    transform: rotateY(180deg);
 }
-.inner{margin:0px !important;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
