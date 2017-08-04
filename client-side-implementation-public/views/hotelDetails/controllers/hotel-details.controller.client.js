@@ -334,7 +334,7 @@
                                     .then(function (result) {
                                         console.log("this is the google api key RESULT",result);
                                         model.googleApiKey=result.key;
-                                        var newUrl = "https://www.google.com/maps/embed/v1/place?key="+model.googleApiKey+"&center="+model.hotelObject.hotelLatitude+","+model.hotelObject.hotelLongitude+"&zoom=18&maptype=roadmap&q="+model.hotelObject.hotelName+model.hotelObject.hotelAddress ;
+                                        var newUrl = "https://www.google.com/maps/embed/v1/view?key="+model.googleApiKey+"&center="+model.hotelObject.hotelLatitude+","+model.hotelObject.hotelLongitude+"&zoom=18&maptype=satellite" ;
                                         model.mapUrlIframe = model.urlContentTrusting(newUrl);
                                         console.log("model.mapUrlIframe", model.mapUrlIframe);
                                         hotelService.createHotel(model.hotelObject)

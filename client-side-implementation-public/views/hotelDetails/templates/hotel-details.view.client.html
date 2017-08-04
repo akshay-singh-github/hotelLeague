@@ -73,41 +73,52 @@
 <!-- details -->
 <div class="details">
     <div class="container">
+        <div class="wd-text-card-margin wd-remove-text-overflowing wd-title-shadow wd-title-color text-center">
+            <h3><span class="wd-title-color"><strong class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h3>
+        </div>
         <div class="col-md-7 details-left">
-            <img src="{{model.hotelObject.photoUrl}}" class="img-responsive center-block wd-image-shadow" alt="">
+            <img src="{{model.hotelObject.photoUrl}}" height="300" width="500" class=" img-responsive center-block wd-image-shadow" alt="">
             <!--<img src="images/16.jpg" class="img-responsive" alt="">-->
         </div>
         <div class="col-md-5 details-right">
-            <span><strong>{{model.hotelObject.hotelName}}</strong></span>
-            <li>Is Open : {{model.hotelObject.openStatus}}</li>
-            <li>{{model.hotelObject.phoneNumber}}</li>
-            <li>{{model.hotelObject.hotelAddress}}</li>
-        </div>
-        <iframe
-                width="450"
-                height="250"
-                frameborder="0" style="border:0"
-                src={{model.mapUrlIframe}} allowfullscreen>
-        </iframe>
-        <div class="clearfix"></div>
-        <div class="details-top">
-            <!--<h3>Lorem Ipsum has been the industry's standard dummy tex</h3>
-            <h5>Buy the online room booking, save 2 euro and skip the line!</h5>
-            <h6>Validity : from 1 January 2015 to 31 August 2015</h6>
-            <h4>Included</h4>-->
-            <li ng-repeat="timing in model.hotelObject.weekHours">{{timing}}</li>
-            <!--<li>publishing packages and web .Many desktop publishing packages and web page editors </li>
-            <h4>Not included</h4>
-            <li> will uncover many web sites still in their infancy. Various versions have evolved over the years,</li>
-            <h4>Additional information</h4>-->
 
+            <div class="card">
+                <div class="card-block">
+                    <!--<div class="wd-text-card-margin wd-remove-text-overflowing wd-title-shadow wd-title-color">
+                        <h5><span class="wd-title-color"><strong class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h5>
+                    </div>-->
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                    <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Open Now&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.openStatus}}</h4>
+                    </div>
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Phone&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.phoneNumber}}</h4>
+                    </div>
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Address&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.hotelAddress}}</h4>
+                    </div>
+                    <div class="wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Opening Hours&nbsp;&nbsp;:&nbsp;&nbsp;</h4><ul class="list-group wd-text-card-margin"><li ng-repeat="timing in model.hotelObject.weekHours" class="list-group-item wd-remove-text-overflowing"><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{timing}}</h4></li></ul>
+                    </div>
+
+                </div>
+            </div>
         </div>
+        <div class="clearfix"></div>
+        <div class="wd-heading-bottom-margin">
+        <iframe
+                width="100%"
+                height="350"
+                frameborder="0" style="border:0"
+                src={{model.mapUrlIframe}} allowfullscreen >
+        </iframe>
+        </div>
+
+
 
         <div class="container-fluid">
             <ul class="nav nav-tabs nav-justified">
-                <li class="active"><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href="">Hotel
-                    Booking</a></li>
-                <li><a data-toggle="tab" data-target="#wd-compose-review-id" href="">Hotel Review</a></li>
+                <li class="active"><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Hotel Booking</h4></a></li>
+                <li><a data-toggle="tab" data-target="#wd-compose-review-id" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Hotel Review</h4></a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="wd-booking-id">
@@ -278,7 +289,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-target="#collapse1" type="button" class="btn btn-warning btn-block" href="">Click to Write A Review.</a>
+                                        <a data-toggle="collapse" data-target="#collapse1" type="button" class="btn btn-warning btn-block wd-remove-text-overflowing" href="">Click to Write A Review.</a>
                                     </h4>
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
@@ -361,7 +372,7 @@
                             <div class="wd-latest-flipping-trial-card-container col-sm-6 " ng-repeat="review in model.reviews">
                             <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
                                 <div class="wd-latest-flipping-trial-front">
-                                    <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="250" height="200">
+                                    <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="60%" height="200">
                                     <h3>{{review.reviewer}} says:</h3>
                                     <h5>{{review.ReviewTitle}}</h5>
                                     <div></div>
