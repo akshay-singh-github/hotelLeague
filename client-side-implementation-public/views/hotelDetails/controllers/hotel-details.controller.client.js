@@ -18,11 +18,13 @@
         model.getReviewBycurrentHotel = getReviewBycurrentHotel;
         model.urlContentTrusting = urlContentTrusting;
         model.likeReview = likeReview;
+        model.deleteReview = deleteReview;
         model.islikedBycurrentUser = islikedBycurrentUser;
         model.isNotlikedBycurrentUser = isNotlikedBycurrentUser;
         model.isDislikedBycurrentUser = isDislikedBycurrentUser;
         model.isNotDislikedBycurrentUser = isNotDislikedBycurrentUser;
         model.dislikeReview = dislikeReview;
+        model.iswrittenByCurrentUser = iswrittenByCurrentUser;
 
 
 
@@ -40,8 +42,27 @@
         init();
 
 
+        function deleteReview(review) {
 
+            console.log("delete review controller");
+            reviewService.deleteReview(review)
+                .then(function (result) {
+                    $route.reload();
+                    /*return result*/
+                });
 
+        }
+
+        function iswrittenByCurrentUser(review) {
+
+            if(review.reviewerId === currentUser._id){
+                    return "Yes"
+            }
+            else{
+                return null;
+            }
+
+        }
 
 
 
@@ -156,19 +177,6 @@
                     });
 
             }
-
-
-
-
-
-
-
-
-
-
-
-
-            
         }
         
 

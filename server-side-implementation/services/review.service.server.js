@@ -9,6 +9,21 @@ module.exports=function (app,model) {
     app.post("/api/createReview" , createReview);
     app.put("/api/likeReview", likeReview);
     app.put("/api/dislikeReview", dislikeReview);
+    app.delete('/api/deleteReview/:reviewId', deleteReview);
+
+
+
+
+    function deleteReview(req, res) {
+        var reviewId = req.params.reviewId;
+        console.log("delete review service server");
+        model.reviewModel.deleteReview(reviewId)
+            .then(function (result) {
+                res.json(result);
+            })
+
+    }
+
 
 
 

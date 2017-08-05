@@ -75,8 +75,13 @@
 
         }
 
-        function deleteReview() {
-
+        function deleteReview(review) {
+            var url = '/api/deleteReview/'+review._id;
+            console.log("delete review service client");
+            return $http.delete(url)
+                .then(function (result) {
+                    return result.data;
+                });
         }
 
 
