@@ -126,11 +126,12 @@
 
         <div class="container-fluid">
             <ul class="nav nav-tabs nav-justified">
-                <li class="active"><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Hotel Booking</h4></a></li>
-                <li><a data-toggle="tab" data-target="#wd-compose-review-id" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Hotel Review</h4></a></li>
+                <li class="active"><a data-toggle="tab" data-target="#wd-compose-review-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Hotel Review</h4></a></li>
+                <li ><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Hotel Booking</h4></a></li>
+
             </ul>
             <div class="tab-content">
-                <div class="tab-pane fade in active" id="wd-booking-id">
+                <div class="tab-pane fade" id="wd-booking-id">
                     <div class="booking-form">
                         <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
                         <div ng-show="model.successMessage" class="alert alert-success">{{model.successMessage}}</div>
@@ -292,7 +293,7 @@
                 </div>
 
 
-                <div id="wd-compose-review-id" class="tab-pane fade">
+                <div id="wd-compose-review-id" class="tab-pane fade in active">
                     <div class="container">
                         <div class="panel-group">
                             <div class="panel panel-default">
@@ -378,23 +379,31 @@
 
 
                         <div class="row">
-                            <div class="wd-latest-flipping-trial-card-container col-sm-6 " ng-repeat="review in model.reviews">
+                            <div class="wd-latest-flipping-trial-card-container col-xs-12 " ng-repeat="review in model.reviews">
                             <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
                                 <div class="wd-latest-flipping-trial-front">
-                                    <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="60%" height="200">
+                                    <div class="container-fluid">
+                                    <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
                                     <h3>{{review.reviewer}} says:</h3>
-                                    <h5>{{review.ReviewTitle}}</h5>
-                                    <div></div>
-                                    <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb" aria-hidden="true"></i>
-                                    <h5 class="pull-left wd-positive-thumb">Likes</h5>
-                                    <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb" aria-hidden="true"></i>
-                                    <h5 class="pull-right wd-negative-thumb">Dislikes</h5>
-                                    <h5 class="wd-tile-footer-info">Note: Bring the mouse pointer on tile for detailed review.</h5>
+                                    <h5 class="wd-review-title-color wd-remove-text-overflowing">"{{review.ReviewTitle}}"</h5>
+
+
+
+                                        <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb wd-title-shadow" ng-show="model.islikedBycurrentUser(review)" aria-hidden="true"></i>
+                                        <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb" ng-show="model.isNotlikedBycurrentUser(review)" aria-hidden="true"></i>
+                                    <h5 class="pull-left wd-positive-thumb wd-remove-text-overflowing">{{review.Likes}}</h5>
+                                        <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb wd-title-shadow" ng-show="model.isDislikedBycurrentUser(review)" aria-hidden="true"></i>
+                                        <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb " ng-show="model.isNotDislikedBycurrentUser(review)" aria-hidden="true"></i>
+                                    <h5 class="pull-right wd-negative-thumb wd-remove-text-overflowing">{{review.Dislikes}}</h5>
+                                    </div>
+
+                                    <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover/Click for detailed review.</h5>
+
                                 </div>
                                 <div class="wd-latest-flipping-trial-back">
-                                    <h3 class="wd-review-detail-margin-top">{{review.ReviewContent}}</h3>
-                                    <button type="button" class="btn btn-success">Like Review</button>
-                                    <button type="button" class="btn btn-danger">Dislike Review</button>
+                                    <h3 class="wd-review-detail-margin-top wd-remove-text-overflowing">"{{review.ReviewContent}}"</h3>
+                                    <button type="button" class="btn btn-success" ng-click="model.likeReview(review)">Like Review</button>
+                                    <button type="button" class="btn btn-danger" ng-click="model.dislikeReview(review)">Dislike Review</button>
 
                                 </div>
                             </div>

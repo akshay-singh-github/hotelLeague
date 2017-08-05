@@ -46,15 +46,16 @@ html, body{
 }
 
 .wd-tile-footer-info {
-    position: absolute;
+
     bottom: 2px;
     left: 2px;
-    color: red;
+    color: black;
+    padding-bottom: 5px;
     text-shadow:
-            -1px -1px 0 yellow,
-            1px -1px 0 yellow,
-            -1px 1px 0 yellow,
-            1px 1px 0 yellow;
+            -1px -1px 0 #19F54C,
+            1px -1px 0 #19F54C,
+            -1px 1px 0 #19F54C,
+            1px 1px 0 #19F54C;
 }
 
 .wd-review-detail-margin-top{
@@ -156,8 +157,18 @@ html, body{
     margin: 20px;
 }
 
+
+.wd-review-title-color{
+    color: blueviolet;
+}
+
 .wd-card-margin{
     margin: 5px;
+}
+
+
+.wd-card-padding{
+    padding: 5px;
 }
 
 .row.is-flex {

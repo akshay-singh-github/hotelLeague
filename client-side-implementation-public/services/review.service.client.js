@@ -13,12 +13,47 @@
         var api = {
             createReview : createReview,
             getReviewBycurrentHotel : getReviewBycurrentHotel,
-            deleteReview : deleteReview
+            deleteReview : deleteReview,
+            likeReview : likeReview,
+            dislikeReview : dislikeReview
 
 
         };
 
         return api;
+
+
+        function dislikeReview(review) {
+
+            var url = "/api/dislikeReview";
+
+            return $http.put(url, review)
+                .then(function (result) {
+                    return result.data;
+                });
+
+        }
+
+
+
+
+
+        function likeReview(review) {
+
+            var url = "/api/likeReview";
+
+            return $http.put(url, review)
+                .then(function (result) {
+                    return result.data;
+                });
+
+        }
+
+
+
+
+
+
 
 
         function createReview(reviewObject) {

@@ -7,9 +7,36 @@ module.exports=function (app,model) {
 
     app.get("/api/getReview/:resId" , findReviewByHotelId);
     app.post("/api/createReview" , createReview);
+    app.put("/api/likeReview", likeReview);
+    app.put("/api/dislikeReview", dislikeReview);
 
 
 
+    
+    function dislikeReview(req, res) {
+        var reviewObj = req.body;
+
+        model.reviewModel.UpdateReviewDisLikeByReviewId(reviewObj)
+            .then(function (review) {
+                res.json(review)
+            });
+
+    }
+    
+    
+
+
+
+    function likeReview(req, res) {
+
+        var reviewObj = req.body;
+
+        model.reviewModel.UpdateReviewLikeByReviewId(reviewObj)
+            .then(function (review) {
+                res.json(review)
+            });
+
+    }
 
 
 

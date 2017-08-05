@@ -13,8 +13,10 @@ module.exports = function () {
         reviewFor :String,
         reviewerId :String,
         rating : Number,
-        Likes : Number,
-        Dislikes : Number
+        Likes : { type: Number,min: 0, default: 0 },
+        LikedBy : [String],
+        DislikedBy : [String],
+        Dislikes : { type: Number,min: 0, default: 0}
     }, {collection:"hotelLeague.review"});
 
     return reviewSchema;

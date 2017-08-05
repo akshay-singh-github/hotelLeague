@@ -12,6 +12,8 @@ module.exports = function () {
 
         createReview: createReview,
         findReviewByHotelId: findReviewByHotelId,
+        UpdateReviewLikeByReviewId : UpdateReviewLikeByReviewId,
+        UpdateReviewDisLikeByReviewId : UpdateReviewDisLikeByReviewId,
         deleteReview: deleteReview,
         setModel: setModel
     };
@@ -19,13 +21,22 @@ module.exports = function () {
     return api;
 
 
-
-
-
-
     function setModel(_model) {
         model = _model;
     }
+
+
+    function UpdateReviewDisLikeByReviewId(review) {
+        return reviewModel.update({_id: review._id},{Dislikes : review.Dislikes , DislikedBy : review.DislikedBy });
+    }
+
+
+
+    function UpdateReviewLikeByReviewId(review) {
+        return reviewModel.update({_id: review._id},{Likes : review.Likes , LikedBy : review.LikedBy });
+    }
+
+
 
     function deleteReview(reviewId) {
         return reviewModel.remove({_id: reviewId});
