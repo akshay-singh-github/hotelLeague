@@ -99,17 +99,22 @@
             </div>
 
             <div class="container">
-                <div class="row">
+                <div class="row" ng-show="model.foundUsers.length > 0">
+                    <h3 class="wd-button-margin wd-email-messagetomessage-subject">Search Results&nbsp;:&nbsp;</h3>
                     <div class="wd-latest-flipping-trial-card-container col-xs-12 " ng-repeat="user in model.foundUsers">
                         <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
                             <div class="wd-latest-flipping-trial-front">
                                 <div class="container-fluid">
                                     <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
-                                    <h3 class="wd-button-margin">Name : {{user.firstName}}&nbsp;&nbsp;{{user.lastName}}</h3>
+                                    <h3 class="wd-button-margin wd-remove-text-overflowing">Name : {{user.firstName}}&nbsp;&nbsp;{{user.lastName}}</h3>
                                     <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin">Username : {{user.username}}</h5>
                                 </div>
-
-                                <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover for details/Follow(or Unfollow).</h5>
+                                <h5 class="wd-tile-footer-info wd-remove-text-overflowing" ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0">Note: Hover for details or Unfollow.</h5>
+                                <h5 class="wd-tile-footer-info wd-remove-text-overflowing" ng-show="user.followedBy.indexOf(model.currentUser._id) < 0">Note: Hover for details or Follow.</h5>
+                                <i class="fa fa-users wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0" aria-hidden="true"></i>
+                                <h5 class=" wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0">Following</h5>
+                                <i class="fa fa-users wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="user.followedBy.indexOf(model.currentUser._id) < 0" aria-hidden="true"></i>
+                                <h5 class=" wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="user.followedBy.indexOf(model.currentUser._id) < 0">Not Following</h5>
 
                             </div>
                             <div class="wd-latest-flipping-trial-back">
@@ -137,8 +142,8 @@
                                             <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Favorite Hotel&nbsp;:&nbsp;</h3> <p><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 135%;" ng-repeat="hotel in user.favoriteHotel">{{hotel}}</span></p>
                                         </div>
                                         <div class="wd-button-margin ">
-                                            <button type="button" class="btn btn-success" ng-click="model.addAsFollower(user)">Follow</button>
-                                            <button type="button" class="btn btn-danger" ng-click="model.removeAsFollower(user)">Unfollow</button>
+                                            <button type="button" class="btn btn-success" ng-click="model.addAsFollower(user)" ng-show="user.followedBy.indexOf(model.currentUser._id) < 0">Follow</button>
+                                            <button type="button" class="btn btn-danger" ng-click="model.removeAsFollower(user)" ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0">Unfollow</button>
                                         </div>
                                     </div>
 

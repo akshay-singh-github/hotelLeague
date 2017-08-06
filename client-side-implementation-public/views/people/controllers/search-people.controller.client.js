@@ -13,6 +13,8 @@
         model.logout = logout;
         model.searchUser = searchUser;
         model.showUserDetails = showUserDetails;
+        model.addAsFollower = addAsFollower;
+        model.removeAsFollower = removeAsFollower;
         model.currentUser = currentUser;
 
 
@@ -21,6 +23,53 @@
             model.showUserDetailsFlag = false;
         }
         init();
+
+
+
+
+        function addAsFollower(user) {
+            console.log("Current card User", user);
+
+            userService.findUserByUsername(currentUser.username)
+                .then(function (result) {
+                    if(result.following.indexOf(user._id) < 0){
+                        result.following.push(user._id);
+                        userService.updateUserProfile(result._id,result)
+                            .then(function (output) {
+                                console.log("This is the updated User",output);
+
+                                if (user.followedBy.indexOf(result._id) < 0){
+                                    user.followedBy.push(result._id);
+                                    userService.updateUserProfile(user._id, user)
+                                        .then(function (response) {
+                                            console.log("This is the updated followed User",response);
+                                        })
+                                }
+                            })
+                    }
+                    console.log("This is the returned user outside if", result);
+
+                },function (error) {
+                    console.log("This is the returned error.",error);
+                })
+
+
+
+
+
+        }
+
+
+
+
+        function removeAsFollower(user) {
+            console.log("Current User", user);
+
+        }
+
+
+
+
 
 
 

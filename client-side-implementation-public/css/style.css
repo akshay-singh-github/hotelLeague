@@ -177,6 +177,10 @@ html, body{
     margin: 5px;
 }
 
+.wd-follow-status-indicator{
+    padding-top: 5px;
+    padding-left: 5px;
+}
 
 .wd-card-padding{
     padding: 5px;
@@ -322,7 +326,7 @@ html, body{
     margin-left: 10px;
     margin-bottom: 10px;
     background-color: #F8E6CF;
-    border-radius: 15px;
+    border-radius: 35px;
 }
 
 
