@@ -12,12 +12,28 @@
         var api = {
             createMessage : createMessage,
             getMessageBycurrentUser : getMessageBycurrentUser,
-            deleteMessage : deleteMessage
+            deleteMessage : deleteMessage,
+            updateMessage : updateMessage
 
 
         };
 
         return api;
+
+
+
+        function updateMessage(message) {
+
+            var url = "/api/updateMessage";
+            return $http.put(url, message)
+                .then(function (response) {
+                    return response;
+                });
+
+        }
+
+
+
 
 
         function createMessage(messageObj) {
@@ -39,7 +55,13 @@
             
         }
         
-        function deleteMessage() {
+        function deleteMessage(message) {
+            var url = '/api/deleteMessage/' + message._id;
+
+            return $http.delete(url)
+                .then(function (result) {
+                    return result;
+                });
             
         }
 

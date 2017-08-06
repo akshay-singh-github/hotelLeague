@@ -89,7 +89,7 @@
 
 
                                 <div class="container-fluid" >
-                                    <div class="row">
+                                    <div class="row" ng-click="model.messageOpen(message)">
 
 
                                         <!--<li class="list-group-item active">
@@ -129,8 +129,7 @@
                                                data-target="#collapseExampleReply{{message._id}}">
                                                 Reply
                                             </a>
-                                            <a class="btn btn-danger wd-remove-text-overflowing" data-toggle="collapse"
-                                               data-target="#collapseExample{{message._id}}">
+                                            <a class="btn btn-danger wd-remove-text-overflowing" ng-click="model.deleteMessage(message)">
                                                 Delete
                                             </a>
                                         </div>

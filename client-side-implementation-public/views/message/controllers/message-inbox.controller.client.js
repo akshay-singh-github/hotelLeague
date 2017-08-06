@@ -17,6 +17,8 @@
         model.createMessage = createMessage;
         model.getMessageBycurrentUser = getMessageBycurrentUser;
         model.reloadPage = reloadPage;
+        model.messageOpen = messageOpen;
+        model.deleteMessage = deleteMessage;
         /*model.findMessageByReceiverId = findMessageByReceiverId;
         model.deleteMessage = deleteMessage;*/
         model.currentUser = currentUser;
@@ -29,6 +31,19 @@
             model.showMessageDetailsFlag = false;
         }
         init();
+        
+        
+        
+        function deleteMessage(message) {
+            messageService.deleteMessage(message)
+                .then(function (result) {
+                    console.log("Delete Message", result.data);
+                    $route.reload();
+                    return result.data;
+
+                });
+            
+        }
 
 
         function reloadPage() {
@@ -42,6 +57,20 @@
                     console.log("This all Messages for user", model.allMessages)
                 });
         }
+
+
+
+        function messageOpen(message) {
+            message.isMessageNew = 'OLD';
+            messageService.updateMessage(message)
+                .then(function (result) {
+                    console.log("Message Open", result.data);
+                    return result.data;
+
+                });
+
+        }
+
 
 
 

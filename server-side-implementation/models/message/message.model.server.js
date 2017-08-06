@@ -14,12 +14,19 @@ module.exports = function () {
         createMessage: createMessage,
         findMessageByReceiverId: findMessageByReceiverId,
         deleteMessage: deleteMessage,
+        updateMessage: updateMessage,
         setModel: setModel
     };
 
     return api;
 
 
+
+    function updateMessage(message) {
+
+        return messageModel.update({_id : message._id}, {$set : message});
+
+    }
 
 
 
