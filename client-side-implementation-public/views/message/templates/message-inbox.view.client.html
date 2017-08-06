@@ -72,11 +72,11 @@
             <div id="wd-inbox-id" class="tab-pane fade in active">
                 <div class="account_grid">
                     <div class="col-xs-12 login-right wow fadeInLeft" data-wow-delay="0.4s">
-                        <h3>MESSAGE INBOX</h3>
+                        <h3 class="wd-email-messagetomessage-subject" style="color: #814807;font-style: italic;font-weight: bold;">MESSAGE INBOX</h3>
                         <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
                         <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
-                        <ul class="list-group">
-                            <li class="list-group-item wd-message-inbox-title-bar">
+                        <ul class="list-group wd-message-border-background">
+                            <li class="list-group-item wd-message-inbox-title-bar ">
                                 <div class="row">
 
                                     <div class="text-center">
@@ -85,7 +85,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li ng-repeat="message in model.allMessages" class="list-group-item" ng-click = "model.showMessageDetails(message)">
+                            <li ng-repeat="message in model.allMessages" class="list-group-item wd-message-border-background" ng-click = "model.showMessageDetails(message)">
 
 
                                 <div class="container-fluid" >
@@ -121,7 +121,7 @@
                                             <i class="fa fa-envelope fa-2x wd-font-color-message"
                                                aria-hidden="true"></i>
                                             <span class="wd-superscript-parameter wd-title-shadow "
-                                                  style="color: red">new!!!</span>
+                                                  style="color: red" ng-show="message.isMessageNew === 'NEW'">new!!!</span>
                                             <h2 class="wd-remove-text-overflowing wd-email-message-subject">&nbsp;&nbsp;&nbsp;&nbsp;{{message.message_title}}</h2>
                                         </div>
                                         <div class="col-xs-5 col-sm-3 ">
@@ -144,7 +144,7 @@
                                 <div id="collapseExampleReply{{message._id}}" class="collapse">
                                     <!--<div class="card card-block">hello</div>-->
                                     <div class="container-fluid wd-reply-window-formatting">
-                                        <h4 class="wd-heading-bottom-margin wd-email-messagetomessage-subject wd-remove-text-overflowing">Reply To Message</h4>
+                                        <h4 class="wd-heading-bottom-margin wd-email-messagetomessage-subject wd-remove-text-overflowing wd-font-weight">Reply To Message</h4>
                                         <div ng-show="model.error" class="alert alert-danger">
                                             {{model.error}}
                                         </div>
@@ -169,7 +169,7 @@
                                                    required/>
                                             <div ng-show="model.messageSubject" class="alert alert-info">{{model.messageSubject}}</div>-->
 
-                                            <label class="wd-custom-label-color wd-email-messagetomessage-subject wd-remove-text-overflowing" for="reply-message-content">Reply Message:</label>
+                                            <label class="wd-custom-label-color wd-email-messagetomessage-subject wd-remove-text-overflowing" for="reply-message-content">Message:</label>
                                             <textarea class="input-group"
                                                       placeholder="Best email service."
                                                       ng-model="messageObject.message_body"
@@ -184,10 +184,6 @@
 
                                 </div>
 
-
-
-
-
                                 <div class="collapse" id="collapseExample{{message._id}}">
                                     <div class="container-fluid wd-reply-window-formatting">
                                         <div class="wd-heading-bottom-margin nowrapping">
@@ -201,10 +197,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
                             </li>
                         </ul>
                     </div>
@@ -215,8 +207,8 @@
             </div>
 
             <div id="wd-compose-message-id" class="tab-pane fade">
-                <div class="container-fluid">
-                    <h3>Compose Message</h3>
+                <div class="container-fluid wd-message-border-background wd-border-radius">
+                    <h3 class="wd-email-messagetomessage-subject wd-font-weight wd-heading-bottom-margin" >Compose Message</h3>
                     <div ng-show="model.error" class="alert alert-danger">
                         {{model.error}}
                     </div>
@@ -224,23 +216,23 @@
                         {{model.successMessage}}
                     </div>
                     <form ng-class="{'submitted': model.submitted}">
-                        <label class="wd-custom-label-color" for="to">To:</label>
-                        <input class="input-group "
+                        <label class=" wd-email-messagetomessage-subject wd-font-size-compose" for="to">To:</label>
+                        <input class="input-group wd-compose-window-formatting"
                                placeholder="abc"
                                id="to"
                                ng-model="messageObject.forUser"
                                required/>
                         <div ng-show="model.messageTo" class="alert alert-info">{{model.messageTo}}</div>
-                        <label class="wd-custom-label-color" for="subject">Subject:</label>
-                        <input class="input-group"
+                        <label class=" wd-email-messagetomessage-subject wd-font-size-compose" for="subject">Subject:</label>
+                        <input class="input-group wd-compose-window-formatting"
                                placeholder="subject of message"
                                id="subject"
                                ng-model="messageObject.message_title"
                                required/>
                         <div ng-show="model.messageSubject" class="alert alert-info">{{model.messageSubject}}</div>
 
-                        <label class="wd-custom-label-color" for="message-content">Message:</label>
-                        <textarea class="container-fluid  wd-vertical-scroll-textarea"
+                        <label class=" wd-email-messagetomessage-subject wd-font-size-compose" for="message-content">Message:</label>
+                        <textarea class="container-fluid  wd-vertical-scroll-textarea wd-compose-window-formatting"
                                   placeholder="Best email service."
                                   ng-model="messageObject.message_body"
                                   id="message-content" rows="8"></textarea>

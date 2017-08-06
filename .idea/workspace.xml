@@ -21,31 +21,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="300" column="0" lean-forward="true" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="message-inbox.view.client.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/message/templates/message-inbox.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="122" column="98" lean-forward="false" selection-start-line="122" selection-start-column="98" selection-end-line="122" selection-end-column="98" />
+            <state relative-caret-position="502">
+              <caret line="121" column="65" lean-forward="false" selection-start-line="121" selection-start-column="65" selection-end-line="121" selection-end-column="65" />
               <folding>
-                <element signature="e#6266#6272#0" expanded="true" />
-                <element signature="e#6272#6278#0" expanded="true" />
-                <element signature="e#6279#6285#0" expanded="true" />
-                <element signature="e#6285#6291#0" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#6428#6434#0" expanded="true" />
+                <element signature="e#6434#6440#0" expanded="true" />
+                <element signature="e#6441#6447#0" expanded="true" />
+                <element signature="e#6447#6453#0" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="e#6968#6974#0" expanded="true" />
-                <element signature="e#6974#6980#0" expanded="true" />
-                <element signature="e#6980#6986#0" expanded="true" />
-                <element signature="e#6986#6992#0" expanded="true" />
+                <element signature="e#7171#7177#0" expanded="true" />
+                <element signature="e#7177#7183#0" expanded="true" />
+                <element signature="e#7183#7189#0" expanded="true" />
+                <element signature="e#7189#7195#0" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#2;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#div#2;n#div#0;n#div#2;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -53,11 +44,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="155" column="25" lean-forward="false" selection-start-line="155" selection-start-column="1" selection-end-line="155" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="message.schema.server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-side-implementation/models/message/message.schema.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="20" />
+            <state relative-caret-position="640">
+              <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -76,11 +77,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wd-</find>
-      <find>webkit</find>
-      <find>-webkit-perspective</find>
-      <find>wd-menuitem-style</find>
-      <find>repeat</find>
       <find>tels</find>
       <find>wd-profile-image-border</find>
       <find>ng-click</find>
@@ -106,6 +102,11 @@
       <find>wd-email-messagetomessage-subject</find>
       <find>wd-vertical-scroll-textarea</find>
       <find>wd-email-message-subject</find>
+      <find>border-</find>
+      <find>border-b</find>
+      <find>new!!</find>
+      <find>wd-custom-label-color</find>
+      <find>border-back</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -588,12 +589,12 @@
       <workItem from="1501537555800" duration="25457000" />
       <workItem from="1501695440993" duration="10015000" />
       <workItem from="1501709833964" duration="64116000" />
-      <workItem from="1501930799708" duration="41857000" />
+      <workItem from="1501930799708" duration="45344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318642000" />
+    <option name="totallyTimeSpent" value="322129000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1038,34 +1039,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server-side-implementation/models/message/message.schema.server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="20" />
+        <state relative-caret-position="640">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="300" column="0" lean-forward="true" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
+        <state relative-caret-position="382">
+          <caret line="155" column="25" lean-forward="false" selection-start-line="155" selection-start-column="1" selection-end-line="155" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/message/templates/message-inbox.view.client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="122" column="98" lean-forward="false" selection-start-line="122" selection-start-column="98" selection-end-line="122" selection-end-column="98" />
+        <state relative-caret-position="502">
+          <caret line="121" column="65" lean-forward="false" selection-start-line="121" selection-start-column="65" selection-end-line="121" selection-end-column="65" />
           <folding>
-            <element signature="e#6266#6272#0" expanded="true" />
-            <element signature="e#6272#6278#0" expanded="true" />
-            <element signature="e#6279#6285#0" expanded="true" />
-            <element signature="e#6285#6291#0" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#6428#6434#0" expanded="true" />
+            <element signature="e#6434#6440#0" expanded="true" />
+            <element signature="e#6441#6447#0" expanded="true" />
+            <element signature="e#6447#6453#0" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#6968#6974#0" expanded="true" />
-            <element signature="e#6974#6980#0" expanded="true" />
-            <element signature="e#6980#6986#0" expanded="true" />
-            <element signature="e#6986#6992#0" expanded="true" />
+            <element signature="e#7171#7177#0" expanded="true" />
+            <element signature="e#7177#7183#0" expanded="true" />
+            <element signature="e#7183#7189#0" expanded="true" />
+            <element signature="e#7189#7195#0" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#2;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#div#2;n#div#0;n#div#2;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>

@@ -279,6 +279,9 @@ html, body{
     color: red;
 }
 
+.wd-font-weight{
+    font-weight: bold;
+}
 
 .wd-message-list-buttons {
     padding: 5px;
@@ -299,7 +302,27 @@ html, body{
 }
 
 
+.wd-message-border-background{
+    border:1px solid #814807;
+    background-color: #F8E6CF;
+}
 
+
+
+
+.wd-border-radius{
+    border-radius: 25px;
+}
+
+.wd-compose-window-formatting{
+    border:1px solid black;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.wd-font-size-compose{
+    font-size: 125%;
+}
 
 .wd-email-message-subject{
 
