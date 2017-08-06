@@ -120,7 +120,7 @@
                                         <div class=" hidden-xs  col-sm-6 nowrapping" data-toggle="collapse" data-target="#collapseExample{{message._id}}" href="">
                                             <i class="fa fa-envelope fa-2x wd-font-color-message"
                                                aria-hidden="true"></i>
-                                            <span class="wd-superscript-parameter wd-title-shadow wd-remove-text-overflowing"
+                                            <span class="wd-superscript-parameter wd-title-shadow "
                                                   style="color: red">new!!!</span>
                                             <h2 class="wd-remove-text-overflowing wd-email-message-subject">&nbsp;&nbsp;&nbsp;&nbsp;{{message.message_title}}</h2>
                                         </div>
@@ -139,20 +139,6 @@
                                     <!--<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample{{message._id}}" aria-expanded="false" aria-controls="collapseExample">
                                         Button with data-target
                                     </button>-->
-
-                                <div class="collapse" id="collapseExample{{message._id}}">
-                                    <div class="container-fluid wd-reply-window-formatting">
-                                        <div class="wd-heading-bottom-margin nowrapping">
-                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">From : </h2> <p><h2 class="wd-email-message-subject wd-remove-text-overflowing">{{message.from}}</h2> </p>
-                                        </div>
-                                        <div class=" wd-heading-bottom-margin nowrapping">
-                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Subject : </h2> <p><h2 class="wd-email-message-subject wd-remove-text-overflowing">{{message.message_title}}</h2></p>
-                                        </div>
-                                        <div class="wd-heading-bottom-margin nowrapping">
-                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Message : </h2> <p><h2 class="wd-email-message-subject wd-remove-text-overflowing">{{message.message_body}}</h2></p>
-                                        </div>
-                                    </div>
-                                </div>
 
 
                                 <div id="collapseExampleReply{{message._id}}" class="collapse">
@@ -190,13 +176,34 @@
                                                       id="reply-message-content" rows="8"></textarea>
 
                                             <button type="submit" class="btn btn-success btn-block wd-remove-text-overflowing"
-                                                    ng-click="model.createMessage(model.currentUser._id,messageObject)">Create
+                                                    ng-click="model.createMessage(model.currentUser._id,messageObject)">Reply
                                             </button>
                                         </form>
 
                                     </div>
 
                                 </div>
+
+
+
+
+
+                                <div class="collapse" id="collapseExample{{message._id}}">
+                                    <div class="container-fluid wd-reply-window-formatting">
+                                        <div class="wd-heading-bottom-margin nowrapping">
+                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">From : </h2> <p><h2 class="wd-email-message-subject wd-remove-text-overflowing">{{message.from}}</h2> </p>
+                                        </div>
+                                        <div class=" wd-heading-bottom-margin">
+                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Subject : </h2> <p><span class="wd-email-message-subject " style="color: #169F12;font-size: 175%;">{{message.message_title}}</span></p>
+                                        </div>
+                                        <div class="wd-heading-bottom-margin ">
+                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Message : </h2> <p><span class="wd-email-message-subject " style="color: #169F12;font-size: 150%;">{{message.message_body}}</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
 
                             </li>
                         </ul>
@@ -233,7 +240,7 @@
                         <div ng-show="model.messageSubject" class="alert alert-info">{{model.messageSubject}}</div>
 
                         <label class="wd-custom-label-color" for="message-content">Message:</label>
-                        <textarea class="input-group"
+                        <textarea class="container-fluid  wd-vertical-scroll-textarea"
                                   placeholder="Best email service."
                                   ng-model="messageObject.message_body"
                                   id="message-content" rows="8"></textarea>

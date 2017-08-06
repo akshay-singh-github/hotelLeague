@@ -299,6 +299,8 @@ html, body{
 }
 
 
+
+
 .wd-email-message-subject{
 
     color: #169F12;
@@ -317,6 +319,13 @@ html, body{
 
 }
 
+.wd-vertical-scroll-textarea{
+
+    height: 100px;
+    max-height: 100px;
+    overflow-y: hidden;
+    width:100%;
+}
 
 
 .wd-remove-text-overflowing{
