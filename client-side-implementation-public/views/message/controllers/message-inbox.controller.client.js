@@ -19,6 +19,7 @@
         model.reloadPage = reloadPage;
         model.messageOpen = messageOpen;
         model.deleteMessage = deleteMessage;
+        model.replyMessage = replyMessage;
         /*model.findMessageByReceiverId = findMessageByReceiverId;
         model.deleteMessage = deleteMessage;*/
         model.currentUser = currentUser;
@@ -32,7 +33,29 @@
         }
         init();
         
-        
+        function replyMessage(message_body, message) {
+            var replyObject = {};
+            replyObject.message_body = message_body;
+
+            console.log("initial Reply message", replyObject);
+            console.log("initial message message", message);
+            replyObject.forUser = message.from;
+            userService.findUserByUsername(replyObject.forUser)
+                .then(function (result) {
+                    replyObject.forUserId = result._id;
+                    replyObject.from = currentUser.username;
+                    replyObject.date = new Date();
+                    replyObject.message_title = message.message_title;
+                    replyObject.isMessageNew = 'NEW';
+                    console.log("final Reply message", replyObject);
+                    model.createMessage(replyObject);
+                    $route.reload();
+
+                });
+
+
+
+        }
         
         function deleteMessage(message) {
             messageService.deleteMessage(message)
@@ -62,6 +85,7 @@
 
         function messageOpen(message) {
             message.isMessageNew = 'OLD';
+            message.dateRead = new Date();
             messageService.updateMessage(message)
                 .then(function (result) {
                     console.log("Message Open", result.data);
@@ -74,7 +98,7 @@
 
 
 
-        function createMessage(uid , messageObject) {
+        function createMessage(messageObject) {
             model.error="";
             model.successMessage = "";
             model.messageTo="";

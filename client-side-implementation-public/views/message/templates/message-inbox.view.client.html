@@ -171,11 +171,11 @@
                                             <label class="wd-custom-label-color wd-email-messagetomessage-subject wd-remove-text-overflowing" for="reply-message-content">Message:</label>
                                             <textarea class="input-group"
                                                       placeholder="Best email service."
-                                                      ng-model="messageObject.message_body"
+                                                      ng-model="message_body"
                                                       id="reply-message-content" rows="8"></textarea>
 
                                             <button type="submit" class="btn btn-success btn-block wd-remove-text-overflowing"
-                                                    ng-click="model.createMessage(model.currentUser._id,messageObject)">Reply
+                                                    ng-click="model.replyMessage(message_body, message)">Reply
                                             </button>
                                         </form>
 
@@ -237,7 +237,7 @@
                                   id="message-content" rows="8"></textarea>
 
                         <button type="submit" class="btn btn-success btn-block "
-                                ng-click="model.createMessage(model.currentUser._id,messageObject)">Create
+                                ng-click="model.createMessage(messageObject)">Create
                         </button>
                     </form>
 
