@@ -65,6 +65,31 @@
         function removeAsFollower(user) {
             console.log("Current User", user);
 
+            userService.findUserByUsername(currentUser.username)
+                .then(function (result) {
+                    if(result.following.indexOf(user._id) >= 0){
+                        var index = result.following.indexOf(user._id);
+                        result.following.splice(index, 1);
+                        userService.updateUserProfile(result._id,result)
+                            .then(function (output) {
+                                console.log("This is the updated User",output);
+
+                                if (user.followedBy.indexOf(result._id) >= 0){
+                                    var index2 = user.followedBy.indexOf(result._id);
+                                    user.followedBy.splice(index2, 1);
+                                    userService.updateUserProfile(user._id, user)
+                                        .then(function (response) {
+                                            console.log("This is the updated followed User",response);
+                                        })
+                                }
+                            })
+                    }
+                    console.log("This is the returned user outside if", result);
+
+                },function (error) {
+                    console.log("This is the returned error.",error);
+                })
+
         }
 
 
