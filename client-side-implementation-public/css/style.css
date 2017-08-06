@@ -252,6 +252,71 @@ html, body{
 }
 
 
+.wd-email-sender-title{
+
+    color: saddlebrown;
+    font-weight: bold;
+    font-family: "Arial Black", Gadget, sans-serif;
+
+}
+
+.wd-message-inbox-title-bar{
+    background-color: #814807;
+    color:white;
+    font-weight: bold;
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.wd-font-color-message{
+    color: mediumpurple;
+}
+
+
+.follow-this .wd-superscript-parameter{
+    vertical-align: text-top;
+    text-transform: none;
+    font-weight: bold;
+    color: red;
+}
+
+
+.wd-message-list-buttons {
+    padding: 5px;
+    /*position: absolute;*/
+    opacity: 1.0;
+    float:right;
+    right: 15px;
+    border-bottom-left-radius: 10px;
+    background: #FFFFFF;
+    z-index : 1;
+}
+
+
+.wd-reply-window-formatting{
+    border:1px solid black;
+    margin: 30px;
+    border-radius: 25px;
+}
+
+
+.wd-email-message-subject{
+
+    color: #169F12;
+    font-style: italic;
+    /*font-style: oblique;*/
+    font-family: "Times New Roman", Georgia, sans-serif;
+
+}
+
+.wd-email-messagetomessage-subject{
+
+    color: #814807;
+    font-style: italic;
+    /*font-style: oblique;*/
+    font-family: "Times New Roman", Georgia, sans-serif;
+
+}
+
 
 
 .wd-remove-text-overflowing{
@@ -993,7 +1058,7 @@ i.g-1:hover{
 	font-size:0.8125em;
 	padding-bottom: 0.2em;
 	display: block;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 .login-right input[type="text"] {
 	border: 1px solid #EEE;
@@ -1058,7 +1123,7 @@ a.forgot {
 	font-size: 0.85em;
 	padding-bottom: 0.2em;
 	display: block;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 .register-top-grid input[type="text"], .register-bottom-grid input[type="text"] {
 	border: 1px solid #EEE;

@@ -71,73 +71,137 @@
         <div class="tab-content">
             <div id="wd-inbox-id" class="tab-pane fade in active">
                 <div class="account_grid">
-                    <div class="col-md-6 login-right wow fadeInLeft" data-wow-delay="0.4s">
+                    <div class="col-xs-12 login-right wow fadeInLeft" data-wow-delay="0.4s">
                         <h3>MESSAGE INBOX</h3>
                         <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
                         <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
                         <ul class="list-group">
-                            <li class="list-group-item active">
+                            <li class="list-group-item wd-message-inbox-title-bar">
                                 <div class="row">
-                                    <div class="col-xs-10">
+
+                                    <div class="text-center">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
                                         Messages
-                                    </div>
-                                    <div class="col-xs-2">
-                                        Delete
                                     </div>
                                 </div>
                             </li>
                             <li ng-repeat="message in model.allMessages" class="list-group-item" ng-click = "model.showMessageDetails(message)">
-                                <div class="row nowrapping">
-                                    <div class = "col-xs-9">
-                                        <h6 ng-if="message.isMessageNew=='NEW'">New!!!</h6>
-                                        <h2>{{message.message_title}}</h2>
-                                        <h2>from: {{message.from}}</h2>
-                                        <h4>Message : <p>{{message.message_body}}</p></h4>
-                                        {{message}}
-                                    </div>
-                                    <div class = "col-xs-3">
-                                        <span ng-click="model.selectUser(user)" class="glyphicon glyphicon-pencil pull-right"></span>
-                                        <span ng-click="model.deleteUser(user)" class="glyphicon glyphicon-remove pull-right"></span>
+
+
+                                <div class="container-fluid" >
+                                    <div class="row">
+
+
+                                        <!--<li class="list-group-item active">
+                                            <div class="wd-disable-wrapping row">
+                                                <div class="col-md-5 col-sm-7 col-xs-11">
+                                                    <span>Website</span>
+                                                </div>
+                                                <div class="hidden-sm hidden-xs col-md-3 ">
+                                                    <span>Created</span>
+                                                </div>
+                                                <div class="hidden-xs col-sm-4 col-md-3">
+                                                    <span>Updated</span>
+
+                                                </div>
+                                                <div class="col-xs-1">
+                                                </div>
+                                            </div>
+                                        </li>-->
+
+
+                                        <div class=" col-sm-3 col-xs-7 nowrapping" data-toggle="collapse" data-target="#collapseExample{{message._id}}" href="">
+
+                                            <h2 class="wd-remove-text-overflowing wd-email-sender-title">
+                                                {{message.from}} </h2>
+                                            <h2>&nbsp;&nbsp;:&nbsp;&nbsp;</h2>
+                                        </div>
+
+                                        <div class=" hidden-xs  col-sm-6 nowrapping" data-toggle="collapse" data-target="#collapseExample{{message._id}}" href="">
+                                            <i class="fa fa-envelope fa-2x wd-font-color-message"
+                                               aria-hidden="true"></i>
+                                            <span class="wd-superscript-parameter wd-title-shadow wd-remove-text-overflowing"
+                                                  style="color: red">new!!!</span>
+                                            <h2 class="wd-remove-text-overflowing wd-email-message-subject">&nbsp;&nbsp;&nbsp;&nbsp;{{message.message_title}}</h2>
+                                        </div>
+                                        <div class="col-xs-5 col-sm-3 ">
+                                            <a class="btn btn-success wd-remove-text-overflowing" data-toggle="collapse"
+                                               data-target="#collapseExampleReply{{message._id}}">
+                                                Reply
+                                            </a>
+                                            <a class="btn btn-danger wd-remove-text-overflowing" data-toggle="collapse"
+                                               data-target="#collapseExample{{message._id}}">
+                                                Delete
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
+                                    <!--<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample{{message._id}}" aria-expanded="false" aria-controls="collapseExample">
+                                        Button with data-target
+                                    </button>-->
+
+                                <div class="collapse" id="collapseExample{{message._id}}">
+                                    <div class="container-fluid wd-reply-window-formatting">
+                                        <div class="wd-heading-bottom-margin nowrapping">
+                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">From : </h2> <p><h2 class="wd-email-message-subject wd-remove-text-overflowing">{{message.from}}</h2> </p>
+                                        </div>
+                                        <div class=" wd-heading-bottom-margin nowrapping">
+                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Subject : </h2> <p><h2 class="wd-email-message-subject wd-remove-text-overflowing">{{message.message_title}}</h2></p>
+                                        </div>
+                                        <div class="wd-heading-bottom-margin nowrapping">
+                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Message : </h2> <p><h2 class="wd-email-message-subject wd-remove-text-overflowing">{{message.message_body}}</h2></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div id="collapseExampleReply{{message._id}}" class="collapse">
+                                    <!--<div class="card card-block">hello</div>-->
+                                    <div class="container-fluid wd-reply-window-formatting">
+                                        <h4 class="wd-heading-bottom-margin wd-email-messagetomessage-subject wd-remove-text-overflowing">Reply To Message</h4>
+                                        <div ng-show="model.error" class="alert alert-danger">
+                                            {{model.error}}
+                                        </div>
+                                        <div ng-show="model.successMessage" class="alert alert-success">
+                                            {{model.successMessage}}
+                                        </div>
+                                        <form ng-class="{'submitted': model.submitted}">
+                                            <!--<label class="wd-custom-label-color wd-email-messagetomessage-subject" for="toUser">To:</label>
+
+                                            <input class="input-group "
+                                                   placeholder="abc"
+                                                   id="toUser"
+                                                   value="{{message.from}}"
+                                                   ng-model="messageObject.forUser"
+                                                   required/>-->
+                                            <!--<div ng-show="model.messageTo" class="alert alert-info">{{model.messageTo}}</div>
+                                            <label class="wd-custom-label-color wd-email-messagetomessage-subject" for="subject">Subject:</label>
+                                            <input class="input-group"
+                                                   placeholder="subject of message"
+                                                   id="subject"
+                                                   ng-model="messageObject.message_title"
+                                                   required/>
+                                            <div ng-show="model.messageSubject" class="alert alert-info">{{model.messageSubject}}</div>-->
+
+                                            <label class="wd-custom-label-color wd-email-messagetomessage-subject wd-remove-text-overflowing" for="reply-message-content">Reply Message:</label>
+                                            <textarea class="input-group"
+                                                      placeholder="Best email service."
+                                                      ng-model="messageObject.message_body"
+                                                      id="reply-message-content" rows="8"></textarea>
+
+                                            <button type="submit" class="btn btn-success btn-block wd-remove-text-overflowing"
+                                                    ng-click="model.createMessage(model.currentUser._id,messageObject)">Create
+                                            </button>
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
                             </li>
                         </ul>
-
-                        <!--{{model.foundUser}}
-
-                        <div  ng-show="model.foundUsers">
-                            <div>
-                                <ul class="list-group wd-tile-shadow">
-                                    <li class="list-group-item active"><h2>Search Results:</h2></li>
-                                    <li ng-repeat="user in model.foundUsers" class="list-group-item"><button ng-click="model.showUserDetails(user)" type="button" class="btn btn-link"><h2>{{user.firstName}} {{user.lastName}}</h2></button></li>
-                                </ul>
-                            </div>
-
-                        </div>-->
-
-
-
                     </div>
-                    <!--class="wd-tile-shadow"-->
-                    <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
-                        <div ng-show="model.showMessageDetailsFlag">
-                            <div class="wd-tile-shadow">
-                                <div>
-                                    <ul class="list-group">
 
-                                        <li class="list-group-item active"><h2>Message Details</h2></li>
-                                        <li class="list-group-item"><h2>from : {{model.thisFrom}}</h2></li>
-                                        <li class="list-group-item"><h2>Title : {{model.thisMessageTitle}}</h2></li>
-                                        <li class="list-group-item"><h4>Message : <p>{{model.thisMessageBody}}</p></h4></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
-                        <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
-                    </div>
                     <div class="clearfix"> </div>
                 </div>
 
