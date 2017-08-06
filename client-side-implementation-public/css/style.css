@@ -132,6 +132,17 @@ html, body{
 
 
 
+.wd-custom-Message-Tab-label-setting{
+    color: #814807;
+    font-weight: bold;
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+
+
+
+
+
 .wd-custom-text-value-setting{
     color: green;
     font-style: oblique;
@@ -300,6 +311,22 @@ html, body{
     margin: 30px;
     border-radius: 25px;
 }
+
+
+
+
+.wd-search-people-window-formatting{
+    border:1px solid black;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: #F8E6CF;
+    border-radius: 15px;
+}
+
+
+
 
 
 .wd-message-border-background{

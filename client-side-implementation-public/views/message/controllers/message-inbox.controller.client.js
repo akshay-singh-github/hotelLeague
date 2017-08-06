@@ -84,15 +84,17 @@
 
 
         function messageOpen(message) {
-            message.isMessageNew = 'OLD';
-            message.dateRead = new Date();
-            messageService.updateMessage(message)
-                .then(function (result) {
-                    console.log("Message Open", result.data);
-                    return result.data;
+            if(message.isMessageNew === 'NEW'){
+                message.isMessageNew = 'OLD';
+                message.dateRead = new Date();
+                messageService.updateMessage(message)
+                    .then(function (result) {
+                        console.log("Message Open", result.data);
+                        return result.data;
 
-                });
+                    });
 
+            }
         }
 
 

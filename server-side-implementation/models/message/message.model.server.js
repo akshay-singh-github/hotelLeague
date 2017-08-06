@@ -51,7 +51,7 @@ module.exports = function () {
 
 
     function findMessageByReceiverId(uid) {
-        return messageModel.find({forUserId: uid});
+        return messageModel.find({forUserId: uid}).sort({date:-1});
     }
 
 
