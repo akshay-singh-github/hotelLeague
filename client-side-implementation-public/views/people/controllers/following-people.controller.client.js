@@ -55,6 +55,7 @@
                                         .then(function (response) {
                                             console.log("This is the updated followed User",response);
                                             $route.reload();
+                                            window.scrollTo(0, 0);
                                         })
                                 }
                             })
@@ -93,6 +94,7 @@
                                         .then(function (response) {
                                             console.log("This is the updated followed User",response);
                                             $route.reload();
+                                            window.scrollTo(0, 0);
                                         })
                                 }
                             })
