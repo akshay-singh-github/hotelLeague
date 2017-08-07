@@ -26,7 +26,7 @@ module.exports = function () {
         phone: String,
         followedBy:[String],
         following:[String],
-        favoriteHotel:[String],
+        favoriteHotelBooking:[String],
         dateCreated: {type: Date, default: Date.now}
     }, {collection:"hotelLeague.user"});
 

@@ -17,16 +17,62 @@
         model.removeAsFollower = removeAsFollower;
         model.currentUser = currentUser;
         model.getAllBookingsForUser = getAllBookingsForUser;
+        model.addAsFavoriteBooking = addAsFavoriteBooking;
+        model.removeAsFavoriteBooking = removeAsFavoriteBooking;
+        model.getAllFavoriteBookingsForUser = getAllFavoriteBookingsForUser;
 
 
+        /*model.favoritebookings*/
 
         function init() {
             model.getAllBookingsForUser();
+            model.getAllFavoriteBookingsForUser();
             model.showUserDetailsFlag = false;
         }
         init();
+        
+        
+        
+        function getAllFavoriteBookingsForUser() {
+
+            bookingService.getAllFavoriteBookingsForUser()
+                .then(function (result) {
+                    console.log("Fav bookings in controller", result);
+                    model.favoritebookings = result.data;
+                    console.log("model.favoritebookings", model.favoritebookings);
+                })
+            
+        }
+        
+        
 
 
+        function addAsFavoriteBooking(booking) {
+
+            model.currentUser.favoriteHotelBooking.push(booking._id);
+            userService.updateUserProfile(model.currentUser._id, model.currentUser)
+                .then(function (result) {
+                    $route.reload();
+                    return result;
+                });
+        }
+        
+        
+        
+        function removeAsFavoriteBooking(booking) {
+            var index = model.currentUser.favoriteHotelBooking.indexOf(booking._id);
+            if(index >= 0){
+                model.currentUser.favoriteHotelBooking.splice(index, 1);
+                userService.updateUserProfile(model.currentUser._id, model.currentUser)
+                    .then(function (result) {
+                        $route.reload();
+                        return result;
+                    });
+
+            }
+        }
+        
+        
 
 
         function getAllBookingsForUser() {

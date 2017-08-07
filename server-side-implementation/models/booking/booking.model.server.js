@@ -14,6 +14,7 @@ module.exports = function () {
         createBooking: createBooking,
         findBookingByUserId: findBookingByUserId,
         deleteBooking: deleteBooking,
+        findFavoriteBookingByUserId : findFavoriteBookingByUserId,
         setModel: setModel
     };
 
@@ -27,6 +28,15 @@ module.exports = function () {
     function setModel(_model) {
         model = _model;
     }
+
+
+    function findFavoriteBookingByUserId(favbookingIdArray) {
+
+        return bookingModel.find({'_id':{$in:favbookingIdArray}}).populate('hotel').exec();
+
+    }
+
+
 
     function deleteBooking(bookingId) {
         return bookingModel.remove({_id: bookingId});

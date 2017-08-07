@@ -13,12 +13,24 @@
         var api = {
             createBooking : createBooking,
             getBookingBycurrentUser : getBookingBycurrentUser,
+            getAllFavoriteBookingsForUser : getAllFavoriteBookingsForUser,
             deleteBooking : deleteBooking
 
 
         };
 
         return api;
+
+        function getAllFavoriteBookingsForUser() {
+            var url = "/api/getFavoriteBooking";
+
+            return $http.get(url)
+                .then(function (response) {
+                    console.log("Fav bookings in client", response);
+                    return response;
+                });
+
+        }
 
 
         function createBooking(bookingObj) {

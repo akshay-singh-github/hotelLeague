@@ -75,384 +75,130 @@
     <div class="container">
         <div class="container-fluid">
             <ul class="nav nav-tabs nav-justified">
-                <li class="active"><a data-toggle="tab" data-target="#wd-compose-review-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Bookings</h4></a></li>
-                <li ><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Favorites</h4></a></li>
+                <li class="active"><a data-toggle="tab" data-target="#wd-booking-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Bookings</h4></a></li>
+                <li ><a data-toggle="tab" data-target="#wd-booking-favorites-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Favorites</h4></a></li>
 
             </ul>
             <div class="tab-content">
-                <div class="tab-pane fade" id="wd-booking-id">
-                    <div class="booking-form">
-                        <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
-                        <div ng-show="model.successMessage" class="alert alert-success">{{model.successMessage}}</div>
-                        <div class="col-md-6">
-                            <form>
-                                <div ng-show="model.nameMessage" class="alert alert-danger">{{model.nameMessage}}</div>
-                                <h5>NAME</h5>
-                                <input type="text" value="" ng-model="model.customer.name">
-                                <h5>SUR NAME</h5>
-                                <input type="text" value="" ng-model="model.customer.surname">
-                                <div ng-show="model.contactMessage" class="alert alert-danger">
-                                    {{model.contactMessage}}
+                <div class="tab-pane fade in active" id="wd-booking-id">
+                    <div class="container">
+                        <div class="row" ng-show="model.bookings.length > 0">
+                            <!--<h3 class="wd-button-margin wd-email-messagetomessage-subject">Followers&nbsp;:&nbsp;</h3>-->
+                            <div class="wd-latest-flipping-trial-card-container col-xs-12 " ng-repeat="booking in model.bookings">
+                                <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
+                                    <div class="wd-latest-flipping-trial-front">
+                                        <div class="container-fluid">
+                                            <img src="{{booking.hotel.photoUrl}}" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
+                                            <h4 class="wd-button-margin wd-remove-text-overflowing wd-title-shadow">{{booking.hotel.hotelName}}</h4>
+                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin " style="color: green;font-size:100%"><span style="color: red;font-size: 100%;">For&nbsp;:&nbsp;</span>{{booking.name}}&nbsp;{{booking.surname}}</h5>
+                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin " style="color: green;font-size:100%"><span style="color: red;font-size: 100%;">Check - in&nbsp;:&nbsp;</span>{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}</h5>
+                                        </div>
+                                        <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover for details.</h5>
+                                        <i class="fa fa-star wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0" aria-hidden="true"></i>
+                                        <h5 class=" wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">Favorite</h5>
+                                        <i class="fa fa-star wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0" aria-hidden="true"></i>
+                                        <h5 class=" wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Not Favorite</h5>
+                                    </div>
+                                    <div class="wd-latest-flipping-trial-back">
+                                        <div class="container-fluid wd-search-people-window-formatting ">
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking._id">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing ">Booking ID&nbsp;:&nbsp; </h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking._id}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.name">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Booked For&nbsp;:&nbsp; </h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.name}}&nbsp;{{booking.surname}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.checkinDate">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Check - in&nbsp;:&nbsp;</h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.checkoutDate">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Check - out&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.checkoutMonth}}&nbsp;/&nbsp;{{booking.checkoutDate}}&nbsp;/&nbsp;{{booking.checkoutYear}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.phone">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Guest Phone&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.phone}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.MemberCount">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Guest Count&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.MemberCount}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.hotel.hotelName">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Hotel Name&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelName}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.hotel.hotelAddress">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Hotel Address&nbsp;:&nbsp;</h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelAddress}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking ">
+                                                <button type="button" class="btn btn-success" ng-click="model.addAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Add To Favorite</button>
+                                                <button type="button" class="btn btn-danger" ng-click="model.removeAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">Remove From Favorite</button>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
                                 </div>
-                                <h5>E-MAIL</h5>
-                                <input type="text" value="" ng-model="model.customer.email">
-                                <h5>PHONE</h5>
-                                <input type="text" value="" ng-model="model.customer.phone">
-                            </form>
-                        </div>
-                        <div class="col-md-6">
-                            <form>
-                                <div ng-show="model.checkinMessage" class="alert alert-danger">
-                                    {{model.checkinMessage}}
-                                </div>
-                                <h5>CHECK IN</h5>
-                                <select class="arrival" ng-model="model.customer.checkinDate">
-                                    <option>01</option>
-                                    <option>02</option>
-                                    <option>03</option>
-                                    <option>04</option>
-                                    <option>05</option>
-                                    <option>06</option>
-                                    <option>08</option>
-                                    <option>09</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
-                                    <option>13</option>
-                                    <option>14</option>
-                                    <option>15</option>
-                                    <option>16</option>
-                                    <option>17</option>
-                                    <option>18</option>
-                                    <option>19</option>
-                                    <option>20</option>
-                                    <option>21</option>
-                                    <option>22</option>
-                                    <option>23</option>
-                                    <option>24</option>
-                                    <option>25</option>
-                                    <option>26</option>
-                                    <option>27</option>
-                                    <option>28</option>
-                                    <option>29</option>
-                                    <option>30</option>
-                                    <option>31</option>
-                                </select>
-                                <select class="arrival" ng-model="model.customer.checkinMonth">
-                                    <option value="1">Jan</option>
-                                    <option value="2">Feb</option>
-                                    <option value="3">Mar</option>
-                                    <option value="4">Apr</option>
-                                    <option value="5">May</option>
-                                    <option value="6">June</option>
-                                    <option value="7">July</option>
-                                    <option value="8">Aug</option>
-                                    <option value="9">Sep</option>
-                                    <option value="10">Oct</option>
-                                    <option value="11">Nov</option>
-                                    <option value="12">Dec</option>
-                                </select>
-                                <select class="arrival" ng-model="model.customer.checkinYear">
-                                    <option>2017</option>
-                                    <option>2018</option>
-                                    <option>2019</option>
-                                    <option>2020</option>
-                                    <option>2021</option>
-                                    <option>2022</option>
-                                </select>
-                                <div ng-show="model.checkoutMessage" class="alert alert-danger">
-                                    {{model.checkoutMessage}}
-                                </div>
-                                <h5>CHECK OUT</h5>
-                                <select class="arrival" ng-model="model.customer.checkoutDate">
-                                    <option>01</option>
-                                    <option>02</option>
-                                    <option>03</option>
-                                    <option>04</option>
-                                    <option>05</option>
-                                    <option>06</option>
-                                    <option>08</option>
-                                    <option>09</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
-                                    <option>13</option>
-                                    <option>14</option>
-                                    <option>15</option>
-                                    <option>16</option>
-                                    <option>17</option>
-                                    <option>18</option>
-                                    <option>19</option>
-                                    <option>20</option>
-                                    <option>21</option>
-                                    <option>22</option>
-                                    <option>23</option>
-                                    <option>24</option>
-                                    <option>25</option>
-                                    <option>26</option>
-                                    <option>27</option>
-                                    <option>28</option>
-                                    <option>29</option>
-                                    <option>30</option>
-                                    <option>31</option>
-                                </select>
-                                <select class="arrival" ng-model="model.customer.checkoutMonth">
-                                    <option value="1">Jan</option>
-                                    <option value="2">Feb</option>
-                                    <option value="3">Mar</option>
-                                    <option value="4">Apr</option>
-                                    <option value="5">May</option>
-                                    <option value="6">June</option>
-                                    <option value="7">July</option>
-                                    <option value="8">Aug</option>
-                                    <option value="9">Sep</option>
-                                    <option value="10">Oct</option>
-                                    <option value="11">Nov</option>
-                                    <option value="12">Dec</option>
-                                </select>
-                                <select class="arrival" ng-model="model.customer.checkoutYear">
-                                    <option>2017</option>
-                                    <option>2018</option>
-                                    <option>2019</option>
-                                    <option>2020</option>
-                                    <option>2021</option>
-                                    <option>2022</option>
-                                </select>
-                                <div ng-show="model.MemberCountMessage" class="alert alert-danger">
-                                    {{model.MemberCountMessage}}
-                                </div>
-                                <h5 class="mem">MEMBERS</h5>
-                                <select class="arrival " ng-model="model.customer.MemberCount">
-                                    <option selected="selected" value=1>1</option>
-                                    <option value=2>2</option>
-                                    <option value=3>3</option>
-                                    <option value=4>4</option>
-                                    <option value=5>5</option>
-                                    <option value=6>6</option>
-                                </select>
-                                <!--<input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small" ng-model="model.customer.MemberCount">-->
-                                <h5>REQUIRED</h5>
-                                <textarea value="" ng-model="model.customer.Instructions"></textarea>
-                                <input type="submit" value="Submit" ng-click="model.createBooking(model.customer)">
-                                <input type="reset" value="Reset">
-                            </form>
+                            </div>
                         </div>
 
                     </div>
                 </div>
 
 
-                <div id="wd-compose-review-id" class="tab-pane fade in active">
+                <div id="wd-booking-favorites-id" class="tab-pane fade">
                     <div class="container">
-                        <div class="panel-group">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-target="#collapse1" type="button" class="btn btn-warning btn-block wd-remove-text-overflowing" href="">Click to Write A Review.</a>
-                                    </h4>
-                                </div>
-                                <div id="collapse1" class="panel-collapse collapse">
-                                    <div class="container-fluid">
-                                        <h3>Review : </h3>
-                                        <div ng-show="model.Reviewerror" class="alert alert-danger">
-                                            {{model.Reviewerror}}
-                                        </div>
-                                        <div ng-show="model.ReviewsuccessMessage" class="alert alert-success">
-                                            {{model.ReviewsuccessMessage}}
-                                        </div>
-                                        <form ng-class="{'submitted': model.Reviewsubmitted}">
-                                            <label class="wd-custom-label-color" for="Title">Title :</label>
-                                            <div ng-show="model.ReviewTitleMessage" class="alert alert-info">
-                                                {{model.ReviewTitleMessage}}
-                                            </div>
-                                            <input class="input-group "
-                                                   placeholder="abc"
-                                                   id="Title"
-                                                   ng-model="reviewObject.ReviewTitle"
-                                                   required/>
-                                            <div ng-show="model.messageReviewContent" class="alert alert-info">
-                                                {{model.messageReviewContent}}
-                                            </div>
-
-                                            <label class="wd-custom-label-color" for="Content">Review Content :</label>
-                                            <textarea class="input-group"
-                                                      placeholder="review details"
-                                                      ng-model="reviewObject.ReviewContent"
-                                                      id="Content" rows="8"></textarea>
-
-                                            <button type="submit" class="btn btn-success btn-block "
-                                                    ng-click="model.createReview(reviewObject)">Post Review
-                                            </button>
-                                        </form>
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container-fluid">
-
-                        <!--<div class="card text-center" ng-repeat="review in model.reviews" style="background-color: lightsalmon; border-color: black;">
-                            <div class="card-header">
-                                {{review.reviewer}} says:
-                            </div>
-                            <div class="card-block">
-                                <h4 class="card-title">{{review.ReviewTitle}}</h4>
-                                <p class="card-text">{{review.ReviewContent}}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                            &lt;!&ndash;<div class="card-footer text-muted">
-                                2 days ago
-                            </div>&ndash;&gt;
-                        </div>-->
-
-                        <!--<div class="row">
-                            <div class="col-sm-6 card wd-tile-shadow " ng-repeat="review in model.reviews" >
-                                <div class=" wd-card-margin">
-                                    <div class="card-block">
-                                        <h3 class="card-title">{{review.reviewer}} says:</h3>
-                                        &lt;!&ndash;<h3 class="card-title">{{review.ReviewTitle}}</h3>&ndash;&gt;
-                                        <p class="card-text">{{review.ReviewContent}}</p>
-                                        <a href="" class="btn btn-primary wd-button-margin">Go somewhere</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
-
-
-
-
-
-
-                        <div class="row">
-                            <div class="wd-latest-flipping-trial-card-container col-xs-12 " ng-repeat="review in model.reviews">
+                        <div class="row" ng-show="model.bookings.length > 0">
+                            <!--<h3 class="wd-button-margin wd-email-messagetomessage-subject">Followers&nbsp;:&nbsp;</h3>-->
+                            <div class="wd-latest-flipping-trial-card-container col-xs-12 " ng-repeat="booking in model.favoritebookings">
                                 <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
                                     <div class="wd-latest-flipping-trial-front">
                                         <div class="container-fluid">
-                                            <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
-                                            <h3>{{review.reviewer}} says:</h3>
-                                            <h5 class="wd-review-title-color wd-remove-text-overflowing">"{{review.ReviewTitle}}"</h5>
-
-
-
-                                            <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb wd-title-shadow" ng-show="model.islikedBycurrentUser(review)" aria-hidden="true"></i>
-                                            <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb" ng-show="model.isNotlikedBycurrentUser(review)" aria-hidden="true"></i>
-                                            <h5 class="pull-left wd-positive-thumb wd-remove-text-overflowing">{{review.Likes}}</h5>
-                                            <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb wd-title-shadow" ng-show="model.isDislikedBycurrentUser(review)" aria-hidden="true"></i>
-                                            <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb " ng-show="model.isNotDislikedBycurrentUser(review)" aria-hidden="true"></i>
-                                            <h5 class="pull-right wd-negative-thumb wd-remove-text-overflowing">{{review.Dislikes}}</h5>
+                                            <img src="{{booking.hotel.photoUrl}}" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
+                                            <h4 class="wd-button-margin wd-remove-text-overflowing wd-title-shadow">{{booking.hotel.hotelName}}</h4>
+                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin " style="color: green;font-size:100%"><span style="color: red;font-size: 100%;">For&nbsp;:&nbsp;</span>{{booking.name}}&nbsp;{{booking.surname}}</h5>
+                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin " style="color: green;font-size:100%"><span style="color: red;font-size: 100%;">Check - in&nbsp;:&nbsp;</span>{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}</h5>
                                         </div>
-
-                                        <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover/Click for detailed review.</h5>
-
+                                        <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover for details.</h5>
+                                        <i class="fa fa-star wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0" aria-hidden="true"></i>
+                                        <h5 class=" wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">Favorite</h5>
+                                        <i class="fa fa-star wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0" aria-hidden="true"></i>
+                                        <h5 class=" wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Not Favorite</h5>
                                     </div>
                                     <div class="wd-latest-flipping-trial-back">
-                                        <h3 class="wd-review-detail-margin-top wd-remove-text-overflowing">"{{review.ReviewContent}}"</h3>
-                                        <button type="button" class="btn btn-success" ng-click="model.likeReview(review)">Like Review</button>
-                                        <button type="button" class="btn btn-danger" ng-click="model.dislikeReview(review)">Dislike Review</button>
-                                        <button type="button" class="btn btn-primary" ng-click="model.deleteReview(review)" ng-show="model.iswrittenByCurrentUser(review)">Delete Review</button>
+                                        <div class="container-fluid wd-search-people-window-formatting ">
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking._id">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing ">Booking ID&nbsp;:&nbsp; </h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking._id}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.name">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Booked For&nbsp;:&nbsp; </h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.name}}&nbsp;{{booking.surname}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.checkinDate">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Check - in&nbsp;:&nbsp;</h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.checkoutDate">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Check - out&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.checkoutMonth}}&nbsp;/&nbsp;{{booking.checkoutDate}}&nbsp;/&nbsp;{{booking.checkoutYear}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.phone">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Guest Phone&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.phone}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.MemberCount">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Guest Count&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.MemberCount}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.hotel.hotelName">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Hotel Name&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelName}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.hotel.hotelAddress">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Hotel Address&nbsp;:&nbsp;</h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelAddress}}</span>
+                                            </div>
+                                            <div class="wd-button-margin-booking ">
+                                                <button type="button" class="btn btn-success" ng-click="model.addAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Add To Favorite</button>
+                                                <button type="button" class="btn btn-danger" ng-click="model.removeAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">Remove From Favorite</button>
+                                            </div>
+                                        </div>
+
 
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-
-
-
-
-
-
-                        <!--
-                                                <div class="row">
-                                                    <div ng-repeat="review in model.reviews">
-                                                    <div class="col-sm-6 " >
-                                                        <div class="flip ">
-                                                            <div class="card wd-tile-shadow">
-                                                                <div class="face front">
-                                                                    <div class="inner text-center">
-                                                                        &lt;!&ndash;<img src="http://vinculumgroup.com/v2/wp-content/uploads/2015/08/nykaa.jpg">&ndash;&gt;
-                                                                        <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="325" height="275">
-                                                                        <h3>{{review.reviewer}} says:</h3>
-                                                                            &lt;!&ndash;<img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">&ndash;&gt;
-                                                                    </div>
-                                                                </div>
-                                                                <div class="face back">
-                                                                    <div class="inner text-center">
-                                                                        <h3>Improved efficiency through automation</h3>
-                                                                        <button type="button" class="btn btn-default">Know More</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                    &lt;!&ndash;<div class="col-sm-6 " >
-                                                        <div class="flip ">
-                                                            <div class="card wd-tile-shadow">
-                                                                <div class="face front">
-                                                                    <div class="inner text-center">
-                                                                        &lt;!&ndash;<img src="http://vinculumgroup.com/v2/wp-content/uploads/2015/08/nykaa.jpg">&ndash;&gt;
-                                                                        <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="325" height="275">
-                                                                        <h3>{{review.reviewer}} says:</h3>
-                                                                        &lt;!&ndash;<img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">&ndash;&gt;
-                                                                    </div>
-                                                                </div>
-                                                                <div class="face back">
-                                                                    <div class="inner text-center">
-                                                                        <h3>Improved efficiency through automation</h3>
-                                                                        <button type="button" class="btn btn-default">Know More</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>&ndash;&gt;
-                                                </div>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <!--<div ng-repeat="review in model.reviews">
-                            <h1>{{review.reviewer}} says:</h1>
-                            <h4>{{review.ReviewTitle}}</h4>
-                            <p>{{review.ReviewContent}}</p>
-                        </div>-->
-
                     </div>
-
-
-
-
                 </div>
             </div>
 
