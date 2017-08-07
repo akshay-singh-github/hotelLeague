@@ -25,7 +25,6 @@
                         <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
-                        <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
@@ -37,10 +36,10 @@
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
                         <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
-                        <li ng-show="model.currentUser._id"><a href="">Search People</a></li>
-                        <li ng-show="model.currentUser._id"><a href="">Following</a></li>
-                        <li ng-show="model.currentUser._id"><a href="">Followers</a></li>
-                        <li ng-show="model.currentUser._id"><a href="">Reservations</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/following">Following</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/follower">Followers</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/reservation">Bookings</a></li>
                         <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>

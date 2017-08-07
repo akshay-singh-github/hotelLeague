@@ -63,6 +63,30 @@
                 resolve:{
                     currentUser: checkLoggedInUser
                 }
+            })
+            .when('/following', {
+                templateUrl:'views/people/templates/following-people.view.client.html',
+                controller: "followingController",
+                controllerAs: "model",
+                resolve:{
+                    currentUser: checkLoggedInUser
+                }
+            })
+            .when('/follower', {
+                templateUrl:'views/people/templates/follower-people.view.client.html',
+                controller: "followerController",
+                controllerAs: "model",
+                resolve:{
+                    currentUser: checkLoggedInUser
+                }
+            })
+            .when('/reservation', {
+                templateUrl:'views/hotelDetails/templates/reservation.view.client.html',
+                controller: "reservationController",
+                controllerAs: "model",
+                resolve:{
+                    currentUser: checkLoggedInUser
+                }
             });
 
     }

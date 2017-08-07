@@ -20,6 +20,9 @@ module.exports=function (app, model) {
 
     app.post("/api/login" ,passport.authenticate('local') ,login);
     app.get("/api/user",findUserbyQueryParameter);
+    app.get("/api/user/:userId",findUserByUserId);
+    app.get("/api/getAllfollowers/:userId",getAllfollowers);
+    app.get("/api/getAllfollowing/:userId",getAllfollowing);
     app.get("/api/userRegex",findUserbyRegexQueryParameter);
     app.post('/api/register',register);
     app.get('/api/checkLoggedInUser', checkLoggedInUser);
@@ -27,6 +30,44 @@ module.exports=function (app, model) {
     app.post('/api/logoutUser',logoutUser);
     app.put('/api/user/:uid',isAdminorCurrentUser , updateUserProfile);
     app.post('/api/unregisterUserProfile',unregisterUserProfile);
+
+
+
+    function getAllfollowing(req, res) {
+        var userId = req.params.userId;
+        model.userModel.getAllfollowing(userId)
+            .then(function (users) {
+                console.log(users);
+                res.json(users);
+            },function (error) {
+                console.log(error);
+                return error;
+            });
+    }
+
+
+    function getAllfollowers(req, res) {
+        var userId = req.params.userId;
+        model.userModel.getAllfollowers(userId)
+            .then(function (users) {
+                console.log(users);
+                res.json(users);
+            },function (error) {
+                console.log(error);
+                return error;
+            });
+
+    }
+
+
+
+    function findUserByUserId(req, res) {
+        var userId = req.params.userId;
+        model.userModel.findUserById(userId)
+            .then(function (user) {
+                res.json(user);
+            })
+    }
 
 
 

@@ -14,18 +14,51 @@
             register : register,
             getApiKey : getApiKey,
             findUserByUsername : findUserByUsername,
+            findUserByUserId : findUserByUserId,
             checkLoggedInUser : checkLoggedInUser,
             checkAdminUser : checkAdminUser,
             logout : logout,
             updateUserProfile : updateUserProfile,
             unregisterUserProfile : unregisterUserProfile,
-            findUserByUsernameRegex : findUserByUsernameRegex
+            findUserByUsernameRegex : findUserByUsernameRegex,
+            getAllfollowers : getAllfollowers,
+            getAllfollowing : getAllfollowing
             /*getHotelDetails : getHotelDetails*/
 
 
         };
 
         return api;
+
+        function getAllfollowing(userId) {
+            var url= "/api/getAllfollowing/"+userId;
+            return $http.get(url)
+                .then(function (result) {
+                    return result.data;
+                })
+        }
+
+
+        function getAllfollowers(userId) {
+            var url= "/api/getAllfollowers/"+userId;
+            return $http.get(url)
+                .then(function (result) {
+                    return result.data;
+                })
+
+        }
+
+
+
+        function findUserByUserId(userId) {
+            var url = '/api/user/' + userId;
+            return $http.get(url)
+                .then(function (result) {
+                    return result.data;
+                })
+
+        }
+
 
 
         function findUserByUsernameRegex(username) {

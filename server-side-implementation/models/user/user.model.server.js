@@ -23,11 +23,24 @@ module.exports = function () {
         findUserByFacebookId : findUserByFacebookId,
         setModel: setModel,
         deleteUserProfile : deleteUserProfile,
-        findUserByRegexUsername : findUserByRegexUsername
+        findUserByRegexUsername : findUserByRegexUsername,
+        getAllfollowers : getAllfollowers,
+        getAllfollowing : getAllfollowing
     };
 
     return api;
-    
+
+
+    function getAllfollowing(userId) {
+        return userModel.find({'followedBy':{$in:[userId]}});
+    }
+
+    function getAllfollowers(userId) {
+
+        return userModel.find({'following':{$in:[userId]}});
+
+    }
+
     
     
     function findUserByRegexUsername(username) {
