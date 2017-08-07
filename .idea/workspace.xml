@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7f29be4-a40d-4905-8ed0-95bb0d7bafa1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/client_config.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/client_config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/index.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/message/templates/message-inbox.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/message/templates/message-inbox.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/search-people.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/search-people.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-login.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-login.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-profile.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-profile.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-register.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-register.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/services/user.service.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/services/user.service.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,7 +24,19 @@
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="560">
-              <caret line="30" column="32" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="32" />
+              <caret line="56" column="60" lean-forward="false" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#38#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="follower-people.controller.client.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.controller.client.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="56" column="102" lean-forward="false" selection-start-line="56" selection-start-column="102" selection-end-line="56" selection-end-column="102" />
               <folding>
                 <element signature="e#0#38#0" expanded="false" />
               </folding>
@@ -54,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.service.server.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.service.server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-side-implementation/services/user.service.server.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="358">
@@ -181,11 +181,11 @@
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/follower-people.view.client.html" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/user/user.schema.server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/following-people.view.client.html" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.controller.client.js" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/services/user.service.server.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.controller.client.js" />
       </list>
     </option>
   </component>
@@ -690,12 +690,12 @@
       <workItem from="1501537555800" duration="25457000" />
       <workItem from="1501695440993" duration="10015000" />
       <workItem from="1501709833964" duration="64116000" />
-      <workItem from="1501930799708" duration="81537000" />
+      <workItem from="1501930799708" duration="81970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="358322000" />
+    <option name="totallyTimeSpent" value="358755000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -707,7 +707,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
+    <frame x="-16" y="-16" width="3872" height="2092" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21319261" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1261,26 +1261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1280">
-          <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="30" column="32" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
@@ -1310,6 +1290,26 @@
         <state relative-caret-position="358">
           <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="56" column="60" lean-forward="false" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.controller.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="56" column="102" lean-forward="false" selection-start-line="56" selection-start-column="102" selection-end-line="56" selection-end-column="102" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

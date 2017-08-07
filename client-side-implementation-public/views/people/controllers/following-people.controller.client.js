@@ -54,6 +54,7 @@
                                     userService.updateUserProfile(user._id, user)
                                         .then(function (response) {
                                             console.log("This is the updated followed User",response);
+                                            $route.reload();
                                         })
                                 }
                             })
@@ -91,6 +92,7 @@
                                     userService.updateUserProfile(user._id, user)
                                         .then(function (response) {
                                             console.log("This is the updated followed User",response);
+                                            $route.reload();
                                         })
                                 }
                             })
