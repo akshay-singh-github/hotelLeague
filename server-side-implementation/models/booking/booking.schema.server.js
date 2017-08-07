@@ -12,6 +12,7 @@ module.exports = function () {
         forUserId: String,
         name :String,
         surname :String,
+        hotel : {type: mongoose.Schema.Types.ObjectId, ref: "hotelModel"},
         email :String,
         phone :String,
         checkinDate :String,

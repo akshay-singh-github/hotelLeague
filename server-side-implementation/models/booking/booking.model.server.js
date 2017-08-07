@@ -44,7 +44,7 @@ module.exports = function () {
 
 
     function findBookingByUserId(uid) {
-        return bookingModel.find({forUserId: uid});
+        return bookingModel.find({forUserId: uid}).populate('hotel').exec();
     }
 
 

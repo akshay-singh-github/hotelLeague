@@ -25,6 +25,7 @@
         model.isNotDislikedBycurrentUser = isNotDislikedBycurrentUser;
         model.dislikeReview = dislikeReview;
         model.iswrittenByCurrentUser = iswrittenByCurrentUser;
+        model.reload = reload;
 
 
 
@@ -40,6 +41,12 @@
 
         }
         init();
+
+
+        function reload() {
+            $route.reload();
+
+        }
 
 
         function deleteReview(review) {
@@ -294,6 +301,7 @@
 
                 model.submitted = false;
                 bookingObject.forUser = currentUser.username;
+                bookingObject.hotel = model.hotelObject;
                 userService.findUserByUsername(bookingObject.forUser)
                     .then(function (result) {
                         if(!result || typeof result === "undefined"){
@@ -309,6 +317,7 @@
                                         bookingService
                                             .createBooking(bookingObject)
                                             .then(function (result) {
+                                                console.log("bookingObject", bookingObject);
                                                 return result.data;
                                             });
 
@@ -321,6 +330,7 @@
                                     bookingService
                                         .createBooking(bookingObject)
                                         .then(function (result) {
+                                            console.log("bookingObject", bookingObject);
                                             return result.data;
                                         });}
 
@@ -333,6 +343,7 @@
                                         bookingService
                                             .createBooking(bookingObject)
                                             .then(function (result) {
+                                                console.log("bookingObject", bookingObject);
                                                 return result.data;
                                             });
 

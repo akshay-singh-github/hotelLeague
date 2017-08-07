@@ -6,7 +6,7 @@
     angular.module("HotelLeagueMaker")
         .controller("reservationController", reservationController);
 
-    function reservationController($route, currentUser, userService, $location) {
+    function reservationController($route, currentUser,bookingService, userService, $location) {
         var model = this;
 
         model.login = login;
@@ -16,15 +16,27 @@
         model.addAsFollower = addAsFollower;
         model.removeAsFollower = removeAsFollower;
         model.currentUser = currentUser;
+        model.getAllBookingsForUser = getAllBookingsForUser;
 
 
 
         function init() {
+            model.getAllBookingsForUser();
             model.showUserDetailsFlag = false;
         }
         init();
 
 
+
+
+        function getAllBookingsForUser() {
+
+            bookingService.getBookingBycurrentUser()
+                .then(function (result) {
+                    model.bookings = result.data;
+                    console.log("model.bookings", model.bookings);
+                })
+        }
 
 
         function addAsFollower(user) {

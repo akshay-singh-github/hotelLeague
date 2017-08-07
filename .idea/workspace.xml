@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7f29be4-a40d-4905-8ed0-95bb0d7bafa1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.controller.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.controller.client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/reservation.controller.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/reservation.controller.client.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/reservation.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/reservation.view.client.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/models/booking/booking.model.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/models/booking/booking.model.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/models/booking/booking.schema.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/models/booking/booking.schema.server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="following-people.controller.client.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js">
+      <file leaf-file-name="reservation.controller.client.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/reservation.controller.client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+            <state relative-caret-position="1000">
+              <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
               <folding>
                 <element signature="e#0#38#0" expanded="false" />
               </folding>
@@ -33,54 +38,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="follower-people.controller.client.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.controller.client.js">
+      <file leaf-file-name="following-people.view.client.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/templates/following-people.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="249" selection-end-column="6" />
               <folding>
-                <element signature="e#0#38#0" expanded="false" />
+                <element signature="e#6419#6425#0" expanded="true" />
+                <element signature="e#6425#6431#0" expanded="true" />
+                <element signature="e#8345#8351#0" expanded="true" />
+                <element signature="e#8352#8358#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#8774#8780#0" expanded="true" />
+                <element signature="e#8781#8787#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#9198#9204#0" expanded="true" />
+                <element signature="e#9205#9211#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#9618#9624#0" expanded="true" />
+                <element signature="e#9625#9631#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#10035#10041#0" expanded="true" />
+                <element signature="e#10042#10048#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#10461#10467#0" expanded="true" />
+                <element signature="e#10468#10474#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#10929#10935#0" expanded="true" />
+                <element signature="e#10936#10942#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.service.client.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.service.server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server-side-implementation/services/user.service.server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.model.server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js">
+      <file leaf-file-name="reservation.view.client.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/reservation.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="680">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <caret line="78" column="167" lean-forward="true" selection-start-line="78" selection-start-column="167" selection-end-line="78" selection-end-column="167" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.schema.server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server-side-implementation/models/user/user.schema.server.js">
+      <file leaf-file-name="follower-people.view.client.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/templates/follower-people.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="-1680">
+              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding>
+                <element signature="e#6420#6426#0" expanded="true" />
+                <element signature="e#6426#6432#0" expanded="true" />
+                <element signature="e#8346#8352#0" expanded="true" />
+                <element signature="e#8353#8359#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#8775#8781#0" expanded="true" />
+                <element signature="e#8782#8788#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#9199#9205#0" expanded="true" />
+                <element signature="e#9206#9212#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#9619#9625#0" expanded="true" />
+                <element signature="e#9626#9632#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#10036#10042#0" expanded="true" />
+                <element signature="e#10043#10049#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#10462#10468#0" expanded="true" />
+                <element signature="e#10469#10475#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#10930#10936#0" expanded="true" />
+                <element signature="e#10937#10943#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,10 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>createReview</find>
-      <find>deleteReview</find>
-      <find>wd-tile-footer-info</find>
-      <find>wd-superscript-parameter</find>
       <find>span</find>
       <find>wd-message-inbox-title-bar</find>
       <find>wd-font-color-message</find>
@@ -128,6 +155,10 @@
       <find>wd-review-title-color</find>
       <find>wd-latest-flipping-trial-card-container</find>
       <find>wd-negative-thumb</find>
+      <find>model.hotelObject</find>
+      <find>hotel booking</find>
+      <find>reload</find>
+      <find>Hotel Booking</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,8 +173,6 @@
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/message/message-inbox.view.client.html" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/message/message.schema.server.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/booking.model.server.js" />
-        <option value="$PROJECT_DIR$/server-side-implementation/models/booking/booking.model.server.js" />
-        <option value="$PROJECT_DIR$/server-side-implementation/models/booking/booking.schema.server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/services/booking.service.client.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelBooking/templates/hotel-booking.view.client.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelBooking/controllers/hotel-booking.controller.client.js" />
@@ -157,7 +186,6 @@
         <option value="$PROJECT_DIR$/server-side-implementation/services/google.service.server.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/review/review.schema.server.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/review/review.model.server.js" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/services/review.service.client.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/services/review.service.server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/services/message.service.client.js" />
@@ -168,7 +196,6 @@
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/search-people.controller.client.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.view.client.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.view.client.js" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/reservation.controller.client.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/client_config.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/index.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/search-people.view.client.html" />
@@ -176,8 +203,6 @@
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-profile.view.client.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-login.view.client.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/message/templates/message-inbox.view.client.html" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/reservation.view.client.html" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/follower-people.view.client.html" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/user/user.schema.server.js" />
@@ -187,6 +212,12 @@
         <option value="$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.controller.client.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js" />
+        <option value="$PROJECT_DIR$/server-side-implementation/models/booking/booking.schema.server.js" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js" />
+        <option value="$PROJECT_DIR$/server-side-implementation/models/booking/booking.model.server.js" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/reservation.controller.client.js" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/reservation.view.client.html" />
       </list>
     </option>
   </component>
@@ -424,6 +455,10 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -470,6 +505,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="people" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client-side-implementation-public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client-side-implementation-public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelDetails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client-side-implementation-public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelDetails" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -691,12 +792,12 @@
       <workItem from="1501537555800" duration="25457000" />
       <workItem from="1501695440993" duration="10015000" />
       <workItem from="1501709833964" duration="64116000" />
-      <workItem from="1501930799708" duration="82671000" />
+      <workItem from="1501930799708" duration="89551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="359456000" />
+    <option name="totallyTimeSpent" value="366336000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -792,27 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="43" column="17" lean-forward="false" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/services/booking.service.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/booking/booking.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/services/booking.service.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1480">
-          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -949,36 +1029,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/search-people.controller.client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="196" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/reservation.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/client_config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="82" column="19" lean-forward="true" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1071,94 +1125,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/reservation.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="29" column="80" lean-forward="true" selection-start-line="29" selection-start-column="80" selection-end-line="29" selection-end-column="80" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#form#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#5774#5780#0" expanded="true" />
-            <element signature="e#5781#5787#0" expanded="true" />
-            <element signature="e#6404#6410#0" expanded="true" />
-            <element signature="e#6410#6416#0" expanded="true" />
-            <element signature="e#8330#8336#0" expanded="true" />
-            <element signature="e#8337#8343#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#8759#8765#0" expanded="true" />
-            <element signature="e#8766#8772#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#9183#9189#0" expanded="true" />
-            <element signature="e#9190#9196#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#9603#9609#0" expanded="true" />
-            <element signature="e#9610#9616#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#10020#10026#0" expanded="true" />
-            <element signature="e#10027#10033#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#10446#10452#0" expanded="true" />
-            <element signature="e#10453#10459#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#10914#10920#0" expanded="true" />
-            <element signature="e#10921#10927#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="39" column="80" lean-forward="false" selection-start-line="39" selection-start-column="80" selection-end-line="39" selection-end-column="80" />
-          <folding>
-            <element signature="e#5416#5422#0" expanded="true" />
-            <element signature="e#5422#5428#0" expanded="true" />
-            <element signature="e#5429#5435#0" expanded="true" />
-            <element signature="e#5435#5441#0" expanded="true" />
-            <element signature="e#5775#5781#0" expanded="true" />
-            <element signature="e#5781#5787#0" expanded="true" />
-            <element signature="e#5788#5794#0" expanded="true" />
-            <element signature="e#5794#5800#0" expanded="true" />
-            <element signature="e#6137#6143#0" expanded="true" />
-            <element signature="e#6143#6149#0" expanded="true" />
-            <element signature="e#6150#6156#0" expanded="true" />
-            <element signature="e#6156#6162#0" expanded="true" />
-            <element signature="e#6499#6505#0" expanded="true" />
-            <element signature="e#6505#6511#0" expanded="true" />
-            <element signature="e#6512#6518#0" expanded="true" />
-            <element signature="e#6518#6524#0" expanded="true" />
-            <element signature="e#6862#6868#0" expanded="true" />
-            <element signature="e#6868#6874#0" expanded="true" />
-            <element signature="e#6875#6881#0" expanded="true" />
-            <element signature="e#6881#6887#0" expanded="true" />
-            <element signature="e#7229#7235#0" expanded="true" />
-            <element signature="e#7235#7241#0" expanded="true" />
-            <element signature="e#7242#7248#0" expanded="true" />
-            <element signature="e#7248#7254#0" expanded="true" />
-            <element signature="e#7607#7613#0" expanded="true" />
-            <element signature="e#7613#7619#0" expanded="true" />
-            <element signature="e#7620#7626#0" expanded="true" />
-            <element signature="e#7626#7632#0" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#div#4;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1177,88 +1148,6 @@
         <state relative-caret-position="760">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/booking/booking.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/templates/follower-people.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="249" selection-end-column="6" />
-          <folding>
-            <element signature="e#6420#6426#0" expanded="true" />
-            <element signature="e#6426#6432#0" expanded="true" />
-            <element signature="e#8346#8352#0" expanded="true" />
-            <element signature="e#8353#8359#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#8775#8781#0" expanded="true" />
-            <element signature="e#8782#8788#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#9199#9205#0" expanded="true" />
-            <element signature="e#9206#9212#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#9619#9625#0" expanded="true" />
-            <element signature="e#9626#9632#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#10036#10042#0" expanded="true" />
-            <element signature="e#10043#10049#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#10462#10468#0" expanded="true" />
-            <element signature="e#10469#10475#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#10930#10936#0" expanded="true" />
-            <element signature="e#10937#10943#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/templates/following-people.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="102" column="103" lean-forward="true" selection-start-line="102" selection-start-column="103" selection-end-line="102" selection-end-column="118" />
-          <folding>
-            <element signature="e#6419#6425#0" expanded="true" />
-            <element signature="e#6425#6431#0" expanded="true" />
-            <element signature="e#8345#8351#0" expanded="true" />
-            <element signature="e#8352#8358#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#8774#8780#0" expanded="true" />
-            <element signature="e#8781#8787#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#9198#9204#0" expanded="true" />
-            <element signature="e#9205#9211#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#9618#9624#0" expanded="true" />
-            <element signature="e#9625#9631#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#10035#10041#0" expanded="true" />
-            <element signature="e#10042#10048#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#10461#10467#0" expanded="true" />
-            <element signature="e#10468#10474#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#10929#10935#0" expanded="true" />
-            <element signature="e#10936#10942#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1306,11 +1195,201 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+        <state relative-caret-position="240">
+          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.schema.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="24" column="57" lean-forward="false" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/services/booking.service.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1000">
+          <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/services/booking.service.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/client_config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="82" column="29" lean-forward="true" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/booking/booking.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/booking/booking.schema.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/templates/following-people.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="249" selection-end-column="6" />
+          <folding>
+            <element signature="e#6419#6425#0" expanded="true" />
+            <element signature="e#6425#6431#0" expanded="true" />
+            <element signature="e#8345#8351#0" expanded="true" />
+            <element signature="e#8352#8358#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#8774#8780#0" expanded="true" />
+            <element signature="e#8781#8787#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#9198#9204#0" expanded="true" />
+            <element signature="e#9205#9211#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#9618#9624#0" expanded="true" />
+            <element signature="e#9625#9631#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#10035#10041#0" expanded="true" />
+            <element signature="e#10042#10048#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#10461#10467#0" expanded="true" />
+            <element signature="e#10468#10474#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#10929#10935#0" expanded="true" />
+            <element signature="e#10936#10942#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/templates/follower-people.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1680">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="e#6420#6426#0" expanded="true" />
+            <element signature="e#6426#6432#0" expanded="true" />
+            <element signature="e#8346#8352#0" expanded="true" />
+            <element signature="e#8353#8359#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#8775#8781#0" expanded="true" />
+            <element signature="e#8782#8788#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#9199#9205#0" expanded="true" />
+            <element signature="e#9206#9212#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#9619#9625#0" expanded="true" />
+            <element signature="e#9626#9632#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#10036#10042#0" expanded="true" />
+            <element signature="e#10043#10049#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#10462#10468#0" expanded="true" />
+            <element signature="e#10469#10475#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#10930#10936#0" expanded="true" />
+            <element signature="e#10937#10943#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="132" column="37" lean-forward="true" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
+          <folding>
+            <element signature="e#5416#5422#0" expanded="true" />
+            <element signature="e#5422#5428#0" expanded="true" />
+            <element signature="e#5429#5435#0" expanded="true" />
+            <element signature="e#5435#5441#0" expanded="true" />
+            <element signature="e#5775#5781#0" expanded="true" />
+            <element signature="e#5781#5787#0" expanded="true" />
+            <element signature="e#5788#5794#0" expanded="true" />
+            <element signature="e#5794#5800#0" expanded="true" />
+            <element signature="e#6137#6143#0" expanded="true" />
+            <element signature="e#6143#6149#0" expanded="true" />
+            <element signature="e#6150#6156#0" expanded="true" />
+            <element signature="e#6156#6162#0" expanded="true" />
+            <element signature="e#6499#6505#0" expanded="true" />
+            <element signature="e#6505#6511#0" expanded="true" />
+            <element signature="e#6512#6518#0" expanded="true" />
+            <element signature="e#6518#6524#0" expanded="true" />
+            <element signature="e#6862#6868#0" expanded="true" />
+            <element signature="e#6868#6874#0" expanded="true" />
+            <element signature="e#6875#6881#0" expanded="true" />
+            <element signature="e#6881#6887#0" expanded="true" />
+            <element signature="e#7229#7235#0" expanded="true" />
+            <element signature="e#7235#7241#0" expanded="true" />
+            <element signature="e#7242#7248#0" expanded="true" />
+            <element signature="e#7248#7254#0" expanded="true" />
+            <element signature="e#7607#7613#0" expanded="true" />
+            <element signature="e#7613#7619#0" expanded="true" />
+            <element signature="e#7620#7626#0" expanded="true" />
+            <element signature="e#7626#7632#0" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#div#4;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/reservation.controller.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1000">
+          <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/reservation.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="78" column="167" lean-forward="true" selection-start-line="78" selection-start-column="167" selection-end-line="78" selection-end-column="167" />
+          <folding />
         </state>
       </provider>
     </entry>
