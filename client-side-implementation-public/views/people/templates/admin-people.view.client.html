@@ -418,7 +418,7 @@
                 <div class="tab-pane fade" id="wd-review-id">
                     <div class="wd-admin-tile-review wd-tile-shadow" ng-repeat="review in model.AllReviews">
                         <div class="container-fluid">
-                            <h3>Review : </h3>
+                            <h3 class="wd-label-color text-center wd-text-card-margin">Edit Review : </h3>
                             <div ng-show="model.Reviewerror" class="alert alert-danger">
                                 {{model.Reviewerror}}
                             </div>
@@ -426,28 +426,30 @@
                                 {{model.ReviewsuccessMessage}}
                             </div>
                             <form ng-class="{'submitted': model.Reviewsubmitted}">
-                                <label class="wd-custom-label-color" for="Title">Title :</label>
+                                <label class="wd-label-color" for="ReviewTitle">Title :</label>
                                 <div ng-show="model.ReviewTitleMessage" class="alert alert-info">
                                     {{model.ReviewTitleMessage}}
                                 </div>
-                                <input class="input-group "
-                                       placeholder="abc"
-                                       id="Title"
-                                       ng-model="reviewObject.ReviewTitle"
+                                <input type="text"
+                                       placeholder="abc321"
+                                       id="ReviewTitle"
+                                       class="form-control wd-make-full-width"
+                                       ng-model="review.ReviewTitle"
                                        required/>
                                 <div ng-show="model.messageReviewContent" class="alert alert-info">
                                     {{model.messageReviewContent}}
                                 </div>
 
-                                <label class="wd-custom-label-color" for="Content">Review Content :</label>
-                                <textarea class="input-group"
+                                <label class="wd-label-color" for="ReviewContent">Review Content :</label>
+                                <textarea class="form-control wd-make-full-width"
                                           placeholder="review details"
-                                          ng-model="reviewObject.ReviewContent"
-                                          id="Content" rows="8"></textarea>
+                                          ng-model="review.ReviewContent"
+                                          id="ReviewContent" rows="8"></textarea>
 
-                                <button type="submit" class="btn btn-success btn-block "
-                                        ng-click="model.createReview(reviewObject)">Post Review
-                                </button>
+                                <div class="wd-button-margin text-center">
+                                    <a class="btn btn-primary wd-button-margin" href="" role="button" >Update</a>
+                                    <a class="btn btn-danger wd-button-margin" href="" role="button" >Delete</a>
+                                </div>
                             </form>
 
                         </div>
