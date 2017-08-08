@@ -6,10 +6,31 @@ var https = require('https');
 module.exports=function (app,model) {
 
     app.get("/api/getReview/:resId" , findReviewByHotelId);
+    app.get("/api/getAllReviews" , getAllReviews);
     app.post("/api/createReview" , createReview);
     app.put("/api/likeReview", likeReview);
     app.put("/api/dislikeReview", dislikeReview);
     app.delete('/api/deleteReview/:reviewId', deleteReview);
+
+
+
+
+
+
+
+
+    function getAllReviews(req, res) {
+
+        model.reviewModel.getAllReviews()
+            .then(function (reviews) {
+                res.json(reviews)
+            })
+
+    }
+
+
+
+
 
 
 

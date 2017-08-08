@@ -15,12 +15,26 @@
             getReviewBycurrentHotel : getReviewBycurrentHotel,
             deleteReview : deleteReview,
             likeReview : likeReview,
+            getAllReviews : getAllReviews,
             dislikeReview : dislikeReview
 
 
         };
 
         return api;
+
+
+
+        function getAllReviews() {
+            var url = "/api/getAllReviews";
+
+            return $http.get(url)
+                .then(function (result) {
+                    return result.data;
+                });
+
+        }
+
 
 
         function dislikeReview(review) {

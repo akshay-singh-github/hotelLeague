@@ -20,6 +20,7 @@ module.exports=function (app, model) {
 
     app.post("/api/login" ,passport.authenticate('local') ,login);
     app.get("/api/user",findUserbyQueryParameter);
+    app.get("/api/getAllUsers",getAllUsers);
     app.get("/api/user/:userId",findUserByUserId);
     app.get("/api/getAllfollowers/:userId",getAllfollowers);
     app.get("/api/getAllfollowing/:userId",getAllfollowing);
@@ -30,6 +31,18 @@ module.exports=function (app, model) {
     app.post('/api/logoutUser',logoutUser);
     app.put('/api/user/:uid',isAdminorCurrentUser , updateUserProfile);
     app.post('/api/unregisterUserProfile',unregisterUserProfile);
+
+
+
+    function getAllUsers(req, res) {
+            model.userModel.findAllUser()
+                .then(function (users) {
+                    res.json(users);
+                });
+    }
+
+
+
 
 
 

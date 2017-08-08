@@ -14,12 +14,30 @@
             createBooking : createBooking,
             getBookingBycurrentUser : getBookingBycurrentUser,
             getAllFavoriteBookingsForUser : getAllFavoriteBookingsForUser,
-            deleteBooking : deleteBooking
+            deleteBooking : deleteBooking,
+            getAllBookings : getAllBookings
 
 
         };
 
         return api;
+
+
+
+
+        function getAllBookings() {
+            var url = "/api/getAllBookings";
+            return $http.get(url)
+                .then(function (response) {
+                    console.log("getAllBookings", response);
+                    return response.data;
+                });
+
+        }
+
+
+
+
 
         function getAllFavoriteBookingsForUser() {
             var url = "/api/getFavoriteBooking";

@@ -15,10 +15,21 @@ module.exports = function () {
         UpdateReviewLikeByReviewId : UpdateReviewLikeByReviewId,
         UpdateReviewDisLikeByReviewId : UpdateReviewDisLikeByReviewId,
         deleteReview: deleteReview,
+        getAllReviews: getAllReviews,
         setModel: setModel
     };
 
     return api;
+
+
+
+    function getAllReviews() {
+
+        return reviewModel.find();
+    }
+
+
+
 
 
     function setModel(_model) {

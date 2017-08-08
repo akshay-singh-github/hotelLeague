@@ -87,6 +87,14 @@
                 resolve:{
                     currentUser: checkLoggedInUser
                 }
+            })
+            .when('/admin', {
+                templateUrl:'views/people/templates/admin-people.view.client.html',
+                controller: "adminController",
+                controllerAs: "model",
+                resolve:{
+                    currentUser: checkLoggedInUser
+                }
             });
 
     }

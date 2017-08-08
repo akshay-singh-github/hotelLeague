@@ -1,0 +1,474 @@
+<div class="banner1">
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">Motel</a></h1>
+            </div>
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!--/.navbar-header-->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav ">
+                        <li><a href="#!/">Home</a></li>
+                        <li class="active" ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin">Admin</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox</a></li>
+                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
+                        <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav ">
+                        <!--<li class="active"><a href="#!/">Home</a></li>
+                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
+                        <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/following">Following</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/follower">Followers</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/reservation">Bookings</a></li>
+                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
+                    </ul>
+                </div>
+                <!--/.navbar-collapse-->
+            </nav>
+            <div class="search-box">
+                <div id="sb-search" class="sb-search">
+                    <form>
+                        <input class="sb-search-input" placeholder="Enter your search term..." type="search"
+                               name="search" id="search">
+                        <input class="sb-search-submit" type="submit" value="">
+                        <span class="sb-icon-search"> </span>
+                    </form>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <!-- search-scripts -->
+            <script src="js/classie.js"></script>
+            <script src="js/uisearch.js"></script>
+            <script>
+                new UISearch(document.getElementById('sb-search'));
+            </script>
+            <!-- //search-scripts -->
+
+        </div>
+    </div>
+</div>
+<!-- banner -->
+<!-- details -->
+<div class="details">
+    <div class="container">
+        <div class="container-fluid">
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active"><a data-toggle="tab" data-target="#wd-user-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Users</h4></a></li>
+                <li ><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Bookings</h4></a></li>
+                <li ><a data-toggle="tab" data-target="#wd-review-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Reviews</h4></a></li>
+
+            </ul>
+            <div class="tab-content">
+
+
+
+
+
+
+
+
+                <div class="tab-pane fade in active" id="wd-user-id">
+
+                    <div class="container">
+                        <div class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-target="#collapse1" type="button" class="btn btn-warning btn-block wd-remove-text-overflowing" href="">Click to Create New User.</a>
+                                    </h4>
+                                </div>
+                                <div id="collapse1" class="panel-collapse collapse">
+                                    <div class="container-fluid">
+                                        <h3>New User : </h3>
+                                        <div ng-show="model.Reviewerror" class="alert alert-danger">
+                                            {{model.Reviewerror}}
+                                        </div>
+                                        <div ng-show="model.ReviewsuccessMessage" class="alert alert-success">
+                                            {{model.ReviewsuccessMessage}}
+                                        </div>
+                                        <form ng-class="{'submitted': model.Reviewsubmitted}">
+                                            <label class="wd-custom-label-color" for="Title">Title :</label>
+                                            <div ng-show="model.ReviewTitleMessage" class="alert alert-info">
+                                                {{model.ReviewTitleMessage}}
+                                            </div>
+                                            <input class="input-group "
+                                                   placeholder="abc"
+                                                   id="Title"
+                                                   ng-model="reviewObject.ReviewTitle"
+                                                   required/>
+                                            <div ng-show="model.messageReviewContent" class="alert alert-info">
+                                                {{model.messageReviewContent}}
+                                            </div>
+
+                                            <label class="wd-custom-label-color" for="Content">Review Content :</label>
+                                            <textarea class="input-group"
+                                                      placeholder="review details"
+                                                      ng-model="reviewObject.ReviewContent"
+                                                      id="Content" rows="8"></textarea>
+
+                                            <button type="submit" class="btn btn-success btn-block wd-button-margin"
+                                                    ng-click="model.createReview(reviewObject)">Create User
+                                            </button>
+                                        </form>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="wd-admin-tile wd-tile-shadow" ng-repeat="user in model.Allusers">
+                        <div class="container-fluid">
+
+                            <div class="wd-button-margin">
+                                <label for="firstName" class="wd-label-color">First Name</label>
+                                <input
+                                        type="text"
+                                        id="firstName"
+                                        ng-model="user.firstName"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+
+                            <div class="wd-button-margin">
+                                <label for="lastName" class="wd-label-color">Last Name</label>
+                                <input
+                                        type="text"
+                                        id="lastName"
+                                        ng-model="user.lastName"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+                            <div class="wd-button-margin">
+                                <label for="roles" class="wd-label-color">Roles</label>
+                                <input
+                                        type="text"
+                                        id="roles"
+                                        ng-model="user.roles"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+                            <div class="wd-button-margin">
+                                <label for="emailId" class="wd-label-color">Email ID</label>
+                                <input
+                                        type="text"
+                                        id="emailId"
+                                        ng-model="user.emailId"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+                            <div class="wd-button-margin">
+                                <label for="phone" class="wd-label-color">Phone</label>
+                                <input
+                                        type="text"
+                                        id="phone"
+                                        ng-model="user.phone"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+                            <div class="wd-button-margin text-center">
+                                <a class="btn btn-primary wd-button-margin" href="" role="button" >Update</a>
+                                <a class="btn btn-danger wd-button-margin" href="" role="button" >Delete</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="tab-pane container-fluid fade" id="wd-booking-id">
+                    <div class="wd-admin-tile wd-tile-shadow" ng-repeat="user in model.Allusers">
+                        <div class="container-fluid">
+
+                            <div class="wd-button-margin">
+                                <label for="firstName" class="wd-label-color">First Name</label>
+                                <input
+                                        type="text"
+                                        id="firstName"
+                                        ng-model="user.firstName"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+
+                            <div class="wd-button-margin">
+                                <label for="lastName" class="wd-label-color">Last Name</label>
+                                <input
+                                        type="text"
+                                        id="lastName"
+                                        ng-model="user.lastName"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+                            <div class="wd-button-margin">
+                                <label for="roles" class="wd-label-color">Roles</label>
+                                <input
+                                        type="text"
+                                        id="roles"
+                                        ng-model="user.roles"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+                            <div class="wd-button-margin">
+                                <label for="emailId" class="wd-label-color">Email ID</label>
+                                <input
+                                        type="text"
+                                        id="emailId"
+                                        ng-model="user.emailId"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+                            <div class="wd-button-margin">
+                                <label for="phone" class="wd-label-color">Phone</label>
+                                <input
+                                        type="text"
+                                        id="phone"
+                                        ng-model="user.phone"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+                            <div class="wd-button-margin text-center">
+                                <a class="btn btn-primary wd-button-margin" href="" role="button" >Update</a>
+                                <a class="btn btn-danger wd-button-margin" href="" role="button" >Delete</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="tab-pane fade" id="wd-review-id">
+                    <div class="wd-admin-tile wd-tile-shadow" ng-repeat="user in model.Allusers">
+                        <div class="container-fluid">
+
+                            <div class="wd-button-margin">
+                                <label for="firstName" class="wd-label-color">First Name</label>
+                                <input
+                                        type="text"
+                                        id="firstName"
+                                        ng-model="user.firstName"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+
+                            <div class="wd-button-margin">
+                                <label for="lastName" class="wd-label-color">Last Name</label>
+                                <input
+                                        type="text"
+                                        id="lastName"
+                                        ng-model="user.lastName"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+                            <div class="wd-button-margin">
+                                <label for="roles" class="wd-label-color">Roles</label>
+                                <input
+                                        type="text"
+                                        id="roles"
+                                        ng-model="user.roles"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+                            <div class="wd-button-margin">
+                                <label for="emailId" class="wd-label-color">Email ID</label>
+                                <input
+                                        type="text"
+                                        id="emailId"
+                                        ng-model="user.emailId"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+
+                            <div class="wd-button-margin">
+                                <label for="phone" class="wd-label-color">Phone</label>
+                                <input
+                                        type="text"
+                                        id="phone"
+                                        ng-model="user.phone"
+                                        class="form-control wd-make-full-width"
+                                        placeholder="abc321"
+                                />
+                            </div>
+                            <div class="wd-button-margin text-center">
+                                <a class="btn btn-primary wd-button-margin" href="" role="button" >Update</a>
+                                <a class="btn btn-danger wd-button-margin" href="" role="button" >Delete</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<!-- details -->
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="col-md-2 deco">
+            <h4>Navigation</h4>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shortcodes.html">Short Codes </a></li>
+            <li><a href="sigin.html">Sign in</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+        <div class="col-md-2 deco">
+            <h4>Links</h4>
+            <li><a href="#">Qui Sommes-Nous ?</a></li>
+            <li><a href="#">Mentions Légales </a></li>
+            <li><a href="#">Conditions D'Utilisation </a></li>
+        </div>
+        <div class="col-md-2 deco">
+            <h4>Social</h4>
+            <div class="soci">
+                <li><a href="#"><i class="f-1"> </i></a></li>
+                <li><a href="#"><i class="t-1"> </i></a></li>
+                <li><a href="#"><i class="g-1"> </i></a></li>
+            </div>
+        </div>
+        <div class="col-md-3 cardss">
+            <h4>Payment Sécure</h4>
+            <li><i class="visa"></i></li>
+            <li><i class="ma"></i></li>
+            <li><i class="paypal"></i></li>
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-md-3 pos">
+            <h4>NewsLetter</h4>
+            <form method="post">
+                <input type="text" class="textbox" value="Email" onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Email';}">
+                <div class="smt">
+                    <input type="submit" value="Subscribe">
+                </div>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="footer-bottom">
+    <div class="container">
+        <p>© 2015 Motel. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a>
+        </p>
+    </div>
+</div>
+
+<script>
+    $('.flip').hover(function(){
+        $(this).find('.card').toggleClass('flipped');
+
+    });
+
+</script>

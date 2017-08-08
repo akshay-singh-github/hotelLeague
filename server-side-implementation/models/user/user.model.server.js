@@ -107,7 +107,7 @@ module.exports = function () {
             user.roles = user.roles.split(',');
         }
         else{
-            user.roles = ['USER'];
+            user.roles = ['ADMIN'];
         }
         return userModel.create(user);
     }

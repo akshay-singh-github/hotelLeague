@@ -7,10 +7,22 @@ module.exports=function (app,model) {
 
     app.get("/api/getFavoriteBooking" , findFavoriteBookingByUserId);
     app.get("/api/getBooking" , findBookingByUserId);
+    app.get("/api/getAllBookings" , getAllBookings);
     app.post("/api/createBooking" , createBooking);
 
+
+
+
+
     
-    
+    function getAllBookings(req, res) {
+
+        model.bookingModel.getAllBookings()
+            .then(function (bookings) {
+                res.json(bookings);
+            });
+
+    }
     
     
     function findFavoriteBookingByUserId(req, res) {

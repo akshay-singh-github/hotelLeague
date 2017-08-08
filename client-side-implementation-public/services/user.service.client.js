@@ -12,6 +12,7 @@
         var api = {
             login : login,
             register : register,
+            getAllUsers : getAllUsers,
             getApiKey : getApiKey,
             findUserByUsername : findUserByUsername,
             findUserByUserId : findUserByUserId,
@@ -29,6 +30,20 @@
         };
 
         return api;
+
+
+        function getAllUsers() {
+            var url = "/api/getAllUsers";
+
+            return $http.get(url)
+                .then(function (result) {
+                    return result.data;
+                })
+
+        }
+
+
+
 
         function getAllfollowing(userId) {
             var url= "/api/getAllfollowing/"+userId;

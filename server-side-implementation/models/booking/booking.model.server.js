@@ -15,6 +15,7 @@ module.exports = function () {
         findBookingByUserId: findBookingByUserId,
         deleteBooking: deleteBooking,
         findFavoriteBookingByUserId : findFavoriteBookingByUserId,
+        getAllBookings : getAllBookings,
         setModel: setModel
     };
 
@@ -28,6 +29,14 @@ module.exports = function () {
     function setModel(_model) {
         model = _model;
     }
+
+
+    function getAllBookings() {
+        return bookingModel.find();
+    }
+
+
+
 
 
     function findFavoriteBookingByUserId(favbookingIdArray) {
