@@ -85,6 +85,7 @@
         function getAllBookings() {
             bookingService.getAllBookings()
                 .then(function (result) {
+                    model.AllBookings = result;
                     console.log("getAllBookings",result);
                 })
         }
@@ -93,6 +94,7 @@
         function getAllReviews() {
             reviewService.getAllReviews()
                 .then(function (result) {
+                    model.AllReviews = result;
                     console.log("getAllReviews",result);
                 })
         }
