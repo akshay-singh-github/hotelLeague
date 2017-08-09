@@ -103,11 +103,16 @@ module.exports = function () {
 
 
     function createUser(user) {
-        if(user.roles){
-            user.roles = user.roles.split(',');
+        if (user.roles) {
+            if (typeof user.roles === 'string' || user.roles instanceof String) {
+                user.roles = user.roles.toUpperCase();
+                user.roles = user.roles.split(',').filter(function (e) {
+                    return String(e).trim();
+                });
+            }
         }
-        else{
-            user.roles = ['ADMIN'];
+        else {
+            user.roles = ['USER'];
         }
         return userModel.create(user);
     }
@@ -143,6 +148,7 @@ module.exports = function () {
 
         if (newUser.roles) {
             if (typeof newUser.roles === 'string' || newUser.roles instanceof String) {
+                newUser.roles = newUser.roles.toUpperCase();
                 newUser.roles = newUser.roles.split(',').filter(function (e) {
                     return String(e).trim();
                 });

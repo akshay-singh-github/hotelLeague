@@ -23,7 +23,9 @@
             unregisterUserProfile : unregisterUserProfile,
             findUserByUsernameRegex : findUserByUsernameRegex,
             getAllfollowers : getAllfollowers,
-            getAllfollowing : getAllfollowing
+            getAllfollowing : getAllfollowing,
+            deleteUser : deleteUser,
+            createUser : createUser
             /*getHotelDetails : getHotelDetails*/
 
 
@@ -98,8 +100,30 @@
                     return response.data;
                 });
         }
+
+
+
+        function createUser(user) {
+            var url = "/api/createUser";
+            return $http.post(url, user)
+                .then(function (response) {
+                    return response.data;
+                });
+
+        }
+
+
+
         
-        
+        function deleteUser(user) {
+
+            var url = '/api/deleteUserProfile/'+user._id;
+            return $http.delete(url)
+                .then(function (response) {
+                    return response.data;
+                });
+
+        }
         
         
         

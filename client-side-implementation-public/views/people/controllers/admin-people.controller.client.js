@@ -6,15 +6,19 @@
     angular.module("HotelLeagueMaker")
         .controller("adminController", adminController);
 
-    function adminController($route, currentUser,bookingService,reviewService, userService, $location) {
+    function adminController($route, currentUser,bookingService,$window,reviewService, userService, $location) {
         var model = this;
         model.currentUser = currentUser;
         model.getAllUsers = getAllUsers;
         model.getAllBookings = getAllBookings;
         model.getAllReviews = getAllReviews;
+        model.updateUser = updateUser;
+        model.deleteUser = deleteUser;
+        model.createUser = createUser;
+        model.logout = logout;
 
         /*model.login = login;
-        model.logout = logout;
+
         model.searchUser = searchUser;
         model.showUserDetails = showUserDetails;
         model.addAsFollower = addAsFollower;
@@ -65,11 +69,129 @@
             model.getAllUsers();
             model.getAllBookings();
             model.getAllReviews();
+            model.updateUserMessage = "";
+            model.errorupdateUser = "";
             /*model.getAllBookingsForUser();
             model.getAllFavoriteBookingsForUser();
             model.showUserDetailsFlag = false;*/
         }
         init();
+
+
+        function logout() {
+            userService
+                .logout()
+                .then(function () {
+                    $route.reload();
+                    $location.url('/');
+                })
+
+        }
+
+
+        function createUser(user) {
+            console.log("inside create");
+            model.usernamecreateUsermessage="";
+            model.passwordcreateUsermessage="";
+            model.createUsersubmitted="";
+            model.errorcreateUser="";
+            model.successcreateUser="";
+            console.log("user",user);
+
+            if(!user){
+                model.errorcreateUser = "Incomplete Fields , Cannot Register.";
+                model.createUsersubmitted= "yes";
+                return;
+            }
+
+            if (!user.username && !user.password && !model.createUserpassword2) {
+                model.errorcreateUser = "Incomplete Fields , Cannot Register.";
+                model.passwordcreateUsermessage = "Password is Required";
+                model.usernamecreateUsermessage="Username is Required";
+                model.createUsersubmitted= "yes";
+                return;
+            }
+
+            if(!user.username){
+                model.errorcreateUser = "Incomplete Fields , Cannot Register.";
+                model.usernamecreateUsermessage="Username is Required";
+                model.createUsersubmitted= "yes";
+                return;
+            }
+
+            if(!user.password || !model.createUserpassword2){
+                model.errorcreateUser = "Incomplete Fields , Cannot Register.";
+                model.passwordcreateUsermessage = "Password is Required";
+                model.createUsersubmitted= "yes";
+                return
+            }
+
+
+            if (user.password !== model.createUserpassword2) {
+                model.errorcreateUser = "Password must match";
+                model.createUsersubmitted= "yes";
+                return;
+            }
+            model.createUsersubmitted= "";
+            userService
+                .findUserByUsername(user.username)
+                .then(function () {
+                    model.errorcreateUser = "Username is not available";
+                    $window.scrollTo(0, 0);
+                }, function () {
+                    console.log("this user can be registered");
+                    /*var userNew = {
+                        firstName:firstname,
+                        lastName : lastname,
+                        emailId:email,
+                        username: username,
+                        password: password
+                    };*/
+                    model.successcreateUser = "The new user has been created.";
+                    console.log("before register done",user);
+                    return userService
+                        .createUser(user);
+                })
+                .then(function (user) {
+                    console.log("after register done",user);
+                    $route.reload();
+                    /*$location.url('/');*/
+                });
+        }
+
+
+
+
+        function updateUser(user) {
+            model.updateUserMessage = "";
+            model.errorupdateUser = "";
+            /*user.roles.toUpperCase();*/
+                userService
+                    .updateUserProfile(user._id, user)
+                    .then(function (result) {
+                        console.log("this is the user after upper case",result);
+                        model.updateUserMessage = "User with Username : "+user.username+" has been updated.";
+                        $window.scrollTo(0, 0);
+                    }, function () {
+                        model.errorupdateUser = "This user could not be updated."
+                    });
+
+        }
+
+
+
+
+        function deleteUser(user){
+
+            userService
+                .deleteUser(user)
+                .then(function (result) {
+
+                    console.log("this user has been deleted", result);
+                    $route.reload();
+                })
+        }
+
 
 
 
@@ -242,15 +364,7 @@
                 })
         }
 
-        function logout() {
-            userService
-                .logout()
-                .then(function () {
-                    $route.reload();
-                    $location.url('/');
-                })
 
-        }
 
 
 

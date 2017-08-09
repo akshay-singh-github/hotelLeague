@@ -81,14 +81,6 @@
 
             </ul>
             <div class="tab-content">
-
-
-
-
-
-
-
-
                 <div class="tab-pane fade in active" id="wd-user-id">
 
                     <div class="container">
@@ -102,35 +94,131 @@
                                 <div id="collapse1" class="panel-collapse collapse">
                                     <div class="container-fluid">
                                         <h3>New User : </h3>
-                                        <div ng-show="model.Reviewerror" class="alert alert-danger">
-                                            {{model.Reviewerror}}
+                                        <div ng-show="model.errorcreateUser" class="alert alert-danger">
+                                            {{model.errorcreateUser}}
                                         </div>
-                                        <div ng-show="model.ReviewsuccessMessage" class="alert alert-success">
-                                            {{model.ReviewsuccessMessage}}
+                                        <div ng-show="model.successcreateUser" class="alert alert-success">
+                                            {{model.successcreateUser}}
                                         </div>
-                                        <form ng-class="{'submitted': model.Reviewsubmitted}">
-                                            <label class="wd-custom-label-color" for="Title">Title :</label>
-                                            <div ng-show="model.ReviewTitleMessage" class="alert alert-info">
-                                                {{model.ReviewTitleMessage}}
+                                        <form ng-class="{'submitted': model.createUsersubmitted}">
+                                            <div class="wd-button-margin">
+                                                <label for="createfirstName" class="wd-label-color">First Name</label>
+                                                <input
+                                                        type="text"
+                                                        id="createfirstName"
+                                                        autocomplete="off"
+                                                        autocorrect="off"
+                                                        autocapitalize="off"
+                                                        spellcheck="false"
+                                                        ng-model="newUser.firstName"
+                                                        class="form-control wd-make-full-width"
+                                                        placeholder="abc321"
+                                                />
                                             </div>
-                                            <input class="input-group "
-                                                   placeholder="abc"
-                                                   id="Title"
-                                                   ng-model="reviewObject.ReviewTitle"
-                                                   required/>
-                                            <div ng-show="model.messageReviewContent" class="alert alert-info">
-                                                {{model.messageReviewContent}}
+                                            <div class="wd-button-margin">
+                                                <label for="createlastName" class="wd-label-color">Last Name</label>
+                                                <input
+                                                        type="text"
+                                                        id="createlastName"
+                                                        autocomplete="off"
+                                                        autocorrect="off"
+                                                        autocapitalize="off"
+                                                        spellcheck="false"
+                                                        ng-model="newUser.lastName"
+                                                        class="form-control wd-make-full-width"
+                                                        placeholder="abc321"
+                                                />
+                                            </div>
+                                            <div class="wd-button-margin">
+                                                <label for="createusername" class="wd-label-color">Username</label>
+                                                <input
+                                                        type="text"
+                                                        id="createusername"
+                                                        autocomplete="off"
+                                                        autocorrect="off"
+                                                        autocapitalize="off"
+                                                        spellcheck="false"
+                                                        ng-model="newUser.username"
+                                                        class="form-control wd-make-full-width"
+                                                        placeholder="abc321"
+                                                        required/>
                                             </div>
 
-                                            <label class="wd-custom-label-color" for="Content">Review Content :</label>
-                                            <textarea class="input-group"
-                                                      placeholder="review details"
-                                                      ng-model="reviewObject.ReviewContent"
-                                                      id="Content" rows="8"></textarea>
+                                            <div class="wd-button-margin">
+                                                <label for="createroles" class="wd-label-color">Roles</label>
+                                                <input
+                                                        type="text"
+                                                        id="createroles"
+                                                        autocomplete="off"
+                                                        autocorrect="off"
+                                                        autocapitalize="off"
+                                                        spellcheck="false"
+                                                        ng-model="newUser.roles"
+                                                        class="form-control wd-make-full-width"
+                                                        placeholder="abc321"
+                                                />
+                                            </div>
 
-                                            <button type="submit" class="btn btn-success btn-block wd-button-margin"
-                                                    ng-click="model.createReview(reviewObject)">Create User
-                                            </button>
+                                            <div class="wd-button-margin">
+                                                <label for="createemailId" class="wd-label-color">Email ID</label>
+                                                <input
+                                                        type="text"
+                                                        id="createemailId"
+                                                        autocomplete="off"
+                                                        autocorrect="off"
+                                                        autocapitalize="off"
+                                                        spellcheck="false"
+                                                        ng-model="newUser.emailId"
+                                                        class="form-control wd-make-full-width"
+                                                        placeholder="abc321"
+                                                />
+                                            </div>
+
+                                            <div class="wd-button-margin">
+                                                <label for="createphone" class="wd-label-color">Phone</label>
+                                                <input
+                                                        type="text"
+                                                        id="createphone"
+                                                        autocomplete="off"
+                                                        autocorrect="off"
+                                                        autocapitalize="off"
+                                                        spellcheck="false"
+                                                        ng-model="newUser.phone"
+                                                        class="form-control wd-make-full-width"
+                                                        placeholder="abc321"
+                                                />
+                                            </div>
+                                            <div class="wd-button-margin">
+                                                <label for="createpassword" class="wd-label-color">Password*</label>
+                                                <input ng-model="newUser.password"
+                                                       type="password"
+                                                       id="createpassword"
+                                                       autocomplete="off"
+                                                       autocorrect="off"
+                                                       autocapitalize="off"
+                                                       class="form-control wd-make-full-width"
+                                                       spellcheck="false"
+                                                       placeholder="qwerty321"
+                                                       required>
+                                                <div ng-show="model.passwordcreateUsermessage" class="alert alert-info">{{model.passwordcreateUsermessage}}</div>
+                                            </div>
+                                            <div class="wd-button-margin">
+                                                <label for="createpassword2" class="wd-label-color">Confirm Password*</label>
+                                                <input ng-model="model.createUserpassword2"
+                                                       type="password"
+                                                       id="createpassword2"
+                                                       autocomplete="off"
+                                                       autocorrect="off"
+                                                       autocapitalize="off"
+                                                       class="form-control wd-make-full-width"
+                                                       spellcheck="false"
+                                                       placeholder="qwerty321"
+                                                       required>
+                                                <div ng-show="model.passwordcreateUsermessage" class="alert alert-info">{{model.passwordcreateUsermessage}}</div>
+                                            </div>
+                                            <div class="wd-button-margin text-center">
+                                                <a class="btn btn-success wd-button-margin" href="" ng-click="model.createUser(newUser)" role="button" >Create</a>
+                                            </div>
                                         </form>
 
                                     </div>
@@ -144,10 +232,14 @@
 
 
 
-
+                    <div ng-show="model.updateUserMessage" class="alert alert-success">
+                        {{model.updateUserMessage}}
+                    </div>
+                    <div ng-show="model.errorupdateUser" class="alert alert-danger">
+                        {{model.errorupdateUser}}
+                    </div>
                     <div class="wd-admin-tile wd-tile-shadow" ng-repeat="user in model.Allusers">
                         <div class="container-fluid">
-
                             <div class="wd-button-margin">
                                 <label for="firstName" class="wd-label-color">First Name</label>
                                 <input
@@ -204,8 +296,8 @@
                                 />
                             </div>
                             <div class="wd-button-margin text-center">
-                                <a class="btn btn-primary wd-button-margin" href="" role="button" >Update</a>
-                                <a class="btn btn-danger wd-button-margin" href="" role="button" >Delete</a>
+                                <a class="btn btn-primary wd-button-margin" href="" ng-click="model.updateUser(user)" role="button" >Update</a>
+                                <a class="btn btn-danger wd-button-margin" href="" ng-click="model.deleteUser(user)" role="button" >Delete</a>
                             </div>
 
 

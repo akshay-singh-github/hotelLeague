@@ -26,11 +26,13 @@ module.exports=function (app, model) {
     app.get("/api/getAllfollowing/:userId",getAllfollowing);
     app.get("/api/userRegex",findUserbyRegexQueryParameter);
     app.post('/api/register',register);
+    app.post('/api/createUser',createUser);
     app.get('/api/checkLoggedInUser', checkLoggedInUser);
     app.get('/api/checkAdminUser', checkAdminUser);
     app.post('/api/logoutUser',logoutUser);
     app.put('/api/user/:uid',isAdminorCurrentUser , updateUserProfile);
     app.post('/api/unregisterUserProfile',unregisterUserProfile);
+    app.delete("/api/deleteUserProfile/:userId", deleteUser);
 
 
 
@@ -42,7 +44,15 @@ module.exports=function (app, model) {
     }
 
 
+    function deleteUser(req, res) {
+        var userId = req.params.userId;
+        model.userModel
+            .deleteUserProfile(userId)
+            .then(function (user) {
+                res.json(user);
+            });
 
+    }
 
 
 
@@ -132,8 +142,8 @@ module.exports=function (app, model) {
         model
             .userModel
             .updateUserProfile(userid, user)
-            .then(function () {
-                res.sendStatus(200);
+            .then(function (user) {
+                res.json(user);
             }, function (error) {
                 res.sendStatus(404);
             });
@@ -256,6 +266,25 @@ module.exports=function (app, model) {
                 }
             );
     }
+
+
+
+
+
+    function createUser(req, res) {
+
+        var newUser = req.body;
+        newUser.password = bcrypt.hashSync(newUser.password);
+        model.userModel
+            .createUser(newUser)
+            .then(function (user) {
+                res.json(user);
+            });
+
+    }
+
+
+
 
 
 
