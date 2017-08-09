@@ -15,6 +15,7 @@
         model.updateUser = updateUser;
         model.deleteUser = deleteUser;
         model.createUser = createUser;
+        model.updateReview = updateReview;
         model.logout = logout;
 
         /*model.login = login;
@@ -71,11 +72,52 @@
             model.getAllReviews();
             model.updateUserMessage = "";
             model.errorupdateUser = "";
+            model.usernamecreateUsermessage="";
+            model.passwordcreateUsermessage="";
+            model.createUsersubmitted="";
+            model.errorcreateUser="";
+            model.successcreateUser="";
             /*model.getAllBookingsForUser();
             model.getAllFavoriteBookingsForUser();
             model.showUserDetailsFlag = false;*/
         }
         init();
+
+
+
+        function updateReview(reviewObject) {
+            model.Reviewerror = "";
+            model.ReviewsuccessMessage = "";
+            model.ReviewTitleMessage = "";
+            model.Reviewsubmitted = true;
+            model.messageReviewContent = "";
+
+            if(!reviewObject){
+                model.Reviewerror = "Review could not be updated. Please fill all the details and try again.";
+            }
+            else if(reviewObject && (!reviewObject.ReviewTitle)){
+                model.Reviewerror = "Review could not be updated. Please fill all the details and try again.";
+                model.ReviewTitleMessage = "Please fill the review title field.";
+            }
+            else if(reviewObject && (!reviewObject.ReviewContent)){
+                model.Reviewerror = "Review could not be updated. Please fill all the details and try again.";
+                model.messageReviewContent = "Please fill the review content field.";
+            }
+            else{
+                model.Reviewsubmitted = false;
+                model.ReviewsuccessMessage = "The review has been successfully updated.";
+                console.log("This is the review object",reviewObject);
+                reviewService.updateReview(reviewObject)
+                    .then(function (result) {
+                        console.log("result",result);
+                    });
+            }
+
+        }
+
+
+
+
 
 
         function logout() {

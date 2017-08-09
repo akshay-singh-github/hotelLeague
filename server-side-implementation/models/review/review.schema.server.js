@@ -11,6 +11,7 @@ module.exports = function () {
         ReviewContent: String,
         reviewer :String,
         reviewFor :String,
+        reviewHotelName : String,
         reviewerId :String,
         rating : Number,
         Likes : { type: Number,min: 0, default: 0 },

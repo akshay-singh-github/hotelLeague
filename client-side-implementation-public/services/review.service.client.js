@@ -16,12 +16,26 @@
             deleteReview : deleteReview,
             likeReview : likeReview,
             getAllReviews : getAllReviews,
-            dislikeReview : dislikeReview
+            dislikeReview : dislikeReview,
+            updateReview : updateReview
 
 
         };
 
         return api;
+
+
+
+        function updateReview(review) {
+
+            var url = "/api/getUpdateReview";
+            return $http.put(url, review)
+                .then(function (result) {
+                    return result.data;
+                });
+
+        }
+
 
 
 

@@ -10,12 +10,25 @@ module.exports=function (app,model) {
     app.post("/api/createReview" , createReview);
     app.put("/api/likeReview", likeReview);
     app.put("/api/dislikeReview", dislikeReview);
+    app.put("/api/getUpdateReview", updateReview);
     app.delete('/api/deleteReview/:reviewId', deleteReview);
 
 
 
 
 
+
+
+
+    function updateReview(req, res) {
+        var review = req.body;
+
+        model.reviewModel.updateReview(review._id, review)
+            .then(function (review) {
+                res.json(review)
+            })
+
+    }
 
 
 

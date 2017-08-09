@@ -233,32 +233,43 @@
                 reviewObject.reviewer = currentUser.username;
                 reviewObject.reviewerId = currentUser._id;
                 reviewObject.reviewFor = model.hotelId;
-                userService.findUserByUsername(reviewObject.reviewer)
-                    .then(function (result) {
+                /*reviewObject.reviewHotelName = */
 
-                        if(!result){
-                            model.Reviewerror = "This User does not exist.";
-                        }
-                        else {
-                            model.ReviewsuccessMessage = "The review has been successfully posted.";
-                            reviewService.createReview(reviewObject)
-                                .then(function (result) {
-                                    $route.reload();
-                                    return result
+                    hotelService.findHotelById(model.hotelId)
+                        .then(function (result) {
+                            console.log("this is the hotel object in creste review",result);
+                            reviewObject.reviewHotelName = result.data[0].hotelName;
+                            console.log("reviewObject.reviewHotelName", reviewObject.reviewHotelName);
+                            userService.findUserByUsername(reviewObject.reviewer)
+                                .then(function (result2) {
+
+                                    if(!result2){
+                                        model.Reviewerror = "This User does not exist.";
+                                    }
+                                    else {
+                                        model.ReviewsuccessMessage = "The review has been successfully posted.";
+                                        reviewService.createReview(reviewObject)
+                                            .then(function (result3) {
+                                                $route.reload();
+                                                return result3
+                                            });
+                                    }
+
+                                }, function () {
+                                    model.Reviewerror = "This User does not exist.";
                                 });
-                        }
 
-                    }, function () {
-                        model.Reviewerror = "This User does not exist.";
-                    });
-
-
+                        });
 
 
             }
 
 
         }
+
+
+
+
         
         function createBooking(bookingObject) {
             console.log("Inside booking controller create");

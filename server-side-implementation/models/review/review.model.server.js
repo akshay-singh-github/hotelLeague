@@ -15,11 +15,22 @@ module.exports = function () {
         UpdateReviewLikeByReviewId : UpdateReviewLikeByReviewId,
         UpdateReviewDisLikeByReviewId : UpdateReviewDisLikeByReviewId,
         deleteReview: deleteReview,
+        updateReview: updateReview,
         getAllReviews: getAllReviews,
         setModel: setModel
     };
 
     return api;
+
+
+
+    function updateReview(reviewId, review) {
+
+        return reviewModel.update({_id: reviewId},{$set: review});
+
+    }
+
+
 
 
 

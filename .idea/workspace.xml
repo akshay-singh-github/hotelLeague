@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f7f29be4-a40d-4905-8ed0-95bb0d7bafa1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/css/style.css" afterPath="$PROJECT_DIR$/client-side-implementation-public/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/services/review.service.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/services/review.service.client.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/admin-people.controller.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/admin-people.controller.client.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/admin-people.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/admin-people.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/services/user.service.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/services/user.service.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/models/review/review.model.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/models/review/review.model.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/models/review/review.schema.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/models/review/review.schema.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/services/review.service.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/services/review.service.server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,18 +31,18 @@
       <file leaf-file-name="admin-people.view.client.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/templates/admin-people.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="206" column="65" lean-forward="true" selection-start-line="206" selection-start-column="65" selection-end-line="206" selection-end-column="90" />
+            <state relative-caret-position="406">
+              <caret line="517" column="68" lean-forward="false" selection-start-line="517" selection-start-column="68" selection-end-line="517" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-people.controller.client.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin-people.controller.client.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/admin-people.controller.client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
-              <caret line="158" column="19" lean-forward="true" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
+            <state relative-caret-position="273">
+              <caret line="96" column="13" lean-forward="true" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
               <folding>
                 <element signature="e#0#38#0" expanded="false" />
               </folding>
@@ -47,31 +50,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.model.server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js">
+      <file leaf-file-name="review.schema.server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server-side-implementation/models/review/review.schema.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="114" column="34" lean-forward="true" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="360">
+              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#38#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.service.client.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="793">
-              <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.service.server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server-side-implementation/services/user.service.server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="281" column="15" lean-forward="false" selection-start-line="281" selection-start-column="15" selection-end-line="281" selection-end-column="15" />
+            <state relative-caret-position="743">
+              <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -90,10 +85,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wd-heading-bottom-margin</find>
-      <find>wd-reply-window-formatting</find>
-      <find>wd-custom-text-Tab-label-setting</find>
-      <find>wd-thumbs-margin</find>
       <find>wd-positive-thumb</find>
       <find>wd-review-title-color</find>
       <find>wd-negative-thumb</find>
@@ -118,8 +109,12 @@
       <find>input</find>
       <find>overflo</find>
       <find>wd-admin-tile</find>
-      <find>wd-label-color</find>
       <find>wd-make-full-width</find>
+      <find>admin</find>
+      <find>wd-admin-tile-review</find>
+      <find>createReview</find>
+      <find>overflow</find>
+      <find>wd-label-color</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,14 +129,12 @@
         <option value="$PROJECT_DIR$/server-side-implementation/models/booking.model.server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelBooking/templates/hotel-booking.view.client.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelBooking/controllers/hotel-booking.controller.client.js" />
-        <option value="$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.model.server.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/model_server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/services/hotel.service.client.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/server_app.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/services/hotel.service.server.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.schema.server.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/services/google.service.server.js" />
-        <option value="$PROJECT_DIR$/server-side-implementation/models/review/review.schema.server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/services/message.service.client.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/services/message.service.server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/message/controllers/message-inbox.controller.client.js" />
@@ -151,7 +144,6 @@
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.view.client.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/follower-people.controller.client.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/following-people.controller.client.js" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/reservation.controller.client.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/user/user.schema.server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/client_config.js" />
@@ -168,17 +160,20 @@
         <option value="$PROJECT_DIR$/client-side-implementation-public/services/booking.service.client.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/services/booking.service.server.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/booking/booking.model.server.js" />
+        <option value="$PROJECT_DIR$/server-side-implementation/models/booking/booking.schema.server.js" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html" />
+        <option value="$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js" />
+        <option value="$PROJECT_DIR$/server-side-implementation/services/user.service.server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/services/review.service.client.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/services/review.service.server.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/review/review.model.server.js" />
-        <option value="$PROJECT_DIR$/server-side-implementation/models/booking/booking.schema.server.js" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/css/style.css" />
-        <option value="$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/admin-people.view.client.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/admin-people.controller.client.js" />
-        <option value="$PROJECT_DIR$/server-side-implementation/services/user.service.server.js" />
+        <option value="$PROJECT_DIR$/server-side-implementation/models/review/review.schema.server.js" />
+        <option value="$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.model.server.js" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/admin-people.view.client.html" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/css/style.css" />
       </list>
     </option>
   </component>
@@ -543,7 +538,63 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="message" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client-side-implementation-public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="hotelDetails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client-side-implementation-public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelDetails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -566,6 +617,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client-side-implementation-public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -787,12 +864,12 @@
       <workItem from="1502140307914" duration="21668000" />
       <workItem from="1502216913443" duration="1406000" />
       <workItem from="1502244407258" duration="1384000" />
-      <workItem from="1502281715741" duration="12325000" />
+      <workItem from="1502281715741" duration="19191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="417102000" />
+    <option name="totallyTimeSpent" value="423968000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -810,7 +887,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19709763" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986808" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283166" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -881,13 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
           <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/services/hotel.service.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -982,20 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/reservation.controller.client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -1087,27 +1143,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/review/review.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/services/review.service.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/services/review.service.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server-side-implementation/models/booking/booking.schema.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -1115,50 +1150,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="280" column="13" lean-forward="true" selection-start-line="280" selection-start-column="13" selection-end-line="280" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="314" column="70" lean-forward="false" selection-start-line="314" selection-start-column="70" selection-end-line="314" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/review/review.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="49" column="29" lean-forward="false" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/user/controllers/user-register.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1187,45 +1182,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js">
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/user/controllers/user-register.controller.client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="114" column="34" lean-forward="true" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
+        <state relative-caret-position="873">
+          <caret line="74" column="18" lean-forward="true" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/templates/admin-people.view.client.html">
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/review/review.model.server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="206" column="65" lean-forward="true" selection-start-line="206" selection-start-column="65" selection-end-line="206" selection-end-column="90" />
+        <state relative-caret-position="600">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/services/review.service.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/services/review.service.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="334" column="80" lean-forward="false" selection-start-line="334" selection-start-column="68" selection-end-line="334" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.schema.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/user/user.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="133" column="13" lean-forward="false" selection-start-line="133" selection-start-column="13" selection-end-line="133" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server-side-implementation/services/user.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="281" column="15" lean-forward="false" selection-start-line="281" selection-start-column="15" selection-end-line="281" selection-end-column="15" />
+        <state relative-caret-position="240">
+          <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/services/user.service.client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="793">
-          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+        <state relative-caret-position="624">
+          <caret line="189" column="32" lean-forward="true" selection-start-line="189" selection-start-column="32" selection-end-line="189" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/services/hotel.service.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="239" column="92" lean-forward="true" selection-start-line="239" selection-start-column="92" selection-end-line="239" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/controllers/admin-people.controller.client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="158" column="19" lean-forward="true" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
+        <state relative-caret-position="273">
+          <caret line="96" column="13" lean-forward="true" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/models/review/review.schema.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/templates/admin-people.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="517" column="68" lean-forward="false" selection-start-line="517" selection-start-column="68" selection-end-line="517" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
