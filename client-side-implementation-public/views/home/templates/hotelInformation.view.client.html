@@ -1,0 +1,194 @@
+<div class="banner1">
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">Motel</a></h1>
+            </div>
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!--/.navbar-header-->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav ">
+                        <li class="active"><a href="#!/">Home</a></li>
+                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin">Admin</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox</a></li>
+                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
+                        <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav ">
+                        <!--<li class="active"><a href="#!/">Home</a></li>
+                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
+                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
+                        <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/following">Following</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/follower">Followers</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/reservation">Bookings</a></li>
+                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
+                    </ul>
+                </div>
+                <!--/.navbar-collapse-->
+            </nav>
+            <div class="search-box">
+                <div id="sb-search" class="sb-search">
+                    <form>
+                        <input class="sb-search-input" placeholder="Enter your search term..." type="search"
+                               name="search" id="search">
+                        <input class="sb-search-submit" type="submit" value="">
+                        <span class="sb-icon-search"> </span>
+                    </form>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <!-- search-scripts -->
+            <script src="js/classie.js"></script>
+            <script src="js/uisearch.js"></script>
+            <script>
+                new UISearch(document.getElementById('sb-search'));
+            </script>
+            <!-- //search-scripts -->
+
+        </div>
+    </div>
+</div>
+<!-- banner -->
+<!-- details -->
+<div class="details">
+    <div class="container">
+        <div class="wd-text-card-margin wd-remove-text-overflowing wd-title-shadow wd-title-color text-center">
+            <h3><span class="wd-title-color"><strong class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h3>
+        </div>
+        <div class="col-md-7 details-left">
+            <img src="{{model.hotelObject.photoUrl}}" height="300" width="500" class=" img-responsive center-block wd-image-shadow" alt="">
+            <!--<img src="images/16.jpg" class="img-responsive" alt="">-->
+        </div>
+        <div class="col-md-5 details-right">
+
+            <div class="card">
+                <div class="card-block">
+                    <!--<div class="wd-text-card-margin wd-remove-text-overflowing wd-title-shadow wd-title-color">
+                        <h5><span class="wd-title-color"><strong class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h5>
+                    </div>-->
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Open Now&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.openStatus}}</h4>
+                    </div>
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Phone&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.phoneNumber}}</h4>
+                    </div>
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Address&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.hotelAddress}}</h4>
+                    </div>
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Rating&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.hotelRating}}</h4>
+                    </div>
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Landmark&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.landmarkLocation}}</h4>
+                    </div>
+                    <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Website&nbsp;&nbsp;:&nbsp;&nbsp;</h4><a href="{{model.hotelObject.website}}" target="_blank"><h4 class="card-subtitle mb-2 text-muted wd-link-color">Click Me.</h4></a>
+                    </div>
+                    <div class="wd-text-card-margin wd-remove-text-overflowing">
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Opening Hours&nbsp;&nbsp;:&nbsp;&nbsp;</h4><ul class="list-group wd-text-card-margin"><li ng-repeat="timing in model.hotelObject.weekHours" class="list-group-item wd-remove-text-overflowing"><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{timing}}</h4></li></ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="wd-heading-bottom-margin">
+            <iframe
+                    width="100%"
+                    height="350"
+                    frameborder="0" style="border:0"
+                    src={{model.mapUrlIframe}} allowfullscreen >
+            </iframe>
+        </div>
+        <div class="container-fluid">
+            <a class="btn btn-success btn-block" href="#!/details/{{model.hotelId}}">Book / Review Hotel</a>
+            <a class="btn btn-primary btn-block" ng-click="model.backButton()">Go Back</a>
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+<!-- details -->
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="col-md-2 deco">
+            <h4>Navigation</h4>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shortcodes.html">Short Codes </a></li>
+            <li><a href="sigin.html">Sign in</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+        <div class="col-md-2 deco">
+            <h4>Links</h4>
+            <li><a href="#">Qui Sommes-Nous ?</a></li>
+            <li><a href="#">Mentions Légales </a></li>
+            <li><a href="#">Conditions D'Utilisation </a></li>
+        </div>
+        <div class="col-md-2 deco">
+            <h4>Social</h4>
+            <div class="soci">
+                <li><a href="#"><i class="f-1"> </i></a></li>
+                <li><a href="#"><i class="t-1"> </i></a></li>
+                <li><a href="#"><i class="g-1"> </i></a></li>
+            </div>
+        </div>
+        <div class="col-md-3 cardss">
+            <h4>Payment Sécure</h4>
+            <li><i class="visa"></i></li>
+            <li><i class="ma"></i></li>
+            <li><i class="paypal"></i></li>
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-md-3 pos">
+            <h4>NewsLetter</h4>
+            <form method="post">
+                <input type="text" class="textbox" value="Email" onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Email';}">
+                <div class="smt">
+                    <input type="submit" value="Subscribe">
+                </div>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="footer-bottom">
+    <div class="container">
+        <p>© 2015 Motel. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a>
+        </p>
+    </div>
+</div>
+
+<script>
+    $('.flip').hover(function(){
+        $(this).find('.card').toggleClass('flipped');
+
+    });
+
+</script>

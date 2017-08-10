@@ -16,6 +16,14 @@
                     currentUser: checkCurrentLoggedInUser
                 }
             })
+            .when('/information/:hotelId', {
+                templateUrl:'views/home/templates/hotelInformation.view.client.html',
+                controller: "hotelInformationController",
+                controllerAs: "model",
+                resolve:{
+                    currentUser: checkCurrentLoggedInUser
+                }
+            })
             .when('/details/:hotelId', {
                 templateUrl:'views/hotelDetails/templates/hotel-details.view.client.html',
                 controller: "hotelDetailsController",

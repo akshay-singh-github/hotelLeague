@@ -5,7 +5,7 @@
     angular.module("HotelLeagueMaker")
         .controller("homeController", homeController);
 
-    function homeController($route,$location, userService,currentUser, googleService) {
+    function homeController($route,$location, userService,currentUser, googleService,$scope, $localStorage, $sessionStorage, $window) {
         var model = this;
 
         /*model.currentUser = currentUser;*/
@@ -14,11 +14,44 @@
         model.getApiKey = getApiKey;
         model.logout = logout;
         model.currentUser = currentUser;
+        model.gotoDetailsPage = gotoDetailsPage;
+        model.gotoInfoPage = gotoInfoPage;
 
         function init(){
             model.getApiKey();
+            get();
+            /*model.hotels = $window.sessionStorage.getItem("hotels");
+            console.log("session hotels", $window.sessionStorage.getItem("hotels"));*/
         }
         init();
+
+
+
+
+        function gotoDetailsPage(hotelList) {
+            $localStorage.LocalMessage = hotelList;
+            $sessionStorage.SessionMessage = hotelList;
+            $location.url('/');
+
+        }
+
+        function gotoInfoPage(hotelList) {
+            $localStorage.LocalMessage = hotelList;
+            $sessionStorage.SessionMessage = hotelList;
+            $location.url('/');
+
+        }
+
+
+
+
+
+        function get() {
+            model.hotels = $sessionStorage.SessionMessage;
+            $window.alert($localStorage.LocalMessage + "\n" + $sessionStorage.SessionMessage);
+            $location.url('/');
+        }
+
         
         
         function logout() {
@@ -48,6 +81,7 @@
             googleService.searchNearbyHotels(urlObject)
                 .then(function (result) {
                     model.hotels = result.data;
+                    /*$window.sessionStorage.setItem("hotels",result.data);*/
                     console.log(result.data);
                 })
 
