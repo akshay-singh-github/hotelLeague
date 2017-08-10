@@ -16,6 +16,7 @@ module.exports = function () {
         deleteBooking: deleteBooking,
         findFavoriteBookingByUserId : findFavoriteBookingByUserId,
         getAllBookings : getAllBookings,
+        updateBooking : updateBooking,
         setModel: setModel
     };
 
@@ -23,7 +24,12 @@ module.exports = function () {
 
 
 
+    function updateBooking(bookingID, booking) {
+        console.log("booking in the model", booking);
 
+        return bookingModel.update({_id:bookingID},{$set:booking});
+
+    }
 
 
     function setModel(_model) {

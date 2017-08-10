@@ -15,12 +15,24 @@
             getBookingBycurrentUser : getBookingBycurrentUser,
             getAllFavoriteBookingsForUser : getAllFavoriteBookingsForUser,
             deleteBooking : deleteBooking,
+            updateBooking : updateBooking,
             getAllBookings : getAllBookings
 
 
         };
 
         return api;
+
+
+
+        function updateBooking(Booking) {
+            var url = "/api/updateBooking";
+
+            return $http.put(url, Booking)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
 
 
 
@@ -70,8 +82,14 @@
 
         }
 
-        function deleteBooking() {
+        function deleteBooking(booking) {
 
+            var url = "/api/deleteBooking/"+booking._id;
+
+            return $http.delete(url)
+                .then(function (result) {
+                    return result.data;
+                })
         }
 
 

@@ -9,10 +9,33 @@ module.exports=function (app,model) {
     app.get("/api/getBooking" , findBookingByUserId);
     app.get("/api/getAllBookings" , getAllBookings);
     app.post("/api/createBooking" , createBooking);
+    app.put("/api/updateBooking",updateBooking);
+    app.delete("/api/deleteBooking/:bookingId", deleteBooking);
 
 
 
 
+    function deleteBooking(req, res) {
+        var bookingId = req.params.bookingId;
+
+        model.bookingModel.deleteBooking(bookingId)
+            .then(function (result) {
+                res.json(result) ;
+            })
+    }
+
+
+
+
+    function updateBooking(req, res) {
+        var booking = req.body;
+        console.log("booking",booking);
+        model.bookingModel.updateBooking(booking._id, booking )
+            .then(function (result) {
+                res.json(result);
+            })
+
+    }
 
     
     function getAllBookings(req, res) {

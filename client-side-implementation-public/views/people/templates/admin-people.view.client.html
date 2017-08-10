@@ -74,7 +74,7 @@
 <div class="details">
     <div class="container">
         <div class="container-fluid">
-            <ul class="nav nav-tabs nav-justified">
+            <ul class="nav nav-tabs nav-justified" id="myTab">
                 <li class="active"><a data-toggle="tab" data-target="#wd-user-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Users</h4></a></li>
                 <li ><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Bookings</h4></a></li>
                 <li ><a data-toggle="tab" data-target="#wd-review-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Reviews</h4></a></li>
@@ -102,7 +102,7 @@
                                         </div>
                                         <form ng-class="{'submitted': model.createUsersubmitted}">
                                             <div class="wd-button-margin">
-                                                <label for="createfirstName" class="wd-label-color">First Name</label>
+                                                <label for="createfirstName" class="wd-label-color wd-remove-text-overflowing">First Name</label>
                                                 <input
                                                         type="text"
                                                         id="createfirstName"
@@ -116,7 +116,7 @@
                                                 />
                                             </div>
                                             <div class="wd-button-margin">
-                                                <label for="createlastName" class="wd-label-color">Last Name</label>
+                                                <label for="createlastName" class="wd-label-color wd-remove-text-overflowing">Last Name</label>
                                                 <input
                                                         type="text"
                                                         id="createlastName"
@@ -130,7 +130,7 @@
                                                 />
                                             </div>
                                             <div class="wd-button-margin">
-                                                <label for="createusername" class="wd-label-color">Username</label>
+                                                <label for="createusername" class="wd-label-color wd-remove-text-overflowing">Username</label>
                                                 <input
                                                         type="text"
                                                         id="createusername"
@@ -145,7 +145,7 @@
                                             </div>
 
                                             <div class="wd-button-margin">
-                                                <label for="createroles" class="wd-label-color">Roles</label>
+                                                <label for="createroles" class="wd-label-color wd-remove-text-overflowing">Roles</label>
                                                 <input
                                                         type="text"
                                                         id="createroles"
@@ -160,7 +160,7 @@
                                             </div>
 
                                             <div class="wd-button-margin">
-                                                <label for="createemailId" class="wd-label-color">Email ID</label>
+                                                <label for="createemailId" class="wd-label-color wd-remove-text-overflowing">Email ID</label>
                                                 <input
                                                         type="text"
                                                         id="createemailId"
@@ -175,7 +175,7 @@
                                             </div>
 
                                             <div class="wd-button-margin">
-                                                <label for="createphone" class="wd-label-color">Phone</label>
+                                                <label for="createphone" class="wd-label-color wd-remove-text-overflowing">Phone</label>
                                                 <input
                                                         type="text"
                                                         id="createphone"
@@ -189,7 +189,7 @@
                                                 />
                                             </div>
                                             <div class="wd-button-margin">
-                                                <label for="createpassword" class="wd-label-color">Password*</label>
+                                                <label for="createpassword" class="wd-label-color wd-remove-text-overflowing">Password*</label>
                                                 <input ng-model="newUser.password"
                                                        type="password"
                                                        id="createpassword"
@@ -203,7 +203,7 @@
                                                 <div ng-show="model.passwordcreateUsermessage" class="alert alert-info">{{model.passwordcreateUsermessage}}</div>
                                             </div>
                                             <div class="wd-button-margin">
-                                                <label for="createpassword2" class="wd-label-color">Confirm Password*</label>
+                                                <label for="createpassword2" class="wd-label-color wd-remove-text-overflowing">Confirm Password*</label>
                                                 <input ng-model="model.createUserpassword2"
                                                        type="password"
                                                        id="createpassword2"
@@ -241,7 +241,7 @@
                     <div class="wd-admin-tile wd-tile-shadow" ng-repeat="user in model.Allusers">
                         <div class="container-fluid">
                             <div class="wd-button-margin">
-                                <label for="firstName" class="wd-label-color">First Name</label>
+                                <label for="firstName" class="wd-label-color wd-remove-text-overflowing">First Name</label>
                                 <input
                                         type="text"
                                         id="firstName"
@@ -253,7 +253,7 @@
 
 
                             <div class="wd-button-margin">
-                                <label for="lastName" class="wd-label-color">Last Name</label>
+                                <label for="lastName" class="wd-label-color wd-remove-text-overflowing">Last Name</label>
                                 <input
                                         type="text"
                                         id="lastName"
@@ -264,7 +264,7 @@
                             </div>
 
                             <div class="wd-button-margin">
-                                <label for="roles" class="wd-label-color">Roles</label>
+                                <label for="roles" class="wd-label-color wd-remove-text-overflowing">Roles</label>
                                 <input
                                         type="text"
                                         id="roles"
@@ -275,7 +275,7 @@
                             </div>
 
                             <div class="wd-button-margin">
-                                <label for="emailId" class="wd-label-color">Email ID</label>
+                                <label for="emailId" class="wd-label-color wd-remove-text-overflowing">Email ID</label>
                                 <input
                                         type="text"
                                         id="emailId"
@@ -286,7 +286,7 @@
                             </div>
 
                             <div class="wd-button-margin">
-                                <label for="phone" class="wd-label-color">Phone</label>
+                                <label for="phone" class="wd-label-color wd-remove-text-overflowing">Phone</label>
                                 <input
                                         type="text"
                                         id="phone"
@@ -310,18 +310,30 @@
 
 
                 <div class="tab-pane container-fluid fade" id="wd-booking-id">
-
-
+                    <div ng-show="model.error" class="alert alert-danger wd-remove-text-overflowing">{{model.error}}</div>
+                    <div ng-show="model.successMessage" class="alert alert-success wd-remove-text-overflowing">{{model.successMessage}}</div>
+                    <div ng-show="model.contactMessage" class="alert alert-danger wd-remove-text-overflowing">
+                        {{model.contactMessage}}
+                    </div>
+                    <div ng-show="model.nameMessage" class="alert alert-danger wd-remove-text-overflowing">{{model.nameMessage}}</div>
+                    <div ng-show="model.checkinMessage" class="alert alert-danger wd-remove-text-overflowing">
+                        {{model.checkinMessage}}
+                    </div>
+                    <div ng-show="model.checkoutMessage" class="alert alert-danger wd-remove-text-overflowing">
+                        {{model.checkoutMessage}}
+                    </div>
+                    <div ng-show="model.MemberCountMessage" class="alert alert-danger wd-remove-text-overflowing">
+                        {{model.MemberCountMessage}}
+                    </div>
 
                     <div class="wd-admin-tile-booking wd-tile-shadow" ng-repeat="booking in model.AllBookings">
                         <div class="booking-form">
-                            <div ng-show="model.error" class="alert alert-danger wd-remove-text-overflowing">{{model.error}}</div>
-                            <div ng-show="model.successMessage" class="alert alert-success wd-remove-text-overflowing">{{model.successMessage}}</div>
+
                             <div class="col-xs-12">
                                 <form class="wd-text-card-margin">
-                                    <div ng-show="model.nameMessage" class="alert alert-danger wd-remove-text-overflowing">{{model.nameMessage}}</div>
+
                                     <div class="wd-button-margin">
-                                    <label for="name" class="wd-label-color">Guest's First Name</label>
+                                    <label for="name" class="wd-label-color wd-remove-text-overflowing">Guest's First Name</label>
                                     <input type="text"
                                            placeholder="abc321"
                                            id="name"
@@ -329,18 +341,16 @@
                                            ng-model="booking.name"/>
                                     </div>
                                     <div class="wd-button-margin">
-                                    <label for="surname" class="wd-label-color">Guest's Last Name</label>
+                                    <label for="surname" class="wd-label-color wd-remove-text-overflowing">Guest's Last Name</label>
                                     <input type="text"
                                            placeholder="abc321"
                                            id="surname"
                                            class="form-control wd-make-full-width"
                                            ng-model="booking.surname"/>
                                     </div>
-                                    <div ng-show="model.contactMessage" class="alert alert-danger wd-remove-text-overflowing">
-                                        {{model.contactMessage}}
-                                    </div>
+
                                     <div class="wd-button-margin">
-                                    <label for="email" class="wd-label-color">Guest's Email ID</label>
+                                    <label for="email" class="wd-label-color wd-remove-text-overflowing">Guest's Email ID</label>
                                     <input type="text"
                                            placeholder="abc321"
                                            id="email"
@@ -348,18 +358,16 @@
                                            ng-model="booking.email"/>
                                     </div>
                                     <div class="wd-button-margin">
-                                    <label for="phoneG" class="wd-label-color">Guest's Phone</label>
+                                    <label for="phoneG" class="wd-label-color wd-remove-text-overflowing">Guest's Phone</label>
                                     <input type="text"
                                            placeholder="abc321"
                                            id="phoneG"
                                            class="form-control wd-make-full-width"
                                            ng-model="booking.phone"/>
                                     </div>
-                                    <div ng-show="model.checkinMessage" class="alert alert-danger wd-remove-text-overflowing">
-                                        {{model.checkinMessage}}
-                                    </div>
+
                                     <div class="wd-button-margin">
-                                    <label for="datecin" class="wd-label-color">Check - in:</label>
+                                    <label for="datecin" class="wd-label-color wd-remove-text-overflowing">Check - in:</label>
                                     <select id="datecin" class="arrival" ng-model="booking.checkinDate">
                                         <option>01</option>
                                         <option>02</option>
@@ -415,11 +423,9 @@
                                         <option>2022</option>
                                     </select>
                                     </div>
-                                    <div ng-show="model.checkoutMessage" class="alert alert-danger wd-remove-text-overflowing">
-                                        {{model.checkoutMessage}}
-                                    </div>
+
                                     <div class="wd-button-margin">
-                                        <label for="datecout" class="wd-label-color">Check - out:</label>
+                                        <label for="datecout" class="wd-label-color wd-remove-text-overflowing">Check - out:</label>
                                     <select id = "datecout" class="arrival" ng-model="booking.checkoutDate">
                                         <option>01</option>
                                         <option>02</option>
@@ -475,13 +481,11 @@
                                         <option>2022</option>
                                     </select>
                                     </div>
-                                    <div ng-show="model.MemberCountMessage" class="alert alert-danger wd-remove-text-overflowing">
-                                        {{model.MemberCountMessage}}
-                                    </div>
+
                                     <div class="wd-button-margin">
-                                        <label for="numMember" class="wd-label-color">Member Count:</label>
+                                        <label for="numMember" class="wd-label-color wd-remove-text-overflowing">Member Count:</label>
                                     <select id="numMember" class="arrival " ng-model="booking.MemberCount">
-                                        {{booking.MemberCount}}
+                                        <!--{{booking.MemberCount}}-->
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -492,12 +496,12 @@
                                     </div>
                                     <div class="wd-button-margin">
                                     <!--<input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small" ng-model="model.customer.MemberCount">-->
-                                        <label for="txtarea" class="wd-label-color">Required</label>
+                                        <label for="txtarea" class="wd-label-color wd-remove-text-overflowing">Required</label>
                                     <textarea id ="txtarea" value="" ng-model="booking.Instructions"></textarea>
                                     </div>
                                     <div class="wd-button-margin text-center">
-                                        <a class="btn btn-primary wd-button-margin" href="" role="button" >Update</a>
-                                        <a class="btn btn-danger wd-button-margin" href="" role="button" >Delete</a>
+                                        <a class="btn btn-primary wd-button-margin" href="" role="button" ng-click="model.updateBooking(booking)">Update</a>
+                                        <a class="btn btn-danger wd-button-margin" href="" role="button" ng-click="model.deleteBooking(booking)">Delete</a>
                                     </div>
                                 </form>
                             </div>
@@ -526,7 +530,7 @@
                                 {{model.ReviewsuccessMessage}}
                             </div>
                             <form ng-class="{'submitted': model.Reviewsubmitted}">
-                                <label class="wd-label-color" for="ReviewTitle">Title :</label>
+                                <label class="wd-label-color wd-remove-text-overflowing" for="ReviewTitle">Review Title :</label>
                                 <div ng-show="model.ReviewTitleMessage" class="alert alert-danger">
                                     {{model.ReviewTitleMessage}}
                                 </div>
@@ -536,7 +540,7 @@
                                        class="form-control wd-make-full-width"
                                        ng-model="review.ReviewTitle"
                                        required/>
-                                <label class="wd-label-color" for="ReviewContent">Review Content :</label>
+                                <label class="wd-label-color wd-remove-text-overflowing" for="ReviewContent">Review Content :</label>
                                 <div ng-show="model.messageReviewContent" class="alert alert-danger">
                                     {{model.messageReviewContent}}
                                 </div>
@@ -547,7 +551,7 @@
 
                                 <div class="wd-button-margin text-center">
                                     <a class="btn btn-primary wd-button-margin" href="" ng-click="model.updateReview(review)" role="button" >Update</a>
-                                    <a class="btn btn-danger wd-button-margin" href="" role="button" >Delete</a>
+                                    <a class="btn btn-danger wd-button-margin" href="" ng-click="model.deleteReview(review)" role="button" >Delete</a>
                                 </div>
                             </form>
 
@@ -608,6 +612,13 @@
 
     </div>
 </div>
+
+
+
+
+
+
+
 <!-- details -->
 <!-- footer -->
 <div class="footer">

@@ -16,6 +16,9 @@
         model.deleteUser = deleteUser;
         model.createUser = createUser;
         model.updateReview = updateReview;
+        model.deleteReview = deleteReview;
+        model.updateBooking = updateBooking;
+        model.deleteBooking = deleteBooking;
         model.logout = logout;
 
         /*model.login = login;
@@ -82,6 +85,156 @@
             model.showUserDetailsFlag = false;*/
         }
         init();
+
+        function deleteBooking(booking) {
+            bookingService.deleteBooking(booking)
+                .then(function (result) {
+                    $route.reload();
+                    return result;
+                })
+
+
+
+        }
+
+
+        function updateBooking(bookingObject) {
+            console.log("Inside booking controller create");
+            console.log(bookingObject);
+            model.successMessage = "";
+            model.error = "";
+            model.nameMessage = "";
+            model.contactMessage = "";
+            model.checkinMessage = "";
+            model.checkoutMessage = "";
+            model.MemberCountMessage = "";
+            model.submitted = true;
+
+            if(!bookingObject){
+                model.error = "Booking could not be done. Please fill all the details and try again.";
+                $window.scrollTo(0, 0);
+            }
+            else if(bookingObject && (!bookingObject.name || !bookingObject.surname)){
+                model.error = "Booking could not be done. Please fill all the details and try again.";
+                model.nameMessage = "Please enter all the Guest name fields.";
+                $window.scrollTo(0, 0);
+            }
+            else if(bookingObject && (!bookingObject.email || !bookingObject.phone)){
+
+                model.error = "Booking could not be done. Please fill all the details and try again.";
+                model.contactMessage = "Please enter all the Guest contact fields.";
+                $window.scrollTo(0, 0);
+
+            }
+            else if(bookingObject && (!bookingObject.checkinDate || !bookingObject.checkinMonth || !bookingObject.checkinYear)){
+                model.error = "Booking could not be done. Please fill all the details and try again.";
+                model.checkinMessage = "Please enter all the Hotel Check-in fields.";
+                $window.scrollTo(0, 0);
+            }
+            else if(bookingObject && (!bookingObject.checkoutDate || !bookingObject.checkoutMonth || !bookingObject.checkoutYear)){
+                model.error = "Booking could not be done. Please fill all the details and try again.";
+                model.checkoutMessage = "Please enter all the Hotel Check-out fields.";
+                $window.scrollTo(0, 0);
+            }
+            else if(bookingObject && (!bookingObject.MemberCount)){
+                model.error = "Booking could not be done. Please fill all the details and try again.";
+                model.MemberCountMessage = "Please enter the number of guests.";
+                $window.scrollTo(0, 0);
+            }
+            else{
+
+                model.submitted = false;
+                /*bookingObject.forUser = currentUser.username;
+                bookingObject.hotel = model.hotelObject;*/
+                userService.findUserByUsername(bookingObject.forUser)
+                    .then(function (result) {
+                        if(!result || typeof result === "undefined"){
+                            model.error = "This User does not exist.";
+                            $window.scrollTo(0, 0);
+                        }
+                        else{
+
+                            if(parseInt(bookingObject.checkoutYear) > parseInt(bookingObject.checkinYear)){
+
+
+                                model.successMessage = "Booking has been done Successfully!!!.";
+                                bookingObject.forUserId = result._id;
+                                bookingService
+                                    .updateBooking(bookingObject)
+                                    .then(function (result) {
+                                        $window.scrollTo(0, 0);
+                                        console.log("bookingObject", bookingObject);
+                                        return result.data;
+                                    });
+
+                            }
+                            else if(parseInt(bookingObject.checkoutYear) === parseInt(bookingObject.checkinYear)){
+                                if(parseInt(bookingObject.checkoutMonth) > parseInt(bookingObject.checkinMonth)){
+
+                                    model.successMessage = "Booking has been done Successfully!!!.";
+                                    bookingObject.forUserId = result._id;
+                                    bookingService
+                                        .updateBooking(bookingObject)
+                                        .then(function (result) {
+                                            $window.scrollTo(0, 0);
+                                            console.log("bookingObject", bookingObject);
+                                            return result.data;
+                                        });}
+
+
+                                else if(parseInt(bookingObject.checkoutMonth) === parseInt(bookingObject.checkinMonth)){
+                                    if(parseInt(bookingObject.checkoutDate) >= parseInt(bookingObject.checkinDate)){
+
+                                        model.successMessage = "Booking has been done Successfully!!!.";
+                                        bookingObject.forUserId = result._id;
+                                        bookingService
+                                            .updateBooking(bookingObject)
+                                            .then(function (result) {
+                                                $window.scrollTo(0, 0);
+                                                console.log("bookingObject", bookingObject);
+                                                return result.data;
+                                            });
+
+                                    }
+                                    else{
+                                        model.error = "Booking could not be done. Please check the timings.";
+                                        $window.scrollTo(0, 0);
+                                    }
+
+                                }
+                                else{
+                                    model.error = "Booking could not be done. Please check the timings.";
+                                    $window.scrollTo(0, 0);
+                                }
+
+                            }
+                            else{
+                                model.error = "Booking could not be done. Please check the timings.";
+                                $window.scrollTo(0, 0);
+                            }
+
+                        }
+
+                    },function () {
+                        model.error = "This User does not exist.";
+                        $window.scrollTo(0, 0);
+                    });
+
+            }
+        }
+
+
+
+
+        function deleteReview(review) {
+            reviewService.deleteReview(review)
+                .then(function (result) {
+                    $route.reload();
+                    return result;
+                })
+
+        }
+
 
 
 
