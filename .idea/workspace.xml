@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7f29be4-a40d-4905-8ed0-95bb0d7bafa1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-login.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-login.view.client.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-register.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-register.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/services/google.service.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/services/google.service.server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -80,8 +76,8 @@
       <file leaf-file-name="user-register.view.client.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-register.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="153" column="46" lean-forward="false" selection-start-line="153" selection-start-column="46" selection-end-line="153" selection-end-column="46" />
+            <state relative-caret-position="533">
+              <caret line="171" column="43" lean-forward="false" selection-start-line="171" selection-start-column="43" selection-end-line="171" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -759,12 +755,12 @@
       <workItem from="1502320499175" duration="8675000" />
       <workItem from="1502366330573" duration="8570000" />
       <workItem from="1502394195057" duration="17951000" />
-      <workItem from="1502417957735" duration="10831000" />
+      <workItem from="1502417957735" duration="11085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="470472000" />
+    <option name="totallyTimeSpent" value="470726000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1210,8 +1206,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-register.view.client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="153" column="46" lean-forward="false" selection-start-line="153" selection-start-column="46" selection-end-line="153" selection-end-column="46" />
+        <state relative-caret-position="533">
+          <caret line="171" column="43" lean-forward="false" selection-start-line="171" selection-start-column="43" selection-end-line="171" selection-end-column="43" />
           <folding />
         </state>
       </provider>
