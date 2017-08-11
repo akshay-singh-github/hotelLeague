@@ -136,7 +136,7 @@
     <h1 class="wd-label-color-home-details wd-title-shadow wd-remove-text-overflowing">Search Results</h1>
     <div class="container">
             <div class=" wd-menuitem-style wd-tile-shadow" ng-repeat="hotel in model.hotels" style="text-align: center">
-                <h2 class="wd-project-text-position-heading wd-remove-text-overflowing wd-card-margin" style="text-align: center">{{hotel.name}} </h2>
+                <h2 class="wd-project-text-position-heading wd-remove-text-overflowing wd-card-margin " style="text-align: center">{{hotel.name}} </h2>
                 <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=150&maxwidth=200&key={{model.googleApiKey}}"
                      class="img-responsive center-block wd-image-shadow " alt="" height="150" width="200"
                      style="margin-bottom: 10px">
