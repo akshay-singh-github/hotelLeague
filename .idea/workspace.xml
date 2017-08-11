@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7f29be4-a40d-4905-8ed0-95bb0d7bafa1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/css/style.css" afterPath="$PROJECT_DIR$/client-side-implementation-public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/home/controllers/home.controller.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/home/controllers/home.controller.client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/hotelInformation.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/hotelInformation.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/controllers/hotel-details.controller.client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/hotel-details.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/reservation.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/hotelDetails/templates/reservation.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/message/templates/message-inbox.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/message/templates/message-inbox.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/admin-people.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/admin-people.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/follower-people.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/follower-people.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/following-people.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/following-people.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/search-people.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/people/templates/search-people.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-login.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-login.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-profile.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-profile.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-register.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-register.view.client.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/server_app.js" afterPath="$PROJECT_DIR$/server-side-implementation/server_app.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,11 +21,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="home.view.client.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.view.client.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="560">
               <caret line="132" column="65" lean-forward="false" selection-start-line="132" selection-start-column="65" selection-end-line="132" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server_app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server-side-implementation/server_app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="666">
+              <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -49,29 +56,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="341">
               <caret line="953" column="36" lean-forward="false" selection-start-line="953" selection-start-column="30" selection-end-line="953" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="message-inbox.view.client.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/message/templates/message-inbox.view.client.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="61" column="54" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="54" />
-              <folding>
-                <element signature="e#6560#6566#0" expanded="true" />
-                <element signature="e#6573#6579#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin-people.view.client.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/people/templates/admin-people.view.client.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="83" column="51" lean-forward="false" selection-start-line="83" selection-start-column="51" selection-end-line="83" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -190,7 +174,6 @@
       <list>
         <option value="$PROJECT_DIR$/server-side-implementation/models/model_server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/services/hotel.service.client.js" />
-        <option value="$PROJECT_DIR$/server-side-implementation/server_app.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/services/hotel.service.server.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/models/hotel/hotel.schema.server.js" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/services/message.service.client.js" />
@@ -239,6 +222,7 @@
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-profile.view.client.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/user/templates/user-register.view.client.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" />
+        <option value="$PROJECT_DIR$/server-side-implementation/server_app.js" />
       </list>
     </option>
   </component>
@@ -726,6 +710,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hotelLeague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -911,12 +909,12 @@
       <workItem from="1502320499175" duration="8675000" />
       <workItem from="1502366330573" duration="8570000" />
       <workItem from="1502394195057" duration="17951000" />
-      <workItem from="1502417957735" duration="21505000" />
+      <workItem from="1502417957735" duration="22792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="481146000" />
+    <option name="totallyTimeSpent" value="482433000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -980,20 +978,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/js/uisearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-side-implementation/server_app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server-side-implementation/services/message.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1358,6 +1342,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="132" column="65" lean-forward="false" selection-start-line="132" selection-start-column="65" selection-end-line="132" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-side-implementation/server_app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding />
         </state>
       </provider>
