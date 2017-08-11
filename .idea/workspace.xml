@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7f29be4-a40d-4905-8ed0-95bb0d7bafa1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-side-implementation-public/images/images/6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-side-implementation-public/images/images/62.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-side-implementation-public/images/images/64.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-side-implementation-public/images/images/65.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-side-implementation-public/images/images/66.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-side-implementation-public/images/images/67.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-side-implementation-public/images/images/68.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client-side-implementation-public/images/images/temp.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/css/style.css" afterPath="$PROJECT_DIR$/client-side-implementation-public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-side-implementation/services/google.service.server.js" afterPath="$PROJECT_DIR$/server-side-implementation/services/google.service.server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,24 +21,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="home.view.client.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.view.client.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="138" column="64" lean-forward="false" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="64" />
+            <state relative-caret-position="853">
+              <caret line="168" column="18" lean-forward="true" selection-start-line="168" selection-start-column="18" selection-end-line="168" selection-end-column="18" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#4;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#4;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="588" column="1" lean-forward="true" selection-start-line="588" selection-start-column="1" selection-end-line="588" selection-end-column="1" />
+            <state relative-caret-position="141">
+              <caret line="589" column="51" lean-forward="true" selection-start-line="589" selection-start-column="51" selection-end-line="589" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -57,7 +49,7 @@
       <file leaf-file-name="home.controller.client.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/home/controllers/home.controller.client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1120">
+            <state relative-caret-position="440">
               <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
@@ -97,16 +89,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$window</find>
-      <find>label</find>
-      <find>overflowing</find>
       <find>wd-admin-tile-booking</find>
       <find>wd-booking-id</find>
       <find>deleteBooking</find>
-      <find>hvr-shutter-in-horizontal</find>
       <find>hidd</find>
-      <find>is-flex</find>
-      <find>tels-left</find>
       <find>submit_button</find>
       <find>footer-bottom</find>
       <find>jpg</find>
@@ -120,13 +106,19 @@
       <find>overflow</find>
       <find>wd-label-color-review-details</find>
       <find>footer</find>
-      <find>special</find>
-      <find>result-area-background</find>
-      <find>wd-menuitem-style</find>
       <find>wd-cancel_button</find>
-      <find>wd-label-color-home-details</find>
       <find>url</find>
       <find>wood</find>
+      <find>wd-</find>
+      <find>wd-project-text-position-heading</find>
+      <find>tels-left</find>
+      <find>is-flex</find>
+      <find>result-area-background</find>
+      <find>clearfix</find>
+      <find>wd-label-color-home-details</find>
+      <find>special</find>
+      <find>hvr-shutter-in-horizontal</find>
+      <find>wd-menuitem-style</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,8 +176,8 @@
         <option value="$PROJECT_DIR$/client-side-implementation-public/index.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/home/controllers/home.controller.client.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/services/google.service.server.js" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/css/style.css" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" />
       </list>
     </option>
   </component>
@@ -201,7 +193,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-16" />
     <option name="y" value="-16" />
-    <option name="width" value="3872" />
+    <option name="width" value="3844" />
     <option name="height" value="2092" />
   </component>
   <component name="ProjectView">
@@ -628,12 +620,12 @@
       <workItem from="1502320499175" duration="8675000" />
       <workItem from="1502366330573" duration="8570000" />
       <workItem from="1502394195057" duration="17951000" />
-      <workItem from="1502417957735" duration="2210000" />
+      <workItem from="1502417957735" duration="5825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="461851000" />
+    <option name="totallyTimeSpent" value="465466000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -645,10 +637,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
+    <frame x="-16" y="-16" width="3844" height="2092" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24300791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1241361" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1027,14 +1019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/home/controllers/home.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server-side-implementation/services/google.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
@@ -1043,22 +1027,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html">
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/home/controllers/home.controller.client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="138" column="64" lean-forward="false" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="440">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="588" column="1" lean-forward="true" selection-start-line="588" selection-start-column="1" selection-end-line="588" selection-end-column="1" />
+        <state relative-caret-position="141">
+          <caret line="589" column="51" lean-forward="true" selection-start-line="589" selection-start-column="51" selection-end-line="589" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="168" column="18" lean-forward="true" selection-start-line="168" selection-start-column="18" selection-end-line="168" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#4;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#4;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
