@@ -1,5 +1,4 @@
-
-<div class="banner">
+<div class="banner wd-banner-padding-overlap">
     <div class="header">
         <div class="container">
             <div class="logo">
@@ -8,7 +7,8 @@
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -54,48 +54,46 @@
             <script>
                 new UISearch( document.getElementById( 'sb-search' ) );
             </script>-->
-             <!--//search-scripts-->
+            <!--//search-scripts-->
 
         </div>
     </div>
 
 
-
-        <div class="banner-info wd-search-bar-alignment">
-            <div class="container">
-                <div class="details-1">
-                    <div class="wd-project-padding-search">
-                        <div class="col-xs-12 dropdown-buttons">
-                            <div class="col-xs-12 dropdown-button">
-                                <div class="input-group">
-                                    <label for = "city-name" class="wd-label-cityName ">Enter City Name</label>
-                                    <input class="form-control has-dark-background"
-                                           ng-model="model.city"
-                                           name="city-name"
-                                           id="city-name"
-                                           placeholder="Boston"
-                                           type="text"
-                                           required="">
-                                </div>
-                                <div class=" submit_button">
-                                    <label><i></i></label>
-                                    <input ng-click="model.searchNearbyHotels(model.city)" class="wd-remove-text-overflowing" type="submit" value="Search">
-                                </div>
-                                <div class="wd-cancel_button">
-                                    <label><i></i></label>
-                                    <input ng-click="model.cancelSearch()" class="wd-remove-text-overflowing" type="submit" value="Cancel">
-                                </div>
+    <div class="banner-info wd-search-bar-alignment  wd-bottom-margin-footer-overlap">
+        <div class="container">
+            <div class="details-1 ">
+                <div class="wd-project-padding-search">
+                    <div class="col-xs-12 dropdown-buttons ">
+                        <div class="col-xs-12 dropdown-button ">
+                            <div class="input-group ">
+                                <label for="city-name" class="wd-label-cityName ">Enter City Name</label>
+                                <input class="form-control has-dark-background"
+                                       ng-model="model.city"
+                                       name="city-name"
+                                       id="city-name"
+                                       placeholder="Boston"
+                                       type="text"
+                                       required="">
                             </div>
-                            <div class="clearfix"> </div>
+                            <div class=" submit_button">
+                                <label><i></i></label>
+                                <input ng-click="model.searchNearbyHotels(model.city)"
+                                       class="wd-remove-text-overflowing" type="submit" value="Search">
+                            </div>
+                            <div class="wd-cancel_button">
+                                <label><i></i></label>
+                                <input ng-click="model.cancelSearch()" class="wd-remove-text-overflowing" type="submit"
+                                       value="Cancel">
+                            </div>
                         </div>
-                        <div class="clearfix"> </div>
+                        <div class="clearfix"></div>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>
-
-
-
+    </div>
 
 
     <!--<div class="banner-info wd-search-bar-alignment">
@@ -134,49 +132,61 @@
 
 <div ng-if="model.hotels.length>0" class="container-fluid special">
     <h1 class="wd-label-color-home-details wd-title-shadow wd-remove-text-overflowing">Search Results</h1>
-    <div class="container">
-            <div class=" wd-menuitem-style wd-tile-shadow" ng-repeat="hotel in model.hotels" style="text-align: center">
-                <h2 class="wd-project-text-position-heading wd-remove-text-overflowing wd-card-margin " style="text-align: center">{{hotel.name}} </h2>
-                <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=150&maxwidth=200&key={{model.googleApiKey}}"
-                     class="img-responsive center-block wd-image-shadow " alt="" height="150" width="200"
-                     style="margin-bottom: 10px">
-                <div class="nowrapping wd-remove-text-overflowing wd-card-margin" style="text-align: center">
-                    <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" ng-if="hotel.formatted_address">Address&nbsp;:&nbsp;</h5>
-                    <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" style="color: limegreen" ng-if="hotel.formatted_address">
-                        {{hotel.formatted_address}}</h5>
-                </div>
-                <div class="nowrapping wd-remove-text-overflowing wd-card-margin" style="text-align: center">
-                    <h5 class="wd-project-text-position-heading wd-remove-text-overflowing">Open Now&nbsp;:&nbsp;</h5>
-                    <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" ng-if="hotel.opening_hours.open_now" style="color: limegreen">
-                        Yes</h5>
-                    <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" ng-if="!hotel.opening_hours.open_now" style="color: limegreen">
-                        No</h5>
-                </div>
-                <div class="nowrapping wd-remove-text-overflowing wd-card-margin" style="text-align: center">
-                    <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" ng-if="hotel.price_level">Price&nbsp;:&nbsp;</h5>
-                    <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" style="color: limegreen" ng-if="hotel.price_level">{{hotel.price_level}}</h5>
-                </div>
-                <div class="nowrapping wd-remove-text-overflowing wd-card-margin" style="text-align: center">
-                    <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" ng-if="hotel.rating">Rating&nbsp;:&nbsp;</h5>
-                    <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" style="color: limegreen" ng-if="hotel.rating">{{hotel.rating}}</h5>
-                </div>
-
-                <div class=" wd-remove-text-overflowing wd-card-margin">
-                    <!--<a class="hvr-shutter-in-horizontal pull-left" style="position: absolute;bottom: 5px;left: 5px" href="#!/details/{{hotel.place_id}}">Book Now</a>-->
-                    <a class="hvr-shutter-in-horizontal pull-left wd-remove-text-overflowing" ng-click="model.gotoDetailsPage(model.hotels)" style="position: relative;margin: 10px">Book Now</a>
-                    <!--<a class="hvr-shutter-in-horizontal pull-right" style="position: absolute;bottom: 5px;right: 5px" href="#!/information/{{hotel.place_id}}">Hotel Info.</a>-->
-                    <a class="hvr-shutter-in-horizontal pull-right wd-remove-text-overflowing" ng-click="model.gotoInfoPage(model.hotels)" style="position: relative;margin: 10px">Hotel Info.</a>
-                </div>
+    <div class="container wd-bottom-margin-footer-overlap">
+        <div class=" wd-menuitem-style wd-tile-shadow" ng-repeat="hotel in model.hotels" style="text-align: center">
+            <h2 class="wd-project-text-position-heading wd-remove-text-overflowing wd-card-margin "
+                style="text-align: center">{{hotel.name}} </h2>
+            <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=150&maxwidth=250&key={{model.googleApiKey}}"
+                 class="img-responsive center-block  wd-image-shadow " alt="" height="150" width="250"
+                 style="margin-bottom: 10px">
+            <div class="nowrapping wd-remove-text-overflowing wd-card-margin" style="text-align: center">
+                <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" ng-if="hotel.formatted_address">
+                    Address&nbsp;:&nbsp;</h5>
+                <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" style="color: limegreen"
+                    ng-if="hotel.formatted_address">
+                    {{hotel.formatted_address}}</h5>
             </div>
+            <div class="nowrapping wd-remove-text-overflowing wd-card-margin" style="text-align: center">
+                <h5 class="wd-project-text-position-heading wd-remove-text-overflowing">Open Now&nbsp;:&nbsp;</h5>
+                <h5 class="wd-project-text-position-heading wd-remove-text-overflowing"
+                    ng-if="hotel.opening_hours.open_now" style="color: limegreen">
+                    Yes</h5>
+                <h5 class="wd-project-text-position-heading wd-remove-text-overflowing"
+                    ng-if="!hotel.opening_hours.open_now" style="color: limegreen">
+                    No</h5>
+            </div>
+            <div class="nowrapping wd-remove-text-overflowing wd-card-margin" style="text-align: center">
+                <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" ng-if="hotel.price_level">Price&nbsp;:&nbsp;</h5>
+                <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" style="color: limegreen"
+                    ng-if="hotel.price_level">{{hotel.price_level}}</h5>
+            </div>
+            <div class="nowrapping wd-remove-text-overflowing wd-card-margin" style="text-align: center">
+                <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" ng-if="hotel.rating">Rating&nbsp;:&nbsp;</h5>
+                <h5 class="wd-project-text-position-heading wd-remove-text-overflowing" style="color: limegreen"
+                    ng-if="hotel.rating">{{hotel.rating}}</h5>
+            </div>
+
+            <div class=" wd-remove-text-overflowing wd-card-margin">
+                <!--<a class="hvr-shutter-in-horizontal pull-left" style="position: absolute;bottom: 5px;left: 5px" href="#!/details/{{hotel.place_id}}">Book Now</a>-->
+                <a class="hvr-shutter-in-horizontal pull-left wd-remove-text-overflowing" href=""
+                   ng-click="model.gotoDetailsPage(model.hotels,hotel)" style="position: relative;margin: 10px">Book
+                    Now</a>
+                <!--<a class="hvr-shutter-in-horizontal pull-right" style="position: absolute;bottom: 5px;right: 5px" href="#!/information/{{hotel.place_id}}">Hotel Info.</a>-->
+                <a class="hvr-shutter-in-horizontal pull-right wd-remove-text-overflowing" href=""
+                   ng-click="model.gotoInfoPage(model.hotels,hotel)" style="position: relative;margin: 10px">Hotel
+                    Info.</a>
+            </div>
+        </div>
         <div class="clearfix"></div>
     </div>
     <div class="clearfix"></div>
 </div>
-<div class="footer-bottom">
+<div class="footer-bottom footer navbar-fixed-bottom">
     <div class="container">
-        <p>© 2017 Hotel League. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">Akshay Singh</a>
+        <p>© 2017 Hotel League. All Rights Reserved | Design by <a href="" target="_blank">Akshay Singh</a>
         </p>
     </div>
+    <div class="clearfix"></div>
 </div>
 
 

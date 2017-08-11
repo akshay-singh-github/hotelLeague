@@ -38,19 +38,20 @@
 
 
 
-        function gotoDetailsPage(hotelList) {
+        function gotoDetailsPage(hotelList, hotel) {
             /*$localStorage.LocalMessage = hotelList;*/
             $sessionStorage.hotelList = hotelList;
             $sessionStorage.cityName = model.city;
-            $location.url('/');
+            $location.url('/details/'+hotel.place_id);
 
         }
 
-        function gotoInfoPage(hotelList) {
+        function gotoInfoPage(hotelList, hotel) {
             /*$localStorage.LocalMessage = hotelList;*/
+            console.log("this is hotel object",hotel.place_id);
             $sessionStorage.hotelList = hotelList;
             $sessionStorage.cityName = model.city;
-            $location.url('/');
+            $location.url('/information/'+hotel.place_id);
 
         }
 

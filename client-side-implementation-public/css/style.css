@@ -8,6 +8,8 @@ html, body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 100%;
 	background:#fff;
+    min-height: 100%;
+    min-width: 100%;
 }
 
 .wd-thumbs-margin{
@@ -309,6 +311,12 @@ label.wd-label-color{
 }
 
 
+.wd-button-margin-details{
+    margin-bottom: 50px;
+}
+
+
+
 .wd-button-margin{
     margin: 5px;
 }
@@ -328,6 +336,18 @@ label.wd-label-color{
     margin: 20px;
 }
 
+
+.wd-bottom-margin-footer-overlap{
+    margin-bottom: 150px;
+}
+.wd-bottom-margin-footer-overlap-register{
+    margin-bottom: 150px;
+}
+
+
+.wd-footer-top-margin{
+    margin-top: 20px;
+}
 
 .wd-review-title-color{
     color: blueviolet;
@@ -611,10 +631,18 @@ h5.wd-project-text-position-heading{
     width: 100%;
 }
 
+.wd-search-padding{
+    padding-bottom: 200px;
+}
+
+
+.wd-banner-padding-overlap{
+    padding-bottom: 75px;
+}
 
 
 .wd-project-padding-search{
-    padding: 10px;
+    padding: 20px;
 }
 
 
@@ -1143,6 +1171,9 @@ span {
   background: black;
   padding: 1em 0;
 }
+
+
+
 .cardss li {
   display: inline-block;
   margin: 0 0.1em;

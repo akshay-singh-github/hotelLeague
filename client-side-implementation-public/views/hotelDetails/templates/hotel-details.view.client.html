@@ -2,7 +2,7 @@
     <div class="header">
         <div class="container">
             <div class="logo">
-                <h1><a href="index.html">Motel</a></h1>
+                <h1><a href="#!/">Hotel League</a></h1>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -17,7 +17,7 @@
                 <!--/.navbar-header-->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav ">
-                        <li class="active"><a href="#!/">Home</a></li>
+                        <li><a href="#!/">Home</a></li>
                         <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin">Admin</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
@@ -46,7 +46,7 @@
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
-            <div class="search-box">
+            <!--<div class="search-box">
                 <div id="sb-search" class="sb-search">
                     <form>
                         <input class="sb-search-input" placeholder="Enter your search term..." type="search"
@@ -58,20 +58,20 @@
             </div>
             <div class="clearfix"></div>
 
-            <!-- search-scripts -->
+            &lt;!&ndash; search-scripts &ndash;&gt;
             <script src="js/classie.js"></script>
             <script src="js/uisearch.js"></script>
             <script>
                 new UISearch(document.getElementById('sb-search'));
             </script>
-            <!-- //search-scripts -->
+            &lt;!&ndash; //search-scripts &ndash;&gt;-->
 
         </div>
     </div>
 </div>
 <!-- banner -->
 <!-- details -->
-<div class="details">
+<div class="details wd-bottom-margin-footer-overlap">
     <div class="container">
         <div class="wd-text-card-margin wd-remove-text-overflowing wd-title-shadow wd-title-color text-center">
             <h3><span class="wd-title-color"><strong class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h3>
@@ -121,9 +121,9 @@
                 src={{model.mapUrlIframe}} allowfullscreen >
         </iframe>
         </div>
-
-
-
+        <div class=" wd-button-margin-details text-center">
+            <a class="btn btn-default " ng-click="model.backButton()">Go Back</a>
+        </div>
         <div class="container-fluid">
             <ul class="nav nav-tabs nav-justified">
                 <li class="active"><a data-toggle="tab" data-target="#wd-compose-review-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Write/Read Hotel Review</h4></a></li>
@@ -500,13 +500,9 @@
                         </div>-->
 
                     </div>
-
-
-
-
                 </div>
-            </div>
 
+            </div>
         </div>
 
 
@@ -514,7 +510,7 @@
 </div>
 <!-- details -->
 <!-- footer -->
-<div class="footer">
+<!--<div class="footer">
     <div class="container">
         <div class="col-md-2 deco">
             <h4>Navigation</h4>
@@ -556,12 +552,13 @@
         </div>
         <div class="clearfix"></div>
     </div>
-</div>
-<div class="footer-bottom">
+</div>-->
+<div class="footer-bottom footer navbar-fixed-bottom">
     <div class="container">
-        <p>© 2015 Motel. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a>
+        <p>© 2017 Hotel League. All Rights Reserved | Design by <a href="" target="_blank">Akshay Singh</a>
         </p>
     </div>
+    <div class="clearfix"></div>
 </div>
 
 <script>

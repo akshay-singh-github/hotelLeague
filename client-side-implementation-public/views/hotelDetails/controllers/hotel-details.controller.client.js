@@ -5,7 +5,7 @@
     angular.module("HotelLeagueMaker")
         .controller("hotelDetailsController", hotelDetailsController);
 
-    function hotelDetailsController($route, $location,$sce, userService,bookingService,hotelService,reviewService, currentUser,googleService,$routeParams) {
+    function hotelDetailsController($route,$window, $location,$sce, userService,bookingService,hotelService,reviewService, currentUser,googleService,$routeParams) {
         var model = this;
 
         model.currentUser = currentUser;
@@ -26,6 +26,7 @@
         model.dislikeReview = dislikeReview;
         model.iswrittenByCurrentUser = iswrittenByCurrentUser;
         model.reload = reload;
+        model.backButton = backButton;
 
 
 
@@ -42,6 +43,11 @@
         }
         init();
 
+
+
+        function backButton() {
+            $window.history.back();
+        }
 
         function reload() {
             $route.reload();
