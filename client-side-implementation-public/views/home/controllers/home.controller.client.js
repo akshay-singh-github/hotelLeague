@@ -16,6 +16,7 @@
         model.currentUser = currentUser;
         model.gotoDetailsPage = gotoDetailsPage;
         model.gotoInfoPage = gotoInfoPage;
+        model.cancelSearch = cancelSearch;
 
         function init(){
             model.getApiKey();
@@ -28,16 +29,27 @@
 
 
 
+        function cancelSearch() {
+            $sessionStorage.hotelList ="";
+            $sessionStorage.cityName ="";
+            $route.reload();
+        }
+
+
+
+
         function gotoDetailsPage(hotelList) {
-            $localStorage.LocalMessage = hotelList;
-            $sessionStorage.SessionMessage = hotelList;
+            /*$localStorage.LocalMessage = hotelList;*/
+            $sessionStorage.hotelList = hotelList;
+            $sessionStorage.cityName = model.city;
             $location.url('/');
 
         }
 
         function gotoInfoPage(hotelList) {
-            $localStorage.LocalMessage = hotelList;
-            $sessionStorage.SessionMessage = hotelList;
+            /*$localStorage.LocalMessage = hotelList;*/
+            $sessionStorage.hotelList = hotelList;
+            $sessionStorage.cityName = model.city;
             $location.url('/');
 
         }
@@ -47,8 +59,9 @@
 
 
         function get() {
-            model.hotels = $sessionStorage.SessionMessage;
-            $window.alert($localStorage.LocalMessage + "\n" + $sessionStorage.SessionMessage);
+            model.hotels = $sessionStorage.hotelList;
+            model.city = $sessionStorage.cityName;
+            /*$window.alert($localStorage.LocalMessage + "\n" + $sessionStorage.SessionMessage);*/
             $location.url('/');
         }
 
@@ -70,7 +83,9 @@
         
 
         function searchNearbyHotels(search) {
-            var cityN = search.city;
+            console.log("search",search);
+            if(search !== null && typeof search !== 'undefined'){
+            var cityN = search;
             var replacedsearch = cityN.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g," ");
             var processedSearch = replacedsearch.split(" ").join("+");
             console.log(processedSearch);
@@ -81,9 +96,15 @@
             googleService.searchNearbyHotels(urlObject)
                 .then(function (result) {
                     model.hotels = result.data;
-                    /*$window.sessionStorage.setItem("hotels",result.data);*/
+                    $sessionStorage.hotelList = model.hotels;
+                    $sessionStorage.cityName = search;
                     console.log(result.data);
-                })
+                });
+            }else{
+                $sessionStorage.hotelList="";
+                $route.reload();
+                $window.alert("Enter the city name.");
+            }
 
         }
 

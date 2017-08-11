@@ -1,8 +1,9 @@
+
 <div class="banner">
     <div class="header">
         <div class="container">
             <div class="logo">
-                <h1><a href="index.html">Motel</a></h1>
+                <h1><a href="index.html">Hotel League</a></h1>
                 {{model.currentUser.username}}
             </div>
             <nav class="navbar navbar-default" role="navigation">
@@ -23,30 +24,20 @@
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav ">
-                        <!--<li class="active"><a href="#!/">Home</a></li>
-                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
                         <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/following">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/follower">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/reservation">Bookings</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
-            <div class="search-box">
+            <!--<div class="search-box">
                 <div id="sb-search" class="sb-search">
                     <form>
                         <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
@@ -57,246 +48,122 @@
             </div>
             <div class="clearfix"> </div>
 
-            <!-- search-scripts -->
+            &lt;!&ndash; search-scripts &ndash;&gt;
             <script src="js/classie.js"></script>
             <script src="js/uisearch.js"></script>
             <script>
                 new UISearch( document.getElementById( 'sb-search' ) );
-            </script>
+            </script>-->
              <!--//search-scripts-->
 
         </div>
     </div>
-    <div class="banner-info wd-search-bar-alignment">
+
+
+
+        <div class="banner-info wd-search-bar-alignment">
+            <div class="container">
+                <div class="details-1">
+                    <div class="wd-project-padding-search">
+                        <div class="col-xs-12 dropdown-buttons">
+                            <div class="col-xs-12 dropdown-button">
+                                <div class="input-group">
+                                    <label for = "city-name" ><i>City</i></label>
+                                    <input class="form-control has-dark-background"
+                                           ng-model="model.city"
+                                           name="city-name"
+                                           id="city-name"
+                                           placeholder="Boston"
+                                           type="text"
+                                           required="">
+                                </div>
+                                <div class=" submit_button">
+                                    <label><i></i></label>
+                                    <input ng-click="model.searchNearbyHotels(model.city)" type="submit" value="Search">
+                                </div>
+                                <div class="wd-cancel_button">
+                                    <label><i></i></label>
+                                    <input ng-click="model.cancelSearch()" type="submit" value="Cancel">
+                                </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    <!--<div class="banner-info wd-search-bar-alignment">
         <div class="container">
             <div class="details-1">
                 <div class="wd-project-padding-search">
-                <div class="col-md-10 dropdown-buttons">
-                    <div class="col-md-12 dropdown-button">
+                <div class="col-xs-12 dropdown-buttons">
+                    <div class="col-xs-12 dropdown-button">
                         <div class="input-group">
                             <label for = "city-name" ><i>City</i></label>
                             <input class="form-control has-dark-background"
-                                   ng-model="search.city"
+                                   ng-model="model.city"
                                    name="city-name"
                                    id="city-name"
                                    placeholder="Boston"
                                    type="text"
                                    required="">
                         </div>
-                    </div>
-                    <!---strat-date-piker---->
-                    <link rel="stylesheet" href="css/jquery-ui.css" />
-                    <script src="js/jquery-ui.js"></script>
-                    <script>
-                        $(function() {
-                            $( "#datepicker,#datepicker1" ).datepicker();
-                        });
-                    </script>
-                    <!---/End-date-piker---->
-
-                    <!--<div class="col-md-3 dropdown-button">
-                        <div class="book_date">
-                            <form>
-                                <input class="date" id="datepicker" type="text" value="Check In" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Check In';}">
-                            </form>
+                        <div class=" submit_button">
+                            <label><i></i></label>
+                            <input ng-click="model.searchNearbyHotels(model.city)" type="submit" value="Search">
+                        </div>
+                        <div class="wd-cancel_button">
+                            <label><i></i></label>
+                            <input ng-click="model.cancelSearch()" type="submit" value="Cancel">
                         </div>
                     </div>
-                    <div class="col-md-3 dropdown-button">
-                        <div class="book_date">
-                            <form>
-                                <input class="date1" id="datepicker1" type="text" value="Check Out" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Check Out';}">
-                            </form>
-                        </div>
-                    </div>-->
-                    <!--<div class="col-md-6 dropdown-button">
-                        <div class="section_1">
-                            <label for = "range" ><i>Range</i></label>
-                            <select id="range" name="range" class="frm-field required" ng-model="search.range">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                            </select>
-                        </div>
-                    </div>-->
                     <div class="clearfix"> </div>
-                </div>
-                <div class="col-md-2 submit_button">
-                        <label><i></i></label>
-                        <input ng-click="model.searchNearbyHotels(search)" type="submit" value="Search">
                 </div>
                 <div class="clearfix"> </div>
             </div>
         </div>
         </div>
-    </div>
+    </div>-->
 </div>
-<!-- banner -->
-<!-- hod -->
-<!--<div class="hod">
-    <div class="container">
-        <div class="col-md-6 hod-left">
-            <img src="images/14.jpg" class="img-responsive" alt="">
-        </div>
-        <div class="col-md-6 hod-right">
-            <h2>Publishing packages and web page</h2>
-            <p>The point of using as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' </p>
-            <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
-            <a class="hvr-shutter-in-horizontal" href="details.html">Book Now</a>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>-->
-<!-- hod -->
-<!-- tels -->
-<div ng-if="model.hotels" class="tels result-area-background" >
-    <h1>Search Results</h1>
-    <div class="container ">
-        <div class="row is-flex">
-        <div class="col-md-4 tels-left wd-menuitem-style wd-tile-shadow" ng-repeat="hotel in model.hotels">
-            <div>
-            <h4 class="wd-project-text-position-heading">{{hotel.name}} </h4>
-            <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=200&maxwidth=200&key={{model.googleApiKey}}" class="img-responsive center-block wd-image-shadow" alt="" >
-                <label>Address : </label>
-                <p>{{hotel.formatted_address}}</p>
-                <label>Open Now : </label>
-                <p>{{hotel.opening_hours.open_now}}</p>
-                <label>Price : </label>
-                 <p>{{hotel.price_level}}</p>
-                <label>Rating : </label>
-                <p>{{hotel.rating}}</p>
-            </div>
-            <div>
-            <!--<a class="hvr-shutter-in-horizontal pull-left" style="position: absolute;bottom: 5px;left: 5px" href="#!/details/{{hotel.place_id}}">Book Now</a>-->
-                <a class="hvr-shutter-in-horizontal pull-left" style="position: absolute;bottom: 5px;left: 5px" ng-click="model.gotoDetailsPage(model.hotels)">Book Now</a>
-                <!--<a class="hvr-shutter-in-horizontal pull-right" style="position: absolute;bottom: 5px;right: 5px" href="#!/information/{{hotel.place_id}}">Hotel Info.</a>-->
-                <a class="hvr-shutter-in-horizontal pull-right" style="position: absolute;bottom: 5px;right: 5px" ng-click="model.gotoInfoPage()">Hotel Info.</a>
-            </div>
-        </div>
-        </div>
-        <!--<div class="col-md-4 tels-left">
-            <h4>Double room <span>150$</span></h4>
-            <img src="images/9.jpg" class="img-responsive" alt="">
-            <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
-            <a class="hvr-shutter-in-horizontal" href="details.html">Book Now</a>
-        </div>
-        <div class="col-md-4 tels-left">
-            <h4>Private room <span>200$</span></h4>
-            <img src="images/3.jpg" class="img-responsive" alt="">
-            <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
-            <a class="hvr-shutter-in-horizontal" href="details.html">Book Now</a>
-        </div>
-        <div class="col-md-4 tels-left">
-            <h4>Private room <span>200$</span></h4>
-            <img src="images/3.jpg" class="img-responsive" alt="">
-            <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
-            <a class="hvr-shutter-in-horizontal" href="details.html">Book Now</a>
-        </div>-->
-        <div class="clearfix"></div>
-    </div>
-</div>
-<!-- tels -->
-<!-- special -->
-<div class="special">
-    <div class="container">
-        <div class="spe-info">
-            <h3>Special Offer</h3>
-            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-        </div>
-    </div>
-</div>
-<!-- special -->
-<!-- quick -->
-<div class="quick">
-    <div class="container">
-        <div class="col-md-4 quick-left">
-            <h3>Most Popular</h3>
-            <ul>
-                <li><a href="#">Distribution of letters, as opposed</a></li>
-                <li><a href="#">Distribution of letters, as opposed</a></li>
-                <li><a href="#">Distribution of letters, as opposed</a></li>
-                <li><a href="#">Distribution of letters, as opposed</a></li>
-                <li><a href="#">Distribution of letters, as opposed</a></li>
-            </ul>
-        </div>
-        <div class="col-md-4 quick-left">
-            <h3>News & Events</h3>
-            <div class="new">
-                <div class="n-lft">
-                    <h5>10</h5>
-                    <h6>Sep</h6>
+
+    <div ng-if="model.hotels" class="tels result-area-background" >
+        <h1>Search Results</h1>
+        <div class="container ">
+            <div class="row is-flex">
+                <div class="col-xs-4 tels-left wd-menuitem-style wd-tile-shadow" ng-repeat="hotel in model.hotels">
+                    <div>
+                        <h4 class="wd-project-text-position-heading wd-remove-text-overflowing">{{hotel.name}} </h4>
+                        <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=200&maxwidth=200&key={{model.googleApiKey}}" class="img-responsive center-block wd-image-shadow" alt="" >
+                        <label>Address : </label>
+                        <p>{{hotel.formatted_address}}</p>
+                        <label>Open Now : </label>
+                        <p>{{hotel.opening_hours.open_now}}</p>
+                        <label>Price : </label>
+                        <p>{{hotel.price_level}}</p>
+                        <label>Rating : </label>
+                        <p>{{hotel.rating}}</p>
+                    </div>
+                    <div>
+                        <!--<a class="hvr-shutter-in-horizontal pull-left" style="position: absolute;bottom: 5px;left: 5px" href="#!/details/{{hotel.place_id}}">Book Now</a>-->
+                        <a class="hvr-shutter-in-horizontal pull-left" style="position: absolute;bottom: 5px;left: 5px" ng-click="model.gotoDetailsPage(model.hotels)">Book Now</a>
+                        <!--<a class="hvr-shutter-in-horizontal pull-right" style="position: absolute;bottom: 5px;right: 5px" href="#!/information/{{hotel.place_id}}">Hotel Info.</a>-->
+                        <a class="hvr-shutter-in-horizontal pull-right" style="position: absolute;bottom: 5px;right: 5px" ng-click="model.gotoInfoPage(model.hotels)">Hotel Info.</a>
+                    </div>
                 </div>
-                <div class="n-rgt">
-                    <p>Lorem Ipsum is that it has a more-or-less normal<a href="#">More</a></p>
-                </div>
-                <div class="clearfix"></div>
             </div>
-            <div class="new-1">
-                <div class="n-lft">
-                    <h5>15</h5>
-                    <h6>Sep</h6>
-                </div>
-                <div class="n-rgt">
-                    <p>That it has a more-or-less normal distribution<a href="#">More</a></p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="col-md-4 quick-left">
-            <h3>Quick Message</h3>
-            <form>
-                <input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
-                <textarea placeholder="" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        <div class="clearfix"></div>
     </div>
-</div>
-<!-- quick -->
-<!-- footer -->
-<div class="footer">
-    <div class="container">
-        <div class="col-md-2 deco">
-            <h4>Navigation</h4>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shortcodes.html">Short Codes </a></li>
-            <li><a href="sigin.html">Sign in</a></li>
-            <li><a href="contact.html">Contact</a></li>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2017 Hotel League. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
         </div>
-        <div class="col-md-2 deco">
-            <h4>Links</h4>
-            <li><a href="#">Qui Sommes-Nous ?</a></li>
-            <li><a href="#">Mentions Légales </a></li>
-            <li><a href="#">Conditions D'Utilisation </a></li>
-        </div>
-        <div class="col-md-2 deco">
-            <h4>Social</h4>
-            <div class="soci">
-                <li><a href="#"><i class="f-1"> </i></a></li>
-                <li><a href="#"><i class="t-1"> </i></a></li>
-                <li><a href="#"><i class="g-1"> </i></a></li>
-            </div>
-        </div>
-        <div class="col-md-3 cardss">
-            <h4>Payment Sécure</h4>
-            <li><i class="visa"></i></li>
-            <li><i class="ma"></i></li>
-            <li><i class="paypal"></i></li>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="col-md-3 pos">
-            <h4>NewsLetter</h4>
-            <form method="post">
-                <input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
-                <div class="smt">
-                    <input type="submit" value="Subscribe">
-                </div>
-            </form>
-        </div>
-        <div class="clearfix"> </div>
     </div>
-</div>
-<div class="footer-bottom">
-    <div class="container">
-        <p>© 2015 Motel. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-    </div>
-</div>
+
+

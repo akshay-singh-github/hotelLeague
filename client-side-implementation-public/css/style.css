@@ -17,6 +17,35 @@ html, body{
 }
 
 
+
+.wd-cancel_button input[type="submit"] {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    width: 100%;
+    background:#A0130E;
+    padding: 9px 0px;
+    outline: none;
+}
+
+.wd-cancel_button input[type="submit"]:hover{
+    background:#FFAA17;
+}
+
+
+.wd-cancel_button input[type="submit"] {
+    font-size: 0.875em;
+}
+
+
+
+
+
+
+
+
 input.wd-make-full-width{
     width: 100%;
 }
@@ -586,8 +615,8 @@ label {
     width: 100% ! important;
 }
 .navbar-default {
-    background-color:#6cbc35! important;
-    border-color:#6cbc35 ! important;
+    background-color:#8017D0! important;
+    border-color:#8017D0 ! important;
 }
 .navbar {
     border-radius: 0px ! important;
@@ -606,12 +635,12 @@ label {
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #fff;
-    background-color:#6CBC35;
+    background-color:#8017D0;
 	border-bottom:2px solid #fff;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #fff;
-    background-color:#6CBC35;
+    background-color:#8017D0;
 	border-bottom:2px solid #fff;
 }
 .glyphicon {
@@ -748,8 +777,9 @@ nav.navbar.navbar-default {
 }
 /*--*/
 .header {
-    background-color:#6cbc35;
+    background-color:#8017D0;
     padding: 1.5em 0;
+    z-index: 1;
 }
 .details-1 {
     padding: 2em 0 1em;
@@ -817,6 +847,7 @@ input#datepicker, input#datepicker1 {
   -o-background-size: cover;
   -ms-background-size: cover;
   min-height:750px;
+    z-index: 100;
 }
 .hod {
     padding: 5em 0;
@@ -1017,7 +1048,7 @@ span {
   transform: scaleX(0);
 }
 .footer {
-  background:#553A99;
+  background:#8017D0;
   padding: 3em 0;
 }
 .footer h4 {
@@ -1048,25 +1079,26 @@ span {
   color: #3498db;
 }
 .footer-bottom a {
-  color: #6cbc35;
+  color: #27FF1F;
+    font-weight: bold;
   font-size: 1em;
   line-height: 1.8em;
   text-decoration:none;
 }
 .footer-bottom a:hover{
-	color:#a1a1a1;
+	color:#FB0800;
 }
 .footer-bottom span {
-  color: #3498db;
+  color: white;
 }
 .footer-bottom p {
-    color: #a1a1a1;
+    color: white;
     font-size: 1em;
     line-height: 1.8em;
     text-align: center;
 }
 .footer-bottom {
-  background: #191919;
+  background: black;
   padding: 1em 0;
 }
 .cardss li {
