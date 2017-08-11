@@ -600,7 +600,7 @@ h5.wd-project-text-position-heading{
 }
 
 .wd-menuitem-style:hover {
-    border:5px solid orangered;
+    border:5px solid red;
      // only changes to red if the mouse is hovering.
 }
 

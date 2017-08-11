@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7f29be4-a40d-4905-8ed0-95bb0d7bafa1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" afterPath="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-side-implementation-public/css/style.css" afterPath="$PROJECT_DIR$/client-side-implementation-public/css/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="home.view.client.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.view.client.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="139" column="151" lean-forward="false" selection-start-line="139" selection-start-column="151" selection-end-line="139" selection-end-column="151" />
+            <state relative-caret-position="213">
+              <caret line="137" column="42" lean-forward="false" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="138" column="16" lean-forward="false" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="16" />
+            <state relative-caret-position="621">
+              <caret line="610" column="16" lean-forward="true" selection-start-line="610" selection-start-column="16" selection-end-line="610" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -193,8 +193,8 @@
         <option value="$PROJECT_DIR$/client-side-implementation-public/index.html" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/home/controllers/home.controller.client.js" />
         <option value="$PROJECT_DIR$/server-side-implementation/services/google.service.server.js" />
-        <option value="$PROJECT_DIR$/client-side-implementation-public/css/style.css" />
         <option value="$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html" />
+        <option value="$PROJECT_DIR$/client-side-implementation-public/css/style.css" />
       </list>
     </option>
   </component>
@@ -637,12 +637,12 @@
       <workItem from="1502320499175" duration="8675000" />
       <workItem from="1502366330573" duration="8570000" />
       <workItem from="1502394195057" duration="17951000" />
-      <workItem from="1502417957735" duration="7927000" />
+      <workItem from="1502417957735" duration="8111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="467568000" />
+    <option name="totallyTimeSpent" value="467752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1052,18 +1052,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="138" column="16" lean-forward="false" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client-side-implementation-public/views/home/templates/home.view.client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="139" column="151" lean-forward="false" selection-start-line="139" selection-start-column="151" selection-end-line="139" selection-end-column="151" />
+        <state relative-caret-position="213">
+          <caret line="137" column="42" lean-forward="false" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -1088,6 +1080,14 @@
             <element signature="n#style#0;n#a#0;n#div#4;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#1;n#div#4;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-implementation-public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="610" column="16" lean-forward="true" selection-start-line="610" selection-start-column="16" selection-end-line="610" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
