@@ -56,6 +56,17 @@ textarea.wd-make-full-width{
 
 
 
+.wd-label-cityName{
+
+    color: white;
+    font-weight: bold;
+    font-style: normal;
+    font-family: "Arial Black", Gadget, sans-serif;
+
+}
+
+
+
 
 h3.wd-label-color{
 
@@ -72,6 +83,31 @@ h5.wd-label-color-review-details{
     font-style: normal;
     font-family: "Arial Black", Gadget, sans-serif;
 }
+
+h1.wd-label-color-review-details{
+
+    color: #F2AB30;
+    font-weight: bold;
+    text-align: center;
+    font-style: normal;
+    font-family: "Arial Black", Gadget, sans-serif;
+
+}
+
+
+
+h1.wd-label-color-home-details{
+    color: lightseagreen;
+    font-weight: bold;
+    text-align: center;
+    font-style: normal;
+    font-family: "Arial Black", Gadget, sans-serif;
+
+}
+
+
+
+
 
 
 
@@ -541,17 +577,13 @@ label.wd-label-color{
 
 
 
-.result-area-background{
-    background-color: #E7E3DA;
-}
-
-
 
 
 .wd-menuitem-style{
 
     /*border:5px solid #E7E3DA;*/
-    background-color: green;
+    background: url(../images/wood_1.png) repeat 94% 50% black;
+    /*background-color: #FFFFFF;*/
     margin: 70px;
 
 }
@@ -847,7 +879,6 @@ input#datepicker, input#datepicker1 {
   -o-background-size: cover;
   -ms-background-size: cover;
   min-height:750px;
-    z-index: 100;
 }
 .hod {
     padding: 5em 0;
@@ -889,7 +920,7 @@ span {
     -ms-background-size: cover;
     min-height: 350px;
 	padding: 5em 0;
-    text-align: center;
+    /*text-align: center;*/
 }
 .spe-info {
     background-color: #fff;

@@ -68,7 +68,7 @@
                         <div class="col-xs-12 dropdown-buttons">
                             <div class="col-xs-12 dropdown-button">
                                 <div class="input-group">
-                                    <label for = "city-name" ><i>City</i></label>
+                                    <label for = "city-name" class="wd-label-cityName">Enter City Name</label>
                                     <input class="form-control has-dark-background"
                                            ng-model="model.city"
                                            name="city-name"
@@ -132,14 +132,14 @@
     </div>-->
 </div>
 
-    <div ng-if="model.hotels" class="tels result-area-background" >
-        <h1>Search Results</h1>
+    <div ng-if="model.hotels.length>0" class="tels result-area-background special" >
+        <h1 class="wd-label-color-home-details wd-title-shadow wd-remove-text-overflowing">Search Results</h1>
         <div class="container ">
             <div class="row is-flex">
                 <div class="col-xs-4 tels-left wd-menuitem-style wd-tile-shadow" ng-repeat="hotel in model.hotels">
                     <div>
                         <h4 class="wd-project-text-position-heading wd-remove-text-overflowing">{{hotel.name}} </h4>
-                        <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=200&maxwidth=200&key={{model.googleApiKey}}" class="img-responsive center-block wd-image-shadow" alt="" >
+                        <img src="https://maps.googleapis.com/maps/api/place/photo?photoreference={{hotel.photos[0].photo_reference}}&sensor=false&maxheight=150&maxwidth=150&key={{model.googleApiKey}}" class="img-responsive center-block wd-image-shadow" alt="" height="150" width="150">
                         <label>Address : </label>
                         <p>{{hotel.formatted_address}}</p>
                         <label>Open Now : </label>
