@@ -66,7 +66,6 @@ module.exports=function (app, model) {
     app.get('/auth/google/callback',
 
         passport.authenticate('google', { failureRedirect: '/index.html#!/login' }), function(req, res) {
-            // absolute path
             res.redirect('/index.html#!/profile');
         });
 
@@ -496,7 +495,7 @@ module.exports=function (app, model) {
     function login(req, res) {
         var userObject = req.body;
         console.log(userObject);
-        res.send(userObject);
+        res.json(userObject);
 
     }
 
