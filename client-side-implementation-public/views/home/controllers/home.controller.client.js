@@ -5,7 +5,7 @@
     angular.module("HotelLeagueMaker")
         .controller("homeController", homeController);
 
-    function homeController($route,$location, userService,currentUser, googleService,$scope, $localStorage, $sessionStorage, $window) {
+    function homeController($route,$location, userService,currentUser, googleService,$scope, $localStorage, $sessionStorage,$anchorScroll, $window) {
         var model = this;
 
         /*model.currentUser = currentUser;*/
@@ -17,6 +17,7 @@
         model.gotoDetailsPage = gotoDetailsPage;
         model.gotoInfoPage = gotoInfoPage;
         model.cancelSearch = cancelSearch;
+        model.scrollToSearchResults = scrollToSearchResults;
 
         function init(){
             model.getApiKey();
@@ -28,6 +29,15 @@
 
 
 
+        
+        function scrollToSearchResults() {
+            $anchorScroll('search_results');
+        }
+        
+        
+        
+        
+        
 
         function cancelSearch() {
             $sessionStorage.hotelList ="";
@@ -99,6 +109,7 @@
                     model.hotels = result.data;
                     $sessionStorage.hotelList = model.hotels;
                     $sessionStorage.cityName = search;
+                    model.scrollToSearchResults();
                     console.log(result.data);
                 });
             }else{
@@ -108,6 +119,10 @@
             }
 
         }
+
+
+
+
 
         function getApiKey() {
             googleService.getApiKey()
