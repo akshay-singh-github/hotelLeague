@@ -8,15 +8,8 @@ module.exports=function (app,model) {
     app.post("/api/hotel/details" , getHotelDetails);
     app.get("/api/google/apiKey" , getApiKey);
     
-    var GOOGLE_API_KEY = "AIzaSyBu_azU0pu53ljUbVGNHIiYTISJDHZymaA";
+    var GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
-    /*AIzaSyAeildH4NJUWZsBHSCYZPdUoE89O0MFDys*/ //static khan
-    /*AIzaSyA2Bhea9SgEMLUpWGOHViSBv8iEpYQky9Y*/
-    /*AIzaSyC5BexhekQh3Vn7H6xr4727j0bQkkd8R24*/ //khan
-    //DJIHAnBlzcy2F39QY4jLsNwL
-    /*AIzaSyDGxY0mVTT3OXdOYSwf4UZtSr_X1e3PkoU*/ /*dummy*/
-    /*AIzaSyCs1cUSABA5pOEvshw8nIcDs_stsHQC9eY*/ /*dummy2*/
-    /*AIzaSyBu_azU0pu53ljUbVGNHIiYTISJDHZymaA*///project765456
 
     function getApiKey(req, res) {
 
