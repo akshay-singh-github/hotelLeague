@@ -6,12 +6,13 @@ module.exports=function (app, model) {
 
     var https = require('https');
     var passport  = require('passport');
-    var bcrypt = require("bcrypt-nodejs");
     var LocalStrategy = require('passport-local').Strategy;
+    var bcrypt = require("bcrypt-nodejs");
 
-    passport.use(new LocalStrategy(localStrategy));
-    passport.serializeUser(serializeUser);
-    passport.deserializeUser(deserializeUser);
+
+    passport.use(new LocalStrategy(localStrategyForProject));
+    passport.serializeUser(serializeUserForProject);
+    passport.deserializeUser(deserializeUserForProject);
 
     /*isUserAdmin
      isUserAdminOrCurrentUser
@@ -33,6 +34,128 @@ module.exports=function (app, model) {
     app.put('/api/user/:uid',isAdminorCurrentUser , updateUserProfile);
     app.post('/api/unregisterUserProfile',unregisterUserProfile);
     app.delete("/api/deleteUserProfile/:userId", deleteUser);
+
+
+    var ProjectFBconfig ={
+        callbackURL : process.env.CALLBACK_URL_FB,
+        clientID : process.env.ID_CLIENT_FB,
+        clientSecret : process.env.SECRET_CLIENT_FB
+    };
+    var ProjectFacebookStrategy = require('passport-facebook').Strategy;
+    passport.use(new ProjectFacebookStrategy(ProjectFBconfig,projectFBstrategy ));
+    app.get ('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+    app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+            failureRedirect: '/index.html#!/login',
+            successRedirect: '/index.html#!/profile'}));
+
+
+
+
+    var ProjectGPconfig={
+
+        callbackURL: process.env.CALLBACK_URL_GP,
+        clientID: process.env.ID_CLIENT_GP,
+        clientSecret: process.env.SECRET_CLIENT_GP
+    };
+
+    var ProjectGPStrategy = require('passport-google-oauth').OAuth2Strategy;
+    passport.use(new ProjectGPStrategy(ProjectGPconfig, projectGPstrategy));
+
+
+    app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+    app.get('/auth/google/callback',
+
+        passport.authenticate('google', { failureRedirect: '/index.html#!/login' }), function(req, res) {
+            // absolute path
+            res.redirect('/index.html#!/profile');
+        });
+
+
+
+
+
+
+
+
+
+    function projectGPstrategy(token, refreshToken, profile, done) {
+        model.userModel.findUserByGoogleId(profile.id).then(
+            function(user) {
+                    if(user) {
+                        return done(null, user);
+                    } else {
+                        var emailID = profile.emails[0].value;
+                        var  emailIDarray= emailID.split("@");
+                        var userGP = {
+                            lastName:  profile.name.familyName,
+                            firstName: profile.name.givenName,
+                            emailId:     emailID,
+                            username:  emailIDarray[0],
+                            google: {
+                                token: token,
+                                id:    profile.id
+                            }
+                        };
+                        return model.userModel.createUser(userGP);
+                    }
+                }, function(err) {
+                    if (err) {
+                        return done(err);
+                    }
+                }
+            )
+            .then(function(user){
+                    return done(null, user);
+                }, function(err){
+                    if (err) {
+                        return done(err);
+                    }
+                });}
+
+
+
+    function projectFBstrategy(token, refreshToken, profile, done) {
+        model.userModel.findUserByFacebookId(profile.id).then(
+            function(user) {
+                    if(user) {
+                        return done(null, user);
+                    } else {
+                        var displayNameArray =profile.displayName.split(" ");
+                        var fbLastName = displayNameArray[(displayNameArray.length) - 1];
+                        var fbFirstName = displayNameArray[0];
+
+                        var newFaceBookUser = {
+                            firstName: fbFirstName,
+                            lastName:  fbLastName,
+                            facebook: {
+                                token: token,
+                                id:    profile.id
+                            },
+                            username:  profile.displayName.replace(/\s+/g, '').toLowerCase()
+                        };
+                        return model.userModel.createUser(newFaceBookUser);
+                    }
+                }, function(err) {
+                    if (err) {
+                        return done(err);
+                    }
+                }
+            )
+            .then(
+                function(user){
+                    return done(null, user);
+                }, function(err){
+                    if (err) {
+                        return done(err);
+                    }
+                });}
+
+
+
+
+
+
+
 
 
 
@@ -227,12 +350,12 @@ module.exports=function (app, model) {
 
 
 
-    function serializeUser(user, done) {
+    function serializeUserForProject(user, done) {
         done(null, user);
     }
 
 
-    function deserializeUser(user, done) {
+    function deserializeUserForProject(user, done) {
         model.userModel
             .findUserById(user._id)
             .then(
@@ -246,7 +369,7 @@ module.exports=function (app, model) {
     }
 
 
-    function localStrategy(username, password, done) {
+    function localStrategyForProject(username, password, done) {
         model.userModel
             .findUserByUsername(username, password)
             .then(

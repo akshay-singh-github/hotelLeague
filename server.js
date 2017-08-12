@@ -12,7 +12,7 @@ var passport = require('passport');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var session_fields = {
-    secret: "This is a secret",
+    secret: process.env.SECRET_SESSION, /*process.env.SECRET_SESSION*/
     resave: true,
     saveUninitialized:true
 

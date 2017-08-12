@@ -72,13 +72,13 @@
 <div class="login-page wd-bottom-margin-footer-overlap">
     <div class="container">
         <div class="account_grid">
-            <div class="col-md-6 login-left wow fadeInLeft wd-heading-bottom-margin" data-wow-delay="0.4s">
-                <h3>NEW CUSTOMERS</h3>
+            <div class="col-md-6 login-left wow fadeInLeft wd-login-page-new-cust-margin" data-wow-delay="0.4s">
+                <h3 class="wd-label-color" >NEW CUSTOMERS</h3>
                 <p>By creating an account with our store, you will be able to Book or/and Review hotels.</p>
-                <a class="acount-btn" href="#!/register">Create an Account</a>
+                <a class="acount-btn " href="#!/register">Create an Account</a>
             </div>
             <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
-                <h3>REGISTERED CUSTOMERS</h3>
+                <h3 class="wd-label-color" >REGISTERED CUSTOMERS</h3>
                 <p>If you have an account with us, please log in.</p>
                 <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
                 <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
@@ -111,7 +111,9 @@
                         <div ng-show="model.passwordmessage" class="alert alert-info">{{model.passwordmessage}}</div>
                     </div>
                     <!--<a class="forgot" href="#">Forgot Your Password?</a>-->
-                    <input ng-click ="model.login(user.username,user.password);submitted= true" type="submit" value="Login">
+                    <a class="wd-button-margin btn btn-success" ng-click ="model.login(user.username,user.password);submitted= true"><i class="fa fa-key" aria-hidden="true"></i> Username Login</a>
+                    <a class="wd-button-margin btn btn-primary" href="/auth/facebook" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook Login</a>
+                    <a class="wd-button-margin btn btn-danger" href="/auth/google" ><i class="fa fa-google-plus" aria-hidden="true"></i> Google Login</a>
                 </form>
             </div>
             <div class="clearfix"> </div>
