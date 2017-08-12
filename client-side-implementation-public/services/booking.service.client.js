@@ -26,7 +26,7 @@
 
 
         function updateBooking(Booking) {
-            var url = "/api/updateBooking";
+            var url = "/api/project/updateBooking";
 
             return $http.put(url, Booking)
                 .then(function (response) {
@@ -38,7 +38,7 @@
 
 
         function getAllBookings() {
-            var url = "/api/getAllBookings";
+            var url = "/api/project/getAllBookings";
             return $http.get(url)
                 .then(function (response) {
                     console.log("getAllBookings", response);
@@ -52,7 +52,7 @@
 
 
         function getAllFavoriteBookingsForUser() {
-            var url = "/api/getFavoriteBooking";
+            var url = "/api/project/getFavoriteBooking";
 
             return $http.get(url)
                 .then(function (response) {
@@ -65,7 +65,7 @@
 
         function createBooking(bookingObj) {
             console.log("Inside booking client create");
-            var url = "/api/createBooking";
+            var url = "/api/project/createBooking";
             return $http.post(url, bookingObj)
                 .then(function (response) {
                     return response;
@@ -73,7 +73,7 @@
         }
 
         function getBookingBycurrentUser() {
-            var url = "/api/getBooking";
+            var url = "/api/project/getBooking";
 
             return $http.get(url)
                 .then(function (response) {
@@ -84,7 +84,7 @@
 
         function deleteBooking(booking) {
 
-            var url = "/api/deleteBooking/"+booking._id;
+            var url = "/api/project/deleteBooking/"+booking._id;
 
             return $http.delete(url)
                 .then(function (result) {

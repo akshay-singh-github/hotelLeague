@@ -19,7 +19,7 @@ module.exports=function (app, model) {
     * */
 
 
-    app.post("/api/login" ,passport.authenticate('local') ,login);
+    app.post("/api/project/login" ,passport.authenticate('local') ,login);
     app.get("/api/user",findUserbyQueryParameter);
     app.get("/api/getAllUsers",getAllUsers);
     app.get("/api/user/:userId",findUserByUserId);

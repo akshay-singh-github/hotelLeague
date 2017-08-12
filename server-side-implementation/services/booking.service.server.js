@@ -5,12 +5,12 @@
 var https = require('https');
 module.exports=function (app,model) {
 
-    app.get("/api/getFavoriteBooking" , findFavoriteBookingByUserId);
-    app.get("/api/getBooking" , findBookingByUserId);
-    app.get("/api/getAllBookings" , getAllBookings);
-    app.post("/api/createBooking" , createBooking);
-    app.put("/api/updateBooking",updateBooking);
-    app.delete("/api/deleteBooking/:bookingId", deleteBooking);
+    app.get("/api/project/getFavoriteBooking" , findFavoriteBookingByUserId);
+    app.get("/api/project/getBooking" , findBookingByUserId);
+    app.get("/api/project/getAllBookings" , getAllBookings);
+    app.post("/api/project/createBooking" , createBooking);
+    app.put("/api/project/updateBooking",updateBooking);
+    app.delete("/api/project/deleteBooking/:bookingId", deleteBooking);
 
 
 

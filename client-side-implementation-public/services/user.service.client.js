@@ -212,7 +212,7 @@
 
         function login(username , password) {
 
-            var url = "/api/login";
+            var url = "/api/project/login";
             var user = {
                 username : username,
                 password : password
