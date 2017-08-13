@@ -36,8 +36,6 @@
         
         
         
-        
-        
 
         function cancelSearch() {
             $sessionStorage.hotelList ="";

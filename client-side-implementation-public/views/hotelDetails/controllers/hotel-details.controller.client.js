@@ -39,7 +39,7 @@
             console.log("this is the google api key",model.googleApiKey);
             model.getHotelDetails(model.hotelId);
             getReviewBycurrentHotel(model.hotelId);
-
+            $window.scrollTo(0, 0);
         }
         init();
 
