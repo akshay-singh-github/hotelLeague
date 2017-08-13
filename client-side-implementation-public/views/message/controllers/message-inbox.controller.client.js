@@ -20,6 +20,7 @@
         model.messageOpen = messageOpen;
         model.deleteMessage = deleteMessage;
         model.replyMessage = replyMessage;
+        model.getNewMessageCount = getNewMessageCount;
         /*model.findMessageByReceiverId = findMessageByReceiverId;
         model.deleteMessage = deleteMessage;*/
         model.currentUser = currentUser;
@@ -32,6 +33,22 @@
             model.showMessageDetailsFlag = false;
         }
         init();
+
+
+        function getNewMessageCount(messageArray) {
+            model.newMessageCountVar = 0;
+            for(var i in messageArray){
+                if (messageArray[i].isMessageNew === 'NEW'){
+                    model.newMessageCountVar = model.newMessageCountVar + 1;
+                }
+            }
+
+            console.log("model.newMessageCountVar",model.newMessageCountVar)
+
+        }
+
+
+
         
         function replyMessage(message_body, message) {
             var replyObject = {};
@@ -77,6 +94,7 @@
             messageService.getMessageBycurrentUser()
                 .then(function (result) {
                     model.allMessages = result.data;
+                    model.getNewMessageCount(model.allMessages);
                     console.log("This all Messages for user", model.allMessages)
                 });
         }
@@ -85,6 +103,7 @@
 
         function messageOpen(message) {
             if(message.isMessageNew === 'NEW'){
+                model.newMessageCountVar = model.newMessageCountVar - 1;
                 message.isMessageNew = 'OLD';
                 message.dateRead = new Date();
                 messageService.updateMessage(message)

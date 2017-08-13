@@ -114,7 +114,7 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="wd-heading-bottom-margin">
+        <div class="wd-heading-bottom-margin" ng-if="model.mapUrlIframe">
             <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">MAP</h4>
             <iframe
                     width="100%"
@@ -123,7 +123,7 @@
                     src={{model.mapUrlIframe}} allowfullscreen >
             </iframe>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid wd-heading-bottom-margin">
             <a class="btn btn-success btn-block" href="#!/details/{{model.hotelId}}">Book / Review Hotel</a>
             <a class="btn btn-primary btn-block" ng-click="model.backButton()">Go Back</a>
         </div>

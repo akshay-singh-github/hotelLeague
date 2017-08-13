@@ -23,6 +23,8 @@ html, body{
 }
 
 
+
+
 .wd-login-user-name-styling{
     color: #09FE00;
     font-weight: bold;
@@ -72,7 +74,7 @@ textarea.wd-make-full-width{
 
 .wd-label-cityName{
 
-    color: orangered;
+    color: #FFFFFF;
     font-weight: bold;
     font-style: normal;
     font-family: "Arial Black", Gadget, sans-serif;
