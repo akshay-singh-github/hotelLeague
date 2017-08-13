@@ -3,6 +3,7 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="#!/">Hotel League</a></h1>
+                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!!!</a></h3>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">

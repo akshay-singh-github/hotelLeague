@@ -18,6 +18,18 @@ html, body{
     margin-right: 10px;
 }
 
+.wd-login-user-name-margin{
+    margin-top: 15px;
+}
+
+
+.wd-login-user-name-styling{
+    color: #09FE00;
+    font-weight: bold;
+    /*font-style: oblique;*/
+    /*font-family: "Comic Sans MS", cursive, sans-serif;*/
+    font-family: 'Great Vibes';
+}
 
 
 .wd-cancel_button input[type="submit"] {
@@ -60,7 +72,7 @@ textarea.wd-make-full-width{
 
 .wd-label-cityName{
 
-    color: white;
+    color: orangered;
     font-weight: bold;
     font-style: normal;
     font-family: "Arial Black", Gadget, sans-serif;

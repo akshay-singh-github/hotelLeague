@@ -34,7 +34,7 @@
             $anchorScroll('search_results');
         }
         
-        
+
         
 
         function cancelSearch() {
