@@ -6,7 +6,7 @@
     angular.module("HotelLeagueMaker")
         .controller("userProfileController", userProfileController);
 
-    function userProfileController($route,messageService, currentUser, userService, $location) {
+    function userProfileController($route,reviewService, messageService, currentUser, userService, $location) {
         var model = this;
 
         model.register = register;
@@ -16,16 +16,201 @@
         model.currentUser = currentUser;
         model.getMessageBycurrentUser = getMessageBycurrentUser;
         model.getNewMessageCount = getNewMessageCount;
+        model.getReviewBycurrentUser = getReviewBycurrentUser;
+        model.likeReview = likeReview;
+        model.deleteReview = deleteReview;
+        model.islikedBycurrentUser = islikedBycurrentUser;
+        model.isNotlikedBycurrentUser = isNotlikedBycurrentUser;
+        model.isDislikedBycurrentUser = isDislikedBycurrentUser;
+        model.isNotDislikedBycurrentUser = isNotDislikedBycurrentUser;
+        model.dislikeReview = dislikeReview;
+        model.iswrittenByCurrentUser = iswrittenByCurrentUser;
+        model.reload = reload;
 
 
 
         function Init() {
             getMessageBycurrentUser();
+            getReviewBycurrentUser();
             model.userId = currentUser._id;
+
 
         }
 
         Init();
+
+
+
+        function reload() {
+            $route.reload();
+
+        }
+
+
+
+        function deleteReview(review) {
+
+            console.log("delete review controller");
+            reviewService.deleteReview(review)
+                .then(function (result) {
+                    $route.reload();
+                    /*return result*/
+                });
+
+        }
+
+        function iswrittenByCurrentUser(review) {
+
+            if(review.reviewerId === currentUser._id){
+                return "Yes"
+            }
+            else{
+                return null;
+            }
+
+        }
+
+
+
+
+        function isDislikedBycurrentUser(review) {
+
+            if(review.DislikedBy.indexOf(currentUser._id)>-1){
+                return "Yes"
+
+            }
+            else{
+                return null;
+
+            }
+
+        }
+
+        function isNotDislikedBycurrentUser(review) {
+
+            if(review.DislikedBy.indexOf(currentUser._id)>-1){
+                return null
+
+            }
+            else{
+                return "Yes";
+
+            }
+
+        }
+
+
+
+
+
+        function islikedBycurrentUser(review) {
+
+            if(review.LikedBy.indexOf(currentUser._id)>-1){
+                return "Yes"
+
+            }
+            else{
+                return null;
+
+            }
+
+        }
+
+        function isNotlikedBycurrentUser(review) {
+
+            if(review.LikedBy.indexOf(currentUser._id)>-1){
+                return null
+
+            }
+            else{
+                return "Yes";
+
+            }
+
+        }
+
+
+
+
+
+        function likeReview(review) {
+
+
+            if(review.LikedBy.indexOf(currentUser._id)>-1){
+                review.Likes = review.Likes - 1;
+                var index = review.LikedBy.indexOf(currentUser._id);
+                review.LikedBy.splice(index, 1);
+                reviewService.likeReview(review)
+                    .then(function (result) {
+                        return result;
+                    });
+
+            }
+            else{
+                review.Likes = review.Likes + 1;
+                review.LikedBy.push(currentUser._id);
+                reviewService.likeReview(review)
+                    .then(function (result) {
+                        return result;
+                    });
+
+            }
+        }
+
+
+        function dislikeReview(review) {
+
+            /*review.Dislikes = review.Dislikes + 1;*/
+
+
+
+            if(review.DislikedBy.indexOf(currentUser._id)>-1){
+                review.Dislikes = review.Dislikes - 1;
+                var index = review.DislikedBy.indexOf(currentUser._id);
+                review.DislikedBy.splice(index, 1);
+                reviewService.dislikeReview(review)
+                    .then(function (result) {
+                        return result;
+                    });
+
+            }
+            else{
+                review.Dislikes = review.Dislikes + 1;
+                review.DislikedBy.push(currentUser._id);
+                reviewService.dislikeReview(review)
+                    .then(function (result) {
+                        return result;
+                    });
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function getReviewBycurrentUser() {
+            reviewService.getReviewBycurrentUser(model.currentUser)
+                .then(function (resultReview) {
+                    model.reviews = resultReview.data;
+                    console.log("review for this user are here",model.reviews);
+                });
+        }
+
+
+
 
 
         function getNewMessageCount(messageArray) {

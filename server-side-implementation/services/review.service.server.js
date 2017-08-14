@@ -6,6 +6,7 @@ var https = require('https');
 module.exports=function (app,model) {
 
     app.get("/api/getReview/:resId" , findReviewByHotelId);
+    app.get("/api/getReviewByUser/:userId" , getReviewBycurrentUser);
     app.get("/api/getAllReviews" , getAllReviews);
     app.post("/api/createReview" , createReview);
     app.put("/api/likeReview", likeReview);
@@ -13,6 +14,32 @@ module.exports=function (app,model) {
     app.put("/api/getUpdateReview", updateReview);
     app.delete('/api/deleteReview/:reviewId', deleteReview);
 
+
+
+
+
+
+
+
+    function getReviewBycurrentUser(req, res) {
+
+        var uid = req.params.userId;
+        model.reviewModel
+            .getReviewBycurrentUser(uid)
+            .then(function (reviews) {
+                if (reviews)
+                {
+                    res.json(reviews);
+                }
+                else{
+                    res.sendStatus(404);
+                }
+
+            },function () {
+                res.sendStatus(404);
+            });
+
+    }
 
 
 

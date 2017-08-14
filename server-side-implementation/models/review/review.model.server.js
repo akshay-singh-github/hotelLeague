@@ -17,11 +17,19 @@ module.exports = function () {
         deleteReview: deleteReview,
         updateReview: updateReview,
         getAllReviews: getAllReviews,
+        getReviewBycurrentUser : getReviewBycurrentUser,
         setModel: setModel
     };
 
     return api;
 
+    
+    
+    function getReviewBycurrentUser(uid) {
+        return reviewModel.find({reviewerId: uid});
+    }
+    
+    
 
 
     function updateReview(reviewId, review) {

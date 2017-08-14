@@ -159,6 +159,163 @@
 
         </div>
     </div>
+
+
+    <div class="container">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a data-toggle="tab" data-target="#wd-compose-review-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Hotel Reviews By You:</h4></a></li>
+        </ul>
+        <div class="tab-content">
+
+
+            <div id="wd-compose-review-id" class="tab-pane fade in active">
+                <div class="container">
+                    <div class="row">
+                        <div class="wd-latest-flipping-trial-card-container col-xs-12 " ng-repeat="review in model.reviews">
+                            <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
+                                <div class="wd-latest-flipping-trial-front">
+                                    <div class="container-fluid">
+                                        <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
+                                        <h3>{{review.reviewer}} says:</h3>
+                                        <h5 class="wd-review-title-color wd-remove-text-overflowing">"{{review.ReviewTitle}}"</h5>
+
+
+
+                                        <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb wd-title-shadow" ng-show="model.islikedBycurrentUser(review)" aria-hidden="true"></i>
+                                        <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb" ng-show="model.isNotlikedBycurrentUser(review)" aria-hidden="true"></i>
+                                        <h5 class="pull-left wd-positive-thumb wd-remove-text-overflowing">{{review.Likes}}</h5>
+                                        <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb wd-title-shadow" ng-show="model.isDislikedBycurrentUser(review)" aria-hidden="true"></i>
+                                        <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb " ng-show="model.isNotDislikedBycurrentUser(review)" aria-hidden="true"></i>
+                                        <h5 class="pull-right wd-negative-thumb wd-remove-text-overflowing">{{review.Dislikes}}</h5>
+                                    </div>
+
+                                    <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover/Click for detailed review.</h5>
+
+                                </div>
+                                <div class="wd-latest-flipping-trial-back">
+                                    <h3 class="wd-review-detail-margin-top wd-remove-text-overflowing">"{{review.ReviewContent}}"</h3>
+                                    <button type="button" class="btn btn-success" ng-click="model.likeReview(review)">Like Review</button>
+                                    <button type="button" class="btn btn-danger" ng-click="model.dislikeReview(review)">Dislike Review</button>
+                                    <button type="button" class="btn btn-primary" ng-click="model.deleteReview(review)" ng-show="model.iswrittenByCurrentUser(review)">Delete Review</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <!--
+                                            <div class="row">
+                                                <div ng-repeat="review in model.reviews">
+                                                <div class="col-sm-6 " >
+                                                    <div class="flip ">
+                                                        <div class="card wd-tile-shadow">
+                                                            <div class="face front">
+                                                                <div class="inner text-center">
+                                                                    &lt;!&ndash;<img src="http://vinculumgroup.com/v2/wp-content/uploads/2015/08/nykaa.jpg">&ndash;&gt;
+                                                                    <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="325" height="275">
+                                                                    <h3>{{review.reviewer}} says:</h3>
+                                                                        &lt;!&ndash;<img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">&ndash;&gt;
+                                                                </div>
+                                                            </div>
+                                                            <div class="face back">
+                                                                <div class="inner text-center">
+                                                                    <h3>Improved efficiency through automation</h3>
+                                                                    <button type="button" class="btn btn-default">Know More</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                &lt;!&ndash;<div class="col-sm-6 " >
+                                                    <div class="flip ">
+                                                        <div class="card wd-tile-shadow">
+                                                            <div class="face front">
+                                                                <div class="inner text-center">
+                                                                    &lt;!&ndash;<img src="http://vinculumgroup.com/v2/wp-content/uploads/2015/08/nykaa.jpg">&ndash;&gt;
+                                                                    <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="325" height="275">
+                                                                    <h3>{{review.reviewer}} says:</h3>
+                                                                    &lt;!&ndash;<img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">&ndash;&gt;
+                                                                </div>
+                                                            </div>
+                                                            <div class="face back">
+                                                                <div class="inner text-center">
+                                                                    <h3>Improved efficiency through automation</h3>
+                                                                    <button type="button" class="btn btn-default">Know More</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>&ndash;&gt;
+                                            </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!--<div ng-repeat="review in model.reviews">
+                        <h1>{{review.reviewer}} says:</h1>
+                        <h4>{{review.ReviewTitle}}</h4>
+                        <p>{{review.ReviewContent}}</p>
+                    </div>-->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 <!-- registration -->
 <!-- footer -->

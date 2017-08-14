@@ -13,6 +13,7 @@
         var api = {
             createReview : createReview,
             getReviewBycurrentHotel : getReviewBycurrentHotel,
+            getReviewBycurrentUser : getReviewBycurrentUser,
             deleteReview : deleteReview,
             likeReview : likeReview,
             getAllReviews : getAllReviews,
@@ -103,6 +104,27 @@
                 });
 
         }
+
+
+
+
+
+        function getReviewBycurrentUser(user) {
+            var userId = user._id;
+
+            var url = "/api/getReviewByUser/"+userId;
+
+            return $http.get(url)
+                .then(function (response) {
+                    return response;
+                });
+
+        }
+
+
+
+
+
 
         function deleteReview(review) {
             var url = '/api/deleteReview/'+review._id;

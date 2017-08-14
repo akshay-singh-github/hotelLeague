@@ -86,10 +86,15 @@
             $window.history.back();
         }
 
+
+
+
         function reload() {
             $route.reload();
 
         }
+
+
 
 
         function deleteReview(review) {
@@ -237,16 +242,14 @@
         }
 
 
+
+
         function getReviewBycurrentHotel(hotelId) {
             reviewService.getReviewBycurrentHotel(hotelId)
                 .then(function (resultReview) {
                     model.reviews = resultReview.data;
                     console.log("review for this hotel are here",model.reviews);
                 });
-
-
-
-
         }
 
 
