@@ -6,7 +6,7 @@
     angular.module("HotelLeagueMaker")
         .controller("adminController", adminController);
 
-    function adminController($route, currentUser,bookingService,$window,reviewService, userService, $location) {
+    function adminController($route, currentUser,messageService,bookingService,$window,reviewService, userService, $location) {
         var model = this;
         model.currentUser = currentUser;
         model.getAllUsers = getAllUsers;
@@ -20,6 +20,8 @@
         model.updateBooking = updateBooking;
         model.deleteBooking = deleteBooking;
         model.logout = logout;
+        model.getMessageBycurrentUser = getMessageBycurrentUser;
+        model.getNewMessageCount = getNewMessageCount;
 
         /*model.login = login;
 
@@ -70,6 +72,7 @@
         /*model.favoritebookings*/
 
         function init() {
+            getMessageBycurrentUser();
             model.getAllUsers();
             model.getAllBookings();
             model.getAllReviews();
@@ -85,6 +88,49 @@
             model.showUserDetailsFlag = false;*/
         }
         init();
+
+
+
+
+
+        function getNewMessageCount(messageArray) {
+            model.newMessageCountVar = 0;
+            for(var i in messageArray){
+                if (messageArray[i].isMessageNew === 'NEW'){
+                    model.newMessageCountVar = model.newMessageCountVar + 1;
+                }
+            }
+
+            console.log("model.newMessageCountVar",model.newMessageCountVar)
+
+        }
+
+
+
+
+
+
+        function getMessageBycurrentUser() {
+            messageService.getMessageBycurrentUser(model.currentUser)
+                .then(function (result) {
+                    model.allMessages = result.data;
+                    model.getNewMessageCount(model.allMessages);
+                    console.log("This all Messages for user", model.allMessages)
+                },function (error) {
+                    console.log(error)
+                });
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         function deleteBooking(booking) {
             bookingService.deleteBooking(booking)

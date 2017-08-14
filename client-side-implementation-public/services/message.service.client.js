@@ -45,8 +45,8 @@
                 });
         }
 
-        function getMessageBycurrentUser() {
-            var url = "/api/getMessages";
+        function getMessageBycurrentUser(user) {
+            var url = "/api/getMessages/"+user._id;
 
             return $http.get(url)
                 .then(function (response) {

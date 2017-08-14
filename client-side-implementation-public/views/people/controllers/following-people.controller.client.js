@@ -7,7 +7,7 @@
     angular.module("HotelLeagueMaker")
         .controller("followingController", followingController);
 
-    function followingController($route, currentUser, userService, $location) {
+    function followingController($route,messageService, currentUser, userService, $location) {
         var model = this;
 
         model.login = login;
@@ -18,14 +18,55 @@
         model.removeAsFollower = removeAsFollower;
         model.currentUser = currentUser;
         model.getAllfollowing = getAllfollowing;
+        model.getMessageBycurrentUser = getMessageBycurrentUser;
+        model.getNewMessageCount = getNewMessageCount;
 
 
 
         function init() {
+            getMessageBycurrentUser();
             model.getAllfollowing();
             model.showUserDetailsFlag = false;
         }
         init();
+
+
+
+
+        function getNewMessageCount(messageArray) {
+            model.newMessageCountVar = 0;
+            for(var i in messageArray){
+                if (messageArray[i].isMessageNew === 'NEW'){
+                    model.newMessageCountVar = model.newMessageCountVar + 1;
+                }
+            }
+
+            console.log("model.newMessageCountVar",model.newMessageCountVar)
+
+        }
+
+
+
+
+
+
+        function getMessageBycurrentUser() {
+            messageService.getMessageBycurrentUser(model.currentUser)
+                .then(function (result) {
+                    model.allMessages = result.data;
+                    model.getNewMessageCount(model.allMessages);
+                    console.log("This all Messages for user", model.allMessages)
+                },function (error) {
+                    console.log(error)
+                });
+        }
+
+
+
+
+
+
+
 
 
         function getAllfollowing() {

@@ -90,8 +90,9 @@
             $route.reload();
         }
 
+
         function getMessageBycurrentUser() {
-            messageService.getMessageBycurrentUser()
+            messageService.getMessageBycurrentUser(model.currentUser)
                 .then(function (result) {
                     model.allMessages = result.data;
                     model.getNewMessageCount(model.allMessages);

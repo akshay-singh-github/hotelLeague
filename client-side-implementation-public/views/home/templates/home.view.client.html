@@ -19,12 +19,12 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav ">
                         <li class="active"><a href="#!/">Home</a></li>
-                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin">Admin</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox</a></li>
-                        <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
+                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin" class="wd-remove-text-overflowing">Admin</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/login" class="wd-remove-text-overflowing">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register" class="wd-remove-text-overflowing">Register</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/profile" class="wd-remove-text-overflowing">Profile</a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup style="background-color: yellow;color: red;border-radius:15px 50px;" ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a></li>
+                        <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="" class="wd-remove-text-overflowing">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">

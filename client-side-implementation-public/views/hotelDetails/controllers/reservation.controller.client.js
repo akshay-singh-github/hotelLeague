@@ -6,7 +6,7 @@
     angular.module("HotelLeagueMaker")
         .controller("reservationController", reservationController);
 
-    function reservationController($route, currentUser,bookingService, userService, $location) {
+    function reservationController($route,messageService, currentUser,bookingService, userService, $location) {
         var model = this;
 
         model.login = login;
@@ -20,16 +20,52 @@
         model.addAsFavoriteBooking = addAsFavoriteBooking;
         model.removeAsFavoriteBooking = removeAsFavoriteBooking;
         model.getAllFavoriteBookingsForUser = getAllFavoriteBookingsForUser;
+        model.getMessageBycurrentUser = getMessageBycurrentUser;
+        model.getNewMessageCount = getNewMessageCount;
 
 
         /*model.favoritebookings*/
 
         function init() {
+            getMessageBycurrentUser();
             model.getAllBookingsForUser();
             model.getAllFavoriteBookingsForUser();
             model.showUserDetailsFlag = false;
         }
         init();
+
+
+
+        function getNewMessageCount(messageArray) {
+            model.newMessageCountVar = 0;
+            for(var i in messageArray){
+                if (messageArray[i].isMessageNew === 'NEW'){
+                    model.newMessageCountVar = model.newMessageCountVar + 1;
+                }
+            }
+
+            console.log("model.newMessageCountVar",model.newMessageCountVar)
+
+        }
+
+
+
+
+
+
+        function getMessageBycurrentUser() {
+            messageService.getMessageBycurrentUser(model.currentUser)
+                .then(function (result) {
+                    model.allMessages = result.data;
+                    model.getNewMessageCount(model.allMessages);
+                    console.log("This all Messages for user", model.allMessages)
+                },function (error) {
+                    console.log(error)
+                });
+        }
+
+
+
         
         
         

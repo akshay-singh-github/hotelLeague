@@ -6,7 +6,7 @@
     angular.module("HotelLeagueMaker")
         .controller("userProfileController", userProfileController);
 
-    function userProfileController($route, currentUser, userService, $location) {
+    function userProfileController($route,messageService, currentUser, userService, $location) {
         var model = this;
 
         model.register = register;
@@ -14,17 +14,55 @@
         model.updateUserProfile = updateUserProfile;
         model.unregisterUserProfile = unregisterUserProfile;
         model.currentUser = currentUser;
+        model.getMessageBycurrentUser = getMessageBycurrentUser;
+        model.getNewMessageCount = getNewMessageCount;
 
 
 
         function Init() {
+            getMessageBycurrentUser();
             model.userId = currentUser._id;
 
         }
 
         Init();
 
-        
+
+        function getNewMessageCount(messageArray) {
+            model.newMessageCountVar = 0;
+            for(var i in messageArray){
+                if (messageArray[i].isMessageNew === 'NEW'){
+                    model.newMessageCountVar = model.newMessageCountVar + 1;
+                }
+            }
+
+            console.log("model.newMessageCountVar",model.newMessageCountVar)
+
+        }
+
+
+
+
+
+
+        function getMessageBycurrentUser() {
+            if(currentUser){
+
+                messageService.getMessageBycurrentUser(model.currentUser)
+                    .then(function (result) {
+                        model.allMessages = result.data;
+                        model.getNewMessageCount(model.allMessages);
+                        console.log("This all Messages for user", model.allMessages)
+                    },function (error) {
+                        console.log(error)
+                    });
+
+            }
+
+        }
+
+
+
         
         function unregisterUserProfile() {
 

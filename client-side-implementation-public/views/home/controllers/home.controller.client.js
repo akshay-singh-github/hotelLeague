@@ -5,7 +5,7 @@
     angular.module("HotelLeagueMaker")
         .controller("homeController", homeController);
 
-    function homeController($route,$location, userService,currentUser, googleService,$scope, $localStorage, $sessionStorage,$anchorScroll, $window) {
+    function homeController($route,$location,messageService, userService,currentUser, googleService,$scope, $localStorage, $sessionStorage,$anchorScroll, $window) {
         var model = this;
 
         /*model.currentUser = currentUser;*/
@@ -17,15 +17,51 @@
         model.gotoDetailsPage = gotoDetailsPage;
         model.gotoInfoPage = gotoInfoPage;
         model.cancelSearch = cancelSearch;
+        model.getMessageBycurrentUser = getMessageBycurrentUser;
+        model.getNewMessageCount = getNewMessageCount;
         model.scrollToSearchResults = scrollToSearchResults;
 
         function init(){
+            getMessageBycurrentUser();
             model.getApiKey();
             get();
             /*model.hotels = $window.sessionStorage.getItem("hotels");
             console.log("session hotels", $window.sessionStorage.getItem("hotels"));*/
         }
         init();
+
+
+
+
+        function getNewMessageCount(messageArray) {
+            model.newMessageCountVar = 0;
+            for(var i in messageArray){
+                if (messageArray[i].isMessageNew === 'NEW'){
+                    model.newMessageCountVar = model.newMessageCountVar + 1;
+                }
+            }
+
+            console.log("model.newMessageCountVar",model.newMessageCountVar)
+
+        }
+
+
+
+
+
+
+        function getMessageBycurrentUser() {
+            messageService.getMessageBycurrentUser(model.currentUser)
+                .then(function (result) {
+                    model.allMessages = result.data;
+                    model.getNewMessageCount(model.allMessages);
+                    console.log("This all Messages for user", model.allMessages)
+                });
+        }
+
+
+
+
 
 
 

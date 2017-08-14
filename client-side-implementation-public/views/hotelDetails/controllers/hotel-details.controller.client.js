@@ -5,7 +5,7 @@
     angular.module("HotelLeagueMaker")
         .controller("hotelDetailsController", hotelDetailsController);
 
-    function hotelDetailsController($route,$window, $location,$sce, userService,bookingService,hotelService,reviewService, currentUser,googleService,$routeParams) {
+    function hotelDetailsController($route,$window,messageService, $location,$sce, userService,bookingService,hotelService,reviewService, currentUser,googleService,$routeParams) {
         var model = this;
 
         model.currentUser = currentUser;
@@ -27,6 +27,8 @@
         model.iswrittenByCurrentUser = iswrittenByCurrentUser;
         model.reload = reload;
         model.backButton = backButton;
+        model.getMessageBycurrentUser = getMessageBycurrentUser;
+        model.getNewMessageCount = getNewMessageCount;
 
 
 
@@ -34,6 +36,7 @@
 
 
         function init(){
+            getMessageBycurrentUser();
             model.hotelId = $routeParams.hotelId;
             model.getApiKey();
             console.log("this is the google api key",model.googleApiKey);
@@ -42,6 +45,40 @@
             $window.scrollTo(0, 0);
         }
         init();
+
+
+
+        function getNewMessageCount(messageArray) {
+            model.newMessageCountVar = 0;
+            for(var i in messageArray){
+                if (messageArray[i].isMessageNew === 'NEW'){
+                    model.newMessageCountVar = model.newMessageCountVar + 1;
+                }
+            }
+
+            console.log("model.newMessageCountVar",model.newMessageCountVar)
+
+        }
+
+
+
+
+
+
+        function getMessageBycurrentUser() {
+            messageService.getMessageBycurrentUser(model.currentUser)
+                .then(function (result) {
+                    model.allMessages = result.data;
+                    model.getNewMessageCount(model.allMessages);
+                    console.log("This all Messages for user", model.allMessages)
+                },function (error) {
+                    console.log(error)
+                });
+        }
+
+
+
+
 
 
 

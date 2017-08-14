@@ -5,7 +5,7 @@
 var https = require('https');
 module.exports=function (app,model) {
 
-    app.get("/api/getMessages" , findMessagesByUserId);
+    app.get("/api/getMessages/:currentUserId" , findMessagesByUserId);
     app.post("/api/createMessage" , createMessage);
     app.put("/api/updateMessage" , updateMessage);
     app.delete('/api/deleteMessage/:messageId', deleteMessage);
@@ -60,22 +60,25 @@ module.exports=function (app,model) {
 
 
     function findMessagesByUserId(req, res) {
-        var uid = req.user._id;
 
-        model.messageModel
-            .findMessageByReceiverId(uid)
-            .then(function (messages) {
-                if (messages)
-                {
-                    res.json(messages);
-                }
-                else{
+            var uid = req.params.currentUserId;
+
+            model.messageModel
+                .findMessageByReceiverId(uid)
+                .then(function (messages) {
+                    if (messages)
+                    {
+                        res.json(messages);
+                    }
+                    else{
+                        res.sendStatus(404);
+                    }
+
+                },function () {
                     res.sendStatus(404);
-                }
+                });
 
-            },function () {
-                res.sendStatus(404);
-            });
+
     }
 
 
