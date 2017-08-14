@@ -18,10 +18,16 @@ module.exports = function () {
         updateReview: updateReview,
         getAllReviews: getAllReviews,
         getReviewBycurrentUser : getReviewBycurrentUser,
-        setModel: setModel
+        setModel: setModel,
+        getReviewsofFollowing : getReviewsofFollowing
     };
 
     return api;
+
+
+    function getReviewsofFollowing(following) {
+        return reviewModel.find({'reviewerId':{$in:following}}).sort({date:-1});
+    }
 
     
     

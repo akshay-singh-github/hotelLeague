@@ -13,6 +13,7 @@ module.exports = function () {
         reviewFor :String,
         reviewHotelName : String,
         reviewerId :String,
+        date:{type: Date, default: Date.now},
         rating : Number,
         Likes : { type: Number,min: 0, default: 0 },
         LikedBy : [String],

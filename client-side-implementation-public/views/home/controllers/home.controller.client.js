@@ -5,7 +5,7 @@
     angular.module("HotelLeagueMaker")
         .controller("homeController", homeController);
 
-    function homeController($route,$location,messageService, userService,currentUser, googleService,$scope, $localStorage, $sessionStorage,$anchorScroll, $window) {
+    function homeController($route,$location,reviewService, messageService, userService,currentUser, googleService,$scope, $localStorage, $sessionStorage,$anchorScroll, $window) {
         var model = this;
 
         /*model.currentUser = currentUser;*/
@@ -20,15 +20,39 @@
         model.getMessageBycurrentUser = getMessageBycurrentUser;
         model.getNewMessageCount = getNewMessageCount;
         model.scrollToSearchResults = scrollToSearchResults;
+        model.getReviewsofFollowing = getReviewsofFollowing;
 
         function init(){
+            getReviewsofFollowing();
             getMessageBycurrentUser();
             model.getApiKey();
             get();
+            /*model.myInterval = 3000;*/
             /*model.hotels = $window.sessionStorage.getItem("hotels");
             console.log("session hotels", $window.sessionStorage.getItem("hotels"));*/
         }
         init();
+
+
+
+
+
+
+        function getReviewsofFollowing() {
+            if(model.currentUser){
+                reviewService.getReviewsofFollowing(model.currentUser)
+                    .then(function (result) {
+                        model.allReviewsOfFollowing = result;
+                        console.log("model.allReviewsOfFollowing", model.allReviewsOfFollowing)
+                    },function (error) {
+                        console.log("This is the error",error);
+                    });
+            }
+        }
+
+
+
+
 
 
 

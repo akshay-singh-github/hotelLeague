@@ -8,6 +8,7 @@ module.exports=function (app,model) {
     app.get("/api/getReview/:resId" , findReviewByHotelId);
     app.get("/api/getReviewByUser/:userId" , getReviewBycurrentUser);
     app.get("/api/getAllReviews" , getAllReviews);
+    app.get("/api/getReviewsofFollowing/:userId", getReviewsofFollowing);
     app.post("/api/createReview" , createReview);
     app.put("/api/likeReview", likeReview);
     app.put("/api/dislikeReview", dislikeReview);
@@ -15,6 +16,24 @@ module.exports=function (app,model) {
     app.delete('/api/deleteReview/:reviewId', deleteReview);
 
 
+
+
+
+    function getReviewsofFollowing(req, res) {
+        var userId = req.params.userId;
+
+        model.userModel.findUserById(userId)
+            .then(function (user) {
+                var following = user.following;
+                model.reviewModel.getReviewsofFollowing(following)
+                    .then(function (result) {
+                        console.log("this is the review of the  following",result);
+                        res.json(result);
+                    },function (error) {
+                        res.json(error);
+                    });
+            });
+    }
 
 
 

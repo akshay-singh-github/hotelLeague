@@ -18,12 +18,30 @@
             likeReview : likeReview,
             getAllReviews : getAllReviews,
             dislikeReview : dislikeReview,
-            updateReview : updateReview
+            updateReview : updateReview,
+            getReviewsofFollowing : getReviewsofFollowing
 
 
         };
 
         return api;
+
+
+
+
+        function getReviewsofFollowing(user) {
+
+            var url = "/api/getReviewsofFollowing/"+user._id;
+
+            return $http.get(url)
+                .then(function (result) {
+                    console.log("This is the review of the following",result);
+                    return result.data;
+                }, function (error) {
+                    return error;
+                });
+        }
+
 
 
 
