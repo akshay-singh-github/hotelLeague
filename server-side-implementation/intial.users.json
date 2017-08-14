@@ -1,0 +1,63 @@
+[
+  {
+    "firstName": "alice",
+    "lastName": "alice",
+    "username": "alice",
+    "password": "alice",
+    "emailId": "alice@alice.com",
+    "phone" : "000-000-0000",
+    "roles" : [ "ADMIN", "USER" ]},
+
+  {
+    "firstName": "bob",
+    "lastName": "bob",
+    "username": "bob",
+    "password": "bob",
+    "emailId": "bob@bob.com",
+    "phone" : "111-111-1111",
+    "favoriteHotelBooking" : [ ],
+    "following" : [ ],
+    "followedBy" : [],
+    "roles" : [ "USER" ]},
+
+
+
+  {
+    "firstName": "charlie",
+    "lastName": "charlie",
+    "username": "charlie",
+    "password": "charlie",
+    "emailId": "charlie@charlie.com",
+    "phone" : "222-222-2222",
+    "favoriteHotelBooking" : [ ],
+    "following" : [ ],
+    "followedBy" : [],
+    "roles" : [ "USER" ]},
+
+  {
+    "firstName": "dan",
+    "lastName": "dan",
+    "username": "dan",
+    "password": "dan",
+    "emailId": "dan@dan.com",
+    "phone" : "333-333-3333",
+    "favoriteHotelBooking" : [ ],
+    "following" : [],
+    "followedBy" : [],
+    "roles" : [ "USER"]},
+
+
+
+  {
+    "firstName": "admin",
+    "lastName": "admin",
+    "username": "admin",
+    "password": "admin",
+    "emailId": "admin@admin.com",
+    "phone" : "444-444-4444",
+    "favoriteHotelBooking" : [ ],
+    "following" : [],
+    "followedBy" : [],
+    "roles" : [ "ADMIN", "USER" ]}
+
+]

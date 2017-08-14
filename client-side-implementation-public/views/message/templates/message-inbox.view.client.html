@@ -125,13 +125,15 @@
                                             <h2 class="wd-remove-text-overflowing wd-email-message-subject">&nbsp;&nbsp;&nbsp;&nbsp;{{message.message_title}}</h2>
                                         </div>
                                         <div class="col-xs-5 col-sm-3 ">
-                                            <a class="btn btn-success wd-remove-text-overflowing" data-toggle="collapse"
+                                            <div class="nowrapping">
+                                            <a class="btn btn-success wd-remove-text-overflowing wd-button-margin" data-toggle="collapse"
                                                data-target="#collapseExampleReply{{message._id}}">
                                                 Reply
                                             </a>
-                                            <a class="btn btn-danger wd-remove-text-overflowing" ng-click="model.deleteMessage(message)">
+                                            <a class="btn btn-danger wd-remove-text-overflowing wd-button-margin" ng-click="model.deleteMessage(message)">
                                                 Delete
                                             </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -25,4 +25,70 @@ module.exports = function(app){
     require("./services/review.service.server.js")(app, model);
     require("./services/hotel.service.server.js")(app, model);
 
+    var userSchema = require('./models/user/user.schema.server')();
+    var bcrypt = require("bcrypt-nodejs");
+    var userModelDummy = mongoose.model('userModelDummy', userSchema);
+
+    function init(model) {
+        var dumUsers = require("./intial.users.json");
+
+        console.log("These are init user",dumUsers );
+        /*var query = {username: dumUsers[i].username},
+            update = { dumUsers[i] },
+            options = { upsert: true, new: true, setDefaultsOnInsert: true };
+
+
+        Model.findOneAndUpdate(query, update, options, function(error, result) {
+            if (error) return error;
+        });*/
+
+        for (var i in dumUsers) {
+            dumUsers[i].password = bcrypt.hashSync(dumUsers[i].password);
+
+
+            var query = {username: dumUsers[i].username};
+            var update = { $set:dumUsers[i] };
+            var options = { upsert: true, new: true, setDefaultsOnInsert: true };
+
+
+            userModelDummy.findOneAndUpdate(query, update, options, function(error, result) {
+                if (error) return error;
+            });
+
+
+
+
+
+
+            /*FoodieUserModel
+                .findOneAndUpdate(
+                    {username: initUsers[u].username},
+                    initUsers[u],
+                    {upsert: true},
+                    function(user) {}
+                );*/
+        }
+    }
+
+    init();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
