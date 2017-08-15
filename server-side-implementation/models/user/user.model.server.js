@@ -106,9 +106,12 @@ module.exports = function () {
         if (user.roles) {
             if (typeof user.roles === 'string' || user.roles instanceof String) {
                 user.roles = user.roles.toUpperCase();
-                user.roles = user.roles.split(',').filter(function (e) {
-                    return String(e).trim();
-                });
+                user.roles = user.roles.split(',');
+
+                    for(var i in user.roles){
+                        user.roles[i] = user.roles[i].trim();
+                    }
+
             }
             else {
                 user.roles = ['USER'];
