@@ -21,7 +21,9 @@ module.exports=function (app,model) {
         model.bookingModel.deleteBooking(bookingId)
             .then(function (result) {
                 res.json(result) ;
-            })
+            },function (error) {
+                res.json(error);
+            });
     }
 
 
@@ -33,7 +35,9 @@ module.exports=function (app,model) {
         model.bookingModel.updateBooking(booking._id, booking )
             .then(function (result) {
                 res.json(result);
-            })
+            },function (error) {
+                res.json(error);
+            });
 
     }
 
@@ -43,6 +47,8 @@ module.exports=function (app,model) {
         model.bookingModel.getAllBookings()
             .then(function (bookings) {
                 res.json(bookings);
+            },function (error) {
+                res.json(error);
             });
 
     }
@@ -90,6 +96,8 @@ module.exports=function (app,model) {
             .then(function (booking) {
                 console.log("booking : ", booking);
                 res.json(booking);
+            }, function (error) {
+                res.json(error);
             });
     }
 

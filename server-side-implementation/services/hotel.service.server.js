@@ -22,6 +22,8 @@ module.exports=function (app,model) {
             .then(function (hotel) {
                 console.log("hotel : ", hotel);
                 res.json(hotel);
+            },function (error) {
+                res.json(error);
             });
     }
 

@@ -20,6 +20,8 @@ module.exports=function (app,model) {
         model.messageModel.deleteMessage(msgId)
             .then(function (result) {
                 res.send(result);
+            }, function (error) {
+                res.send(error);
             });
 
     }
@@ -39,6 +41,8 @@ module.exports=function (app,model) {
             .updateMessage(messageObject)
             .then(function (message) {
                 res.json(message);
+            }, function (error) {
+                res.json(error);
             });
 
 
@@ -53,6 +57,8 @@ module.exports=function (app,model) {
             .createMessage(messageObject)
             .then(function (message) {
                 res.json(message);
+            }, function (error) {
+                res.json(error)
             });
     }
 

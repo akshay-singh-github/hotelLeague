@@ -32,7 +32,7 @@ module.exports = function () {
     
     
     function getReviewBycurrentUser(uid) {
-        return reviewModel.find({reviewerId: uid});
+        return reviewModel.find({reviewerId: uid}).sort({date:-1});
     }
     
     
@@ -50,7 +50,7 @@ module.exports = function () {
 
     function getAllReviews() {
 
-        return reviewModel.find();
+        return reviewModel.find().sort({date:-1});
     }
 
 
@@ -90,7 +90,7 @@ module.exports = function () {
 
 
     function findReviewByHotelId(resId) {
-        return reviewModel.find({reviewFor: resId});
+        return reviewModel.find({reviewFor: resId}).sort({date:-1});
     }
 
 

@@ -72,7 +72,9 @@ module.exports=function (app,model) {
         model.reviewModel.updateReview(review._id, review)
             .then(function (review) {
                 res.json(review)
-            })
+            },function (error) {
+                res.json(error);
+            });
 
     }
 
@@ -83,7 +85,9 @@ module.exports=function (app,model) {
         model.reviewModel.getAllReviews()
             .then(function (reviews) {
                 res.json(reviews)
-            })
+            }, function (error) {
+                res.json(error);
+            });
 
     }
 
@@ -100,7 +104,9 @@ module.exports=function (app,model) {
         model.reviewModel.deleteReview(reviewId)
             .then(function (result) {
                 res.json(result);
-            })
+            }, function (error) {
+                res.json(error);
+            });
 
     }
 
@@ -114,6 +120,8 @@ module.exports=function (app,model) {
         model.reviewModel.UpdateReviewDisLikeByReviewId(reviewObj)
             .then(function (review) {
                 res.json(review)
+            },function (error) {
+                res.json(error);
             });
 
     }
@@ -129,6 +137,8 @@ module.exports=function (app,model) {
         model.reviewModel.UpdateReviewLikeByReviewId(reviewObj)
             .then(function (review) {
                 res.json(review)
+            },function (error) {
+                res.json(error);
             });
 
     }
@@ -144,6 +154,8 @@ module.exports=function (app,model) {
             .then(function (review) {
                 console.log("review : ", review);
                 res.json(review);
+            }, function (error) {
+                res.json(error);
             });
     }
 

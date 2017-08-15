@@ -15,9 +15,6 @@
     "password": "bob",
     "emailId": "bob@bob.com",
     "phone" : "111-111-1111",
-    "favoriteHotelBooking" : [ ],
-    "following" : [ ],
-    "followedBy" : [],
     "roles" : [ "USER" ]},
 
 
@@ -29,9 +26,6 @@
     "password": "charlie",
     "emailId": "charlie@charlie.com",
     "phone" : "222-222-2222",
-    "favoriteHotelBooking" : [ ],
-    "following" : [ ],
-    "followedBy" : [],
     "roles" : [ "USER" ]},
 
   {
@@ -41,9 +35,6 @@
     "password": "dan",
     "emailId": "dan@dan.com",
     "phone" : "333-333-3333",
-    "favoriteHotelBooking" : [ ],
-    "following" : [],
-    "followedBy" : [],
     "roles" : [ "USER"]},
 
 
@@ -55,9 +46,6 @@
     "password": "admin",
     "emailId": "admin@admin.com",
     "phone" : "444-444-4444",
-    "favoriteHotelBooking" : [ ],
-    "following" : [],
-    "followedBy" : [],
     "roles" : [ "ADMIN", "USER" ]}
 
 ]

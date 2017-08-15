@@ -162,6 +162,8 @@ module.exports=function (app, model) {
             model.userModel.findAllUser()
                 .then(function (users) {
                     res.json(users);
+                },function (error) {
+                    res.json(error);
                 });
     }
 
@@ -172,6 +174,8 @@ module.exports=function (app, model) {
             .deleteUserProfile(userId)
             .then(function (user) {
                 res.json(user);
+            }, function (error) {
+                res.json(error)
             });
 
     }
@@ -211,7 +215,9 @@ module.exports=function (app, model) {
         model.userModel.findUserById(userId)
             .then(function (user) {
                 res.json(user);
-            })
+            }, function (error) {
+                res.json(error);
+            });
     }
 
 
@@ -246,6 +252,8 @@ module.exports=function (app, model) {
             .then(function (user) {
                 req.logOut();
                 res.sendStatus(200);
+            },function (error) {
+                res.json(error);
             });
         
     }

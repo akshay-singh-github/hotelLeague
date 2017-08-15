@@ -38,7 +38,7 @@ module.exports = function () {
 
 
     function getAllBookings() {
-        return bookingModel.find();
+        return bookingModel.find().sort({date:-1});
     }
 
 
@@ -47,7 +47,7 @@ module.exports = function () {
 
     function findFavoriteBookingByUserId(favbookingIdArray) {
 
-        return bookingModel.find({'_id':{$in:favbookingIdArray}}).populate('hotel').exec();
+        return bookingModel.find({'_id':{$in:favbookingIdArray}}).sort({date:-1}).populate('hotel').exec();
 
     }
 
@@ -69,7 +69,7 @@ module.exports = function () {
 
 
     function findBookingByUserId(uid) {
-        return bookingModel.find({forUserId: uid}).populate('hotel').exec();
+        return bookingModel.find({forUserId: uid}).sort({date:-1}).populate('hotel').exec();
     }
 
 

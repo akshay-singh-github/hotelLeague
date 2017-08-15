@@ -15,6 +15,7 @@ module.exports = function () {
         hotel : {type: mongoose.Schema.Types.ObjectId, ref: "hotelModel"},
         email :String,
         phone :String,
+        date:{type: Date, default: Date.now},
         checkinDate :String,
         checkinMonth :String,
         checkinYear :String,

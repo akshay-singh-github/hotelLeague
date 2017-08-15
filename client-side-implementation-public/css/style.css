@@ -22,7 +22,15 @@ html, body{
     margin-top: 15px;
 }
 
-
+.banner-recent-reviews-of-following {
+    background: url(../images/following1.jpg) no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    min-height:550px;
+}
 
 
 h3.wd-login-user-name-styling,a.wd-login-user-name-styling{
