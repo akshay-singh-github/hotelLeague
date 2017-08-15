@@ -516,6 +516,15 @@
 
 
                 <div class="tab-pane fade" id="wd-review-id">
+                    <div ng-show="model.ReviewsuccessMessage" class="alert alert-success">
+                        {{model.ReviewsuccessMessage}}
+                    </div>
+                    <div ng-show="model.ReviewTitleMessage" class="alert alert-danger">
+                        {{model.ReviewTitleMessage}}
+                    </div>
+                    <div ng-show="model.messageReviewContent" class="alert alert-danger">
+                        {{model.messageReviewContent}}
+                    </div>
                     <div class="wd-admin-tile-review wd-tile-shadow" ng-repeat="review in model.AllReviews">
                         <div class="container-fluid">
                             <h3 class="wd-label-color text-center wd-text-card-margin wd-remove-text-overflowing">Edit Review</h3>
@@ -527,14 +536,9 @@
                             <h5 class="wd-label-color-review-details text-center wd-text-card-margin wd-remove-text-overflowing">Reviewer Username : </h5>
                                 <h5 class="wd-label-color text-center wd-text-card-margin wd-remove-text-overflowing">{{review.reviewer}}</h5>
                             </div>
-                            <div ng-show="model.ReviewsuccessMessage" class="alert alert-success">
-                                {{model.ReviewsuccessMessage}}
-                            </div>
+
                             <form ng-class="{'submitted': model.Reviewsubmitted}">
                                 <label class="wd-label-color wd-remove-text-overflowing" for="ReviewTitle">Review Title :</label>
-                                <div ng-show="model.ReviewTitleMessage" class="alert alert-danger">
-                                    {{model.ReviewTitleMessage}}
-                                </div>
                                 <input type="text"
                                        placeholder="abc321"
                                        id="ReviewTitle"
@@ -542,9 +546,7 @@
                                        ng-model="review.ReviewTitle"
                                        required/>
                                 <label class="wd-label-color wd-remove-text-overflowing" for="ReviewContent">Review Content :</label>
-                                <div ng-show="model.messageReviewContent" class="alert alert-danger">
-                                    {{model.messageReviewContent}}
-                                </div>
+
                                 <textarea class="form-control wd-make-full-width"
                                           placeholder="review details"
                                           ng-model="review.ReviewContent"

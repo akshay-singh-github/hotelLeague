@@ -404,11 +404,14 @@ module.exports=function (app, model) {
     function createUser(req, res) {
 
         var newUser = req.body;
+        console.log("new user in create User server", newUser);
         newUser.password = bcrypt.hashSync(newUser.password);
         model.userModel
             .createUser(newUser)
             .then(function (user) {
                 res.json(user);
+            },function (error) {
+                res.json(error);
             });
 
     }

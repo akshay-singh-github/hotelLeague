@@ -110,6 +110,9 @@ module.exports = function () {
                     return String(e).trim();
                 });
             }
+            else {
+                user.roles = ['USER'];
+            }
         }
         else {
             user.roles = ['USER'];

@@ -293,14 +293,17 @@
 
             if(!reviewObject){
                 model.Reviewerror = "Review could not be updated. Please fill all the details and try again.";
+                $window.scrollTo(0, 0);
             }
             else if(reviewObject && (!reviewObject.ReviewTitle)){
                 model.Reviewerror = "Review could not be updated. Please fill all the details and try again.";
                 model.ReviewTitleMessage = "Please fill the review title field.";
+                $window.scrollTo(0, 0);
             }
             else if(reviewObject && (!reviewObject.ReviewContent)){
                 model.Reviewerror = "Review could not be updated. Please fill all the details and try again.";
                 model.messageReviewContent = "Please fill the review content field.";
+                $window.scrollTo(0, 0);
             }
             else{
                 model.Reviewsubmitted = false;
@@ -308,6 +311,7 @@
                 console.log("This is the review object",reviewObject);
                 reviewService.updateReview(reviewObject)
                     .then(function (result) {
+                        $window.scrollTo(0, 0);
                         console.log("result",result);
                     });
             }
@@ -331,6 +335,7 @@
 
 
         function createUser(user) {
+            var mainRoles = ['ADMIN','USER'];
             console.log("inside create");
             model.usernamecreateUsermessage="";
             model.passwordcreateUsermessage="";
@@ -381,22 +386,25 @@
                     $window.scrollTo(0, 0);
                 }, function () {
                     console.log("this user can be registered");
-                    /*var userNew = {
-                        firstName:firstname,
-                        lastName : lastname,
-                        emailId:email,
-                        username: username,
-                        password: password
-                    };*/
-                    model.successcreateUser = "The new user has been created.";
                     console.log("before register done",user);
                     return userService
-                        .createUser(user);
-                })
-                .then(function (user) {
-                    console.log("after register done",user);
-                    $route.reload();
-                    /*$location.url('/');*/
+                        .createUser(user)
+                        .then(function (result) {
+                            console.log("this is the result of the create user",result);
+                            if(result.name === "ValidationError") {
+                                model.errorcreateUser = "Roles can only accept USER or ADMIN or both together separated by comma. 'User' not created.";
+                                $window.scrollTo(0, 0);
+                            }
+                            else{
+                                console.log("after register done",result);
+                                model.successcreateUser = "The new user has been created.";
+                                $route.reload();
+                            }
+                        },function (error) {
+                            model.errorcreateUser = "Error occurred, User not created.";
+                            $window.scrollTo(0, 0);
+                            console.log(error);
+                        });
                 });
         }
 
