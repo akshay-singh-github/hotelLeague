@@ -606,6 +606,16 @@ h5.wd-project-text-position-heading{
 }
 
 
+
+label.wd-remove-label-text-overflowing{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+
+
+
 .wd-remove-text-overflowing{
     overflow: hidden;
     white-space: nowrap;

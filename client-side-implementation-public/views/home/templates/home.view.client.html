@@ -3,7 +3,7 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="#!/">Hotel League</a></h1>
-                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="" class="wd-login-user-name-styling">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!!!</a></h3>
+                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="" class="wd-login-user-name-styling ">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a></h3>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -66,8 +66,8 @@
                 <div class="wd-project-padding-search">
                     <div class="col-xs-12 dropdown-buttons ">
                         <div class="col-xs-12 dropdown-button ">
-                            <div class="input-group ">
-                                <label for="city-name" class="wd-label-cityName ">Enter CITY&nbsp;&nbsp;&nbsp;and/or&nbsp;&nbsp;&nbsp;HOTEL name:</label>
+                            <div class="input-group wd-remove-text-overflowing">
+                                <p class="wd-remove-text-overflowing"><label for="city-name" class="wd-remove-label-text-overflowing wd-label-cityName">City/Hotel name:</label></p>
                                 <input class="form-control has-dark-background"
                                        ng-model="model.city"
                                        name="city-name"
