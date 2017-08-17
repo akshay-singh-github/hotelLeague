@@ -3,7 +3,10 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="#!/">Hotel League</a></h1>
-                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="" class="wd-login-user-name-styling ">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a></h3>
+                <h3 ng-if="model.currentUser.username"
+                    class="pull-left wd-login-user-name-margin wd-login-user-name-styling "><a href=""
+                                                                                              class="wd-login-user-name-styling wd-remove-text-overflowing">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a>
+                </h3>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -19,12 +22,21 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav ">
                         <li class="active"><a href="#!/">Home</a></li>
-                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin" class="wd-remove-text-overflowing">Admin</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/login" class="wd-remove-text-overflowing">Login</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/register" class="wd-remove-text-overflowing">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="#!/profile" class="wd-remove-text-overflowing">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup style="background-color: yellow;color: red;border-radius:15px 50px;" ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a></li>
-                        <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="" class="wd-remove-text-overflowing">Logout</a></li>
+                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin"
+                                                                                     class="wd-remove-text-overflowing">Admin</a>
+                        </li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/login"
+                                                                class="wd-remove-text-overflowing">Login</a></li>
+                        <li ng-show="!model.currentUser._id"><a href="#!/register" class="wd-remove-text-overflowing">Register</a>
+                        </li>
+                        <li ng-show="model.currentUser._id"><a href="#!/profile" class="wd-remove-text-overflowing">Profile</a>
+                        </li>
+                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup
+                                style="background-color: yellow;color: red;border-radius:15px 50px;"
+                                ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a>
+                        </li>
+                        <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href=""
+                                                               class="wd-remove-text-overflowing">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -37,25 +49,6 @@
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
-            <!--<div class="search-box">
-                <div id="sb-search" class="sb-search">
-                    <form>
-                        <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-                        <input class="sb-search-submit" type="submit" value="">
-                        <span class="sb-icon-search"> </span>
-                    </form>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-
-            &lt;!&ndash; search-scripts &ndash;&gt;
-            <script src="js/classie.js"></script>
-            <script src="js/uisearch.js"></script>
-            <script>
-                new UISearch( document.getElementById( 'sb-search' ) );
-            </script>-->
-            <!--//search-scripts-->
-
         </div>
     </div>
 
@@ -67,7 +60,9 @@
                     <div class="col-xs-12 dropdown-buttons ">
                         <div class="col-xs-12 dropdown-button ">
                             <div class="input-group wd-remove-text-overflowing">
-                                <p class="wd-remove-text-overflowing"><label for="city-name" class="wd-remove-label-text-overflowing wd-label-cityName">City/Hotel name:</label></p>
+                                <p class="wd-remove-text-overflowing"><label for="city-name"
+                                                                             class="wd-remove-label-text-overflowing wd-label-cityName">City/Hotel
+                                    name:</label></p>
                                 <input class="form-control has-dark-background"
                                        ng-model="model.city"
                                        name="city-name"
@@ -108,7 +103,8 @@
                      ng-class="{active:!$index}" ng-repeat="review in model.allReviewsOfFollowing">
                     <div class=" wd-latest-flipping-trial-card wd-tile-shadow wd-carousal-bg">
                         <div class="wd-latest-flipping-trial-front wd-carousal-bg">
-                            <h2 class="wd-custom-following-review-label-setting wd-button-margin wd-remove-text-overflowing">Recent reviews by Friends you followed  :</h2>
+                            <h2 class="wd-custom-following-review-label-setting wd-button-margin wd-remove-text-overflowing">
+                                Recent reviews by Friends you followed :</h2>
                             <div class="container wd-carousal-bg">
                                 <img src="/images/user.png" class="img-circle wd-profile-image-border"
                                      alt="Cinque Terre" width="20%" height="150">
@@ -123,7 +119,8 @@
 
                         </div>
                         <div class="wd-latest-flipping-trial-back wd-carousal-bg">
-                            <p class=" wd-remove-text-overflowing"><h3 class="wd-review-detail-margin-top">"{{review.ReviewContent}}"</h3></p>
+                            <p class=" wd-remove-text-overflowing">
+                            <h3 class="wd-review-detail-margin-top">"{{review.ReviewContent}}"</h3></p>
                         </div>
                     </div>
                 </div>
@@ -144,32 +141,9 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div ng-if="model.hotels.length>0" class="container-fluid special">
-    <h1 class="wd-label-color-home-details wd-title-shadow wd-remove-text-overflowing" id="search_results">Search Results</h1>
+    <h1 class="wd-label-color-home-details wd-title-shadow wd-remove-text-overflowing" id="search_results">Search
+        Results</h1>
     <div class="container wd-bottom-margin-footer-overlap">
         <div class=" wd-menuitem-style wd-tile-shadow" ng-repeat="hotel in model.hotels" style="text-align: center">
             <h2 class="wd-project-text-position-heading wd-remove-text-overflowing wd-card-margin "
@@ -205,11 +179,9 @@
             </div>
 
             <div class=" wd-remove-text-overflowing wd-card-margin">
-                <!--<a class="hvr-shutter-in-horizontal pull-left" style="position: absolute;bottom: 5px;left: 5px" href="#!/details/{{hotel.place_id}}">Book Now</a>-->
                 <a class="hvr-shutter-in-horizontal pull-left wd-remove-text-overflowing" href=""
                    ng-click="model.gotoDetailsPage(model.hotels,hotel)" style="position: relative;margin: 10px">Book
                     Now</a>
-                <!--<a class="hvr-shutter-in-horizontal pull-right" style="position: absolute;bottom: 5px;right: 5px" href="#!/information/{{hotel.place_id}}">Hotel Info.</a>-->
                 <a class="hvr-shutter-in-horizontal pull-right wd-remove-text-overflowing" href=""
                    ng-click="model.gotoInfoPage(model.hotels,hotel)" style="position: relative;margin: 10px">Hotel
                     Info.</a>

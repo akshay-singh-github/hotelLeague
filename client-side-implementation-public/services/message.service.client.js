@@ -3,23 +3,22 @@
  */
 (function () {
     angular.module("HotelLeagueMaker")
-        .factory("messageService",messageService);
+        .factory("messageService", messageService);
 
 
     function messageService($http) {
 
 
         var api = {
-            createMessage : createMessage,
-            getMessageBycurrentUser : getMessageBycurrentUser,
-            deleteMessage : deleteMessage,
-            updateMessage : updateMessage
+            createMessage: createMessage,
+            getMessageBycurrentUser: getMessageBycurrentUser,
+            deleteMessage: deleteMessage,
+            updateMessage: updateMessage
 
 
         };
 
         return api;
-
 
 
         function updateMessage(message) {
@@ -33,9 +32,6 @@
         }
 
 
-
-
-
         function createMessage(messageObj) {
 
             var url = "/api/createMessage";
@@ -46,15 +42,15 @@
         }
 
         function getMessageBycurrentUser(user) {
-            var url = "/api/getMessages/"+user._id;
+            var url = "/api/getMessages/" + user._id;
 
             return $http.get(url)
                 .then(function (response) {
                     return response;
                 });
-            
+
         }
-        
+
         function deleteMessage(message) {
             var url = '/api/deleteMessage/' + message._id;
 
@@ -62,7 +58,7 @@
                 .then(function (result) {
                     return result;
                 });
-            
+
         }
 
 

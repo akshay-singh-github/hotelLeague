@@ -3,27 +3,27 @@
  */
 (function () {
     angular.module("HotelLeagueMaker")
-        .factory("googleService",googleService);
-    
-    
+        .factory("googleService", googleService);
+
+
     function googleService($http) {
 
 
         var api = {
-            searchNearbyHotels : searchNearbyHotels,
-            getApiKey : getApiKey,
-            getHotelDetails : getHotelDetails
+            searchNearbyHotels: searchNearbyHotels,
+            getApiKey: getApiKey,
+            getHotelDetails: getHotelDetails
 
 
         };
 
         return api;
-        
+
         function getHotelDetails(detailUrlObject) {
 
             var url = "/api/hotel/details";
 
-            return $http.post(url,detailUrlObject)
+            return $http.post(url, detailUrlObject)
                 .then(function (result) {
                     return result;
                 }, function (err) {
@@ -31,11 +31,11 @@
                 });
 
         }
-        
+
         function searchNearbyHotels(searchUrlObject) {
             var url = "/api/hotel/search";
 
-            return $http.post(url,searchUrlObject)
+            return $http.post(url, searchUrlObject)
                 .then(function (result) {
                     return result;
                 }, function (err) {
@@ -53,10 +53,9 @@
                     console.log(err);
                 });
         }
-        
-        
-        
+
+
     }
-    
-    
+
+
 })();

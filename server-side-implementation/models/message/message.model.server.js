@@ -21,14 +21,11 @@ module.exports = function () {
     return api;
 
 
-
     function updateMessage(message) {
 
-        return messageModel.update({_id : message._id}, {$set : message});
+        return messageModel.update({_id: message._id}, {$set: message});
 
     }
-
-
 
 
     function setModel(_model) {
@@ -40,18 +37,14 @@ module.exports = function () {
     }
 
 
-
-
-
     function createMessage(message) {
 
         return messageModel.create(message);
     }
 
 
-
     function findMessageByReceiverId(uid) {
-        return messageModel.find({forUserId: uid}).sort({date:-1});
+        return messageModel.find({forUserId: uid}).sort({date: -1});
     }
 
 

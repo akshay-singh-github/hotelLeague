@@ -20,6 +20,9 @@ html, body{
 
 .wd-login-user-name-margin{
     margin-top: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
 }
 
 .banner-recent-reviews-of-following {

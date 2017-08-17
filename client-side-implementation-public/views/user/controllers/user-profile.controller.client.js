@@ -6,7 +6,7 @@
     angular.module("HotelLeagueMaker")
         .controller("userProfileController", userProfileController);
 
-    function userProfileController($route,reviewService, messageService, currentUser, userService, $location) {
+    function userProfileController($route, reviewService, messageService, currentUser, userService, $location) {
         var model = this;
 
         model.register = register;
@@ -28,7 +28,6 @@
         model.reload = reload;
 
 
-
         function Init() {
             getMessageBycurrentUser();
             getReviewBycurrentUser();
@@ -40,17 +39,15 @@
         Init();
 
 
-
         function reload() {
             $route.reload();
 
         }
 
 
-
         function deleteReview(review) {
 
-            console.log("delete review controller");
+            /*console.log("delete review controller");*/
             reviewService.deleteReview(review)
                 .then(function (result) {
                     $route.reload();
@@ -61,82 +58,76 @@
 
         function iswrittenByCurrentUser(review) {
 
-            if(review.reviewerId === currentUser._id){
+            if (review.reviewerId === currentUser._id) {
                 return "Yes"
             }
-            else{
+            else {
                 return null;
             }
 
         }
-
-
 
 
         function isDislikedBycurrentUser(review) {
 
-            if(review.DislikedBy.indexOf(currentUser._id)>-1){
+            if (review.DislikedBy.indexOf(currentUser._id) > -1) {
                 return "Yes"
 
             }
-            else{
+            else {
                 return null;
 
             }
 
         }
 
+
         function isNotDislikedBycurrentUser(review) {
 
-            if(review.DislikedBy.indexOf(currentUser._id)>-1){
+            if (review.DislikedBy.indexOf(currentUser._id) > -1) {
                 return null
 
             }
-            else{
+            else {
                 return "Yes";
 
             }
 
         }
-
-
-
 
 
         function islikedBycurrentUser(review) {
 
-            if(review.LikedBy.indexOf(currentUser._id)>-1){
+            if (review.LikedBy.indexOf(currentUser._id) > -1) {
                 return "Yes"
 
             }
-            else{
+            else {
                 return null;
 
             }
 
         }
 
+
         function isNotlikedBycurrentUser(review) {
 
-            if(review.LikedBy.indexOf(currentUser._id)>-1){
+            if (review.LikedBy.indexOf(currentUser._id) > -1) {
                 return null
 
             }
-            else{
+            else {
                 return "Yes";
 
             }
 
         }
-
-
-
 
 
         function likeReview(review) {
 
 
-            if(review.LikedBy.indexOf(currentUser._id)>-1){
+            if (review.LikedBy.indexOf(currentUser._id) > -1) {
                 review.Likes = review.Likes - 1;
                 var index = review.LikedBy.indexOf(currentUser._id);
                 review.LikedBy.splice(index, 1);
@@ -146,7 +137,7 @@
                     });
 
             }
-            else{
+            else {
                 review.Likes = review.Likes + 1;
                 review.LikedBy.push(currentUser._id);
                 reviewService.likeReview(review)
@@ -163,8 +154,7 @@
             /*review.Dislikes = review.Dislikes + 1;*/
 
 
-
-            if(review.DislikedBy.indexOf(currentUser._id)>-1){
+            if (review.DislikedBy.indexOf(currentUser._id) > -1) {
                 review.Dislikes = review.Dislikes - 1;
                 var index = review.DislikedBy.indexOf(currentUser._id);
                 review.DislikedBy.splice(index, 1);
@@ -174,7 +164,7 @@
                     });
 
             }
-            else{
+            else {
                 review.Dislikes = review.Dislikes + 1;
                 review.DislikedBy.push(currentUser._id);
                 reviewService.dislikeReview(review)
@@ -186,59 +176,37 @@
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         function getReviewBycurrentUser() {
             reviewService.getReviewBycurrentUser(model.currentUser)
                 .then(function (resultReview) {
                     model.reviews = resultReview.data;
-                    console.log("review for this user are here",model.reviews);
+                    /*console.log("review for this user are here",model.reviews);*/
                 });
         }
 
 
-
-
-
         function getNewMessageCount(messageArray) {
             model.newMessageCountVar = 0;
-            for(var i in messageArray){
-                if (messageArray[i].isMessageNew === 'NEW'){
+            for (var i in messageArray) {
+                if (messageArray[i].isMessageNew === 'NEW') {
                     model.newMessageCountVar = model.newMessageCountVar + 1;
                 }
             }
 
-            console.log("model.newMessageCountVar",model.newMessageCountVar)
+            /*console.log("model.newMessageCountVar",model.newMessageCountVar)*/
 
         }
 
 
-
-
-
-
         function getMessageBycurrentUser() {
-            if(currentUser){
+            if (currentUser) {
 
                 messageService.getMessageBycurrentUser(model.currentUser)
                     .then(function (result) {
                         model.allMessages = result.data;
                         model.getNewMessageCount(model.allMessages);
-                        console.log("This all Messages for user", model.allMessages)
-                    },function (error) {
+                        /*console.log("This all Messages for user", model.allMessages)*/
+                    }, function (error) {
                         console.log(error)
                     });
 
@@ -247,8 +215,6 @@
         }
 
 
-
-        
         function unregisterUserProfile() {
 
             userService
@@ -256,14 +222,10 @@
                 .then(function () {
                     $location.url('/');
                 })
-            
-        }
-        
-        
-        
-        
 
-        
+        }
+
+
         function updateUserProfile(userProfile) {
             model.submitted = true;
             userService
@@ -275,14 +237,7 @@
 
                         model.err = "Cannot Update User";
                     });
-
-            
         }
-        
-        
-        
-        
-        
 
 
         function logout() {
@@ -292,28 +247,28 @@
                     $route.reload();
                     $location.url('/');
                 })
-
         }
 
-        function register(firstname, lastname,username, password, password2, email) {
-            model.usernamemessage="";
-            model.passwordmessage="";
-            model.error="";
+
+        function register(firstname, lastname, username, password, password2, email) {
+            model.usernamemessage = "";
+            model.passwordmessage = "";
+            model.error = "";
 
             if (!username && !password && !password2) {
                 model.error = "Incomplete Fields , Cannot Register";
                 model.passwordmessage = "Password is Required";
-                model.usernamemessage="Username is Required";
+                model.usernamemessage = "Username is Required";
                 return;
             }
 
-            if(!username){
+            if (!username) {
                 model.error = "Incomplete Fields , Cannot Register";
-                model.usernamemessage="Username is Required";
+                model.usernamemessage = "Username is Required";
                 return;
             }
 
-            if(!password || !password2){
+            if (!password || !password2) {
                 model.error = "Incomplete Fields , Cannot Register";
                 model.passwordmessage = "Password is Required";
                 return
@@ -330,7 +285,7 @@
                 .then(function () {
                     model.error = "Username is not available";
                 }, function () {
-                    console.log("this user can be registered");
+                    /*console.log("this user can be registered");*/
                     var userNew = {
                         username: username,
                         password: password
@@ -340,7 +295,7 @@
                         .register(userNew);
                 })
                 .then(function (user) {
-                    console.log("after register done",user);
+                    /*console.log("after register done",user);*/
                     $location.url('/');
                 });
         }

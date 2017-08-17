@@ -21,10 +21,7 @@
         model.deleteMessage = deleteMessage;
         model.replyMessage = replyMessage;
         model.getNewMessageCount = getNewMessageCount;
-        /*model.findMessageByReceiverId = findMessageByReceiverId;
-        model.deleteMessage = deleteMessage;*/
         model.currentUser = currentUser;
-
 
 
         function init() {
@@ -32,30 +29,29 @@
             model.showUserDetailsFlag = false;
             model.showMessageDetailsFlag = false;
         }
+
         init();
 
 
         function getNewMessageCount(messageArray) {
             model.newMessageCountVar = 0;
-            for(var i in messageArray){
-                if (messageArray[i].isMessageNew === 'NEW'){
+            for (var i in messageArray) {
+                if (messageArray[i].isMessageNew === 'NEW') {
                     model.newMessageCountVar = model.newMessageCountVar + 1;
                 }
             }
 
-            console.log("model.newMessageCountVar",model.newMessageCountVar)
+            /*console.log("model.newMessageCountVar",model.newMessageCountVar)*/
 
         }
 
 
-
-        
         function replyMessage(message_body, message) {
             var replyObject = {};
             replyObject.message_body = message_body;
 
-            console.log("initial Reply message", replyObject);
-            console.log("initial message message", message);
+            /*console.log("initial Reply message", replyObject);*/
+            /*console.log("initial message message", message);*/
             replyObject.forUser = message.from;
             userService.findUserByUsername(replyObject.forUser)
                 .then(function (result) {
@@ -64,25 +60,24 @@
                     replyObject.date = new Date();
                     replyObject.message_title = message.message_title;
                     replyObject.isMessageNew = 'NEW';
-                    console.log("final Reply message", replyObject);
+                    /*console.log("final Reply message", replyObject);*/
                     model.createMessage(replyObject);
                     $route.reload();
 
                 });
 
 
-
         }
-        
+
         function deleteMessage(message) {
             messageService.deleteMessage(message)
                 .then(function (result) {
-                    console.log("Delete Message", result.data);
+                    /*console.log("Delete Message", result.data);*/
                     $route.reload();
                     return result.data;
 
                 });
-            
+
         }
 
 
@@ -96,20 +91,19 @@
                 .then(function (result) {
                     model.allMessages = result.data;
                     model.getNewMessageCount(model.allMessages);
-                    console.log("This all Messages for user", model.allMessages)
+                    /*console.log("This all Messages for user", model.allMessages)*/
                 });
         }
 
 
-
         function messageOpen(message) {
-            if(message.isMessageNew === 'NEW'){
+            if (message.isMessageNew === 'NEW') {
                 model.newMessageCountVar = model.newMessageCountVar - 1;
                 message.isMessageNew = 'OLD';
                 message.dateRead = new Date();
                 messageService.updateMessage(message)
                     .then(function (result) {
-                        console.log("Message Open", result.data);
+                        /*console.log("Message Open", result.data);*/
                         return result.data;
 
                     });
@@ -118,36 +112,34 @@
         }
 
 
-
-
         function createMessage(messageObject) {
-            model.error="";
+            model.error = "";
             model.successMessage = "";
-            model.messageTo="";
+            model.messageTo = "";
             model.messageSubject = "";
             model.submitted = true;
-            if(!messageObject){
+            if (!messageObject) {
                 model.error = "Message could not be send. Please fill all the fields.";
             }
 
-            else if(messageObject && !messageObject.forUser){
+            else if (messageObject && !messageObject.forUser) {
                 model.error = "Message could not be send. Please fill all the fields.";
                 model.messageTo = "Please enter the receiver's username.";
             }
-            else if(messageObject && !messageObject.message_title){
+            else if (messageObject && !messageObject.message_title) {
                 model.error = "Message could not be send. Please fill all the fields.";
                 model.messageTo = "Please enter the subject for the message.";
             }
-            else{
+            else {
                 model.submitted = false;
 
                 userService.findUserByUsername(messageObject.forUser)
                     .then(function (result) {
-                        console.log("this is the user message to be sent");
-                        if(!result || typeof result === "undefined"){
+                        /*console.log("this is the user message to be sent");*/
+                        if (!result || typeof result === "undefined") {
                             model.error = "This User does not exist.";
                         }
-                        else{
+                        else {
                             model.successMessage = "Message has been sent Successfully!!!.";
                             messageObject.forUserId = result._id;
                             messageObject.from = model.currentUser.username;
@@ -159,7 +151,7 @@
 
                         }
 
-                    },function () {
+                    }, function () {
                         model.error = "This User does not exist.";
                     });
 
@@ -167,28 +159,23 @@
         }
 
 
-
-
         function showMessageDetails(message) {
             model.showMessageDetailsFlag = true;
             model.thisMessageTitle = message.message_title;
             model.thisMessageBody = message.message_body;
             model.thisFrom = message.from;
-
-
-
         }
 
 
-
         function showUserDetails(user) {
-            model.showUserDetailsFlag=true;
+            model.showUserDetailsFlag = true;
             model.thisusername = user.username;
             model.thisfirstName = user.firstName;
             model.thislastName = user.lastName;
             model.thisemailId = user.emailId;
             model.thisphone = user.phone;
         }
+
 
         function searchUser(username) {
             model.showUserDetailsFlag = false;
@@ -198,6 +185,7 @@
                     model.foundUsers = result;
                 })
         }
+
 
         function logout() {
             userService
@@ -210,34 +198,33 @@
         }
 
 
+        function login(username, password) {
 
-        function login(username , password) {
-
-            model.usernamemessage="";
-            model.passwordmessage="";
+            model.usernamemessage = "";
+            model.passwordmessage = "";
             model.error = "";
 
 
-            if (!username && !password){
-                model.usernamemessage="Username is Required";
+            if (!username && !password) {
+                model.usernamemessage = "Username is Required";
                 model.passwordmessage = "Password is Required";
                 model.error = "Incomplete Credentials";
             }
-            else if(!password){
+            else if (!password) {
                 model.passwordmessage = "Password is Required";
                 model.error = "Incomplete Credentials";
             }
 
-            else if(!username){
-                model.usernamemessage="Username is Required";
+            else if (!username) {
+                model.usernamemessage = "Username is Required";
                 model.error = "Incomplete Credentials";
             }
-            else{
+            else {
 
                 userService
                     .login(username, password)
                     .then(function (found) {
-                        console.log(found);
+                        /*console.log(found);*/
                         if (found !== null) {
                             model.message = "Welcome " + username;
                             $location.url('/');
@@ -246,33 +233,12 @@
                             model.error = "Sorry, " + username + " not found. Please try again.";
                         }
 
-                    },function () {
+                    }, function () {
                         model.error = "Sorry, " + username + " not found or mismatch of Credentials. Please try again.";
                     });
 
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /*userService.login(username, password)
-             .then(function (result) {
-             console.log("This is user", result);
-             });*/
         }
-
-
-
-
 
 
     }

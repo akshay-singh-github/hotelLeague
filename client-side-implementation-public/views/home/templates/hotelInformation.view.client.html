@@ -3,7 +3,10 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="#!/">Hotel League</a></h1>
-                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="" class="wd-login-user-name-styling">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a></h3>
+                <h3 ng-if="model.currentUser.username"
+                    class="pull-left wd-login-user-name-margin wd-login-user-name-styling "><a href=""
+                                                                                              class="wd-login-user-name-styling wd-remove-text-overflowing">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a>
+                </h3>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -23,50 +26,23 @@
                         <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup style="background-color: yellow;color: red;border-radius:15px 50px;" ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
+                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup
+                                style="background-color: yellow;color: red;border-radius:15px 50px;"
+                                ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a>
+                        </li>
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav ">
-                        <!--<li class="active"><a href="#!/">Home</a></li>
-                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
                         <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/following">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/follower">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/reservation">Bookings</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
-            <!--<div class="search-box">
-                <div id="sb-search" class="sb-search">
-                    <form>
-                        <input class="sb-search-input" placeholder="Enter your search term..." type="search"
-                               name="search" id="search">
-                        <input class="sb-search-submit" type="submit" value="">
-                        <span class="sb-icon-search"> </span>
-                    </form>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-
-            &lt;!&ndash; search-scripts &ndash;&gt;
-            <script src="js/classie.js"></script>
-            <script src="js/uisearch.js"></script>
-            <script>
-                new UISearch(document.getElementById('sb-search'));
-            </script>-->
-            <!-- //search-scripts -->
-
         </div>
     </div>
 </div>
@@ -75,39 +51,55 @@
 <div class="details wd-bottom-margin-footer-overlap">
     <div class="container">
         <div class="wd-text-card-margin wd-remove-text-overflowing wd-title-shadow wd-title-color text-center">
-            <h3><span class="wd-title-color"><strong class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h3>
+            <h3><span class="wd-title-color"><strong
+                    class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h3>
         </div>
         <div class="col-md-7 details-left">
-            <img src="{{model.hotelObject.photoUrl}}" height="300" width="500" class=" img-responsive center-block wd-image-shadow" alt="">
-            <!--<img src="images/16.jpg" class="img-responsive" alt="">-->
+            <img src="{{model.hotelObject.photoUrl}}" height="300" width="500"
+                 class=" img-responsive center-block wd-image-shadow" alt="">
         </div>
         <div class="col-md-5 details-right">
 
             <div class="card">
                 <div class="card-block">
-                    <!--<div class="wd-text-card-margin wd-remove-text-overflowing wd-title-shadow wd-title-color">
-                        <h5><span class="wd-title-color"><strong class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h5>
-                    </div>-->
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Open Now&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.openStatus}}</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Open Now&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">
+                            {{model.hotelObject.openStatus}}</h4>
                     </div>
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Phone&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.phoneNumber}}</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Phone&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">
+                            {{model.hotelObject.phoneNumber}}</h4>
                     </div>
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Address&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.hotelAddress}}</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Address&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">
+                            {{model.hotelObject.hotelAddress}}</h4>
                     </div>
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Rating&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.hotelRating}}</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Rating&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">
+                            {{model.hotelObject.hotelRating}}</h4>
                     </div>
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Landmark&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.landmarkLocation}}</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Landmark&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">
+                            {{model.hotelObject.landmarkLocation}}</h4>
                     </div>
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Website&nbsp;&nbsp;:&nbsp;&nbsp;</h4><a href="{{model.hotelObject.website}}" target="_blank"><h4 class="card-subtitle mb-2 text-muted wd-link-color">Click Me.</h4></a>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Website&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <a href="{{model.hotelObject.website}}" target="_blank"><h4
+                                class="card-subtitle mb-2 text-muted wd-link-color">Click Me.</h4></a>
                     </div>
                     <div class="wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Opening Hours&nbsp;&nbsp;:&nbsp;&nbsp;</h4><ul class="list-group wd-text-card-margin"><li ng-repeat="timing in model.hotelObject.weekHours" class="list-group-item wd-remove-text-overflowing"><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{timing}}</h4></li></ul>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Opening Hours&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <ul class="list-group wd-text-card-margin">
+                            <li ng-repeat="timing in model.hotelObject.weekHours"
+                                class="list-group-item wd-remove-text-overflowing"><h4
+                                    class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{timing}}</h4>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>
@@ -120,17 +112,13 @@
                     width="100%"
                     height="350"
                     frameborder="0" style="border:0"
-                    src={{model.mapUrlIframe}} allowfullscreen >
+                    src={{model.mapUrlIframe}} allowfullscreen>
             </iframe>
         </div>
         <div class="container-fluid wd-heading-bottom-margin">
             <a class="btn btn-success btn-block" href="#!/details/{{model.hotelId}}">Book / Review Hotel</a>
             <a class="btn btn-primary btn-block" ng-click="model.backButton()">Go Back</a>
         </div>
-
-
-
-
 
 
     </div>
@@ -147,7 +135,7 @@
 </div>
 
 <script>
-    $('.flip').hover(function(){
+    $('.flip').hover(function () {
         $(this).find('.card').toggleClass('flipped');
 
     });

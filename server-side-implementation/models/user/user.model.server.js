@@ -17,42 +17,35 @@ module.exports = function () {
         findUserByCredentials: findUserByCredentials,
         updateUserProfile: updateUserProfile,
         deleteUser: deleteUser,
-        addWebsite : addWebsite,
-        deleteWebsite : deleteWebsite,
-        findUserByGoogleId : findUserByGoogleId,
-        findUserByFacebookId : findUserByFacebookId,
+        addWebsite: addWebsite,
+        deleteWebsite: deleteWebsite,
+        findUserByGoogleId: findUserByGoogleId,
+        findUserByFacebookId: findUserByFacebookId,
         setModel: setModel,
-        deleteUserProfile : deleteUserProfile,
-        findUserByRegexUsername : findUserByRegexUsername,
-        getAllfollowers : getAllfollowers,
-        getAllfollowing : getAllfollowing
+        deleteUserProfile: deleteUserProfile,
+        findUserByRegexUsername: findUserByRegexUsername,
+        getAllfollowers: getAllfollowers,
+        getAllfollowing: getAllfollowing
     };
 
     return api;
 
 
     function getAllfollowing(userId) {
-        return userModel.find({'followedBy':{$in:[userId]}});
+        return userModel.find({'followedBy': {$in: [userId]}});
     }
 
     function getAllfollowers(userId) {
 
-        return userModel.find({'following':{$in:[userId]}});
+        return userModel.find({'following': {$in: [userId]}});
 
     }
 
-    
-    
+
     function findUserByRegexUsername(username) {
-        return userModel.find({"username" : new RegExp(username, "i")});
-        
+        return userModel.find({"username": new RegExp(username, "i")});
+
     }
-    
-    
-    
-    
-
-
 
 
     function deleteUserProfile(userId) {
@@ -60,14 +53,9 @@ module.exports = function () {
     }
 
 
-
-
     function findUserByFacebookId(facebookId) {
         return userModel.findOne({'facebook.id': facebookId});
     }
-
-
-
 
 
     function findUserByGoogleId(googleId) {
@@ -76,12 +64,11 @@ module.exports = function () {
     }
 
 
-
     function setModel(_model) {
         model = _model;
     }
 
-    function deleteWebsite(userId,websiteId) {
+    function deleteWebsite(userId, websiteId) {
         return userModel
             .findById(userId)
             .then(function (user) {
@@ -108,9 +95,9 @@ module.exports = function () {
                 user.roles = user.roles.toUpperCase();
                 user.roles = user.roles.split(',');
 
-                    for(var i in user.roles){
-                        user.roles[i] = user.roles[i].trim();
-                    }
+                for (var i in user.roles) {
+                    user.roles[i] = user.roles[i].trim();
+                }
 
             }
             else {
@@ -124,11 +111,9 @@ module.exports = function () {
     }
 
 
-
     function findUserById(userId) {
         return userModel.findById(userId);
     }
-
 
 
     function findAllUser() {
@@ -136,18 +121,15 @@ module.exports = function () {
     }
 
 
-
     function findUserByUsername(username) {
         return userModel.findOne({username: username});
     }
 
 
-
     function findUserByCredentials(username, password) {
         var newPassword = bcrypt.hashSync(password);
-        return userModel.findOne({username:username , password: newPassword});
+        return userModel.findOne({username: username, password: newPassword});
     }
-
 
 
     function updateUserProfile(userId, newUser) {
@@ -157,7 +139,7 @@ module.exports = function () {
                 newUser.roles = newUser.roles.toUpperCase();
                 newUser.roles = newUser.roles.split(',');
 
-                for(var i in newUser.roles){
+                for (var i in newUser.roles) {
                     newUser.roles[i] = newUser.roles[i].trim();
                 }
             }
@@ -167,12 +149,12 @@ module.exports = function () {
         }
 
 
-
-        delete newUser.username; /*to avoid changing  username*/
-        delete newUser.password; /*to avoid changing password*/
-        return userModel.update({_id: userId},{$set: newUser});
+        delete newUser.username;
+        /*to avoid changing  username*/
+        delete newUser.password;
+        /*to avoid changing password*/
+        return userModel.update({_id: userId}, {$set: newUser});
     }
-
 
 
     function deleteUser(userId) {

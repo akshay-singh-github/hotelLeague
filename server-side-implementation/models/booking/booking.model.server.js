@@ -14,20 +14,19 @@ module.exports = function () {
         createBooking: createBooking,
         findBookingByUserId: findBookingByUserId,
         deleteBooking: deleteBooking,
-        findFavoriteBookingByUserId : findFavoriteBookingByUserId,
-        getAllBookings : getAllBookings,
-        updateBooking : updateBooking,
+        findFavoriteBookingByUserId: findFavoriteBookingByUserId,
+        getAllBookings: getAllBookings,
+        updateBooking: updateBooking,
         setModel: setModel
     };
 
     return api;
 
 
-
     function updateBooking(bookingID, booking) {
-        console.log("booking in the model", booking);
+        /*console.log("booking in the model", booking);*/
 
-        return bookingModel.update({_id:bookingID},{$set:booking});
+        return bookingModel.update({_id: bookingID}, {$set: booking});
 
     }
 
@@ -38,27 +37,20 @@ module.exports = function () {
 
 
     function getAllBookings() {
-        return bookingModel.find().sort({date:-1});
+        return bookingModel.find().sort({date: -1});
     }
-
-
-
 
 
     function findFavoriteBookingByUserId(favbookingIdArray) {
 
-        return bookingModel.find({'_id':{$in:favbookingIdArray}}).sort({date:-1}).populate('hotel').exec();
+        return bookingModel.find({'_id': {$in: favbookingIdArray}}).sort({date: -1}).populate('hotel').exec();
 
     }
-
 
 
     function deleteBooking(bookingId) {
         return bookingModel.remove({_id: bookingId});
     }
-
-
-
 
 
     function createBooking(booking) {
@@ -67,9 +59,8 @@ module.exports = function () {
     }
 
 
-
     function findBookingByUserId(uid) {
-        return bookingModel.find({forUserId: uid}).sort({date:-1}).populate('hotel').exec();
+        return bookingModel.find({forUserId: uid}).sort({date: -1}).populate('hotel').exec();
     }
 
 

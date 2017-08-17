@@ -32,16 +32,6 @@ module.exports = function(app){
     function init(model) {
         var dumUsers = require("./intial.users.json");
 
-        console.log("These are init user",dumUsers );
-        /*var query = {username: dumUsers[i].username},
-            update = { dumUsers[i] },
-            options = { upsert: true, new: true, setDefaultsOnInsert: true };
-
-
-        Model.findOneAndUpdate(query, update, options, function(error, result) {
-            if (error) return error;
-        });*/
-
         for (var i in dumUsers) {
             dumUsers[i].password = bcrypt.hashSync(dumUsers[i].password);
 

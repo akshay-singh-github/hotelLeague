@@ -3,31 +3,25 @@
  */
 
 var https = require('https');
-module.exports=function (app,model) {
+module.exports = function (app, model) {
 
-    app.get("/api/getHotel/:hotId" , findHotelById);
-    app.post("/api/createHotel" , createHotel);
-
-
-
-
+    app.get("/api/getHotel/:hotId", findHotelById);
+    app.post("/api/createHotel", createHotel);
 
 
     function createHotel(req, res) {
-        console.log("Inside hotel server create");
+        /*console.log("Inside hotel server create");*/
         var hotelObject = req.body;
-        console.log("hotelObject : ", hotelObject);
+        /*console.log("hotelObject : ", hotelObject);*/
         model.hotelModel
             .createHotel(hotelObject)
             .then(function (hotel) {
-                console.log("hotel : ", hotel);
+                /*console.log("hotel : ", hotel);*/
                 res.json(hotel);
-            },function (error) {
+            }, function (error) {
                 res.json(error);
             });
     }
-
-
 
 
     function findHotelById(req, res) {
@@ -36,16 +30,15 @@ module.exports=function (app,model) {
         model.hotelModel
             .findHotelById(hotId)
             .then(function (hotel) {
-                if (hotel)
-                {
-                    console.log("sending hotel...",hotel);
+                if (hotel) {
+                    /*console.log("sending hotel...",hotel);*/
                     res.json(hotel);
                 }
-                else{
+                else {
                     res.sendStatus(404);
                 }
 
-            },function () {
+            }, function () {
                 res.sendStatus(404);
             });
     }

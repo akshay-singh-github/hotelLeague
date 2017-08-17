@@ -4,25 +4,24 @@
 
 (function () {
     angular.module("HotelLeagueMaker")
-        .factory("bookingService",bookingService);
+        .factory("bookingService", bookingService);
 
 
     function bookingService($http) {
 
 
         var api = {
-            createBooking : createBooking,
-            getBookingBycurrentUser : getBookingBycurrentUser,
-            getAllFavoriteBookingsForUser : getAllFavoriteBookingsForUser,
-            deleteBooking : deleteBooking,
-            updateBooking : updateBooking,
-            getAllBookings : getAllBookings
+            createBooking: createBooking,
+            getBookingBycurrentUser: getBookingBycurrentUser,
+            getAllFavoriteBookingsForUser: getAllFavoriteBookingsForUser,
+            deleteBooking: deleteBooking,
+            updateBooking: updateBooking,
+            getAllBookings: getAllBookings
 
 
         };
 
         return api;
-
 
 
         function updateBooking(Booking) {
@@ -35,20 +34,15 @@
         }
 
 
-
-
         function getAllBookings() {
             var url = "/api/project/getAllBookings";
             return $http.get(url)
                 .then(function (response) {
-                    console.log("getAllBookings", response);
+                    /*console.log("getAllBookings", response);*/
                     return response.data;
                 });
 
         }
-
-
-
 
 
         function getAllFavoriteBookingsForUser() {
@@ -56,7 +50,7 @@
 
             return $http.get(url)
                 .then(function (response) {
-                    console.log("Fav bookings in client", response);
+                    /*console.log("Fav bookings in client", response);*/
                     return response;
                 });
 
@@ -64,7 +58,7 @@
 
 
         function createBooking(bookingObj) {
-            console.log("Inside booking client create");
+            /*console.log("Inside booking client create");*/
             var url = "/api/project/createBooking";
             return $http.post(url, bookingObj)
                 .then(function (response) {
@@ -84,7 +78,7 @@
 
         function deleteBooking(booking) {
 
-            var url = "/api/project/deleteBooking/"+booking._id;
+            var url = "/api/project/deleteBooking/" + booking._id;
 
             return $http.delete(url)
                 .then(function (result) {

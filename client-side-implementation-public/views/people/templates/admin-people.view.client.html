@@ -3,7 +3,10 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="#!/">Hotel League</a></h1>
-                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="" class="wd-login-user-name-styling">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a></h3>
+                <h3 ng-if="model.currentUser.username"
+                    class="pull-left wd-login-user-name-margin wd-login-user-name-styling "><a href=""
+                                                                                              class="wd-login-user-name-styling wd-remove-text-overflowing">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a>
+                </h3>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -19,53 +22,28 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav ">
                         <li><a href="#!/">Home</a></li>
-                        <li class="active" ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin">Admin</a></li>
+                        <li class="active" ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin">Admin</a>
+                        </li>
                         <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup style="background-color: yellow;color: red;border-radius:15px 50px;" ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
+                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup
+                                style="background-color: yellow;color: red;border-radius:15px 50px;"
+                                ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a>
+                        </li>
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav ">
-                        <!--<li class="active"><a href="#!/">Home</a></li>
-                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
                         <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/following">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/follower">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/reservation">Bookings</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
-            <!--<div class="search-box">
-                <div id="sb-search" class="sb-search">
-                    <form>
-                        <input class="sb-search-input" placeholder="Enter your search term..." type="search"
-                               name="search" id="search">
-                        <input class="sb-search-submit" type="submit" value="">
-                        <span class="sb-icon-search"> </span>
-                    </form>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-
-            &lt;!&ndash; search-scripts &ndash;&gt;
-            <script src="js/classie.js"></script>
-            <script src="js/uisearch.js"></script>
-            <script>
-                new UISearch(document.getElementById('sb-search'));
-            </script>-->
-            <!-- //search-scripts -->
 
         </div>
     </div>
@@ -76,9 +54,14 @@
     <div class="container">
         <div class="container-fluid">
             <ul class="nav nav-tabs nav-justified" id="myTab">
-                <li class="active"><a data-toggle="tab" data-target="#wd-user-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Users</h4></a></li>
-                <li ><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Bookings</h4></a></li>
-                <li ><a data-toggle="tab" data-target="#wd-review-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Reviews</h4></a></li>
+                <li class="active"><a data-toggle="tab" data-target="#wd-user-id" ng-click="model.reload()" href=""><h4
+                        class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Users</h4></a></li>
+                <li><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href=""><h4
+                        class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Bookings</h4></a>
+                </li>
+                <li><a data-toggle="tab" data-target="#wd-review-id" ng-click="model.reload()" href=""><h4
+                        class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Reviews</h4></a>
+                </li>
 
             </ul>
             <div class="tab-content">
@@ -89,7 +72,9 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-target="#collapse1" type="button" class="btn btn-warning btn-block wd-remove-text-overflowing" href="">Click to Create New User.</a>
+                                        <a data-toggle="collapse" data-target="#collapse1" type="button"
+                                           class="btn btn-warning btn-block wd-remove-text-overflowing" href="">Click to
+                                            Create New User.</a>
                                     </h4>
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
@@ -103,7 +88,9 @@
                                         </div>
                                         <form ng-class="{'submitted': model.createUsersubmitted}">
                                             <div class="wd-button-margin">
-                                                <label for="createfirstName" class="wd-label-color wd-remove-text-overflowing">First Name</label>
+                                                <label for="createfirstName"
+                                                       class="wd-label-color wd-remove-text-overflowing">First
+                                                    Name</label>
                                                 <input
                                                         type="text"
                                                         id="createfirstName"
@@ -117,7 +104,9 @@
                                                 />
                                             </div>
                                             <div class="wd-button-margin">
-                                                <label for="createlastName" class="wd-label-color wd-remove-text-overflowing">Last Name</label>
+                                                <label for="createlastName"
+                                                       class="wd-label-color wd-remove-text-overflowing">Last
+                                                    Name</label>
                                                 <input
                                                         type="text"
                                                         id="createlastName"
@@ -131,7 +120,8 @@
                                                 />
                                             </div>
                                             <div class="wd-button-margin">
-                                                <label for="createusername" class="wd-label-color wd-remove-text-overflowing">Username</label>
+                                                <label for="createusername"
+                                                       class="wd-label-color wd-remove-text-overflowing">Username</label>
                                                 <input
                                                         type="text"
                                                         id="createusername"
@@ -146,7 +136,8 @@
                                             </div>
 
                                             <div class="wd-button-margin">
-                                                <label for="createroles" class="wd-label-color wd-remove-text-overflowing">Roles</label>
+                                                <label for="createroles"
+                                                       class="wd-label-color wd-remove-text-overflowing">Roles</label>
                                                 <input
                                                         type="text"
                                                         id="createroles"
@@ -161,7 +152,9 @@
                                             </div>
 
                                             <div class="wd-button-margin">
-                                                <label for="createemailId" class="wd-label-color wd-remove-text-overflowing">Email ID</label>
+                                                <label for="createemailId"
+                                                       class="wd-label-color wd-remove-text-overflowing">Email
+                                                    ID</label>
                                                 <input
                                                         type="text"
                                                         id="createemailId"
@@ -176,7 +169,8 @@
                                             </div>
 
                                             <div class="wd-button-margin">
-                                                <label for="createphone" class="wd-label-color wd-remove-text-overflowing">Phone</label>
+                                                <label for="createphone"
+                                                       class="wd-label-color wd-remove-text-overflowing">Phone</label>
                                                 <input
                                                         type="text"
                                                         id="createphone"
@@ -190,7 +184,8 @@
                                                 />
                                             </div>
                                             <div class="wd-button-margin">
-                                                <label for="createpassword" class="wd-label-color wd-remove-text-overflowing">Password*</label>
+                                                <label for="createpassword"
+                                                       class="wd-label-color wd-remove-text-overflowing">Password*</label>
                                                 <input ng-model="newUser.password"
                                                        type="password"
                                                        id="createpassword"
@@ -201,10 +196,14 @@
                                                        spellcheck="false"
                                                        placeholder="qwerty321"
                                                        required>
-                                                <div ng-show="model.passwordcreateUsermessage" class="alert alert-info">{{model.passwordcreateUsermessage}}</div>
+                                                <div ng-show="model.passwordcreateUsermessage" class="alert alert-info">
+                                                    {{model.passwordcreateUsermessage}}
+                                                </div>
                                             </div>
                                             <div class="wd-button-margin">
-                                                <label for="createpassword2" class="wd-label-color wd-remove-text-overflowing">Confirm Password*</label>
+                                                <label for="createpassword2"
+                                                       class="wd-label-color wd-remove-text-overflowing">Confirm
+                                                    Password*</label>
                                                 <input ng-model="model.createUserpassword2"
                                                        type="password"
                                                        id="createpassword2"
@@ -215,10 +214,13 @@
                                                        spellcheck="false"
                                                        placeholder="qwerty321"
                                                        required>
-                                                <div ng-show="model.passwordcreateUsermessage" class="alert alert-info">{{model.passwordcreateUsermessage}}</div>
+                                                <div ng-show="model.passwordcreateUsermessage" class="alert alert-info">
+                                                    {{model.passwordcreateUsermessage}}
+                                                </div>
                                             </div>
                                             <div class="wd-button-margin text-center">
-                                                <a class="btn btn-success wd-button-margin" href="" ng-click="model.createUser(newUser)" role="button" >Create</a>
+                                                <a class="btn btn-success wd-button-margin" href=""
+                                                   ng-click="model.createUser(newUser)" role="button">Create</a>
                                             </div>
                                         </form>
 
@@ -231,8 +233,6 @@
                     </div>
 
 
-
-
                     <div ng-show="model.updateUserMessage" class="alert alert-success">
                         {{model.updateUserMessage}}
                     </div>
@@ -242,7 +242,8 @@
                     <div class="wd-admin-tile wd-tile-shadow" ng-repeat="user in model.Allusers">
                         <div class="container-fluid">
                             <div class="wd-button-margin">
-                                <label for="firstName" class="wd-label-color wd-remove-text-overflowing">First Name</label>
+                                <label for="firstName" class="wd-label-color wd-remove-text-overflowing">First
+                                    Name</label>
                                 <input
                                         type="text"
                                         id="firstName"
@@ -255,7 +256,8 @@
 
 
                             <div class="wd-button-margin">
-                                <label for="lastName" class="wd-label-color wd-remove-text-overflowing">Last Name</label>
+                                <label for="lastName" class="wd-label-color wd-remove-text-overflowing">Last
+                                    Name</label>
                                 <input
                                         type="text"
                                         id="lastName"
@@ -298,8 +300,10 @@
                                 />
                             </div>
                             <div class="wd-button-margin text-center">
-                                <a class="btn btn-primary wd-button-margin" href="" ng-click="model.updateUser(user)" role="button" >Update</a>
-                                <a class="btn btn-danger wd-button-margin" href="" ng-click="model.deleteUser(user)" role="button" >Delete</a>
+                                <a class="btn btn-primary wd-button-margin" href="" ng-click="model.updateUser(user)"
+                                   role="button">Update</a>
+                                <a class="btn btn-danger wd-button-margin" href="" ng-click="model.deleteUser(user)"
+                                   role="button">Delete</a>
                             </div>
 
 
@@ -308,16 +312,18 @@
                 </div>
 
 
-
-
-
                 <div class="tab-pane container-fluid fade" id="wd-booking-id">
-                    <div ng-show="model.error" class="alert alert-danger wd-remove-text-overflowing">{{model.error}}</div>
-                    <div ng-show="model.successMessage" class="alert alert-success wd-remove-text-overflowing">{{model.successMessage}}</div>
+                    <div ng-show="model.error" class="alert alert-danger wd-remove-text-overflowing">{{model.error}}
+                    </div>
+                    <div ng-show="model.successMessage" class="alert alert-success wd-remove-text-overflowing">
+                        {{model.successMessage}}
+                    </div>
                     <div ng-show="model.contactMessage" class="alert alert-danger wd-remove-text-overflowing">
                         {{model.contactMessage}}
                     </div>
-                    <div ng-show="model.nameMessage" class="alert alert-danger wd-remove-text-overflowing">{{model.nameMessage}}</div>
+                    <div ng-show="model.nameMessage" class="alert alert-danger wd-remove-text-overflowing">
+                        {{model.nameMessage}}
+                    </div>
                     <div ng-show="model.checkinMessage" class="alert alert-danger wd-remove-text-overflowing">
                         {{model.checkinMessage}}
                     </div>
@@ -335,186 +341,192 @@
                                 <form class="wd-text-card-margin">
 
                                     <div class="wd-button-margin">
-                                    <label for="name" class="wd-label-color wd-remove-text-overflowing">Guest's First Name</label>
-                                    <input type="text"
-                                           placeholder="abc321"
-                                           id="name"
-                                           disabled
-                                           class="form-control wd-make-full-width"
-                                           ng-model="booking.name"/>
+                                        <label for="name" class="wd-label-color wd-remove-text-overflowing">Guest's
+                                            First Name</label>
+                                        <input type="text"
+                                               placeholder="abc321"
+                                               id="name"
+                                               disabled
+                                               class="form-control wd-make-full-width"
+                                               ng-model="booking.name"/>
                                     </div>
                                     <div class="wd-button-margin">
-                                    <label for="surname" class="wd-label-color wd-remove-text-overflowing">Guest's Last Name</label>
-                                    <input type="text"
-                                           placeholder="abc321"
-                                           id="surname"
-                                           class="form-control wd-make-full-width"
-                                           ng-model="booking.surname"/>
-                                    </div>
-
-                                    <div class="wd-button-margin">
-                                    <label for="email" class="wd-label-color wd-remove-text-overflowing">Guest's Email ID</label>
-                                    <input type="text"
-                                           placeholder="abc321"
-                                           id="email"
-                                           class="form-control wd-make-full-width"
-                                           ng-model="booking.email"/>
-                                    </div>
-                                    <div class="wd-button-margin">
-                                    <label for="phoneG" class="wd-label-color wd-remove-text-overflowing">Guest's Phone</label>
-                                    <input type="text"
-                                           placeholder="abc321"
-                                           id="phoneG"
-                                           class="form-control wd-make-full-width"
-                                           ng-model="booking.phone"/>
+                                        <label for="surname" class="wd-label-color wd-remove-text-overflowing">Guest's
+                                            Last Name</label>
+                                        <input type="text"
+                                               placeholder="abc321"
+                                               id="surname"
+                                               class="form-control wd-make-full-width"
+                                               ng-model="booking.surname"/>
                                     </div>
 
                                     <div class="wd-button-margin">
-                                    <label for="datecin" class="wd-label-color wd-remove-text-overflowing">Check - in:</label>
-                                    <select id="datecin" class="arrival" ng-model="booking.checkinDate">
-                                        <option>01</option>
-                                        <option>02</option>
-                                        <option>03</option>
-                                        <option>04</option>
-                                        <option>05</option>
-                                        <option>06</option>
-                                        <option>08</option>
-                                        <option>09</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                        <option>15</option>
-                                        <option>16</option>
-                                        <option>17</option>
-                                        <option>18</option>
-                                        <option>19</option>
-                                        <option>20</option>
-                                        <option>21</option>
-                                        <option>22</option>
-                                        <option>23</option>
-                                        <option>24</option>
-                                        <option>25</option>
-                                        <option>26</option>
-                                        <option>27</option>
-                                        <option>28</option>
-                                        <option>29</option>
-                                        <option>30</option>
-                                        <option>31</option>
-                                    </select>
-                                    <select class="arrival" ng-model="booking.checkinMonth">
-                                        <option value="1">Jan</option>
-                                        <option value="2">Feb</option>
-                                        <option value="3">Mar</option>
-                                        <option value="4">Apr</option>
-                                        <option value="5">May</option>
-                                        <option value="6">June</option>
-                                        <option value="7">July</option>
-                                        <option value="8">Aug</option>
-                                        <option value="9">Sep</option>
-                                        <option value="10">Oct</option>
-                                        <option value="11">Nov</option>
-                                        <option value="12">Dec</option>
-                                    </select>
-                                    <select class="arrival" ng-model="booking.checkinYear">
-                                        <option>2017</option>
-                                        <option>2018</option>
-                                        <option>2019</option>
-                                        <option>2020</option>
-                                        <option>2021</option>
-                                        <option>2022</option>
-                                    </select>
+                                        <label for="email" class="wd-label-color wd-remove-text-overflowing">Guest's
+                                            Email ID</label>
+                                        <input type="text"
+                                               placeholder="abc321"
+                                               id="email"
+                                               class="form-control wd-make-full-width"
+                                               ng-model="booking.email"/>
+                                    </div>
+                                    <div class="wd-button-margin">
+                                        <label for="phoneG" class="wd-label-color wd-remove-text-overflowing">Guest's
+                                            Phone</label>
+                                        <input type="text"
+                                               placeholder="abc321"
+                                               id="phoneG"
+                                               class="form-control wd-make-full-width"
+                                               ng-model="booking.phone"/>
                                     </div>
 
                                     <div class="wd-button-margin">
-                                        <label for="datecout" class="wd-label-color wd-remove-text-overflowing">Check - out:</label>
-                                    <select id = "datecout" class="arrival" ng-model="booking.checkoutDate">
-                                        <option>01</option>
-                                        <option>02</option>
-                                        <option>03</option>
-                                        <option>04</option>
-                                        <option>05</option>
-                                        <option>06</option>
-                                        <option>08</option>
-                                        <option>09</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                        <option>15</option>
-                                        <option>16</option>
-                                        <option>17</option>
-                                        <option>18</option>
-                                        <option>19</option>
-                                        <option>20</option>
-                                        <option>21</option>
-                                        <option>22</option>
-                                        <option>23</option>
-                                        <option>24</option>
-                                        <option>25</option>
-                                        <option>26</option>
-                                        <option>27</option>
-                                        <option>28</option>
-                                        <option>29</option>
-                                        <option>30</option>
-                                        <option>31</option>
-                                    </select>
-                                    <select class="arrival" ng-model="booking.checkoutMonth">
-                                        <option value="1">Jan</option>
-                                        <option value="2">Feb</option>
-                                        <option value="3">Mar</option>
-                                        <option value="4">Apr</option>
-                                        <option value="5">May</option>
-                                        <option value="6">June</option>
-                                        <option value="7">July</option>
-                                        <option value="8">Aug</option>
-                                        <option value="9">Sep</option>
-                                        <option value="10">Oct</option>
-                                        <option value="11">Nov</option>
-                                        <option value="12">Dec</option>
-                                    </select>
-                                    <select class="arrival" ng-model="booking.checkoutYear">
-                                        <option>2017</option>
-                                        <option>2018</option>
-                                        <option>2019</option>
-                                        <option>2020</option>
-                                        <option>2021</option>
-                                        <option>2022</option>
-                                    </select>
+                                        <label for="datecin" class="wd-label-color wd-remove-text-overflowing">Check -
+                                            in:</label>
+                                        <select id="datecin" class="arrival" ng-model="booking.checkinDate">
+                                            <option>01</option>
+                                            <option>02</option>
+                                            <option>03</option>
+                                            <option>04</option>
+                                            <option>05</option>
+                                            <option>06</option>
+                                            <option>08</option>
+                                            <option>09</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                            <option>31</option>
+                                        </select>
+                                        <select class="arrival" ng-model="booking.checkinMonth">
+                                            <option value="1">Jan</option>
+                                            <option value="2">Feb</option>
+                                            <option value="3">Mar</option>
+                                            <option value="4">Apr</option>
+                                            <option value="5">May</option>
+                                            <option value="6">June</option>
+                                            <option value="7">July</option>
+                                            <option value="8">Aug</option>
+                                            <option value="9">Sep</option>
+                                            <option value="10">Oct</option>
+                                            <option value="11">Nov</option>
+                                            <option value="12">Dec</option>
+                                        </select>
+                                        <select class="arrival" ng-model="booking.checkinYear">
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                        </select>
                                     </div>
 
                                     <div class="wd-button-margin">
-                                        <label for="numMember" class="wd-label-color wd-remove-text-overflowing">Member Count:</label>
-                                    <select id="numMember" class="arrival " ng-model="booking.MemberCount">
-                                        <!--{{booking.MemberCount}}-->
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                    </select>
+                                        <label for="datecout" class="wd-label-color wd-remove-text-overflowing">Check -
+                                            out:</label>
+                                        <select id="datecout" class="arrival" ng-model="booking.checkoutDate">
+                                            <option>01</option>
+                                            <option>02</option>
+                                            <option>03</option>
+                                            <option>04</option>
+                                            <option>05</option>
+                                            <option>06</option>
+                                            <option>08</option>
+                                            <option>09</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                            <option>31</option>
+                                        </select>
+                                        <select class="arrival" ng-model="booking.checkoutMonth">
+                                            <option value="1">Jan</option>
+                                            <option value="2">Feb</option>
+                                            <option value="3">Mar</option>
+                                            <option value="4">Apr</option>
+                                            <option value="5">May</option>
+                                            <option value="6">June</option>
+                                            <option value="7">July</option>
+                                            <option value="8">Aug</option>
+                                            <option value="9">Sep</option>
+                                            <option value="10">Oct</option>
+                                            <option value="11">Nov</option>
+                                            <option value="12">Dec</option>
+                                        </select>
+                                        <select class="arrival" ng-model="booking.checkoutYear">
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="wd-button-margin">
+                                        <label for="numMember" class="wd-label-color wd-remove-text-overflowing">Member
+                                            Count:</label>
+                                        <select id="numMember" class="arrival " ng-model="booking.MemberCount">
+                                            <!--{{booking.MemberCount}}-->
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
                                     </div>
                                     <div class="wd-button-margin">
-                                    <!--<input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small" ng-model="model.customer.MemberCount">-->
-                                        <label for="txtarea" class="wd-label-color wd-remove-text-overflowing">Required</label>
-                                    <textarea id ="txtarea" value="" ng-model="booking.Instructions"></textarea>
+                                        <!--<input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small" ng-model="model.customer.MemberCount">-->
+                                        <label for="txtarea"
+                                               class="wd-label-color wd-remove-text-overflowing">Required</label>
+                                        <textarea id="txtarea" value="" ng-model="booking.Instructions"></textarea>
                                     </div>
                                     <div class="wd-button-margin text-center">
-                                        <a class="btn btn-primary wd-button-margin" href="" role="button" ng-click="model.updateBooking(booking)">Update</a>
-                                        <a class="btn btn-danger wd-button-margin" href="" role="button" ng-click="model.deleteBooking(booking)">Delete</a>
+                                        <a class="btn btn-primary wd-button-margin" href="" role="button"
+                                           ng-click="model.updateBooking(booking)">Update</a>
+                                        <a class="btn btn-danger wd-button-margin" href="" role="button"
+                                           ng-click="model.deleteBooking(booking)">Delete</a>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
-
 
 
                 <div class="tab-pane fade" id="wd-review-id">
@@ -529,25 +541,32 @@
                     </div>
                     <div class="wd-admin-tile-review wd-tile-shadow" ng-repeat="review in model.AllReviews">
                         <div class="container-fluid">
-                            <h3 class="wd-label-color text-center wd-text-card-margin wd-remove-text-overflowing">Edit Review</h3>
+                            <h3 class="wd-label-color text-center wd-text-card-margin wd-remove-text-overflowing">Edit
+                                Review</h3>
                             <div class="nowrapping">
-                            <h5 class="wd-label-color-review-details text-center wd-text-card-margin wd-remove-text-overflowing">Review for Hotel : </h5>
-                                <h5 class="wd-label-color text-center wd-text-card-margin wd-remove-text-overflowing">{{review.reviewHotelName}}</h5>
+                                <h5 class="wd-label-color-review-details text-center wd-text-card-margin wd-remove-text-overflowing">
+                                    Review for Hotel : </h5>
+                                <h5 class="wd-label-color text-center wd-text-card-margin wd-remove-text-overflowing">
+                                    {{review.reviewHotelName}}</h5>
                             </div>
                             <div class="nowrapping">
-                            <h5 class="wd-label-color-review-details text-center wd-text-card-margin wd-remove-text-overflowing">Reviewer Username : </h5>
-                                <h5 class="wd-label-color text-center wd-text-card-margin wd-remove-text-overflowing">{{review.reviewer}}</h5>
+                                <h5 class="wd-label-color-review-details text-center wd-text-card-margin wd-remove-text-overflowing">
+                                    Reviewer Username : </h5>
+                                <h5 class="wd-label-color text-center wd-text-card-margin wd-remove-text-overflowing">
+                                    {{review.reviewer}}</h5>
                             </div>
 
                             <form ng-class="{'submitted': model.Reviewsubmitted}">
-                                <label class="wd-label-color wd-remove-text-overflowing" for="ReviewTitle">Review Title :</label>
+                                <label class="wd-label-color wd-remove-text-overflowing" for="ReviewTitle">Review Title
+                                    :</label>
                                 <input type="text"
                                        placeholder="abc321"
                                        id="ReviewTitle"
                                        class="form-control wd-make-full-width"
                                        ng-model="review.ReviewTitle"
                                        required/>
-                                <label class="wd-label-color wd-remove-text-overflowing" for="ReviewContent">Review Content :</label>
+                                <label class="wd-label-color wd-remove-text-overflowing" for="ReviewContent">Review
+                                    Content :</label>
 
                                 <textarea class="form-control wd-make-full-width"
                                           placeholder="review details"
@@ -555,61 +574,16 @@
                                           id="ReviewContent" rows="8"></textarea>
 
                                 <div class="wd-button-margin text-center">
-                                    <a class="btn btn-primary wd-button-margin" href="" ng-click="model.updateReview(review)" role="button" >Update</a>
-                                    <a class="btn btn-danger wd-button-margin" href="" ng-click="model.deleteReview(review)" role="button" >Delete</a>
+                                    <a class="btn btn-primary wd-button-margin" href=""
+                                       ng-click="model.updateReview(review)" role="button">Update</a>
+                                    <a class="btn btn-danger wd-button-margin" href=""
+                                       ng-click="model.deleteReview(review)" role="button">Delete</a>
                                 </div>
                             </form>
 
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
 
         </div>
@@ -618,57 +592,6 @@
     </div>
 </div>
 
-
-
-
-
-
-
-<!-- details -->
-<!-- footer -->
-<!--<div class="footer">
-    <div class="container">
-        <div class="col-md-2 deco">
-            <h4>Navigation</h4>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shortcodes.html">Short Codes </a></li>
-            <li><a href="sigin.html">Sign in</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </div>
-        <div class="col-md-2 deco">
-            <h4>Links</h4>
-            <li><a href="#">Qui Sommes-Nous ?</a></li>
-            <li><a href="#">Mentions Légales </a></li>
-            <li><a href="#">Conditions D'Utilisation </a></li>
-        </div>
-        <div class="col-md-2 deco">
-            <h4>Social</h4>
-            <div class="soci">
-                <li><a href="#"><i class="f-1"> </i></a></li>
-                <li><a href="#"><i class="t-1"> </i></a></li>
-                <li><a href="#"><i class="g-1"> </i></a></li>
-            </div>
-        </div>
-        <div class="col-md-3 cardss">
-            <h4>Payment Sécure</h4>
-            <li><i class="visa"></i></li>
-            <li><i class="ma"></i></li>
-            <li><i class="paypal"></i></li>
-            <div class="clearfix"></div>
-        </div>
-        <div class="col-md-3 pos">
-            <h4>NewsLetter</h4>
-            <form method="post">
-                <input type="text" class="textbox" value="Email" onfocus="this.value = '';"
-                       onblur="if (this.value == '') {this.value = 'Email';}">
-                <div class="smt">
-                    <input type="submit" value="Subscribe">
-                </div>
-            </form>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>-->
 <div class="footer-bottom footer navbar-fixed-bottom">
     <div class="container">
         <p>© 2017 Hotel League. All Rights Reserved | Design by <a href="" target="_blank">Akshay Singh</a>
@@ -678,7 +601,7 @@
 </div>
 
 <script>
-    $('.flip').hover(function(){
+    $('.flip').hover(function () {
         $(this).find('.card').toggleClass('flipped');
 
     });

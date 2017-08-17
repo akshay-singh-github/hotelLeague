@@ -3,7 +3,10 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="#!/">Hotel League</a></h1>
-                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="" class="wd-login-user-name-styling">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a></h3>
+                <h3 ng-if="model.currentUser.username"
+                    class="pull-left wd-login-user-name-margin wd-login-user-name-styling "><a href=""
+                                                                                              class="wd-login-user-name-styling wd-remove-text-overflowing">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a>
+                </h3>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -23,50 +26,23 @@
                         <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup style="background-color: yellow;color: red;border-radius:15px 50px;" ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
+                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup
+                                style="background-color: yellow;color: red;border-radius:15px 50px;"
+                                ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a>
+                        </li>
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav ">
-                        <!--<li class="active"><a href="#!/">Home</a></li>
-                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
                         <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/following">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/follower">Followers</a></li>
                         <li class="active" ng-show="model.currentUser._id"><a href="#!/reservation">Bookings</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
-            <!--<div class="search-box">
-                <div id="sb-search" class="sb-search">
-                    <form>
-                        <input class="sb-search-input" placeholder="Enter your search term..." type="search"
-                               name="search" id="search">
-                        <input class="sb-search-submit" type="submit" value="">
-                        <span class="sb-icon-search"> </span>
-                    </form>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-
-            &lt;!&ndash; search-scripts &ndash;&gt;
-            <script src="js/classie.js"></script>
-            <script src="js/uisearch.js"></script>
-            <script>
-                new UISearch(document.getElementById('sb-search'));
-            </script>-->
-            <!-- //search-scripts -->
-
         </div>
     </div>
 </div>
@@ -76,61 +52,123 @@
     <div class="container">
         <div class="container-fluid">
             <ul class="nav nav-tabs nav-justified">
-                <li class="active"><a data-toggle="tab" data-target="#wd-booking-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Bookings</h4></a></li>
-                <li ><a data-toggle="tab" data-target="#wd-booking-favorites-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Favorites</h4></a></li>
+                <li class="active"><a data-toggle="tab" data-target="#wd-booking-id" ng-click="model.reload()" href="">
+                    <h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">All Bookings</h4></a>
+                </li>
+                <li><a data-toggle="tab" data-target="#wd-booking-favorites-id" ng-click="" href=""><h4
+                        class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Favorites</h4></a></li>
 
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="wd-booking-id">
                     <div class="container">
                         <div class="row" ng-show="model.bookings.length > 0">
-                            <!--<h3 class="wd-button-margin wd-email-messagetomessage-subject">Followers&nbsp;:&nbsp;</h3>-->
-                            <div class="wd-latest-flipping-trial-card-container col-xs-12 " ng-repeat="booking in model.bookings">
-                                <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
+                            <div class="wd-latest-flipping-trial-card-container col-xs-12 "
+                                 ng-repeat="booking in model.bookings">
+                                <div class=" wd-latest-flipping-trial-card wd-tile-shadow">
                                     <div class="wd-latest-flipping-trial-front">
                                         <div class="container-fluid">
-                                            <img src="{{booking.hotel.photoUrl}}" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
-                                            <h4 class="wd-button-margin wd-remove-text-overflowing wd-title-shadow">{{booking.hotel.hotelName}}</h4>
-                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin " style="color: green;font-size:100%"><span style="color: red;font-size: 100%;">For&nbsp;:&nbsp;</span>{{booking.name}}&nbsp;{{booking.surname}}</h5>
-                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin " style="color: green;font-size:100%"><span style="color: red;font-size: 100%;">Check - in&nbsp;:&nbsp;</span>{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}</h5>
+                                            <img ng-src="{{model.getHotelPhotoUrlForBooking(booking)}}"
+                                                 class="img-circle wd-profile-image-border" alt="Cinque Terre"
+                                                 width="20%" height="150">
+                                            <h4 class="wd-button-margin wd-remove-text-overflowing wd-title-shadow">
+                                                {{booking.hotel.hotelName}}</h4>
+                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin "
+                                                style="color: green;font-size:100%"><span
+                                                    style="color: red;font-size: 100%;">For&nbsp;:&nbsp;</span>{{booking.name}}&nbsp;{{booking.surname}}
+                                            </h5>
+                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin "
+                                                style="color: green;font-size:100%"><span
+                                                    style="color: red;font-size: 100%;">Check - in&nbsp;:&nbsp;</span>{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}
+                                            </h5>
                                         </div>
-                                        <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover for details.</h5>
-                                        <i class="fa fa-star wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0" aria-hidden="true"></i>
-                                        <h5 class=" wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">Favorite</h5>
-                                        <i class="fa fa-star wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0" aria-hidden="true"></i>
-                                        <h5 class=" wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Not Favorite</h5>
+                                        <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover for
+                                            details.</h5>
+                                        <i class="fa fa-star wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                           ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0"
+                                           aria-hidden="true"></i>
+                                        <h5 class=" wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                            ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">
+                                            Favorite</h5>
+                                        <i class="fa fa-star wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                           ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0"
+                                           aria-hidden="true"></i>
+                                        <h5 class=" wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                            ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">
+                                            Not Favorite</h5>
                                     </div>
                                     <div class="wd-latest-flipping-trial-back">
                                         <div class="container-fluid wd-search-people-window-formatting ">
                                             <div class="wd-button-margin-booking nowrapping" ng-show="booking._id">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing ">Booking ID&nbsp;:&nbsp; </h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking._id}}</span>
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing ">
+                                                    Booking ID&nbsp;:&nbsp; </h5><span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking._id}}</span>
                                             </div>
                                             <div class="wd-button-margin-booking nowrapping" ng-show="booking.name">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Booked For&nbsp;:&nbsp; </h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.name}}&nbsp;{{booking.surname}}</span>
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Booked For&nbsp;:&nbsp; </h5><span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.name}}&nbsp;{{booking.surname}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.checkinDate">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Check - in&nbsp;:&nbsp;</h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}</span>
+                                            <div class="wd-button-margin-booking nowrapping"
+                                                 ng-show="booking.checkinDate">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Check - in&nbsp;:&nbsp;</h5><span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.checkoutDate">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Check - out&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.checkoutMonth}}&nbsp;/&nbsp;{{booking.checkoutDate}}&nbsp;/&nbsp;{{booking.checkoutYear}}</span>
+                                            <div class="wd-button-margin-booking nowrapping"
+                                                 ng-show="booking.checkoutDate">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Check - out&nbsp;:&nbsp;</h5> <span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.checkoutMonth}}&nbsp;/&nbsp;{{booking.checkoutDate}}&nbsp;/&nbsp;{{booking.checkoutYear}}</span>
                                             </div>
                                             <div class="wd-button-margin-booking nowrapping" ng-show="booking.phone">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Guest Phone&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.phone}}</span>
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Guest Phone&nbsp;:&nbsp;</h5> <span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.phone}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.MemberCount">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Guest Count&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.MemberCount}}</span>
+                                            <div class="wd-button-margin-booking nowrapping"
+                                                 ng-show="booking.MemberCount">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Guest Count&nbsp;:&nbsp;</h5> <span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.MemberCount}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.hotel.hotelName">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Hotel Name&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelName}}</span>
+                                            <div class="wd-button-margin-booking nowrapping"
+                                                 ng-show="booking.hotel.hotelName">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Hotel Name&nbsp;:&nbsp;</h5> <span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelName}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.hotel.hotelAddress">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Hotel Address&nbsp;:&nbsp;</h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelAddress}}</span>
+                                            <div class="wd-button-margin-booking nowrapping"
+                                                 ng-show="booking.hotel.hotelAddress">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Hotel Address&nbsp;:&nbsp;</h5><span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelAddress}}</span>
                                             </div>
-                                            <p><div class="wd-button-margin-booking ">
-                                                <button type="button" class="btn btn-success wd-button-margin-booking" ng-click="model.addAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Make Favorite</button>
-                                                <button type="button" class="btn btn-danger wd-button-margin-booking" ng-click="model.removeAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">UN-Favorite</button>
-                                                <button type="button" class="btn btn-danger wd-button-margin-booking" ng-click="model.deleteBooking(booking)">Delete</button>
-                                            </div></p>
+                                            <p>
+                                            <div class="wd-button-margin-booking ">
+                                                <button type="button" class="btn btn-success wd-button-margin-booking"
+                                                        ng-click="model.addAsFavoriteBooking(booking)"
+                                                        ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">
+                                                    Make Favorite
+                                                </button>
+                                                <button type="button" class="btn btn-danger wd-button-margin-booking"
+                                                        ng-click="model.removeAsFavoriteBooking(booking)"
+                                                        ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">
+                                                    UN-Favorite
+                                                </button>
+                                                <button type="button" class="btn btn-danger wd-button-margin-booking"
+                                                        ng-click="model.deleteBooking(booking)">Delete
+                                                </button>
+                                            </div>
+                                            </p>
                                         </div>
 
 
@@ -146,53 +184,112 @@
                 <div id="wd-booking-favorites-id" class="tab-pane fade">
                     <div class="container">
                         <div class="row" ng-show="model.bookings.length > 0">
-                            <!--<h3 class="wd-button-margin wd-email-messagetomessage-subject">Followers&nbsp;:&nbsp;</h3>-->
-                            <div class="wd-latest-flipping-trial-card-container col-xs-12 " ng-repeat="booking in model.favoritebookings">
-                                <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
+                            <div class="wd-latest-flipping-trial-card-container col-xs-12 "
+                                 ng-repeat="booking in model.favoritebookings">
+                                <div class=" wd-latest-flipping-trial-card wd-tile-shadow">
                                     <div class="wd-latest-flipping-trial-front">
                                         <div class="container-fluid">
-                                            <img src="{{booking.hotel.photoUrl}}" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
-                                            <h4 class="wd-button-margin wd-remove-text-overflowing wd-title-shadow">{{booking.hotel.hotelName}}</h4>
-                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin " style="color: green;font-size:100%"><span style="color: red;font-size: 100%;">For&nbsp;:&nbsp;</span>{{booking.name}}&nbsp;{{booking.surname}}</h5>
-                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin " style="color: green;font-size:100%"><span style="color: red;font-size: 100%;">Check - in&nbsp;:&nbsp;</span>{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}</h5>
+                                            <img ng-src="{{model.getHotelPhotoUrlForBooking(booking)}}"
+                                                 class="img-circle wd-profile-image-border" alt="Cinque Terre"
+                                                 width="20%" height="150">
+                                            <h4 class="wd-button-margin wd-remove-text-overflowing wd-title-shadow">
+                                                {{booking.hotel.hotelName}}</h4>
+                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin "
+                                                style="color: green;font-size:100%"><span
+                                                    style="color: red;font-size: 100%;">For&nbsp;:&nbsp;</span>{{booking.name}}&nbsp;{{booking.surname}}
+                                            </h5>
+                                            <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin "
+                                                style="color: green;font-size:100%"><span
+                                                    style="color: red;font-size: 100%;">Check - in&nbsp;:&nbsp;</span>{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}
+                                            </h5>
                                         </div>
-                                        <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover for details.</h5>
-                                        <i class="fa fa-star wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0" aria-hidden="true"></i>
-                                        <h5 class=" wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">Favorite</h5>
-                                        <i class="fa fa-star wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0" aria-hidden="true"></i>
-                                        <h5 class=" wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Not Favorite</h5>
+                                        <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover for
+                                            details.</h5>
+                                        <i class="fa fa-star wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                           ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0"
+                                           aria-hidden="true"></i>
+                                        <h5 class=" wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                            ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">
+                                            Favorite</h5>
+                                        <i class="fa fa-star wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                           ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0"
+                                           aria-hidden="true"></i>
+                                        <h5 class=" wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                            ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">
+                                            Not Favorite</h5>
                                     </div>
                                     <div class="wd-latest-flipping-trial-back">
                                         <div class="container-fluid wd-search-people-window-formatting ">
                                             <div class="wd-button-margin-booking nowrapping" ng-show="booking._id">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing ">Booking ID&nbsp;:&nbsp; </h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking._id}}</span>
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing ">
+                                                    Booking ID&nbsp;:&nbsp; </h5><span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking._id}}</span>
                                             </div>
                                             <div class="wd-button-margin-booking nowrapping" ng-show="booking.name">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Booked For&nbsp;:&nbsp; </h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.name}}&nbsp;{{booking.surname}}</span>
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Booked For&nbsp;:&nbsp; </h5><span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.name}}&nbsp;{{booking.surname}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.checkinDate">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Check - in&nbsp;:&nbsp;</h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}</span>
+                                            <div class="wd-button-margin-booking nowrapping"
+                                                 ng-show="booking.checkinDate">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Check - in&nbsp;:&nbsp;</h5><span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.checkinMonth}}&nbsp;/&nbsp;{{booking.checkinDate}}&nbsp;/&nbsp;{{booking.checkinYear}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.checkoutDate">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Check - out&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.checkoutMonth}}&nbsp;/&nbsp;{{booking.checkoutDate}}&nbsp;/&nbsp;{{booking.checkoutYear}}</span>
+                                            <div class="wd-button-margin-booking nowrapping"
+                                                 ng-show="booking.checkoutDate">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Check - out&nbsp;:&nbsp;</h5> <span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.checkoutMonth}}&nbsp;/&nbsp;{{booking.checkoutDate}}&nbsp;/&nbsp;{{booking.checkoutYear}}</span>
                                             </div>
                                             <div class="wd-button-margin-booking nowrapping" ng-show="booking.phone">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Guest Phone&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.phone}}</span>
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Guest Phone&nbsp;:&nbsp;</h5> <span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.phone}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.MemberCount">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Guest Count&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.MemberCount}}</span>
+                                            <div class="wd-button-margin-booking nowrapping"
+                                                 ng-show="booking.MemberCount">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Guest Count&nbsp;:&nbsp;</h5> <span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.MemberCount}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.hotel.hotelName">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Hotel Name&nbsp;:&nbsp;</h5> <span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelName}}</span>
+                                            <div class="wd-button-margin-booking nowrapping"
+                                                 ng-show="booking.hotel.hotelName">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Hotel Name&nbsp;:&nbsp;</h5> <span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelName}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking nowrapping" ng-show="booking.hotel.hotelAddress">
-                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Hotel Address&nbsp;:&nbsp;</h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelAddress}}</span>
+                                            <div class="wd-button-margin-booking nowrapping"
+                                                 ng-show="booking.hotel.hotelAddress">
+                                                <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                    Hotel Address&nbsp;:&nbsp;</h5><span
+                                                    class="wd-email-message-subject wd-remove-text-overflowing"
+                                                    style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelAddress}}</span>
                                             </div>
-                                            <p><div class="wd-button-margin-booking ">
-                                            <button type="button" class="btn btn-success wd-button-margin-booking" ng-click="model.addAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Make Favorite</button>
-                                            <button type="button" class="btn btn-danger wd-button-margin-booking" ng-click="model.removeAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">UN-Favorite</button>
-                                            <button type="button" class="btn btn-danger wd-button-margin-booking" ng-click="model.deleteBooking(booking)">Delete</button>
-                                        </div></p>
+                                            <p>
+                                            <div class="wd-button-margin-booking ">
+                                                <button type="button" class="btn btn-success wd-button-margin-booking"
+                                                        ng-click="model.addAsFavoriteBooking(booking)"
+                                                        ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">
+                                                    Make Favorite
+                                                </button>
+                                                <button type="button" class="btn btn-danger wd-button-margin-booking"
+                                                        ng-click="model.removeAsFavoriteBooking(booking)"
+                                                        ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">
+                                                    UN-Favorite
+                                                </button>
+                                                <button type="button" class="btn btn-danger wd-button-margin-booking"
+                                                        ng-click="model.deleteBooking(booking)">Delete
+                                                </button>
+                                            </div>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -220,7 +317,7 @@
 </div>
 
 <script>
-    $('.flip').hover(function(){
+    $('.flip').hover(function () {
         $(this).find('.card').toggleClass('flipped');
 
     });

@@ -20,10 +20,6 @@ module.exports = function () {
     return api;
 
 
-
-
-
-
     function setModel(_model) {
         model = _model;
     }
@@ -33,14 +29,10 @@ module.exports = function () {
     }
 
 
-
-
-
     function createHotel(hotel) {
 
         return hotelModel.create(hotel);
     }
-
 
 
     function findHotelById(hotId) {

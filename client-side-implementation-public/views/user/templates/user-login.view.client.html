@@ -3,11 +3,15 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="#!/">Hotel League</a></h1>
-                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="" class="wd-login-user-name-styling">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a></h3>
+                <h3 ng-if="model.currentUser.username"
+                    class="pull-left wd-login-user-name-margin wd-login-user-name-styling "><a href=""
+                                                                                              class="wd-login-user-name-styling wd-remove-text-overflowing">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a>
+                </h3>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -17,53 +21,25 @@
                 <!--/.navbar-header-->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav ">
-                        <li ><a href="#!/">Home</a></li>
+                        <li><a href="#!/">Home</a></li>
                         <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin">Admin</a></li>
                         <li class="active" ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav ">
-                        <!--<li class="active"><a href="#!/">Home</a></li>
-                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
                         <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/following">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/follower">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/reservation">Bookings</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
-            <!--<div class="search-box">
-                <div id="sb-search" class="sb-search">
-                    <form>
-                        <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-                        <input class="sb-search-submit" type="submit" value="">
-                        <span class="sb-icon-search"> </span>
-                    </form>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-
-            &lt;!&ndash; search-scripts &ndash;&gt;
-            <script src="js/classie.js"></script>
-            <script src="js/uisearch.js"></script>
-            <script>
-                new UISearch( document.getElementById( 'sb-search' ) );
-            </script>-->
-            <!-- //search-scripts -->
 
         </div>
     </div>
@@ -74,12 +50,12 @@
     <div class="container">
         <div class="account_grid">
             <div class="col-md-6 login-left wow fadeInLeft wd-login-page-new-cust-margin" data-wow-delay="0.4s">
-                <h3 class="wd-label-color" >NEW CUSTOMERS</h3>
+                <h3 class="wd-label-color">NEW CUSTOMERS</h3>
                 <p>By creating an account with our store, you will be able to Book or/and Review hotels.</p>
                 <a class="acount-btn " href="#!/register">Create an Account</a>
             </div>
             <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
-                <h3 class="wd-label-color" >REGISTERED CUSTOMERS</h3>
+                <h3 class="wd-label-color">REGISTERED CUSTOMERS</h3>
                 <p>If you have an account with us, please log in.</p>
                 <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
                 <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
@@ -87,7 +63,7 @@
                 <form ng-class="{'submitted': submitted}">
                     <div>
                         <label for="username"><span>Username*</span></label>
-                        <input ng-model ="user.username"
+                        <input ng-model="user.username"
                                type="text"
                                autocomplete="off"
                                autocorrect="off"
@@ -100,7 +76,7 @@
                     </div>
                     <div>
                         <label for="password"><span>Password*</span></label>
-                        <input ng-model ="user.password"
+                        <input ng-model="user.password"
                                type="password"
                                autocomplete="off"
                                autocorrect="off"
@@ -112,12 +88,19 @@
                         <div ng-show="model.passwordmessage" class="alert alert-info">{{model.passwordmessage}}</div>
                     </div>
                     <!--<a class="forgot" href="#">Forgot Your Password?</a>-->
-                    <a class="wd-button-margin btn btn-success" ng-click ="model.login(user.username,user.password);submitted= true"><i class="fa fa-key" aria-hidden="true"></i> Username Login</a>
-                    <a class="wd-button-margin btn btn-primary" href="/auth/facebook" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook Login</a>
-                    <a class="wd-button-margin btn btn-danger" href="/auth/google" ><i class="fa fa-google-plus" aria-hidden="true"></i> Google Login</a>
+                    <a class="wd-button-margin btn btn-success"
+                       ng-click="model.login(user.username,user.password);submitted= true"><i class="fa fa-key"
+                                                                                              aria-hidden="true"></i>
+                        Username Login</a>
+                    <a class="wd-button-margin btn btn-primary" href="/auth/facebook"><i class="fa fa-facebook"
+                                                                                         aria-hidden="true"></i>
+                        Facebook Login</a>
+                    <a class="wd-button-margin btn btn-danger" href="/auth/google"><i class="fa fa-google-plus"
+                                                                                      aria-hidden="true"></i> Google
+                        Login</a>
                 </form>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>

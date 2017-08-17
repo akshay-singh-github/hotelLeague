@@ -3,7 +3,10 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="#!/">Hotel League</a></h1>
-                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="" class="wd-login-user-name-styling">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a></h3>
+                <h3 ng-if="model.currentUser.username"
+                    class="pull-left wd-login-user-name-margin wd-login-user-name-styling "><a href=""
+                                                                                              class="wd-login-user-name-styling wd-remove-text-overflowing">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a>
+                </h3>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -24,49 +27,19 @@
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="signin.html">Following</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Followers</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Reservations</a></li>-->
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav ">
-                        <!--<li class="active"><a href="#!/">Home</a></li>
-                        <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="rooms.html">Admin</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
-                        <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="signin.html">Inbox</a></li>-->
                         <li ng-show="model.currentUser._id"><a href="#!/people">People</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/following">Following</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/follower">Followers</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/reservation">Bookings</a></li>
-                        <!--<li ng-show="model.currentUser._id"><a href="contact.html">Logout</a></li>-->
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
-            <!--<div class="search-box">
-                <div id="sb-search" class="sb-search">
-                    <form>
-                        <input class="sb-search-input" placeholder="Enter your search term..." type="search"
-                               name="search" id="search">
-                        <input class="sb-search-submit" type="submit" value="">
-                        <span class="sb-icon-search"> </span>
-                    </form>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-
-            &lt;!&ndash; search-scripts &ndash;&gt;
-            <script src="js/classie.js"></script>
-            <script src="js/uisearch.js"></script>
-            <script>
-                new UISearch(document.getElementById('sb-search'));
-            </script>
-            &lt;!&ndash; //search-scripts &ndash;&gt;-->
-
         </div>
     </div>
 </div>
@@ -75,39 +48,55 @@
 <div class="details wd-bottom-margin-footer-overlap">
     <div class="container">
         <div class="wd-text-card-margin wd-remove-text-overflowing wd-title-shadow wd-title-color text-center">
-            <h3><span class="wd-title-color"><strong class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h3>
+            <h3><span class="wd-title-color"><strong
+                    class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h3>
         </div>
         <div class="col-md-7 details-left">
-            <img src="{{model.hotelObject.photoUrl}}" height="300" width="500" class=" img-responsive center-block wd-image-shadow" alt="">
-            <!--<img src="images/16.jpg" class="img-responsive" alt="">-->
+            <img src="{{model.hotelObject.photoUrl}}" height="300" width="500"
+                 class=" img-responsive center-block wd-image-shadow" alt="">
         </div>
         <div class="col-md-5 details-right">
 
             <div class="card">
                 <div class="card-block">
-                    <!--<div class="wd-text-card-margin wd-remove-text-overflowing wd-title-shadow wd-title-color">
-                        <h5><span class="wd-title-color"><strong class="wd-title-color">{{model.hotelObject.hotelName}}</strong></span></h5>
-                    </div>-->
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                    <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Open Now&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.openStatus}}</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Open Now&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">
+                            {{model.hotelObject.openStatus}}</h4>
                     </div>
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Phone&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.phoneNumber}}</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Phone&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">
+                            {{model.hotelObject.phoneNumber}}</h4>
                     </div>
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Address&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.hotelAddress}}</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Address&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">
+                            {{model.hotelObject.hotelAddress}}</h4>
                     </div>
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Rating&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.hotelRating}}</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Rating&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">
+                            {{model.hotelObject.hotelRating}}</h4>
                     </div>
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Landmark&nbsp;&nbsp;:&nbsp;&nbsp;</h4><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{model.hotelObject.landmarkLocation}}</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Landmark&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">
+                            {{model.hotelObject.landmarkLocation}}</h4>
                     </div>
                     <div class="nowrapping wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Website&nbsp;&nbsp;:&nbsp;&nbsp;</h4><a href="{{model.hotelObject.website}}" target="_blank"><h4 class="card-subtitle mb-2 text-muted wd-link-color">Click Me.</h4></a>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Website&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <a href="{{model.hotelObject.website}}" target="_blank"><h4
+                                class="card-subtitle mb-2 text-muted wd-link-color">Click Me.</h4></a>
                     </div>
                     <div class="wd-text-card-margin wd-remove-text-overflowing">
-                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Opening Hours&nbsp;&nbsp;:&nbsp;&nbsp;</h4><ul class="list-group wd-text-card-margin"><li ng-repeat="timing in model.hotelObject.weekHours" class="list-group-item wd-remove-text-overflowing"><h4 class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{timing}}</h4></li></ul>
+                        <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">Opening Hours&nbsp;&nbsp;:&nbsp;&nbsp;</h4>
+                        <ul class="list-group wd-text-card-margin">
+                            <li ng-repeat="timing in model.hotelObject.weekHours"
+                                class="list-group-item wd-remove-text-overflowing"><h4
+                                    class="card-subtitle mb-2 text-muted wd-custom-text-value-setting">{{timing}}</h4>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>
@@ -116,21 +105,27 @@
         <div class="clearfix"></div>
         <div class="wd-heading-bottom-margin">
             <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting ">MAP</h4>
-            <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting" ng-if="!model.mapUrlIframe" style="color: lightseagreen">MAP not Available for this hotel.</h4>
-        <iframe
-                width="100%"
-                height="350"
-                frameborder="0" style="border:0"
-                src={{model.mapUrlIframe}} allowfullscreen >
-        </iframe>
+            <h4 class="card-subtitle mb-2 text-muted wd-custom-text-label-setting" ng-if="!model.mapUrlIframe"
+                style="color: lightseagreen">MAP not Available for this hotel.</h4>
+            <iframe
+                    width="100%"
+                    height="350"
+                    frameborder="0" style="border:0"
+                    src={{model.mapUrlIframe}} allowfullscreen>
+            </iframe>
         </div>
         <div class=" wd-button-margin-details text-center">
             <a class="btn btn-default " ng-click="model.backButton()">Go Back</a>
         </div>
         <div class="container-fluid">
             <ul class="nav nav-tabs nav-justified">
-                <li class="active"><a data-toggle="tab" data-target="#wd-compose-review-id" ng-click="model.reload()" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Write/Read Hotel Review</h4></a></li>
-                <li ><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href=""><h4 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Create Hotel Booking</h4></a></li>
+                <li class="active"><a data-toggle="tab" data-target="#wd-compose-review-id" ng-click="model.reload()"
+                                      href=""><h4
+                        class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Write/Read Hotel
+                    Review</h4></a></li>
+                <li><a data-toggle="tab" data-target="#wd-booking-id" ng-click="" href=""><h4
+                        class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Create Hotel
+                    Booking</h4></a></li>
 
             </ul>
             <div class="tab-content">
@@ -284,7 +279,6 @@
                                     <option value="5">5</option>
                                     <option value="6">6</option>
                                 </select>
-                                <!--<input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small" ng-model="model.customer.MemberCount">-->
                                 <h5>REQUIRED</h5>
                                 <textarea value="" ng-model="model.customer.Instructions"></textarea>
                                 <input type="submit" value="Submit" ng-click="model.createBooking(model.customer)">
@@ -302,7 +296,9 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-target="#collapse1" type="button" class="btn btn-warning btn-block wd-remove-text-overflowing" href="">Click to Write A Review.</a>
+                                        <a data-toggle="collapse" data-target="#collapse1" type="button"
+                                           class="btn btn-warning btn-block wd-remove-text-overflowing" href="">Click to
+                                            Write A Review.</a>
                                     </h4>
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
@@ -348,160 +344,56 @@
                     </div>
 
                     <div class="container-fluid">
-
-                        <!--<div class="card text-center" ng-repeat="review in model.reviews" style="background-color: lightsalmon; border-color: black;">
-                            <div class="card-header">
-                                {{review.reviewer}} says:
-                            </div>
-                            <div class="card-block">
-                                <h4 class="card-title">{{review.ReviewTitle}}</h4>
-                                <p class="card-text">{{review.ReviewContent}}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                            &lt;!&ndash;<div class="card-footer text-muted">
-                                2 days ago
-                            </div>&ndash;&gt;
-                        </div>-->
-
-                        <!--<div class="row">
-                            <div class="col-sm-6 card wd-tile-shadow " ng-repeat="review in model.reviews" >
-                                <div class=" wd-card-margin">
-                                    <div class="card-block">
-                                        <h3 class="card-title">{{review.reviewer}} says:</h3>
-                                        &lt;!&ndash;<h3 class="card-title">{{review.ReviewTitle}}</h3>&ndash;&gt;
-                                        <p class="card-text">{{review.ReviewContent}}</p>
-                                        <a href="" class="btn btn-primary wd-button-margin">Go somewhere</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
-
-
-
-
-
-
                         <div class="row">
-                            <div class="wd-latest-flipping-trial-card-container col-xs-12 " ng-repeat="review in model.reviews">
-                            <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
-                                <div class="wd-latest-flipping-trial-front">
-                                    <div class="container-fluid">
-                                    <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
-                                    <h3>{{review.reviewer}} says:</h3>
-                                    <h1 class="wd-review-title-color wd-remove-text-overflowing">"{{review.ReviewTitle}}"</h1>
+                            <div class="wd-latest-flipping-trial-card-container col-xs-12 "
+                                 ng-repeat="review in model.reviews">
+                                <div class=" wd-latest-flipping-trial-card wd-tile-shadow">
+                                    <div class="wd-latest-flipping-trial-front">
+                                        <div class="container-fluid">
+                                            <img src="/images/user.png" class="img-circle wd-profile-image-border"
+                                                 alt="Cinque Terre" width="20%" height="150">
+                                            <h3>{{review.reviewer}} says:</h3>
+                                            <h1 class="wd-review-title-color wd-remove-text-overflowing">
+                                                "{{review.ReviewTitle}}"</h1>
 
 
+                                            <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb wd-title-shadow"
+                                               ng-show="model.islikedBycurrentUser(review)" aria-hidden="true"></i>
+                                            <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb"
+                                               ng-show="model.isNotlikedBycurrentUser(review)" aria-hidden="true"></i>
+                                            <h5 class="pull-left wd-positive-thumb wd-remove-text-overflowing">
+                                                {{review.Likes}}</h5>
+                                            <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb wd-title-shadow"
+                                               ng-show="model.isDislikedBycurrentUser(review)" aria-hidden="true"></i>
+                                            <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb "
+                                               ng-show="model.isNotDislikedBycurrentUser(review)"
+                                               aria-hidden="true"></i>
+                                            <h5 class="pull-right wd-negative-thumb wd-remove-text-overflowing">
+                                                {{review.Dislikes}}</h5>
+                                        </div>
 
-                                        <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb wd-title-shadow" ng-show="model.islikedBycurrentUser(review)" aria-hidden="true"></i>
-                                        <i class="fa fa-thumbs-up pull-left fa-2x wd-thumbs-margin wd-positive-thumb" ng-show="model.isNotlikedBycurrentUser(review)" aria-hidden="true"></i>
-                                    <h5 class="pull-left wd-positive-thumb wd-remove-text-overflowing">{{review.Likes}}</h5>
-                                        <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb wd-title-shadow" ng-show="model.isDislikedBycurrentUser(review)" aria-hidden="true"></i>
-                                        <i class="fa fa-thumbs-down pull-right fa-2x wd-thumbs-margin wd-negative-thumb " ng-show="model.isNotDislikedBycurrentUser(review)" aria-hidden="true"></i>
-                                    <h5 class="pull-right wd-negative-thumb wd-remove-text-overflowing">{{review.Dislikes}}</h5>
+                                        <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover/Click for
+                                            detailed review.</h5>
+
                                     </div>
+                                    <div class="wd-latest-flipping-trial-back">
+                                        <p class="wd-remove-text-overflowing">
+                                        <h3 class="wd-review-detail-margin-top">"{{review.ReviewContent}}"</h3></p>
+                                        <button type="button" class="btn btn-success wd-button-margin-booking"
+                                                ng-click="model.likeReview(review)">Like Review
+                                        </button>
+                                        <button type="button" class="btn btn-danger wd-button-margin-booking"
+                                                ng-click="model.dislikeReview(review)">Dislike Review
+                                        </button>
+                                        <button type="button" class="btn btn-primary wd-button-margin-booking"
+                                                ng-click="model.deleteReview(review)"
+                                                ng-show="model.iswrittenByCurrentUser(review)">Delete Review
+                                        </button>
 
-                                    <h5 class="wd-tile-footer-info wd-remove-text-overflowing">Note: Hover/Click for detailed review.</h5>
-
+                                    </div>
                                 </div>
-                                <div class="wd-latest-flipping-trial-back">
-                                    <p class="wd-remove-text-overflowing"><h3 class="wd-review-detail-margin-top">"{{review.ReviewContent}}"</h3></p>
-                                    <button type="button" class="btn btn-success wd-button-margin-booking" ng-click="model.likeReview(review)">Like Review</button>
-                                    <button type="button" class="btn btn-danger wd-button-margin-booking" ng-click="model.dislikeReview(review)">Dislike Review</button>
-                                    <button type="button" class="btn btn-primary wd-button-margin-booking" ng-click="model.deleteReview(review)" ng-show="model.iswrittenByCurrentUser(review)">Delete Review</button>
-
-                                </div>
-                            </div>
                             </div>
                         </div>
-
-
-
-
-
-
-
-<!--
-                        <div class="row">
-                            <div ng-repeat="review in model.reviews">
-                            <div class="col-sm-6 " >
-                                <div class="flip ">
-                                    <div class="card wd-tile-shadow">
-                                        <div class="face front">
-                                            <div class="inner text-center">
-                                                &lt;!&ndash;<img src="http://vinculumgroup.com/v2/wp-content/uploads/2015/08/nykaa.jpg">&ndash;&gt;
-                                                <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="325" height="275">
-                                                <h3>{{review.reviewer}} says:</h3>
-                                                    &lt;!&ndash;<img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">&ndash;&gt;
-                                            </div>
-                                        </div>
-                                        <div class="face back">
-                                            <div class="inner text-center">
-                                                <h3>Improved efficiency through automation</h3>
-                                                <button type="button" class="btn btn-default">Know More</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                            &lt;!&ndash;<div class="col-sm-6 " >
-                                <div class="flip ">
-                                    <div class="card wd-tile-shadow">
-                                        <div class="face front">
-                                            <div class="inner text-center">
-                                                &lt;!&ndash;<img src="http://vinculumgroup.com/v2/wp-content/uploads/2015/08/nykaa.jpg">&ndash;&gt;
-                                                <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="325" height="275">
-                                                <h3>{{review.reviewer}} says:</h3>
-                                                &lt;!&ndash;<img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">&ndash;&gt;
-                                            </div>
-                                        </div>
-                                        <div class="face back">
-                                            <div class="inner text-center">
-                                                <h3>Improved efficiency through automation</h3>
-                                                <button type="button" class="btn btn-default">Know More</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>&ndash;&gt;
-                        </div>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <!--<div ng-repeat="review in model.reviews">
-                            <h1>{{review.reviewer}} says:</h1>
-                            <h4>{{review.ReviewTitle}}</h4>
-                            <p>{{review.ReviewContent}}</p>
-                        </div>-->
-
                     </div>
                 </div>
 
@@ -513,49 +405,6 @@
 </div>
 <!-- details -->
 <!-- footer -->
-<!--<div class="footer">
-    <div class="container">
-        <div class="col-md-2 deco">
-            <h4>Navigation</h4>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shortcodes.html">Short Codes </a></li>
-            <li><a href="sigin.html">Sign in</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </div>
-        <div class="col-md-2 deco">
-            <h4>Links</h4>
-            <li><a href="#">Qui Sommes-Nous ?</a></li>
-            <li><a href="#">Mentions Légales </a></li>
-            <li><a href="#">Conditions D'Utilisation </a></li>
-        </div>
-        <div class="col-md-2 deco">
-            <h4>Social</h4>
-            <div class="soci">
-                <li><a href="#"><i class="f-1"> </i></a></li>
-                <li><a href="#"><i class="t-1"> </i></a></li>
-                <li><a href="#"><i class="g-1"> </i></a></li>
-            </div>
-        </div>
-        <div class="col-md-3 cardss">
-            <h4>Payment Sécure</h4>
-            <li><i class="visa"></i></li>
-            <li><i class="ma"></i></li>
-            <li><i class="paypal"></i></li>
-            <div class="clearfix"></div>
-        </div>
-        <div class="col-md-3 pos">
-            <h4>NewsLetter</h4>
-            <form method="post">
-                <input type="text" class="textbox" value="Email" onfocus="this.value = '';"
-                       onblur="if (this.value == '') {this.value = 'Email';}">
-                <div class="smt">
-                    <input type="submit" value="Subscribe">
-                </div>
-            </form>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>-->
 <div class="footer-bottom footer navbar-fixed-bottom">
     <div class="container">
         <p>© 2017 Hotel League. All Rights Reserved | Design by <a href="" target="_blank">Akshay Singh</a>
@@ -565,7 +414,7 @@
 </div>
 
 <script>
-    $('.flip').hover(function(){
+    $('.flip').hover(function () {
         $(this).find('.card').toggleClass('flipped');
 
     });

@@ -11,24 +11,26 @@ module.exports = function () {
         password: {type: String, require: true},
         firstName: String,
         lastName: String,
-        roles:[{type:String,
-            default:'USER',
-            enum:['USER','ADMIN']}],
+        roles: [{
+            type: String,
+            default: 'USER',
+            enum: ['USER', 'ADMIN']
+        }],
         google: {
             id: String,
             token: String
         },
         facebook: {
-            id:    String,
+            id: String,
             token: String
         },
         emailId: String,
         phone: String,
-        followedBy:[String],
-        following:[String],
-        favoriteHotelBooking:[String],
+        followedBy: [String],
+        following: [String],
+        favoriteHotelBooking: [String],
         dateCreated: {type: Date, default: Date.now}
-    }, {collection:"hotelLeague.user"});
+    }, {collection: "hotelLeague.user"});
 
     return userSchema;
 };

@@ -3,11 +3,15 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="#!/">Hotel League</a></h1>
-                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="" class="wd-login-user-name-styling">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a></h3>
+                <h3 ng-if="model.currentUser.username"
+                    class="pull-left wd-login-user-name-margin wd-login-user-name-styling "><a href=""
+                                                                                              class="wd-login-user-name-styling wd-remove-text-overflowing">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a>
+                </h3>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -17,12 +21,14 @@
                 <!--/.navbar-header-->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav ">
-                        <li ><a href="#!/">Home</a></li>
+                        <li><a href="#!/">Home</a></li>
                         <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin">Admin</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
-                        <li class="active" ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup style="background-color: yellow;color: red;border-radius:15px 50px;" ng-show="model.newMessageCountVar > 0">{{model.newMessageCountVar}}</sup></a></li>
+                        <li class="active" ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup
+                                style="background-color: yellow;color: red;border-radius:15px 50px;"
+                                ng-show="model.newMessageCountVar > 0">{{model.newMessageCountVar}}</sup></a></li>
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
@@ -36,25 +42,6 @@
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
-            <!--<div class="search-box">
-                <div id="sb-search" class="sb-search">
-                    <form>
-                        <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-                        <input class="sb-search-submit" type="submit" value="">
-                        <span class="sb-icon-search"> </span>
-                    </form>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-
-            &lt;!&ndash; search-scripts &ndash;&gt;
-            <script src="js/classie.js"></script>
-            <script src="js/uisearch.js"></script>
-            <script>
-                new UISearch( document.getElementById( 'sb-search' ) );
-            </script>-->
-            <!-- //search-scripts -->
-
         </div>
     </div>
 </div>
@@ -63,8 +50,10 @@
 <div class="login-page wd-bottom-margin-footer-overlap">
     <div class="container">
         <ul class="nav nav-tabs nav-justified">
-            <li class="active"><a class="wd-custom-Message-Tab-label-setting" data-toggle="tab" data-target="#wd-inbox-id" ng-click="model.reloadPage()" href="">Inbox</a></li>
-            <li><a class="wd-custom-Message-Tab-label-setting" data-toggle="tab" data-target="#wd-compose-message-id" href="">Compose Message</a></li>
+            <li class="active"><a class="wd-custom-Message-Tab-label-setting" data-toggle="tab"
+                                  data-target="#wd-inbox-id" ng-click="model.reloadPage()" href="">Inbox</a></li>
+            <li><a class="wd-custom-Message-Tab-label-setting" data-toggle="tab" data-target="#wd-compose-message-id"
+                   href="">Compose Message</a></li>
         </ul>
 
 
@@ -72,7 +61,8 @@
             <div id="wd-inbox-id" class="tab-pane fade in active">
                 <div class="account_grid">
                     <div class="col-xs-12 login-right wow fadeInLeft" data-wow-delay="0.4s">
-                        <h3 class="wd-email-messagetomessage-subject" style="color: #814807;font-style: italic;font-weight: bold;">MESSAGE INBOX</h3>
+                        <h3 class="wd-email-messagetomessage-subject"
+                            style="color: #814807;font-style: italic;font-weight: bold;">MESSAGE INBOX</h3>
                         <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
                         <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
                         <ul class="list-group wd-message-border-background">
@@ -85,67 +75,51 @@
                                     </div>
                                 </div>
                             </li>
-                            <li ng-repeat="message in model.allMessages" class="list-group-item wd-message-border-background" ng-click = "model.showMessageDetails(message)">
+                            <li ng-repeat="message in model.allMessages"
+                                class="list-group-item wd-message-border-background"
+                                ng-click="model.showMessageDetails(message)">
 
 
-                                <div class="container-fluid" >
+                                <div class="container-fluid">
                                     <div class="row" ng-click="model.messageOpen(message)" href="">
 
-
-                                        <!--<li class="list-group-item active">
-                                            <div class="wd-disable-wrapping row">
-                                                <div class="col-md-5 col-sm-7 col-xs-11">
-                                                    <span>Website</span>
-                                                </div>
-                                                <div class="hidden-sm hidden-xs col-md-3 ">
-                                                    <span>Created</span>
-                                                </div>
-                                                <div class="hidden-xs col-sm-4 col-md-3">
-                                                    <span>Updated</span>
-
-                                                </div>
-                                                <div class="col-xs-1">
-                                                </div>
-                                            </div>
-                                        </li>-->
-
-
-                                        <div class=" col-sm-3 col-xs-7 nowrapping" data-toggle="collapse" data-target="#collapseExample{{message._id}}" href="">
+                                        <div class=" col-sm-3 col-xs-7 nowrapping" data-toggle="collapse"
+                                             data-target="#collapseExample{{message._id}}" href="">
 
                                             <h2 class="wd-remove-text-overflowing wd-email-sender-title">
                                                 {{message.from}} </h2>
                                             <h2>&nbsp;&nbsp;:&nbsp;&nbsp;</h2>
                                         </div>
 
-                                        <div class=" hidden-xs  col-sm-6 nowrapping" data-toggle="collapse" data-target="#collapseExample{{message._id}}" href="">
+                                        <div class=" hidden-xs  col-sm-6 nowrapping" data-toggle="collapse"
+                                             data-target="#collapseExample{{message._id}}" href="">
                                             <i class="fa fa-envelope fa-2x wd-font-color-message"
                                                aria-hidden="true"></i>
                                             <span class="wd-superscript-parameter wd-title-shadow "
-                                                  style="color: red" ng-show="message.isMessageNew === 'NEW'">new!!!</span>
+                                                  style="color: red"
+                                                  ng-show="message.isMessageNew === 'NEW'">new!!!</span>
                                             <h2 class="wd-remove-text-overflowing wd-email-message-subject">&nbsp;&nbsp;&nbsp;&nbsp;{{message.message_title}}</h2>
                                         </div>
                                         <div class="col-xs-5 col-sm-3 ">
                                             <div class="nowrapping">
-                                            <a class="btn btn-success wd-remove-text-overflowing wd-button-margin" data-toggle="collapse"
-                                               data-target="#collapseExampleReply{{message._id}}">
-                                                Reply
-                                            </a>
-                                            <a class="btn btn-danger wd-remove-text-overflowing wd-button-margin" ng-click="model.deleteMessage(message)">
-                                                Delete
-                                            </a>
+                                                <a class="btn btn-success wd-remove-text-overflowing wd-button-margin"
+                                                   data-toggle="collapse"
+                                                   data-target="#collapseExampleReply{{message._id}}">
+                                                    Reply
+                                                </a>
+                                                <a class="btn btn-danger wd-remove-text-overflowing wd-button-margin"
+                                                   ng-click="model.deleteMessage(message)">
+                                                    Delete
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                    <!--<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample{{message._id}}" aria-expanded="false" aria-controls="collapseExample">
-                                        Button with data-target
-                                    </button>-->
-
 
                                 <div id="collapseExampleReply{{message._id}}" class="collapse">
-                                    <!--<div class="card card-block">hello</div>-->
                                     <div class="container-fluid wd-reply-window-formatting">
-                                        <h4 class="wd-heading-bottom-margin wd-email-messagetomessage-subject wd-remove-text-overflowing wd-font-weight">Reply To Message</h4>
+                                        <h4 class="wd-heading-bottom-margin wd-email-messagetomessage-subject wd-remove-text-overflowing wd-font-weight">
+                                            Reply To Message</h4>
                                         <div ng-show="model.error" class="alert alert-danger">
                                             {{model.error}}
                                         </div>
@@ -153,30 +127,15 @@
                                             {{model.successMessage}}
                                         </div>
                                         <form ng-class="{'submitted': model.submitted}">
-                                            <!--<label class="wd-custom-label-color wd-email-messagetomessage-subject" for="toUser">To:</label>
-
-                                            <input class="input-group "
-                                                   placeholder="abc"
-                                                   id="toUser"
-                                                   value="{{message.from}}"
-                                                   ng-model="messageObject.forUser"
-                                                   required/>-->
-                                            <!--<div ng-show="model.messageTo" class="alert alert-info">{{model.messageTo}}</div>
-                                            <label class="wd-custom-label-color wd-email-messagetomessage-subject" for="subject">Subject:</label>
-                                            <input class="input-group"
-                                                   placeholder="subject of message"
-                                                   id="subject"
-                                                   ng-model="messageObject.message_title"
-                                                   required/>
-                                            <div ng-show="model.messageSubject" class="alert alert-info">{{model.messageSubject}}</div>-->
-
-                                            <label class="wd-custom-label-color wd-email-messagetomessage-subject wd-remove-text-overflowing" for="reply-message-content">Message:</label>
+                                            <label class="wd-custom-label-color wd-email-messagetomessage-subject wd-remove-text-overflowing"
+                                                   for="reply-message-content">Message:</label>
                                             <textarea class="input-group"
                                                       placeholder="Best email service."
                                                       ng-model="message_body"
                                                       id="reply-message-content" rows="8"></textarea>
 
-                                            <button type="submit" class="btn btn-success btn-block wd-remove-text-overflowing"
+                                            <button type="submit"
+                                                    class="btn btn-success btn-block wd-remove-text-overflowing"
                                                     ng-click="model.replyMessage(message_body, message)">Reply
                                             </button>
                                         </form>
@@ -188,13 +147,25 @@
                                 <div class="collapse" id="collapseExample{{message._id}}">
                                     <div class="container-fluid wd-reply-window-formatting">
                                         <div class="wd-heading-bottom-margin nowrapping">
-                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">From : </h2> <p><h2 class="wd-email-message-subject wd-remove-text-overflowing">{{message.from}}</h2> </p>
+                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                From : </h2>
+                                            <p>
+                                            <h2 class="wd-email-message-subject wd-remove-text-overflowing">
+                                                {{message.from}}</h2> </p>
                                         </div>
                                         <div class=" wd-heading-bottom-margin">
-                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Subject : </h2> <p><span class="wd-email-message-subject " style="color: #169F12;font-size: 175%;">{{message.message_title}}</span></p>
+                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                Subject : </h2>
+                                            <p><span class="wd-email-message-subject "
+                                                     style="color: #169F12;font-size: 175%;">{{message.message_title}}</span>
+                                            </p>
                                         </div>
                                         <div class="wd-heading-bottom-margin ">
-                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Message : </h2> <p><span class="wd-email-message-subject " style="color: #169F12;font-size: 150%;">{{message.message_body}}</span></p>
+                                            <h2 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                                Message : </h2>
+                                            <p><span class="wd-email-message-subject "
+                                                     style="color: #169F12;font-size: 150%;">{{message.message_body}}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -202,14 +173,15 @@
                         </ul>
                     </div>
 
-                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
                 </div>
 
             </div>
 
             <div id="wd-compose-message-id" class="tab-pane fade">
                 <div class="container-fluid wd-message-border-background wd-border-radius">
-                    <h3 class="wd-email-messagetomessage-subject wd-font-weight wd-heading-bottom-margin" >Compose Message</h3>
+                    <h3 class="wd-email-messagetomessage-subject wd-font-weight wd-heading-bottom-margin">Compose
+                        Message</h3>
                     <div ng-show="model.error" class="alert alert-danger">
                         {{model.error}}
                     </div>
@@ -224,7 +196,8 @@
                                ng-model="messageObject.forUser"
                                required/>
                         <div ng-show="model.messageTo" class="alert alert-info">{{model.messageTo}}</div>
-                        <label class=" wd-email-messagetomessage-subject wd-font-size-compose" for="subject">Subject:</label>
+                        <label class=" wd-email-messagetomessage-subject wd-font-size-compose"
+                               for="subject">Subject:</label>
                         <input class="input-group wd-compose-window-formatting"
                                placeholder="subject of message"
                                id="subject"
@@ -250,136 +223,6 @@
     </div>
 </div>
 
-
-<!--
-<div class="container message-inbox-body">
-    <h3>MESSAGE INBOX</h3>
-    <div class="row">
-        <div class="container-fluid">
-            <a href="" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-pencil" style="padding-right:4px;"></span>Compose</a>
-            &lt;!&ndash;<div class="or"></div>&ndash;&gt;
-            &lt;!&ndash;<a href="http://www.jquery2dotnet.com" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-inbox" style="padding-right:4px;"></span>Inbox</a>&ndash;&gt;
-            <a href="" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-send" style="padding-right:4px;"></span>Send</a>
-        </div>
-
-        <div class="panel panel-default widget">
-            <div class="panel-heading">
-                <span class="glyphicon glyphicon-comment"></span>
-                <h3 class="panel-title">
-                    Messages</h3>
-
-
-            </div>
-            <div class="panel-body">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-xs-2 col-md-1">
-                                <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                            <div class="col-xs-10 col-md-11">
-                                <div>
-                                    <a href="#">
-                                        Congratulations</a>
-                                    <div class="mic-info">
-                                        By: <a href="#">Check My Athletics</a> on 12 Jun 2014
-                                    </div>
-                                </div>
-                                <div class="comment-text">
-                                    We would like to congratulate John on his achievement...
-                                </div>
-
-
-                                <a  href="#" class="btn btn-sm btn-hover btn-primary" href="#reply" ><span class="glyphicon glyphicon-share-alt" style="padding-right:3px;"></span>Reply</a>
-                                <a href="#" class="btn btn-sm btn-hover btn-danger"><span class="glyphicon glyphicon-remove" style="padding-right:3px;"></span>Delete</a>
-
-
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-xs-2 col-md-1">
-                                <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                            <div class="col-xs-10 col-md-11">
-                                <div>
-                                    <a href="#">Great Job</a>
-                                    <div class="mic-info">
-                                        By: <a href="#">Coacher</a> on 11 May 2014
-                                    </div>
-                                </div>
-                                <div class="comment-text">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
--->
-
-
-
-
-
-
-
-
-
-
-
-<!-- footer -->
-<!--<div class="footer">
-    <div class="container">
-        <div class="col-md-2 deco">
-            <h4>Navigation</h4>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shortcodes.html">Short Codes </a></li>
-            <li><a href="sigin.html">Sign in</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </div>
-        <div class="col-md-2 deco">
-            <h4>Links</h4>
-            <li><a href="#">Qui Sommes-Nous ?</a></li>
-            <li><a href="#">Mentions Légales </a></li>
-            <li><a href="#">Conditions D'Utilisation </a></li>
-        </div>
-        <div class="col-md-2 deco">
-            <h4>Social</h4>
-            <div class="soci">
-                <li><a href="#"><i class="f-1"> </i></a></li>
-                <li><a href="#"><i class="t-1"> </i></a></li>
-                <li><a href="#"><i class="g-1"> </i></a></li>
-            </div>
-        </div>
-        <div class="col-md-3 cardss">
-            <h4>Payment Sécure</h4>
-            <li><i class="visa"></i></li>
-            <li><i class="ma"></i></li>
-            <li><i class="paypal"></i></li>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="col-md-3 pos">
-            <h4>NewsLetter</h4>
-            <form method="post">
-                <input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
-                <div class="smt">
-                    <input type="submit" value="Subscribe">
-                </div>
-            </form>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-</div>-->
 <div class="footer-bottom footer navbar-fixed-bottom">
     <div class="container">
         <p>© 2017 Hotel League. All Rights Reserved | Design by <a href="" target="_blank">Akshay Singh</a>

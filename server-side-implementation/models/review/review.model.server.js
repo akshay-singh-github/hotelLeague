@@ -12,49 +12,40 @@ module.exports = function () {
 
         createReview: createReview,
         findReviewByHotelId: findReviewByHotelId,
-        UpdateReviewLikeByReviewId : UpdateReviewLikeByReviewId,
-        UpdateReviewDisLikeByReviewId : UpdateReviewDisLikeByReviewId,
+        UpdateReviewLikeByReviewId: UpdateReviewLikeByReviewId,
+        UpdateReviewDisLikeByReviewId: UpdateReviewDisLikeByReviewId,
         deleteReview: deleteReview,
         updateReview: updateReview,
         getAllReviews: getAllReviews,
-        getReviewBycurrentUser : getReviewBycurrentUser,
+        getReviewBycurrentUser: getReviewBycurrentUser,
         setModel: setModel,
-        getReviewsofFollowing : getReviewsofFollowing
+        getReviewsofFollowing: getReviewsofFollowing
     };
 
     return api;
 
 
     function getReviewsofFollowing(following) {
-        return reviewModel.find({'reviewerId':{$in:following}}).sort({date:-1});
+        return reviewModel.find({'reviewerId': {$in: following}}).sort({date: -1});
     }
 
-    
-    
+
     function getReviewBycurrentUser(uid) {
-        return reviewModel.find({reviewerId: uid}).sort({date:-1});
+        return reviewModel.find({reviewerId: uid}).sort({date: -1});
     }
-    
-    
 
 
     function updateReview(reviewId, review) {
 
-        return reviewModel.update({_id: reviewId},{$set: review});
+        return reviewModel.update({_id: reviewId}, {$set: review});
 
     }
-
-
-
 
 
     function getAllReviews() {
 
-        return reviewModel.find().sort({date:-1});
+        return reviewModel.find().sort({date: -1});
     }
-
-
-
 
 
     function setModel(_model) {
@@ -63,23 +54,18 @@ module.exports = function () {
 
 
     function UpdateReviewDisLikeByReviewId(review) {
-        return reviewModel.update({_id: review._id},{Dislikes : review.Dislikes , DislikedBy : review.DislikedBy });
+        return reviewModel.update({_id: review._id}, {Dislikes: review.Dislikes, DislikedBy: review.DislikedBy});
     }
-
 
 
     function UpdateReviewLikeByReviewId(review) {
-        return reviewModel.update({_id: review._id},{Likes : review.Likes , LikedBy : review.LikedBy });
+        return reviewModel.update({_id: review._id}, {Likes: review.Likes, LikedBy: review.LikedBy});
     }
-
 
 
     function deleteReview(reviewId) {
         return reviewModel.remove({_id: reviewId});
     }
-
-
-
 
 
     function createReview(review) {
@@ -88,9 +74,8 @@ module.exports = function () {
     }
 
 
-
     function findReviewByHotelId(resId) {
-        return reviewModel.find({reviewFor: resId}).sort({date:-1});
+        return reviewModel.find({reviewFor: resId}).sort({date: -1});
     }
 
 

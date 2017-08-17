@@ -9,17 +9,17 @@ module.exports = function () {
     var reviewSchema = mongoose.Schema({
         ReviewTitle: String,
         ReviewContent: String,
-        reviewer :String,
-        reviewFor :String,
-        reviewHotelName : String,
-        reviewerId :String,
-        date:{type: Date, default: Date.now},
-        rating : Number,
-        Likes : { type: Number,min: 0, default: 0 },
-        LikedBy : [String],
-        DislikedBy : [String],
-        Dislikes : { type: Number,min: 0, default: 0}
-    }, {collection:"hotelLeague.review"});
+        reviewer: String,
+        reviewFor: String,
+        reviewHotelName: String,
+        reviewerId: String,
+        date: {type: Date, default: Date.now},
+        rating: Number,
+        Likes: {type: Number, min: 0, default: 0},
+        LikedBy: [String],
+        DislikedBy: [String],
+        Dislikes: {type: Number, min: 0, default: 0}
+    }, {collection: "hotelLeague.review"});
 
     return reviewSchema;
 };

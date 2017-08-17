@@ -3,20 +3,17 @@
  */
 
 var https = require('https');
-module.exports=function (app,model) {
+module.exports = function (app, model) {
 
-    app.get("/api/getReview/:resId" , findReviewByHotelId);
-    app.get("/api/getReviewByUser/:userId" , getReviewBycurrentUser);
-    app.get("/api/getAllReviews" , getAllReviews);
+    app.get("/api/getReview/:resId", findReviewByHotelId);
+    app.get("/api/getReviewByUser/:userId", getReviewBycurrentUser);
+    app.get("/api/getAllReviews", getAllReviews);
     app.get("/api/getReviewsofFollowing/:userId", getReviewsofFollowing);
-    app.post("/api/createReview" , createReview);
+    app.post("/api/createReview", createReview);
     app.put("/api/likeReview", likeReview);
     app.put("/api/dislikeReview", dislikeReview);
     app.put("/api/getUpdateReview", updateReview);
     app.delete('/api/deleteReview/:reviewId', deleteReview);
-
-
-
 
 
     function getReviewsofFollowing(req, res) {
@@ -27,17 +24,13 @@ module.exports=function (app,model) {
                 var following = user.following;
                 model.reviewModel.getReviewsofFollowing(following)
                     .then(function (result) {
-                        console.log("this is the review of the  following",result);
+                        /*console.log("this is the review of the  following",result);*/
                         res.json(result);
-                    },function (error) {
+                    }, function (error) {
                         res.json(error);
                     });
             });
     }
-
-
-
-
 
 
     function getReviewBycurrentUser(req, res) {
@@ -46,24 +39,18 @@ module.exports=function (app,model) {
         model.reviewModel
             .getReviewBycurrentUser(uid)
             .then(function (reviews) {
-                if (reviews)
-                {
+                if (reviews) {
                     res.json(reviews);
                 }
-                else{
+                else {
                     res.sendStatus(404);
                 }
 
-            },function () {
+            }, function () {
                 res.sendStatus(404);
             });
 
     }
-
-
-
-
-
 
 
     function updateReview(req, res) {
@@ -72,12 +59,11 @@ module.exports=function (app,model) {
         model.reviewModel.updateReview(review._id, review)
             .then(function (review) {
                 res.json(review)
-            },function (error) {
+            }, function (error) {
                 res.json(error);
             });
 
     }
-
 
 
     function getAllReviews(req, res) {
@@ -92,15 +78,9 @@ module.exports=function (app,model) {
     }
 
 
-
-
-
-
-
-
     function deleteReview(req, res) {
         var reviewId = req.params.reviewId;
-        console.log("delete review service server");
+        /*console.log("delete review service server");*/
         model.reviewModel.deleteReview(reviewId)
             .then(function (result) {
                 res.json(result);
@@ -111,23 +91,17 @@ module.exports=function (app,model) {
     }
 
 
-
-
-    
     function dislikeReview(req, res) {
         var reviewObj = req.body;
 
         model.reviewModel.UpdateReviewDisLikeByReviewId(reviewObj)
             .then(function (review) {
                 res.json(review)
-            },function (error) {
+            }, function (error) {
                 res.json(error);
             });
 
     }
-    
-    
-
 
 
     function likeReview(req, res) {
@@ -137,29 +111,26 @@ module.exports=function (app,model) {
         model.reviewModel.UpdateReviewLikeByReviewId(reviewObj)
             .then(function (review) {
                 res.json(review)
-            },function (error) {
+            }, function (error) {
                 res.json(error);
             });
 
     }
 
 
-
     function createReview(req, res) {
-        console.log("Inside Review server create");
+        /*console.log("Inside Review server create");*/
         var reviewObject = req.body;
-        console.log("reviewObject : ", reviewObject);
+        /*console.log("reviewObject : ", reviewObject);*/
         model.reviewModel
             .createReview(reviewObject)
             .then(function (review) {
-                console.log("review : ", review);
+                /*console.log("review : ", review);*/
                 res.json(review);
             }, function (error) {
                 res.json(error);
             });
     }
-
-
 
 
     function findReviewByHotelId(req, res) {
@@ -168,15 +139,14 @@ module.exports=function (app,model) {
         model.reviewModel
             .findReviewByHotelId(resId)
             .then(function (reviews) {
-                if (reviews)
-                {
+                if (reviews) {
                     res.json(reviews);
                 }
-                else{
+                else {
                     res.sendStatus(404);
                 }
 
-            },function () {
+            }, function () {
                 res.sendStatus(404);
             });
     }

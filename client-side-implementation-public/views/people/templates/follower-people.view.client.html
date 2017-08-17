@@ -3,11 +3,15 @@
         <div class="container">
             <div class="logo">
                 <h1><a href="#!/">Hotel League</a></h1>
-                <h3 ng-if="model.currentUser.username" class="pull-left wd-login-user-name-margin wd-login-user-name-styling"><a href="" class="wd-login-user-name-styling">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a></h3>
+                <h3 ng-if="model.currentUser.username"
+                    class="pull-left wd-login-user-name-margin wd-login-user-name-styling "><a href=""
+                                                                                              class="wd-login-user-name-styling wd-remove-text-overflowing">Welcome&nbsp;&nbsp;{{model.currentUser.username}}!</a>
+                </h3>
             </div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -17,12 +21,15 @@
                 <!--/.navbar-header-->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav ">
-                        <li ><a href="#!/">Home</a></li>
+                        <li><a href="#!/">Home</a></li>
                         <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin">Admin</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/login">Login</a></li>
                         <li ng-show="!model.currentUser._id"><a href="#!/register">Register</a></li>
                         <li ng-show="model.currentUser._id"><a href="#!/profile">Profile</a></li>
-                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup style="background-color: yellow;color: red;border-radius:15px 50px;" ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a></li>
+                        <li ng-show="model.currentUser._id"><a href="#!/inbox">Inbox<sup
+                                style="background-color: yellow;color: red;border-radius:15px 50px;"
+                                ng-show="model.newMessageCountVar > 0" class="wd-remove-text-overflowing">{{model.newMessageCountVar}}</sup></a>
+                        </li>
                         <li ng-show="model.currentUser._id"><a ng-click="model.logout()" href="">Logout</a></li>
                     </ul>
                 </div>
@@ -36,24 +43,6 @@
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
-            <!--<div class="search-box">
-                <div id="sb-search" class="sb-search">
-                    <form>
-                        <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-                        <input class="sb-search-submit" type="submit" value="">
-                        <span class="sb-icon-search"> </span>
-                    </form>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-
-            &lt;!&ndash; search-scripts &ndash;&gt;
-            <script src="js/classie.js"></script>
-            <script src="js/uisearch.js"></script>
-            <script>
-                new UISearch( document.getElementById( 'sb-search' ) );
-            </script>-->
-            <!-- //search-scripts -->
 
         </div>
     </div>
@@ -62,88 +51,93 @@
 
 <div class=" container-fluid wd-bottom-margin-footer-overlap">
     <ul class="nav nav-tabs nav-justified">
-        <li class="active"><a data-toggle="tab" data-target="#wd-search-people-review-id" ng-click="" href=""><h1 class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Followers</h1></a></li>
+        <li class="active"><a data-toggle="tab" data-target="#wd-search-people-review-id" ng-click="" href=""><h1
+                class="card-subtitle mb-2 text-muted wd-custom-text-Tab-label-setting ">Followers</h1></a></li>
     </ul>
     <div class="tab-content">
         <div id="wd-search-people-review-id" class="tab-pane fade in active">
-            <!--<div class="login-page">
-                <div class="container">
-                    <div class="account_grid">
-                        <div class="col-xs-12 login-right wow fadeInLeft" data-wow-delay="0.4s">
-                            <div ng-show="model.message" class="alert alert-info">{{model.message}}</div>
-                            <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
-                            <div>
-                                <form ng-class="{'submitted': submitted}">
-                                    <div>
-                                        <label for="username_search"><span class="wd-email-messagetomessage-subject" style="color: #814807; font-size: 150%">Enter Person Username*</span></label>
-                                        <input ng-model ="user.username"
-                                               type="text"
-                                               autocomplete="off"
-                                               autocorrect="off"
-                                               autocapitalize="off"
-                                               spellcheck="false"
-                                               id="username_search"
-                                               placeholder="ironman321"
-                                               required>
-                                        <div ng-show="model.usernamemessage" class="alert alert-info">{{model.usernamemessage}}</div>
-                                    </div>
-                                    <div>
-                                        <input ng-click ="model.searchUser(user.username);submitted= true" type="submit" value="Search">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-            </div>-->
-
             <div class="container">
                 <div class="row" ng-show="model.currentUser.followedBy.length > 0">
                     <!--<h3 class="wd-button-margin wd-email-messagetomessage-subject">Followers&nbsp;:&nbsp;</h3>-->
                     <div class="wd-latest-flipping-trial-card-container col-xs-12 " ng-repeat="user in model.followers">
-                        <div class=" wd-latest-flipping-trial-card wd-tile-shadow" >
+                        <div class=" wd-latest-flipping-trial-card wd-tile-shadow">
                             <div class="wd-latest-flipping-trial-front">
                                 <div class="container-fluid">
-                                    <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
+                                    <img src="/images/user.png" class="img-circle wd-profile-image-border"
+                                         alt="Cinque Terre" width="20%" height="150">
                                     <h3 class="wd-button-margin wd-remove-text-overflowing">Name : {{user.firstName}}&nbsp;&nbsp;{{user.lastName}}</h3>
-                                    <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin">Username : {{user.username}}</h5>
+                                    <h5 class="wd-review-title-color wd-remove-text-overflowing wd-heading-bottom-margin">
+                                        Username : {{user.username}}</h5>
                                 </div>
-                                <h5 class="wd-tile-footer-info wd-remove-text-overflowing" ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0">Note: Hover for details or Unfollow.</h5>
-                                <h5 class="wd-tile-footer-info wd-remove-text-overflowing" ng-show="user.followedBy.indexOf(model.currentUser._id) < 0">Note: Hover for details or Follow.</h5>
-                                <i class="fa fa-users wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0" aria-hidden="true"></i>
-                                <h5 class=" wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0">Following</h5>
-                                <i class="fa fa-users wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="user.followedBy.indexOf(model.currentUser._id) < 0" aria-hidden="true"></i>
-                                <h5 class=" wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding" ng-show="user.followedBy.indexOf(model.currentUser._id) < 0">Not Following</h5>
+                                <h5 class="wd-tile-footer-info wd-remove-text-overflowing"
+                                    ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0">Note: Hover for
+                                    details or Unfollow.</h5>
+                                <h5 class="wd-tile-footer-info wd-remove-text-overflowing"
+                                    ng-show="user.followedBy.indexOf(model.currentUser._id) < 0">Note: Hover for details
+                                    or Follow.</h5>
+                                <i class="fa fa-users wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                   ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0" aria-hidden="true"></i>
+                                <h5 class=" wd-positive-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                    ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0">Following</h5>
+                                <i class="fa fa-users wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                   ng-show="user.followedBy.indexOf(model.currentUser._id) < 0" aria-hidden="true"></i>
+                                <h5 class=" wd-negative-thumb pull-left wd-remove-text-overflowing wd-title-shadow wd-card-padding"
+                                    ng-show="user.followedBy.indexOf(model.currentUser._id) < 0">Not Following</h5>
 
                             </div>
                             <div class="wd-latest-flipping-trial-back">
 
                                 <div class="container-fluid wd-search-people-window-formatting">
                                     <div class="wd-button-margin nowrapping" ng-show="user.firstName">
-                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">First Name&nbsp;:&nbsp; </h3> <p><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 135%;">{{user.firstName}}</span> </p>
+                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">First
+                                            Name&nbsp;:&nbsp; </h3>
+                                        <p><span class="wd-email-message-subject wd-remove-text-overflowing"
+                                                 style="color: #169F12;font-size: 135%;">{{user.firstName}}</span></p>
                                     </div>
                                     <div class=" wd-button-margin nowrapping" ng-show="user.lastName">
-                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Last Name&nbsp;:&nbsp;</h3> <p><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 135%;">{{user.lastName}}</span></p>
+                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Last
+                                            Name&nbsp;:&nbsp;</h3>
+                                        <p><span class="wd-email-message-subject wd-remove-text-overflowing"
+                                                 style="color: #169F12;font-size: 135%;">{{user.lastName}}</span></p>
                                     </div>
                                     <div class="wd-button-margin nowrapping" ng-show="user.username">
-                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Username&nbsp;:&nbsp;</h3> <p><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 135%;">{{user.username}}</span></p>
+                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                            Username&nbsp;:&nbsp;</h3>
+                                        <p><span class="wd-email-message-subject wd-remove-text-overflowing"
+                                                 style="color: #169F12;font-size: 135%;">{{user.username}}</span></p>
                                     </div>
                                     <div class="wd-button-margin nowrapping" ng-show="user.emailId">
-                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Email&nbsp;:&nbsp;</h3> <p><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 135%;">{{user.emailId}}</span></p>
+                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Email&nbsp;:&nbsp;</h3>
+                                        <p><span class="wd-email-message-subject wd-remove-text-overflowing"
+                                                 style="color: #169F12;font-size: 135%;">{{user.emailId}}</span></p>
                                     </div>
                                     <div class="wd-button-margin nowrapping" ng-show="user.phone">
-                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Phone&nbsp;:&nbsp;</h3> <p><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 135%;">{{user.phone}}</span></p>
+                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Phone&nbsp;:&nbsp;</h3>
+                                        <p><span class="wd-email-message-subject wd-remove-text-overflowing"
+                                                 style="color: #169F12;font-size: 135%;">{{user.phone}}</span></p>
                                     </div>
                                     <div class="wd-button-margin nowrapping" ng-show="user.roles.length > 0">
-                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Roles&nbsp;:&nbsp;</h3> <p><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 135%;" ng-repeat="role in user.roles">{{role}}</span></p>
+                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Roles&nbsp;:&nbsp;</h3>
+                                        <p><span class="wd-email-message-subject wd-remove-text-overflowing"
+                                                 style="color: #169F12;font-size: 135%;" ng-repeat="role in user.roles">{{role}}</span>
+                                        </p>
                                     </div>
                                     <div class="wd-button-margin nowrapping" ng-show="user.favoriteHotel.length > 0">
-                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Favorite Hotel&nbsp;:&nbsp;</h3> <p><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 135%;" ng-repeat="hotel in user.favoriteHotel">{{hotel}}</span></p>
+                                        <h3 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">
+                                            Favorite Hotel&nbsp;:&nbsp;</h3>
+                                        <p><span class="wd-email-message-subject wd-remove-text-overflowing"
+                                                 style="color: #169F12;font-size: 135%;"
+                                                 ng-repeat="hotel in user.favoriteHotel">{{hotel}}</span></p>
                                     </div>
                                     <div class="wd-button-margin ">
-                                        <button type="button" class="btn btn-success" ng-click="model.addAsFollower(user)" ng-show="user.followedBy.indexOf(model.currentUser._id) < 0">Follow</button>
-                                        <button type="button" class="btn btn-danger" ng-click="model.removeAsFollower(user)" ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0">Unfollow</button>
+                                        <button type="button" class="btn btn-success"
+                                                ng-click="model.addAsFollower(user)"
+                                                ng-show="user.followedBy.indexOf(model.currentUser._id) < 0">Follow
+                                        </button>
+                                        <button type="button" class="btn btn-danger"
+                                                ng-click="model.removeAsFollower(user)"
+                                                ng-show="user.followedBy.indexOf(model.currentUser._id) >= 0">Unfollow
+                                        </button>
                                     </div>
                                 </div>
 
@@ -154,8 +148,6 @@
                 </div>
 
             </div>
-
-
 
 
         </div>
@@ -163,87 +155,6 @@
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- footer -->
-<!--<div class="footer">
-    <div class="container">
-        <div class="col-md-2 deco">
-            <h4>Navigation</h4>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shortcodes.html">Short Codes </a></li>
-            <li><a href="sigin.html">Sign in</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </div>
-        <div class="col-md-2 deco">
-            <h4>Links</h4>
-            <li><a href="#">Qui Sommes-Nous ?</a></li>
-            <li><a href="#">Mentions Légales </a></li>
-            <li><a href="#">Conditions D'Utilisation </a></li>
-        </div>
-        <div class="col-md-2 deco">
-            <h4>Social</h4>
-            <div class="soci">
-                <li><a href="#"><i class="f-1"> </i></a></li>
-                <li><a href="#"><i class="t-1"> </i></a></li>
-                <li><a href="#"><i class="g-1"> </i></a></li>
-            </div>
-        </div>
-        <div class="col-md-3 cardss">
-            <h4>Payment Sécure</h4>
-            <li><i class="visa"></i></li>
-            <li><i class="ma"></i></li>
-            <li><i class="paypal"></i></li>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="col-md-3 pos">
-            <h4>NewsLetter</h4>
-            <form method="post">
-                <input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
-                <div class="smt">
-                    <input type="submit" value="Subscribe">
-                </div>
-            </form>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-</div>-->
 <div class="footer-bottom footer navbar-fixed-bottom">
     <div class="container">
         <p>© 2017 Hotel League. All Rights Reserved | Design by <a href="" target="_blank">Akshay Singh</a>

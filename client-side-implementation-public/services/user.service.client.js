@@ -3,29 +3,29 @@
  */
 (function () {
     angular.module("HotelLeagueMaker")
-        .factory("userService",userService);
+        .factory("userService", userService);
 
 
     function userService($http) {
 
 
         var api = {
-            login : login,
-            register : register,
-            getAllUsers : getAllUsers,
-            getApiKey : getApiKey,
-            findUserByUsername : findUserByUsername,
-            findUserByUserId : findUserByUserId,
-            checkLoggedInUser : checkLoggedInUser,
-            checkAdminUser : checkAdminUser,
-            logout : logout,
-            updateUserProfile : updateUserProfile,
-            unregisterUserProfile : unregisterUserProfile,
-            findUserByUsernameRegex : findUserByUsernameRegex,
-            getAllfollowers : getAllfollowers,
-            getAllfollowing : getAllfollowing,
-            deleteUser : deleteUser,
-            createUser : createUser
+            login: login,
+            register: register,
+            getAllUsers: getAllUsers,
+            getApiKey: getApiKey,
+            findUserByUsername: findUserByUsername,
+            findUserByUserId: findUserByUserId,
+            checkLoggedInUser: checkLoggedInUser,
+            checkAdminUser: checkAdminUser,
+            logout: logout,
+            updateUserProfile: updateUserProfile,
+            unregisterUserProfile: unregisterUserProfile,
+            findUserByUsernameRegex: findUserByUsernameRegex,
+            getAllfollowers: getAllfollowers,
+            getAllfollowing: getAllfollowing,
+            deleteUser: deleteUser,
+            createUser: createUser
             /*getHotelDetails : getHotelDetails*/
 
 
@@ -45,10 +45,8 @@
         }
 
 
-
-
         function getAllfollowing(userId) {
-            var url= "/api/getAllfollowing/"+userId;
+            var url = "/api/getAllfollowing/" + userId;
             return $http.get(url)
                 .then(function (result) {
                     return result.data;
@@ -57,14 +55,13 @@
 
 
         function getAllfollowers(userId) {
-            var url= "/api/getAllfollowers/"+userId;
+            var url = "/api/getAllfollowers/" + userId;
             return $http.get(url)
                 .then(function (result) {
                     return result.data;
                 })
 
         }
-
 
 
         function findUserByUserId(userId) {
@@ -75,7 +72,6 @@
                 })
 
         }
-
 
 
         function findUserByUsernameRegex(username) {
@@ -91,7 +87,6 @@
         }
 
 
-        
         function unregisterUserProfile() {
 
             var url = '/api/unregisterUserProfile';
@@ -102,34 +97,29 @@
         }
 
 
-
         function createUser(user) {
             var url = "/api/createUser";
             return $http.post(url, user)
                 .then(function (response) {
                     return response.data;
-                },function (error) {
+                }, function (error) {
                     return error;
                 });
 
         }
 
 
-
-        
         function deleteUser(user) {
 
-            var url = '/api/deleteUserProfile/'+user._id;
+            var url = '/api/deleteUserProfile/' + user._id;
             return $http.delete(url)
                 .then(function (response) {
                     return response.data;
                 });
 
         }
-        
-        
-        
-        
+
+
         function updateUserProfile(userId, user) {
 
             var url = '/api/user/' + userId;
@@ -139,25 +129,20 @@
                     var user = response.data;
                     return user;
                 });
-            
+
         }
-        
-        
-        
-        
-        
-        
-        
+
+
         function logout() {
 
             var url = '/api/logoutUser';
             return $http.post(url)
-                .then(function(result){
+                .then(function (result) {
                     return result.data;
                 });
         }
-        
-        
+
+
         function checkAdminUser() {
 
             var url = '/api/checkAdminUser';
@@ -166,11 +151,8 @@
                     return response.data;
                 })
         }
-        
-        
-        
 
-        
+
         function checkLoggedInUser() {
             var url = '/api/checkLoggedInUser';
             return $http.get(url)
@@ -178,10 +160,7 @@
                     return response.data;
                 })
         }
-        
-        
-        
-        
+
 
         function findUserByUsername(username) {
             var url = '/api/user?username=' + username;
@@ -191,13 +170,10 @@
                     var user = response.data;
                     return user;
                 });
-            
+
         }
-        
-        
-        
-        
-        
+
+
         function register(userNew) {
 
             var url = "/api/register";
@@ -209,32 +185,27 @@
         }
 
 
-
-
-
-        function login(username , password) {
+        function login(username, password) {
 
             var url = "/api/project/login";
             var user = {
-                username : username,
-                password : password
+                username: username,
+                password: password
             };
 
 
-            return $http.post(url , user)
+            return $http.post(url, user)
                 .then(function (result) {
                     return result.data;
                 });
         }
 
 
-
-
         function getHotelDetails(detailUrlObject) {
 
             var url = "/api/hotel/details";
 
-            return $http.post(url,detailUrlObject)
+            return $http.post(url, detailUrlObject)
                 .then(function (result) {
                     return result;
                 }, function (err) {
@@ -246,7 +217,7 @@
         function searchNearbyHotels(searchUrlObject) {
             var url = "/api/hotel/search";
 
-            return $http.post(url,searchUrlObject)
+            return $http.post(url, searchUrlObject)
                 .then(function (result) {
                     return result;
                 }, function (err) {
@@ -264,7 +235,6 @@
                     console.log(err);
                 });
         }
-
 
 
     }
