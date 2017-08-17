@@ -21,6 +21,9 @@
         model.getNewMessageCount = getNewMessageCount;
         model.scrollToSearchResults = scrollToSearchResults;
         model.getReviewsofFollowing = getReviewsofFollowing;
+        model.getHotelImageurlDynamic = getHotelImageurlDynamic;
+
+
 
         function init(){
             getReviewsofFollowing();
@@ -32,6 +35,22 @@
             console.log("session hotels", $window.sessionStorage.getItem("hotels"));*/
         }
         init();
+
+
+
+
+        function getHotelImageurlDynamic(hotel) {
+            var url = "";
+            if(hotel){
+                url = "https://maps.googleapis.com/maps/api/place/photo?photoreference="+hotel.photos[0].photo_reference+"&sensor=false&maxheight=150&maxwidth=250&key="+model.googleApiKey;
+            }
+            else{
+                url = "";
+            }
+
+            return url;
+
+        }
 
 
 
