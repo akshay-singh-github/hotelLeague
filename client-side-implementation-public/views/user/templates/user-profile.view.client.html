@@ -176,8 +176,8 @@
                                 <div class="wd-latest-flipping-trial-front">
                                     <div class="container-fluid">
                                         <img src="/images/user.png" class="img-circle wd-profile-image-border" alt="Cinque Terre" width="20%" height="150">
-                                        <h5 class="wd-remove-text-overflowing" style="color:saddlebrown ">For Hotel : {{review.reviewHotelName}}</h5>
-                                        <h3 class="wd-remove-text-overflowing">{{review.reviewer}} says:</h3>
+                                        <h5 class="wd-remove-text-overflowing wd-button-margin" style="color:saddlebrown ">For Hotel : {{review.reviewHotelName}}</h5>
+                                        <h3 class="wd-remove-text-overflowing wd-button-margin">{{review.reviewer}} says:</h3>
                                         <h1 class="wd-review-title-color wd-button-margin wd-remove-text-overflowing">"{{review.ReviewTitle}}"</h1>
 
 
@@ -194,7 +194,7 @@
 
                                 </div>
                                 <div class="wd-latest-flipping-trial-back">
-                                    <h3 class="wd-review-detail-margin-top wd-remove-text-overflowing">"{{review.ReviewContent}}"</h3>
+                                    <p class="wd-remove-text-overflowing wd-button-margin"><h3 class="wd-review-detail-margin-top">"{{review.ReviewContent}}"</h3></p>
                                     <button type="button" class="btn btn-success wd-button-margin-booking" ng-click="model.likeReview(review)">Like Review</button>
                                     <button type="button" class="btn btn-danger wd-button-margin-booking" ng-click="model.dislikeReview(review)">Dislike Review</button>
                                     <button type="button" class="btn btn-primary wd-button-margin-booking" ng-click="model.deleteReview(review)" ng-show="model.iswrittenByCurrentUser(review)">Delete Review</button>
