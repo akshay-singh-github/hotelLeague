@@ -126,10 +126,11 @@
                                             <div class="wd-button-margin-booking nowrapping" ng-show="booking.hotel.hotelAddress">
                                                 <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Hotel Address&nbsp;:&nbsp;</h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelAddress}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking ">
-                                                <button type="button" class="btn btn-success" ng-click="model.addAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Add To Favorite</button>
-                                                <button type="button" class="btn btn-danger" ng-click="model.removeAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">Remove From Favorite</button>
-                                            </div>
+                                            <p><div class="wd-button-margin-booking ">
+                                                <button type="button" class="btn btn-success wd-button-margin-booking" ng-click="model.addAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Make Favorite</button>
+                                                <button type="button" class="btn btn-danger wd-button-margin-booking" ng-click="model.removeAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">UN-Favorite</button>
+                                                <button type="button" class="btn btn-danger wd-button-margin-booking" ng-click="model.deleteBooking(booking)">Delete</button>
+                                            </div></p>
                                         </div>
 
 
@@ -187,13 +188,12 @@
                                             <div class="wd-button-margin-booking nowrapping" ng-show="booking.hotel.hotelAddress">
                                                 <h5 class=" wd-email-messagetomessage-subject wd-remove-text-overflowing">Hotel Address&nbsp;:&nbsp;</h5><span class="wd-email-message-subject wd-remove-text-overflowing" style="color: #169F12;font-size: 100%;">{{booking.hotel.hotelAddress}}</span>
                                             </div>
-                                            <div class="wd-button-margin-booking ">
-                                                <button type="button" class="btn btn-success" ng-click="model.addAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Add To Favorite</button>
-                                                <button type="button" class="btn btn-danger" ng-click="model.removeAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">Remove From Favorite</button>
-                                            </div>
+                                            <p><div class="wd-button-margin-booking ">
+                                            <button type="button" class="btn btn-success wd-button-margin-booking" ng-click="model.addAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) < 0">Make Favorite</button>
+                                            <button type="button" class="btn btn-danger wd-button-margin-booking" ng-click="model.removeAsFavoriteBooking(booking)" ng-show="model.currentUser.favoriteHotelBooking.indexOf(booking._id) >= 0">UN-Favorite</button>
+                                            <button type="button" class="btn btn-danger wd-button-margin-booking" ng-click="model.deleteBooking(booking)">Delete</button>
+                                        </div></p>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>

@@ -138,9 +138,6 @@
                     $route.reload();
                     return result;
                 })
-
-
-
         }
 
 

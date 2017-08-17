@@ -17,6 +17,7 @@
         model.removeAsFollower = removeAsFollower;
         model.currentUser = currentUser;
         model.getAllBookingsForUser = getAllBookingsForUser;
+        model.deleteBooking = deleteBooking;
         model.addAsFavoriteBooking = addAsFavoriteBooking;
         model.removeAsFavoriteBooking = removeAsFavoriteBooking;
         model.getAllFavoriteBookingsForUser = getAllFavoriteBookingsForUser;
@@ -33,6 +34,15 @@
             model.showUserDetailsFlag = false;
         }
         init();
+
+
+        function deleteBooking(booking) {
+            bookingService.deleteBooking(booking)
+                .then(function (result) {
+                    $route.reload();
+                    return result;
+                })
+        }
 
 
 
