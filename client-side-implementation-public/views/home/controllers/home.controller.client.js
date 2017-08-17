@@ -47,7 +47,7 @@
 
 
         function getReviewsofFollowing() {
-            if (model.currentUser) {
+            if (model.currentUser && (typeof model.currentUser !== 'undefined')) {
                 reviewService.getReviewsofFollowing(model.currentUser)
                     .then(function (result) {
                         model.allReviewsOfFollowing = result;
@@ -73,12 +73,14 @@
 
 
         function getMessageBycurrentUser() {
-            messageService.getMessageBycurrentUser(model.currentUser)
-                .then(function (result) {
-                    model.allMessages = result.data;
-                    model.getNewMessageCount(model.allMessages);
-                    /*console.log("This all Messages for user", model.allMessages)*/
-                });
+            if (model.currentUser && (typeof model.currentUser !== 'undefined')) {
+                messageService.getMessageBycurrentUser(model.currentUser)
+                    .then(function (result) {
+                        model.allMessages = result.data;
+                        model.getNewMessageCount(model.allMessages);
+                        /*console.log("This all Messages for user", model.allMessages)*/
+                    });
+            }
         }
 
 
@@ -166,7 +168,7 @@
                     /*console.log(model.googleApiKey);*/
                 })
                 .then(function (key) {
-                        get();
+                    get();
                 });
         }
 
