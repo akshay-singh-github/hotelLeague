@@ -47,7 +47,9 @@
 
 
         function getReviewsofFollowing() {
-            if (model.currentUser && (typeof model.currentUser !== 'undefined')) {
+
+            if ((typeof model.currentUser._id !== 'undefined') && (model.currentUser._id !== null)) {
+                /*console.log("inside model.currentUser",model.currentUser);*/
                 reviewService.getReviewsofFollowing(model.currentUser)
                     .then(function (result) {
                         model.allReviewsOfFollowing = result;
@@ -73,7 +75,7 @@
 
 
         function getMessageBycurrentUser() {
-            if (model.currentUser && (typeof model.currentUser !== 'undefined')) {
+            if ((typeof model.currentUser._id !== 'undefined') && (model.currentUser._id !== null)) {
                 messageService.getMessageBycurrentUser(model.currentUser)
                     .then(function (result) {
                         model.allMessages = result.data;
