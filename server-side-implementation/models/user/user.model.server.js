@@ -155,9 +155,11 @@ module.exports = function () {
         if (newUser.roles) {
             if (typeof newUser.roles === 'string' || newUser.roles instanceof String) {
                 newUser.roles = newUser.roles.toUpperCase();
-                newUser.roles = newUser.roles.split(',').filter(function (e) {
-                    return String(e).trim();
-                });
+                newUser.roles = newUser.roles.split(',');
+
+                for(var i in newUser.roles){
+                    newUser.roles[i] = newUser.roles[i].trim();
+                }
             }
         }
         else {

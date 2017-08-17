@@ -366,7 +366,7 @@
                 model.errorcreateUser = "Incomplete Fields , Cannot Register.";
                 model.passwordcreateUsermessage = "Password is Required";
                 model.createUsersubmitted= "yes";
-                return
+                return;
             }
 
 
@@ -409,8 +409,30 @@
 
 
         function updateUser(user) {
+
             model.updateUserMessage = "";
             model.errorupdateUser = "";
+
+            if(typeof user.roles === "string" || user.roles instanceof String){
+                console.log("update user.roles", user.roles);
+                user.roles = user.roles.replace(/\s/g, '');
+                user.roles = user.roles.toUpperCase();
+                var tempArray = user.roles.split(",");
+
+                console.log("update user.roles", user.roles);
+                console.log("update tempArray.tempArray", tempArray);
+                for(var j in tempArray){
+                    if((tempArray[j] !== "USER") && (tempArray[j] !== "ADMIN")){
+                        model.errorupdateUser = "Roles can be either 'ADMIN', 'USER' or 'ADMIN,USER'";
+                        $window.scrollTo(0, 0);
+                        return;
+                    }
+
+                }
+
+            }
+
+
             /*user.roles.toUpperCase();*/
                 userService
                     .updateUserProfile(user._id, user)
@@ -419,7 +441,8 @@
                         model.updateUserMessage = "User with Username : "+user.username+" has been updated.";
                         $window.scrollTo(0, 0);
                     }, function () {
-                        model.errorupdateUser = "This user could not be updated."
+                        model.errorupdateUser = "This user could not be updated.";
+                        $window.scrollTo(0, 0);
                     });
 
         }
