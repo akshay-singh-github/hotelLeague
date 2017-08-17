@@ -6,7 +6,7 @@
     "password": "alice",
     "emailId": "alice@alice.com",
     "phone" : "000-000-0000",
-    "roles" : [ "ADMIN", "USER" ]},
+    "roles" : [ "USER" ]},
 
   {
     "firstName": "bob",
