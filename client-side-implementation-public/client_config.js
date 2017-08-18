@@ -101,7 +101,7 @@
                 controller: "adminController",
                 controllerAs: "model",
                 resolve:{
-                    currentUser: checkLoggedInUser
+                    currentUser: checkAdminUser
                 }
             });
 
