@@ -44,41 +44,9 @@ module.exports = function(app){
             userModelDummy.findOneAndUpdate(query, update, options, function(error, result) {
                 if (error) return error;
             });
-
-
-
-
-
-
-            /*FoodieUserModel
-                .findOneAndUpdate(
-                    {username: initUsers[u].username},
-                    initUsers[u],
-                    {upsert: true},
-                    function(user) {}
-                );*/
         }
     }
 
     init();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 };
