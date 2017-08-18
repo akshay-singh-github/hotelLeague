@@ -141,10 +141,11 @@
 </div>
 
 
-<div ng-if="model.hotels.length>0" class="container-fluid special">
-    <h1 class="wd-label-color-home-details wd-title-shadow wd-remove-text-overflowing" id="search_results">Search
+<div class="container-fluid special">
+    <h1 class="wd-label-color-home-details wd-title-shadow wd-remove-text-overflowing" ng-if="model.hotels.length>0">Search
         Results</h1>
-    <div class="container wd-bottom-margin-footer-overlap">
+    <div id="search_results"></div>
+    <div class="container wd-bottom-margin-footer-overlap" ng-if="model.hotels.length>0">
         <div class=" wd-menuitem-style wd-tile-shadow" ng-repeat="hotel in model.hotels" style="text-align: center">
             <h2 class="wd-project-text-position-heading wd-remove-text-overflowing wd-card-margin "
                 style="text-align: center">{{hotel.name}} </h2>

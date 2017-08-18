@@ -136,7 +136,7 @@
 
         function searchNearbyHotels(search) {
             /*console.log("search",search);*/
-            if (search !== null && typeof search !== 'undefined') {
+            if (search !== null && typeof search !== 'undefined' && ((typeof search === 'string' || search instanceof String) && search.length>0)) {
                 var cityN = search;
                 var replacedsearch = cityN.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, " ");
                 var processedSearch = replacedsearch.split(" ").join("+");
@@ -156,7 +156,7 @@
             } else {
                 $sessionStorage.hotelList = "";
                 $route.reload();
-                $window.alert("Enter the city name.");
+                $window.alert("Enter a City or Hotel name.");
             }
 
         }
