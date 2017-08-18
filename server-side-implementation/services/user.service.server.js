@@ -27,13 +27,13 @@ module.exports = function (app, model) {
     app.get("/api/getAllfollowing/:userId", getAllfollowing);
     app.get("/api/userRegex", findUserbyRegexQueryParameter);
     app.post('/api/register', register);
-    app.post('/api/createUser', createUser);
+    app.post('/api/createUser',isUserAdmin , createUser);
     app.get('/api/checkLoggedInUser', checkLoggedInUser);
     app.get('/api/checkAdminUser', checkAdminUser);
     app.post('/api/logoutUser', logoutUser);
     app.put('/api/user/:uid', isAdminorCurrentUser, updateUserProfile);
     app.post('/api/unregisterUserProfile', unregisterUserProfile);
-    app.delete("/api/deleteUserProfile/:userId", deleteUser);
+    app.delete("/api/deleteUserProfile/:userId",isUserAdminOrCurrentUser, deleteUser);
 
 
     var ProjectFBconfig = {
@@ -288,7 +288,7 @@ module.exports = function (app, model) {
     }
 
 
-    function checkAdminUser() {
+    function checkAdminUser(req, res) {
 
         if (req.isAuthenticated() && req.user.roles.indexOf('ADMIN') > -1) {
             res.json(req.user);
